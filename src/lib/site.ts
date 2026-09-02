@@ -42,11 +42,11 @@ export const founder = {
 };
 
 export const contact = {
-  // Reconstructed from the only surviving fragment (.env.example's
-  // BUSINESS_EMAIL default). Phone/WhatsApp numbers were never recorded
-  // anywhere recoverable in this codebase — these are placeholders and
-  // must be replaced with the real numbers before going live.
-  email: "greenvitalenvironmental@gmail.com",
+  // Real business email, confirmed by the site owner. Phone/WhatsApp
+  // numbers were never recorded anywhere recoverable in this codebase —
+  // these are still placeholders and must be replaced with the real
+  // numbers before going live.
+  email: "greenvitaltravelandtouragencyl@gmail.com",
   phones: ["+232 00 000 0000"],
   whatsapp: "23200000000",
   address: {
