@@ -57,7 +57,7 @@ export default function RewardsPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1766928100326-d5d77f98f71b?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1766928100326-d5d77f98f71b.jpg"
           alt="A couple watching the sunset over the water from a terrace"
           fill
           priority

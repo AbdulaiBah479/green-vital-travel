@@ -16,7 +16,9 @@ const csp = [
   // stricter policy, since React never uses eval() in production mode.
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://images.unsplash.com",
+  // All photography is self-hosted under /public/images — no remote host
+  // needed here anymore.
+  "img-src 'self' data:",
   "font-src 'self' data:",
   `connect-src 'self'${isDev ? " ws://localhost:* http://localhost:*" : ""}`,
   // The Contact page embeds an OpenStreetMap iframe for the office location —
@@ -51,12 +53,7 @@ const nextConfig: NextConfig = {
     root: path.join(__dirname),
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    // Every photo is self-hosted under /public/images — no remote patterns needed.
     formats: ["image/avif", "image/webp"],
     // These source photos never change once published — cache the
     // optimized variants for a year instead of Next's 60s default.

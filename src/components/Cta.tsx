@@ -6,7 +6,7 @@ export default function Cta() {
   return (
     <section id="contact" className="relative scroll-mt-36 lg:scroll-mt-52 overflow-hidden px-6 py-28 sm:px-10 sm:py-36">
       <Image
-        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80"
+        src="/images/unsplash/1500530855697-b586d89ba3ee.jpg"
         alt="Coastal cliffs at dusk"
         fill
         sizes="100vw"

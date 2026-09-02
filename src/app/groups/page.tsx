@@ -43,7 +43,7 @@ export default function GroupsPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1506869640319-fe1a24fd76dc.jpg"
           alt="A group of friends celebrating together on a mountaintop at sunset"
           fill
           priority

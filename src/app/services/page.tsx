@@ -23,7 +23,7 @@ const services = [
   {
     title: "Flights",
     body: "We advise on routing, timing, and cabin choice, and can ticket on your behalf — factoring in the rest of your itinerary, not just the cheapest fare.",
-    img: "https://images.unsplash.com/photo-1527605158555-853f200063e9?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1527605158555-853f200063e9.jpg",
     imgAlt: "View of an airplane wing through the cabin window at sunset",
     icon: (
       <path d="M10 21v-6l8-5-1-3-9 3-4-3H2l2 5-2 1 1 2 4-1 4 6h1Z" />
@@ -32,42 +32,42 @@ const services = [
   {
     title: "Hotels & Villas",
     body: "Vetted directly, not pulled from a ranked listing page — the property has to earn a place in an itinerary, not just have availability.",
-    img: "https://images.unsplash.com/photo-1543489822-c49534f3271f?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1543489822-c49534f3271f.jpg",
     imgAlt: "An infinity pool overlooking a blue bay from a villa terrace",
     icon: <path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6" />,
   },
   {
     title: "Cruises & Small-Ship Sailing",
     body: "From a 24-guest expedition ship to a classic ocean liner — cabin category, itinerary, and shore excursions matched to how you actually want to travel.",
-    img: "https://images.unsplash.com/photo-1636730740168-c94f3ab802e6?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1636730740168-c94f3ab802e6.jpg",
     imgAlt: "A small sailboat on calm open water, seen from above",
     icon: <path d="M3 18c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0M5 14l1-8h12l1 8M9 6V3h4v3" />,
   },
   {
     title: "Car Hire & Private Drivers",
     body: "Self-drive for open-road trips, or a private driver-guide where local roads, language, or logistics make that the better call.",
-    img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1533473359331-0135ef1b58bf.jpg",
     imgAlt: "A rental SUV parked on a desert road",
     icon: <path d="M5 17h-2v-6l2-5h12l2 5v6h-2M5 17a2 2 0 1 0 4 0m6 0a2 2 0 1 0 4 0M5 17h10" />,
   },
   {
     title: "Airport & Private Transfers",
     body: "Booked as part of the itinerary, timed against real flight schedules — not a generic pickup window and a driver holding a sign.",
-    img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1449965408869-eaa3f722e40d.jpg",
     imgAlt: "A driver's hand on the steering wheel at dusk, city lights ahead",
     icon: <path d="M12 2 4 8v13h16V8l-8-6Zm0 6v7" />,
   },
   {
     title: "Travel Insurance",
     body: "A default line item on every itinerary, not an upsell — see our full explainer on what's actually worth covering.",
-    img: "https://images.unsplash.com/photo-1614451558582-96f3c35d3e5f?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1614451558582-96f3c35d3e5f.jpg",
     imgAlt: "A life ring mounted on a scenic waterside railing",
     icon: <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" />,
   },
   {
     title: "Visa & Travel Documentation",
     body: "Requirements checked against your specific passport before you book, not after — with the paperwork prepared alongside the itinerary.",
-    img: "https://images.unsplash.com/photo-1581553673739-c4906b5d0de8?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1581553673739-c4906b5d0de8.jpg",
     imgAlt: "An open passport showing pages of visa entry stamps",
     icon: <path d="M4 4h16v16H4z M8 9h8M8 13h5M8 17h3" />,
   },
@@ -78,7 +78,7 @@ export default function ServicesPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1504609773096-104ff2c73ba4.jpg"
           alt="Travel planning essentials — camera, compass, and journal laid out on a wooden table"
           fill
           priority

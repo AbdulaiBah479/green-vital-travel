@@ -21,7 +21,7 @@ const destinations = [
       "Grilled barracuda on the sand at River No. 2",
       "A sunrise hike to Leicester Peak, overlooking Freetown",
     ],
-    img: "https://images.unsplash.com/photo-1611395813517-41f9be5e292d?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
   },
   {
     slug: "kyoto",
@@ -36,7 +36,7 @@ const destinations = [
       "Dawn visit to Fushimi Inari, before the gates open to the public",
       "A driver-guide for day trips into the Kitayama mountains",
     ],
-    img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
   },
   {
     slug: "amalfi",
@@ -51,7 +51,7 @@ const destinations = [
       "A pasta-making morning in a Ravello home kitchen",
       "Rooms with a sea view in towns most itineraries skip",
     ],
-    img: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1533104816931-20fa691ff6ca.jpg",
   },
   {
     slug: "serengeti",
@@ -66,7 +66,7 @@ const destinations = [
       "Private vehicle and guide for the full stay",
       "A balloon dawn over the plains, weather permitting",
     ],
-    img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1516426122078-c23e76319801.jpg",
   },
   {
     slug: "patagonia",
@@ -81,7 +81,7 @@ const destinations = [
       "A refugio held privately for two nights mid-trek",
       "Extra weather-buffer days built into the itinerary",
     ],
-    img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1544735716-392fe2489ffa.jpg",
   },
   {
     slug: "santorini",
@@ -96,7 +96,7 @@ const destinations = [
       "A cliffside suite in Oia's quieter northern edge",
       "Wine tasting at a family-run vineyard off the tourist route",
     ],
-    img: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1570077188670-e3a8d69ac5ff.jpg",
   },
 ];
 

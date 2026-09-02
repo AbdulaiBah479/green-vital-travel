@@ -30,7 +30,7 @@ export default function GiftCardsPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1668463876833-339717e58c4c?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1668463876833-339717e58c4c.jpg"
           alt="An elegantly wrapped gift box tied with ribbon"
           fill
           priority

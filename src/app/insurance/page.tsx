@@ -39,7 +39,7 @@ export default function InsurancePage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1770196567087-b59ba06aef12?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1770196567087-b59ba06aef12.jpg"
           alt="A family walking hand in hand across a grassy hillside"
           fill
           priority

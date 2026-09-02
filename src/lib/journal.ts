@@ -20,7 +20,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "6 min read",
     date: "March 2026",
     isoDate: "2026-03-04",
-    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1488646953014-85cb44e25828.jpg",
     content: [
       "Every guidebook eventually converges on the same ten photographs. That convergence isn't an accident — it's the product of an algorithm, not a traveler. Somewhere along the way, the internet decided which sunset counted, and a hundred million itineraries followed it there at the same hour, on the same day, for the same forty-five minutes of light.",
       "We stopped handing clients that list a few years ago, quietly, without announcing it. What replaced it wasn't a secret list of better places — it was a conversation. What are you actually looking for when you say you want to see Santorini? Is it the caldera, specifically? Or is it the feeling of standing somewhere improbably beautiful with nowhere else to be?",
@@ -38,7 +38,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "5 min read",
     date: "July 2026",
     isoDate: "2026-07-02",
-    img: "https://images.unsplash.com/photo-1526857240824-92be52581d9b?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1526857240824-92be52581d9b.jpg",
     content: [
       "Most packing lists are written for the trip in general, which means they're not really written for your trip at all. A ten-night cultural itinerary in Kyoto and a nine-night trek in Patagonia share almost nothing except a passport and a phone charger.",
       "The rules that do hold up: pack for laundry, not for the length of the trip — five days of clothing covers most three-week itineraries if you're willing to use a hotel laundry service once. Bring one layer warmer than the forecast suggests you'll need; weather forecasts get less reliable the further out they are, and the cost of being wrong runs one direction only.",
@@ -55,7 +55,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "6 min read",
     date: "June 2026",
     isoDate: "2026-06-14",
-    img: "https://images.unsplash.com/photo-1655722725332-9925c96dd627?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1655722725332-9925c96dd627.jpg",
     content: [
       "Every itinerary we build includes a note on entry requirements for the traveler's specific passport — because the answer genuinely depends on it. A US passport and a UK passport can face completely different rules for the same country, same dates, same airline.",
       "Three things worth checking yourself, even when a consultant is handling the rest: passport validity (many countries require six months remaining beyond your travel dates, not just beyond your return flight), whether a visa needs to be arranged in advance versus on arrival, and any recent policy changes — these shift more often than travelers assume, sometimes with only weeks of notice.",
@@ -72,7 +72,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "5 min read",
     date: "May 2026",
     isoDate: "2026-05-20",
-    img: "https://images.unsplash.com/photo-1614451558582-96f3c35d3e5f?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1614451558582-96f3c35d3e5f.jpg",
     content: [
       "Travel insurance earns a bad reputation because most people only think about it after something's gone wrong — which is exactly backwards. The best outcome for any policy is that you never need to make a claim.",
       "The coverage that actually matters, in rough order of how often it gets used: trip cancellation and interruption (the deposit and non-refundable bookings you'd otherwise lose outright), emergency medical coverage abroad (your domestic health insurance very often does not travel with you), and medical evacuation, which sounds dramatic until you need it in a place a normal ambulance can't reach.",
@@ -89,7 +89,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "4 min read",
     date: "April 2026",
     isoDate: "2026-04-09",
-    img: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1580519542036-c47de6196ba5.jpg",
     content: [
       "The single biggest unforced error we see: paying a foreign-transaction fee on every card swipe for two weeks straight because nobody checked before leaving. Most decent travel cards waive it; most everyday cards don't. It's a five-minute check that's worth doing before, not after.",
       "On cash: carry enough for the first 24 hours (a taxi, a meal, a tip) in the local currency, withdrawn from an ATM rather than exchanged at the airport — airport exchange counters are reliably the worst rate you'll find. After that, let the trip tell you how much cash it actually needs; some destinations run almost entirely on card, others still expect cash for the small, best things — a market stall, a family-run trattoria.",
@@ -106,7 +106,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "5 min read",
     date: "March 2026",
     isoDate: "2026-03-25",
-    img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1547471080-7cc2caa01a7e.jpg",
     content: [
       "\"Best time to visit\" gets treated as a weather question, and weather is maybe a third of the actual answer. The other two-thirds are crowds and what's actually happening on the ground — a destination's shoulder season is often better than its peak, not despite the smaller crowds but because of what that absence makes room for.",
       "Take the Serengeti: peak migration season draws the most travelers, understandably. But a shoulder month with a smaller but still substantial resident wildlife population, at a fraction of the camp cost and with guides who have more time for you, is a real trade worth considering — not a compromise.",
@@ -123,7 +123,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "8 min read",
     date: "January 2026",
     isoDate: "2026-01-12",
-    img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
     content: [
       "There's a version of Kyoto that exists for people with four days and a list. Kinkaku-ji in the morning, Fushimi Inari at golden hour, a kaiseki dinner squeezed in before the last train. It's a perfectly good four days. It is also, we'd argue, not really Kyoto.",
       "Given two weeks — which is what we'd actually book, given the choice — the city opens differently. The first three days go to nothing in particular: a neighborhood, a bicycle, a coffee shop you return to twice because the owner remembered your order. Temple fatigue is real, and the cure for it isn't seeing fewer temples. It's seeing them slower, with gaps in between wide enough to actually notice something.",
@@ -140,7 +140,7 @@ export const journalEntries: JournalEntry[] = [
     readTime: "5 min read",
     date: "November 2025",
     isoDate: "2025-11-18",
-    img: "https://images.unsplash.com/photo-1633655442168-c6ef0ed2f984?auto=format&fit=crop&w=1600&q=80",
+    img: "/images/unsplash/1633655442168-c6ef0ed2f984.jpg",
     content: [
       "“Bespoke” is one of those words that travel agencies reach for the way restaurants reach for “artisanal.” It sounds like care. It doesn't always come with any.",
       "Here's a rough test: if the itinerary could be sold twice, unmodified, to two different clients with different reasons for traveling, it wasn't bespoke. It was a package with better font choices.",

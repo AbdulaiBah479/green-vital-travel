@@ -25,7 +25,7 @@ export default function AboutPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1476514525535-07fb3b4ae5f1.jpg"
           alt="Mountain lake at dawn"
           fill
           priority

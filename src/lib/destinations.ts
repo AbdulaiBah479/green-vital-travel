@@ -24,15 +24,15 @@ export type Destination = {
 // filler alongside each destination's own hero — keeps every destination
 // page visually rich without sourcing a fully unique shoot per place.
 const filler = [
-  "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+  "/images/unsplash/1540202404-a2f29016b523.jpg",
+  "/images/unsplash/1512100356356-de1b84283e18.jpg",
+  "/images/unsplash/1502602898657-3e91760cbb34.jpg",
+  "/images/unsplash/1571902943202-507ec2618e8f.jpg",
+  "/images/unsplash/1466442929976-97f336a657be.jpg",
+  "/images/unsplash/1506461883276-594a12b11cf3.jpg",
+  "/images/unsplash/1587595431973-160d0d94add1.jpg",
+  "/images/unsplash/1469521669194-babb45599def.jpg",
+  "/images/unsplash/1544644181-1484b3fdfc62.jpg",
 ];
 
 export const destinations: Destination[] = [
@@ -42,7 +42,7 @@ export const destinations: Destination[] = [
     country: "Japan",
     region: "Asia",
     heroImg:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
     gallery: [filler[0], filler[1]],
     hook: "Temple gardens and quiet mornings",
     description:
@@ -68,7 +68,7 @@ export const destinations: Destination[] = [
     country: "Italy",
     region: "Europe",
     heroImg:
-      "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1533104816931-20fa691ff6ca.jpg",
     gallery: [filler[2], filler[3]],
     hook: "Cliffside towns, slow dinners",
     description:
@@ -94,7 +94,7 @@ export const destinations: Destination[] = [
     country: "Tanzania",
     region: "Africa",
     heroImg:
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1516426122078-c23e76319801.jpg",
     gallery: [filler[4], filler[5]],
     hook: "The great migration, up close",
     description:
@@ -120,7 +120,7 @@ export const destinations: Destination[] = [
     country: "Chile",
     region: "Americas",
     heroImg:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1544735716-392fe2489ffa.jpg",
     gallery: [filler[6], filler[7]],
     hook: "Glaciers, granite, and silence",
     description:
@@ -146,7 +146,7 @@ export const destinations: Destination[] = [
     country: "Greece",
     region: "Europe",
     heroImg:
-      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1570077188670-e3a8d69ac5ff.jpg",
     gallery: [filler[8], filler[0]],
     hook: "Whitewashed cliffs, endless blue",
     description:
@@ -172,7 +172,7 @@ export const destinations: Destination[] = [
     country: "Indonesia",
     region: "Asia",
     heroImg:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1537996194471-e657df975ab4.jpg",
     gallery: [filler[1], filler[2]],
     hook: "Rice terraces, temples, and tide pools",
     description:
@@ -198,7 +198,7 @@ export const destinations: Destination[] = [
     country: "Morocco",
     region: "Africa",
     heroImg:
-      "https://images.unsplash.com/photo-1489493887464-892be6d1daae?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1489493887464-892be6d1daae.jpg",
     gallery: [filler[3], filler[4]],
     hook: "Souks by day, dunes by night",
     description:
@@ -224,7 +224,7 @@ export const destinations: Destination[] = [
     country: "Iceland",
     region: "Europe",
     heroImg:
-      "https://images.unsplash.com/photo-1531168556467-80aace0d0144?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1531168556467-80aace0d0144.jpg",
     gallery: [filler[5], filler[6]],
     hook: "Waterfalls, ice caves, and the aurora",
     description:
@@ -250,7 +250,7 @@ export const destinations: Destination[] = [
     country: "New Zealand",
     region: "Oceania",
     heroImg:
-      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1518837695005-2083093ee35b.jpg",
     gallery: [filler[7], filler[8]],
     hook: "Alps, fjords, and a taste for adrenaline",
     description:
@@ -276,7 +276,7 @@ export const destinations: Destination[] = [
     country: "Maldives",
     region: "Asia",
     heroImg:
-      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1573843981267-be1999ff37cd.jpg",
     gallery: [filler[0], filler[3]],
     hook: "Overwater villas, endless turquoise",
     description:
@@ -302,7 +302,7 @@ export const destinations: Destination[] = [
     country: "Peru",
     region: "Americas",
     heroImg:
-      "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1526392060635-9d6019884377.jpg",
     gallery: [filler[4], filler[7]],
     hook: "Machu Picchu, earned on foot",
     description:
@@ -328,7 +328,7 @@ export const destinations: Destination[] = [
     country: "Vietnam",
     region: "Asia",
     heroImg:
-      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1528127269322-539801943592.jpg",
     gallery: [filler[5], filler[8]],
     hook: "Limestone bays and a coastline that keeps unfolding",
     description:
@@ -354,7 +354,7 @@ export const destinations: Destination[] = [
     country: "Costa Rica",
     region: "Americas",
     heroImg:
-      "https://images.unsplash.com/photo-1518259102261-b40117eabbc9?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1518259102261-b40117eabbc9.jpg",
     gallery: [filler[6], filler[1]],
     hook: "Rainforest canopy to volcanic coastline",
     description:
@@ -380,7 +380,7 @@ export const destinations: Destination[] = [
     country: "United Arab Emirates",
     region: "Middle East",
     heroImg:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1512453979798-5ea266f8880c.jpg",
     gallery: [filler[2], filler[0]],
     hook: "Skyline by night, dunes by day",
     description:
@@ -406,9 +406,9 @@ export const destinations: Destination[] = [
     country: "Sierra Leone",
     region: "Africa",
     heroImg:
-      "https://images.unsplash.com/photo-1611395813517-41f9be5e292d?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1611395813517-41f9be5e292d.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1624832040555-d9f92f7be672?auto=format&fit=crop&w=1200&q=80",
+      "/images/unsplash/1624832040555-d9f92f7be672.jpg",
       filler[0],
     ],
     hook: "Golden beaches, twenty minutes from the airport",
@@ -435,9 +435,9 @@ export const destinations: Destination[] = [
     country: "Sierra Leone",
     region: "Africa",
     heroImg:
-      "https://images.unsplash.com/photo-1602298674761-700e96568f5f?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1602298674761-700e96568f5f.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1544519954-6aeb4816f0ab?auto=format&fit=crop&w=1200&q=80",
+      "/images/unsplash/1544519954-6aeb4816f0ab.jpg",
       filler[4],
     ],
     hook: "Rainforest island, eleven primate species",
@@ -464,9 +464,9 @@ export const destinations: Destination[] = [
     country: "Sierra Leone",
     region: "Africa",
     heroImg:
-      "https://images.unsplash.com/photo-1625001071825-0a85373c8972?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1625001071825-0a85373c8972.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1600550132115-64a9ee300763?auto=format&fit=crop&w=1200&q=80",
+      "/images/unsplash/1600550132115-64a9ee300763.jpg",
       filler[8],
     ],
     hook: "Three islands, no cars, no crowds",
@@ -493,9 +493,9 @@ export const destinations: Destination[] = [
     country: "Saudi Arabia",
     region: "Middle East",
     heroImg:
-      "https://images.unsplash.com/photo-1579305796538-03268c05b65c?auto=format&fit=crop&w=1600&q=80",
+      "/images/unsplash/1579305796538-03268c05b65c.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1568009167523-043c39300e67?auto=format&fit=crop&w=1200&q=80",
+      "/images/unsplash/1568009167523-043c39300e67.jpg",
       filler[2],
     ],
     hook: "Hajj and Umrah, planned end to end",

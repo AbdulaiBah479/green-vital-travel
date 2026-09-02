@@ -37,7 +37,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "kyoto",
     name: "Kyoto, Japan",
-    img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
     bestFor: "Culture, quiet mornings, food",
     arrival: {
       title: "Arrive, settle in",
@@ -106,7 +106,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "amalfi",
     name: "Amalfi Coast, Italy",
-    img: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1533104816931-20fa691ff6ca.jpg",
     bestFor: "Food, slow days, the sea",
     arrival: {
       title: "Arrive, settle in",
@@ -168,7 +168,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "serengeti",
     name: "Serengeti, Tanzania",
-    img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1516426122078-c23e76319801.jpg",
     bestFor: "Wildlife, wide horizons",
     arrival: {
       title: "Fly into the bush",
@@ -230,7 +230,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "patagonia",
     name: "Patagonia, Chile",
-    img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1544735716-392fe2489ffa.jpg",
     bestFor: "Big landscapes, real hiking",
     arrival: {
       title: "Arrive in Puerto Natales",
@@ -292,7 +292,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "santorini",
     name: "Santorini, Greece",
-    img: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1570077188670-e3a8d69ac5ff.jpg",
     bestFor: "The caldera, slow dinners",
     arrival: {
       title: "Arrive, settle in",
@@ -354,7 +354,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "freetown-peninsula",
     name: "Freetown Peninsula, Sierra Leone",
-    img: "https://images.unsplash.com/photo-1611395813517-41f9be5e292d?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
     bestFor: "Beaches, surf, easy days",
     arrival: {
       title: "Arrive, settle in",
@@ -410,7 +410,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "tiwai-island",
     name: "Tiwai Island, Sierra Leone",
-    img: "https://images.unsplash.com/photo-1602298674761-700e96568f5f?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1602298674761-700e96568f5f.jpg",
     bestFor: "Rainforest, wildlife, quiet",
     arrival: {
       title: "Cross onto the island",
@@ -460,7 +460,7 @@ export const destinations: PlannerDestination[] = [
   {
     id: "banana-islands",
     name: "Banana Islands, Sierra Leone",
-    img: "https://images.unsplash.com/photo-1625001071825-0a85373c8972?auto=format&fit=crop&w=1400&q=80",
+    img: "/images/unsplash/1625001071825-0a85373c8972.jpg",
     bestFor: "Snorkeling, history, no cars",
     arrival: {
       title: "Cross to the islands",

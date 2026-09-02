@@ -4,37 +4,37 @@ const serviceCards = [
   {
     title: "Air Ticketing",
     description: "Flight bookings and travel planning designed around schedules, budgets, and personal preferences.",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=75",
+    image: "/images/unsplash/1436491865332-7a61a109cc05.jpg",
     alt: "Airplane wing above the clouds",
   },
   {
     title: "Car Rentals",
     description: "Flexible airport transfers and self-drive options for business trips and private journeys.",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=75",
+    image: "/images/unsplash/1533473359331-0135ef1b58bf.jpg",
     alt: "Rental SUV parked on a desert road",
   },
   {
     title: "Visa Assistance",
     description: "Clear, guided support through documentation and application steps for key destinations.",
-    image: "https://images.unsplash.com/photo-1581553673739-c4906b5d0de8?auto=format&fit=crop&w=800&q=75",
+    image: "/images/unsplash/1581553673739-c4906b5d0de8.jpg",
     alt: "Open passport with visa stamps",
   },
   {
     title: "Holiday Packages",
     description: "Curated travel packages that balance timing, comfort, and value for each traveler.",
-    image: "https://images.unsplash.com/photo-1625001071825-0a85373c8972?auto=format&fit=crop&w=800&q=75",
+    image: "/images/unsplash/1625001071825-0a85373c8972.jpg",
     alt: "Banana Islands, Sierra Leone",
   },
   {
     title: "Hotel Bookings",
     description: "Comfortable stays chosen to fit your itinerary, destination, and budget.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=75",
+    image: "/images/unsplash/1566073771259-6a8506099945.jpg",
     alt: "Beachfront hotel resort with pool",
   },
   {
     title: "Travel Insurance",
     description: "Practical protection for smoother, more confident travel planning.",
-    image: "https://images.unsplash.com/photo-1614451558582-96f3c35d3e5f?auto=format&fit=crop&w=800&q=75",
+    image: "/images/unsplash/1614451558582-96f3c35d3e5f.jpg",
     alt: "Life ring mounted on a scenic waterside railing",
   },
 ];

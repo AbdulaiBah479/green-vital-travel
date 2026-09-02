@@ -22,7 +22,7 @@ export default function PressPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1781709246027-8c8f59aed2e8?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1781709246027-8c8f59aed2e8.jpg"
           alt="Silhouette of a photographer capturing a vast mountainous landscape"
           fill
           priority

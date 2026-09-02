@@ -39,7 +39,7 @@ export default function PartnersPage() {
     <main className="pb-24 sm:pb-32">
       <div className="relative flex h-[50vh] min-h-[460px] w-full items-end overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1781861799305-d22ee4b22795?auto=format&fit=crop&w=2000&q=80"
+          src="/images/unsplash/1781861799305-d22ee4b22795.jpg"
           alt="Two travel partners reviewing a route together over a paper map"
           fill
           priority

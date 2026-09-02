@@ -41,31 +41,31 @@ const outcomes = [
     slug: "patagonia",
     name: "Patagonia, Chile",
     tagline: "For travelers chasing scale over comfort.",
-    img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1544735716-392fe2489ffa.jpg",
   },
   {
     slug: "amalfi",
     name: "Amalfi Coast, Italy",
     tagline: "For travelers who plan a day around dinner.",
-    img: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1533104816931-20fa691ff6ca.jpg",
   },
   {
     slug: "kyoto",
     name: "Kyoto, Japan",
     tagline: "For travelers who need the quiet more than the itinerary.",
-    img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
   },
   {
     slug: "serengeti",
     name: "Serengeti, Tanzania",
     tagline: "For travelers building a story to hand down.",
-    img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1516426122078-c23e76319801.jpg",
   },
   {
     slug: "freetown-peninsula",
     name: "Freetown Peninsula, Sierra Leone",
     tagline: "For travelers who just want the water, easy days, and nowhere to be.",
-    img: "https://images.unsplash.com/photo-1611395813517-41f9be5e292d?auto=format&fit=crop&w=1200&q=80",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
   },
 ];
 

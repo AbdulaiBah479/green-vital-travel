@@ -5,23 +5,23 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1611395813517-41f9be5e292d?auto=format&fit=crop&w=1600&q=80",
+    src: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
     alt: "Freetown Peninsula coastline, Sierra Leone",
   },
   {
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80",
+    src: "/images/unsplash/1436491865332-7a61a109cc05.jpg",
     alt: "Airplane wing above the clouds at sunset",
   },
   {
-    src: "https://images.unsplash.com/photo-1602298674761-700e96568f5f?auto=format&fit=crop&w=1600&q=80",
+    src: "/images/unsplash/1602298674761-700e96568f5f.jpg",
     alt: "Tiwai Island rainforest, Sierra Leone",
   },
   {
-    src: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=1600&q=80",
+    src: "/images/unsplash/1569154941061-e231b4725ef1.jpg",
     alt: "Airplane on the tarmac at an airport terminal",
   },
   {
-    src: "https://images.unsplash.com/photo-1625001071825-0a85373c8972?auto=format&fit=crop&w=1600&q=80",
+    src: "/images/unsplash/1625001071825-0a85373c8972.jpg",
     alt: "Banana Islands, Sierra Leone",
   },
 ];
