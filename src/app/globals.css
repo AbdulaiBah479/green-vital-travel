@@ -1,0 +1,361 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0a2f3d;
+  --ink-soft: #123f50;
+  --paper: #ffffff;
+  --paper-dim: #eef6f3;
+  --accent: #1f9d6b;
+  --accent-soft: #6fdba8;
+  /* Same emerald hue, darkened for text on light backgrounds — the base
+     --accent is only ~2.7:1 against --paper (WCAG AA needs 4.5:1 for text).
+     It stays perfectly fine as a background/border/icon color; this variant
+     is for anywhere the green IS the text color on a light surface. */
+  --accent-deep: #0f6b47;
+  /* Warm complementary pop — sunset amber, used deliberately (prices,
+     ratings, deal badges, loyalty/gift-card accents) so the palette reads
+     as green+blue+white *plus* a pop, not flat two-tone. */
+  --accent-2: #f0a94e;
+  --accent-2-deep: #a86816;
+  --line: rgba(255, 255, 255, 0.14);
+  --line-dark: rgba(10, 47, 61, 0.1);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-2: var(--accent-2);
+  --color-accent-2-deep: var(--accent-2-deep);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-kenburns,
+  .animate-marquee,
+  .route-path,
+  .pulse-ring::before,
+  .animate-page-in,
+  .animate-word-in,
+  [class*="animate-[fadeIn"] {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .reveal,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .card-lift:hover {
+    transform: none !important;
+  }
+
+  .btn-shine::after {
+    display: none !important;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.eyebrow {
+  letter-spacing: 0.28em;
+}
+
+/* Film-grain overlay: gives every section a tactile, editorial-print feel */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Custom cursor: only on devices with a real mouse.
+   Interactive elements (a, button, input...) get their own UA cursor
+   (pointer, default, text) that wins over inheritance, so it has to be
+   overridden explicitly or the native cursor reappears on every hover. */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none,
+  .cursor-none * {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  pointer-events: none;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--accent);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+}
+
+.cursor-ring.is-active {
+  width: 56px;
+  height: 56px;
+  border-color: var(--paper);
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/*
+ * Every keyframe/class below that an element can be left resting on
+ * (via fill-mode "both"/"forwards", or a permanent ".is-visible" class)
+ * ends at `transform: none` rather than e.g. `translateY(0)`. Both look
+ * identical, but only the literal `none` avoids creating a new containing
+ * block for descendant `position: fixed` elements — translateY(0) resolves
+ * to a matrix() and silently traps any fixed-position modal/overlay nested
+ * inside, scoping it to this element's box instead of the viewport.
+ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate(-1%, -1%);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 18s ease-out forwards;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reveal variants — same intersection-triggered mechanism as .reveal,
+   different starting transform, so different sections of a long page
+   don't all move identically and start to feel mechanical. */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card hover-lift: layered on top of a card's own internal hover effects
+   (image zoom, border color) for a bit of physical depth. */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+}
+
+/* Shine sweep: a light band that crosses a filled button on hover.
+   Kept to accent-colored CTAs only — overusing this reads as noisy. */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.45) 48%, transparent 66%);
+  transform: translateX(-120%);
+}
+
+.btn-shine:hover::after {
+  transform: translateX(120%);
+  transition: transform 0.75s ease;
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(248, 244, 236, 0.18) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.route-path {
+  stroke-dasharray: 6 6;
+  stroke-dashoffset: 240;
+  animation: dash 6s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--accent);
+  animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/*
+ * Opacity-only, deliberately. This wraps every page's <main> — including
+ * any fixed-position modal/overlay rendered inside it — and a CSS
+ * `animation` that ever touches `transform` (even animating to the literal
+ * keyword `none`) keeps the element acting as a transform containing block
+ * for as long as the animation holds its fill-mode end state, i.e.
+ * permanently. That silently re-anchors every descendant `position: fixed`
+ * element to this box instead of the viewport. Opacity carries no such risk.
+ */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-page-in {
+  animation: page-in 0.5s ease both;
+}
+
+@keyframes word-in {
+  from {
+    transform: translateY(112%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.animate-word-in {
+  animation: word-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll-progress rail */
+.progress-dot {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-dot.is-active {
+  transform: scale(1.6);
+  background-color: var(--accent);
+}

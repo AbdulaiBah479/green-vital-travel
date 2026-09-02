@@ -1,0 +1,155 @@
+export type JournalEntry = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  readTime: string;
+  date: string;
+  isoDate: string;
+  img: string;
+  content: string[];
+};
+
+export const journalEntries: JournalEntry[] = [
+  {
+    slug: "why-we-stopped-recommending-top-ten-lists",
+    title: "Why We Stopped Recommending “Top 10” Lists",
+    excerpt:
+      "The best itinerary for a place is rarely the one everyone else is holding at the same viewpoint, at the same hour.",
+    category: "Philosophy",
+    readTime: "6 min read",
+    date: "March 2026",
+    isoDate: "2026-03-04",
+    img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "Every guidebook eventually converges on the same ten photographs. That convergence isn't an accident — it's the product of an algorithm, not a traveler. Somewhere along the way, the internet decided which sunset counted, and a hundred million itineraries followed it there at the same hour, on the same day, for the same forty-five minutes of light.",
+      "We stopped handing clients that list a few years ago, quietly, without announcing it. What replaced it wasn't a secret list of better places — it was a conversation. What are you actually looking for when you say you want to see Santorini? Is it the caldera, specifically? Or is it the feeling of standing somewhere improbably beautiful with nowhere else to be?",
+      "Usually it's the second one. And the second one is almost never on the list.",
+      "So our itineraries now start from the feeling, not the landmark. We ask where you want to be handed a glass of wine and no schedule. We ask what you're willing to give up — the postcard shot, the famous restaurant with the eight-month waitlist — in exchange for a version of the same place that still belongs, a little, to the people who live there.",
+      "It makes the research harder. It makes the trip better.",
+    ],
+  },
+  {
+    slug: "a-packing-list-that-actually-holds-up",
+    title: "A Packing List That Actually Holds Up",
+    excerpt:
+      "Not a generic checklist — the handful of rules that hold regardless of destination, plus where we tell clients to deliberately break them.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "July 2026",
+    isoDate: "2026-07-02",
+    img: "https://images.unsplash.com/photo-1526857240824-92be52581d9b?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "Most packing lists are written for the trip in general, which means they're not really written for your trip at all. A ten-night cultural itinerary in Kyoto and a nine-night trek in Patagonia share almost nothing except a passport and a phone charger.",
+      "The rules that do hold up: pack for laundry, not for the length of the trip — five days of clothing covers most three-week itineraries if you're willing to use a hotel laundry service once. Bring one layer warmer than the forecast suggests you'll need; weather forecasts get less reliable the further out they are, and the cost of being wrong runs one direction only.",
+      "Where we tell people to break their own rules: on gear for a single big-ticket activity. A base-trek in Patagonia or four days on the Inca Trail is worth renting or buying real boots for, even if it means checking a bag you'd otherwise avoid. The itinerary earns the exception.",
+      "The thing nobody puts on a checklist: pack the return trip differently than the outbound one. You will own more on day fourteen than you did on day one, usually without meaning to.",
+    ],
+  },
+  {
+    slug: "visa-and-entry-requirements-what-to-actually-check",
+    title: "Visa & Entry Requirements: What to Actually Check Before You Book",
+    excerpt:
+      "Requirements change more often than people expect, and the consequences of getting them wrong land at the gate, not before it.",
+    category: "Travel Guides",
+    readTime: "6 min read",
+    date: "June 2026",
+    isoDate: "2026-06-14",
+    img: "https://images.unsplash.com/photo-1655722725332-9925c96dd627?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "Every itinerary we build includes a note on entry requirements for the traveler's specific passport — because the answer genuinely depends on it. A US passport and a UK passport can face completely different rules for the same country, same dates, same airline.",
+      "Three things worth checking yourself, even when a consultant is handling the rest: passport validity (many countries require six months remaining beyond your travel dates, not just beyond your return flight), whether a visa needs to be arranged in advance versus on arrival, and any recent policy changes — these shift more often than travelers assume, sometimes with only weeks of notice.",
+      "The official source is always the destination country's embassy or consular website, not a travel blog, and not us — we'll flag what we know, but we're not a substitute for confirming directly, and we say so plainly rather than imply an accuracy we can't guarantee.",
+      "The failure mode worth avoiding: discovering a requirement at check-in. Airlines are legally required to verify entry documents before boarding, and they will deny boarding rather than risk a fine — which means the problem surfaces at the worst possible moment, with the least room to fix it.",
+    ],
+  },
+  {
+    slug: "travel-insurance-without-the-fine-print",
+    title: "Travel Insurance, Explained Without the Fine Print",
+    excerpt:
+      "What it actually covers, what it doesn't, and why we treat it as a default line item rather than an upsell.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "May 2026",
+    isoDate: "2026-05-20",
+    img: "https://images.unsplash.com/photo-1614451558582-96f3c35d3e5f?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "Travel insurance earns a bad reputation because most people only think about it after something's gone wrong — which is exactly backwards. The best outcome for any policy is that you never need to make a claim.",
+      "The coverage that actually matters, in rough order of how often it gets used: trip cancellation and interruption (the deposit and non-refundable bookings you'd otherwise lose outright), emergency medical coverage abroad (your domestic health insurance very often does not travel with you), and medical evacuation, which sounds dramatic until you need it in a place a normal ambulance can't reach.",
+      "What it typically doesn't cover: anything you knew about before buying the policy, and — depending on the provider — some \"adventure\" activities unless specifically added. Read the activity list against your actual itinerary, not just the headline coverage amount.",
+      "We build a policy recommendation into every itinerary as a default, not an add-on you have to ask about. It's the cheapest insurance against the most expensive kind of surprise.",
+    ],
+  },
+  {
+    slug: "money-on-the-road-cards-cash-and-currency",
+    title: "Money on the Road: Cards, Cash, and Currency",
+    excerpt:
+      "A short, practical guide to not overpaying in fees, not running out of cash, and not carrying more of it than you need to.",
+    category: "Travel Guides",
+    readTime: "4 min read",
+    date: "April 2026",
+    isoDate: "2026-04-09",
+    img: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "The single biggest unforced error we see: paying a foreign-transaction fee on every card swipe for two weeks straight because nobody checked before leaving. Most decent travel cards waive it; most everyday cards don't. It's a five-minute check that's worth doing before, not after.",
+      "On cash: carry enough for the first 24 hours (a taxi, a meal, a tip) in the local currency, withdrawn from an ATM rather than exchanged at the airport — airport exchange counters are reliably the worst rate you'll find. After that, let the trip tell you how much cash it actually needs; some destinations run almost entirely on card, others still expect cash for the small, best things — a market stall, a family-run trattoria.",
+      "On \"dynamic currency conversion\" — when a card terminal or ATM abroad offers to charge you in your home currency instead of the local one — always decline it. It sounds like a convenience; it's a worse exchange rate, every time.",
+      "None of this requires much planning, just a little of it in advance, which is generally true of travel and money both.",
+    ],
+  },
+  {
+    slug: "how-we-actually-decide-best-time-to-visit",
+    title: "How We Actually Decide \"Best Time to Visit\"",
+    excerpt:
+      "It's rarely just weather — the honest version accounts for crowds, prices, and what's actually happening on the ground that month.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "March 2026",
+    isoDate: "2026-03-25",
+    img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "\"Best time to visit\" gets treated as a weather question, and weather is maybe a third of the actual answer. The other two-thirds are crowds and what's actually happening on the ground — a destination's shoulder season is often better than its peak, not despite the smaller crowds but because of what that absence makes room for.",
+      "Take the Serengeti: peak migration season draws the most travelers, understandably. But a shoulder month with a smaller but still substantial resident wildlife population, at a fraction of the camp cost and with guides who have more time for you, is a real trade worth considering — not a compromise.",
+      "Price follows demand almost exactly, which means the 'best' window by weather alone is usually also the most expensive and most crowded one. We'll always tell a client the honest trade-off rather than default to the postcard month, because the postcard month is postcard-crowded for a reason.",
+      "The actual question we ask before recommending timing: what do you want more of — certainty, or room to have the place partly to yourself? Most people, once it's framed that way, are surprised which one they pick.",
+    ],
+  },
+  {
+    slug: "two-weeks-in-kyoto-wed-actually-book",
+    title: "The Two Weeks in Kyoto We'd Actually Book",
+    excerpt:
+      "Not the itinerary we send to first-time clients — the one we'd take ourselves, temple fatigue and all.",
+    category: "Field Notes",
+    readTime: "8 min read",
+    date: "January 2026",
+    isoDate: "2026-01-12",
+    img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "There's a version of Kyoto that exists for people with four days and a list. Kinkaku-ji in the morning, Fushimi Inari at golden hour, a kaiseki dinner squeezed in before the last train. It's a perfectly good four days. It is also, we'd argue, not really Kyoto.",
+      "Given two weeks — which is what we'd actually book, given the choice — the city opens differently. The first three days go to nothing in particular: a neighborhood, a bicycle, a coffee shop you return to twice because the owner remembered your order. Temple fatigue is real, and the cure for it isn't seeing fewer temples. It's seeing them slower, with gaps in between wide enough to actually notice something.",
+      "Week two is when we'd send you north, into the Kitayama mountains, for two nights at a ryokan with a rotenburo and no wifi worth mentioning. You come back to the city with a different relationship to its noise.",
+      "The famous gates are still worth it. Go at 6am, alone, before the tour buses. But build the trip around the mornings you don't plan at all — that's usually where the actual memory ends up living.",
+    ],
+  },
+  {
+    slug: "what-bespoke-should-actually-mean",
+    title: "What “Bespoke” Should Actually Mean",
+    excerpt:
+      "The word gets printed on a lot of brochures. Most of what's behind it is still a template with your name typed in.",
+    category: "Philosophy",
+    readTime: "5 min read",
+    date: "November 2025",
+    isoDate: "2025-11-18",
+    img: "https://images.unsplash.com/photo-1633655442168-c6ef0ed2f984?auto=format&fit=crop&w=1600&q=80",
+    content: [
+      "“Bespoke” is one of those words that travel agencies reach for the way restaurants reach for “artisanal.” It sounds like care. It doesn't always come with any.",
+      "Here's a rough test: if the itinerary could be sold twice, unmodified, to two different clients with different reasons for traveling, it wasn't bespoke. It was a package with better font choices.",
+      "Real tailoring shows up in the small refusals, not the big gestures. It's telling a client that the hotel they asked for isn't actually right for the trip they described, even though it would have been the easier sale. It's building in a free afternoon because the itinerary was starting to read like a job, not a vacation. It's knowing which two nights in a fourteen-night trip are the ones worth spending real money on, and being honest about the other twelve.",
+      "We'd rather under-promise the word and over-deliver the substance. So we've mostly stopped saying it. You can decide for yourself whether the trip earns it.",
+    ],
+  },
+];
+
+export function getJournalEntry(slug: string) {
+  return journalEntries.find((e) => e.slug === slug);
+}
