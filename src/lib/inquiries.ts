@@ -124,3 +124,78 @@ export async function submitInquiry(kind: "contact" | "booking", payload: Contac
 
   return { reference, ok: true };
 }
+
+export async function subscribeNewsletter(email: string) {
+  const submissionTime = new Date().toISOString();
+
+  // Preferred path: add the address to a real Resend audience, so it's an
+  // actual mailing list, not just a one-off notification.
+  if (process.env.RESEND_API_KEY && process.env.RESEND_AUDIENCE_ID) {
+    const response = await fetch(
+      `https://api.resend.com/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, unsubscribed: false }),
+      }
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Resend audience signup failed:", errorText);
+      throw new Error("Unable to subscribe right now. Please try again shortly.");
+    }
+
+    return { ok: true };
+  }
+
+  // No audience configured yet — at least save the lead somewhere so it
+  // isn't lost, the same fallback pattern as contact/booking inquiries.
+  if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    const response = await fetch(`${process.env.SUPABASE_URL}/rest/v1/newsletter_subscribers`, {
+      method: "POST",
+      headers: {
+        apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+        Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify({ email, created_at: submissionTime, source: "website-newsletter" }),
+    });
+
+    if (!response.ok) {
+      console.error("Supabase newsletter save failed:", await response.text());
+    }
+    return { ok: true };
+  }
+
+  if (process.env.RESEND_API_KEY) {
+    const businessEmail = process.env.BUSINESS_EMAIL || process.env.CONTACT_EMAIL || contact.email;
+    const fromEmail = process.env.EMAIL_FROM || `noreply@${new URL(siteUrl).hostname}`;
+    const emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `Green Vital <${fromEmail}>`,
+        to: [businessEmail],
+        subject: "New newsletter signup",
+        text: `New newsletter signup: ${email}\n\nNo RESEND_AUDIENCE_ID is configured yet, so this wasn't added to a mailing list automatically — add it manually or set RESEND_AUDIENCE_ID.`,
+      }),
+    });
+
+    if (!emailResponse.ok) {
+      console.error("Resend newsletter notification failed:", await emailResponse.text());
+      throw new Error("Unable to subscribe right now. Please try again shortly.");
+    }
+    return { ok: true };
+  }
+
+  console.info(`[newsletter-signup] ${email}`);
+  return { ok: true };
+}

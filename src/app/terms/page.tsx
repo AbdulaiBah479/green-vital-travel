@@ -85,11 +85,9 @@ export default function TermsPage() {
               Governing law
             </h2>
             <p>
-              {siteFullName} is a private company limited by shares,
-              incorporated in {companyRegistration.jurisdiction} (Company No.{" "}
-              {companyRegistration.registrationNumber}). These terms are
-              governed by the laws of the Republic of {companyRegistration.jurisdiction}, without
-              regard to conflict-of-law principles.
+              {siteFullName} is incorporated in {companyRegistration.jurisdiction}.
+              These terms are governed by the laws of {companyRegistration.jurisdiction},
+              without regard to conflict-of-law principles.
             </p>
           </section>
 

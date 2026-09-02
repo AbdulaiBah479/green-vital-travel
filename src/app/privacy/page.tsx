@@ -77,12 +77,9 @@ export default function PrivacyPage() {
             <p>
               Wherever you&rsquo;re located, you can ask us at any time what
               information we hold about you, ask us to correct it, or ask us
-              to delete it. As a company registered in Sierra Leone, we handle
-              these requests in line with the Sierra Leone Data Protection
-              Act — but for clients in the EU, UK, and California, we&rsquo;ll just
-              as readily honor requests consistent with the GDPR, UK GDPR, or
-              CCPA. We&rsquo;ll honor the same request from anyone, regardless of
-              where you&rsquo;re writing from.
+              to delete it. We aim to handle these requests in line with
+              applicable data protection law, and we&rsquo;ll honor the same
+              request from anyone, regardless of where you&rsquo;re writing from.
             </p>
           </section>
 
