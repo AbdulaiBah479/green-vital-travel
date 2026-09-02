@@ -16,13 +16,13 @@ export default function ReviewsSummary() {
               <span className="font-serif text-4xl text-ink">{avg.toFixed(1)}</span>
               <div>
                 <Stars rating={avg} />
-                <p className="mt-1 text-xs text-ink/55">Based on {reviews.length} traveler reviews</p>
+                <p className="mt-1 text-xs text-ink/70">Based on {reviews.length} traveler reviews</p>
               </div>
             </>
           ) : (
             <div>
               <p className="font-serif text-2xl text-ink">A newly registered agency.</p>
-              <p className="mt-1 text-xs text-ink/55">
+              <p className="mt-1 text-xs text-ink/70">
                 No reviews yet — you&rsquo;d be one of our first travelers.
               </p>
             </div>

@@ -93,7 +93,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
         <h2 className="font-serif text-3xl leading-tight text-ink sm:text-4xl">
           Your reservation request is in.
         </h2>
-        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink/65">
+        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink/70">
           Reference <strong className="text-ink">{reference}</strong> — a member of our team will call or
           email {leadEmail || "you"} within one business day to confirm availability for{" "}
           <strong className="text-ink">{tour.title}</strong> and take a deposit. No payment has been
@@ -126,7 +126,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
                 i < step ? "bg-accent" : i === step ? "bg-accent/50" : "bg-ink/10"
               }`}
             />
-            <span className="text-center text-[9px] leading-tight eyebrow uppercase text-ink/60 sm:text-[10px]">{label}</span>
+            <span className="text-center text-[9px] leading-tight eyebrow uppercase text-ink/70 sm:text-[10px]">{label}</span>
           </div>
         ))}
       </div>
@@ -136,7 +136,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
           <h2 className="mb-6 font-serif text-2xl text-ink sm:text-3xl">When, and how many of you?</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <label className="block">
-              <span className="mb-2 block text-xs eyebrow uppercase text-ink/50">Departure Date</span>
+              <span className="mb-2 block text-xs eyebrow uppercase text-ink/70">Departure Date</span>
               <select
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
@@ -150,7 +150,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
               </select>
             </label>
             <label className="block">
-              <span className="mb-2 block text-xs eyebrow uppercase text-ink/50">
+              <span className="mb-2 block text-xs eyebrow uppercase text-ink/70">
                 Travelers (max {tour.groupSizeMax})
               </span>
               <input
@@ -171,7 +171,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
       {step === 1 && (
         <div>
           <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">Who&rsquo;s the lead traveler?</h2>
-          <p className="mb-6 text-sm text-ink/60">
+          <p className="mb-6 text-sm text-ink/70">
             We&rsquo;ll use this to confirm your request — no payment details needed here.
           </p>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -181,7 +181,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
               value={leadName}
               onChange={(e) => setLeadName(e.target.value)}
               placeholder="Full name"
-              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
             />
             <input
               type="email"
@@ -189,14 +189,14 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
               value={leadEmail}
               onChange={(e) => setLeadEmail(e.target.value)}
               placeholder="Email address"
-              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
             />
             <input
               type="tel"
               value={leadPhone}
               onChange={(e) => setLeadPhone(e.target.value)}
               placeholder="Phone (optional)"
-              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent sm:col-span-2"
+              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent sm:col-span-2"
             />
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
       {step === 2 && (
         <div>
           <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">Anything to add?</h2>
-          <p className="mb-6 text-sm text-ink/60">Optional — our team can also adjust these later.</p>
+          <p className="mb-6 text-sm text-ink/70">Optional — our team can also adjust these later.</p>
           <div className="space-y-3">
             <AddonRow
               label="Travel insurance"
@@ -278,7 +278,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
           type="button"
           onClick={goBack}
           disabled={step === 0}
-          className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-ink disabled:cursor-not-allowed disabled:opacity-0"
+          className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-ink disabled:cursor-not-allowed disabled:opacity-0"
         >
           ← Back
         </button>
@@ -323,7 +323,7 @@ function AddonRow({
     <label className="flex cursor-pointer items-center justify-between rounded-2xl border border-ink/15 bg-paper px-5 py-4 transition-colors hover:border-accent">
       <span>
         <span className="block text-sm text-ink">{label}</span>
-        <span className="block text-xs text-ink/50">{hint}</span>
+        <span className="block text-xs text-ink/70">{hint}</span>
       </span>
       <input
         type="checkbox"
@@ -342,7 +342,7 @@ function Row({ label, value, last = false }: { label: string; value: string; las
         last ? "mt-2 border-t border-ink/10 pt-4 font-serif text-base text-ink" : "text-ink/70"
       }`}
     >
-      <span className={last ? "text-ink/60" : ""}>{label}</span>
+      <span className={last ? "text-ink/70" : ""}>{label}</span>
       <span className={last ? "text-ink" : "text-ink"}>{value}</span>
     </div>
   );

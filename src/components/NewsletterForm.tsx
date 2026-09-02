@@ -49,7 +49,7 @@ export default function NewsletterForm() {
           aria-label="Email address"
           placeholder="you@email.com"
           disabled={status === "submitting"}
-          className="w-full rounded-full border border-paper/25 bg-paper/5 px-4 py-2.5 text-sm text-paper placeholder:text-paper/45 outline-none focus:border-accent disabled:opacity-60"
+          className="w-full rounded-full border border-paper/25 bg-paper/5 px-4 py-2.5 text-sm text-paper placeholder:text-paper/50 outline-none focus:border-accent disabled:opacity-60"
         />
         <button
           type="submit"

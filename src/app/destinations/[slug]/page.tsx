@@ -156,7 +156,7 @@ export default async function DestinationPage({
 function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-[10px] eyebrow uppercase text-ink/45">{label}</p>
+      <p className="text-[10px] eyebrow uppercase text-ink/70">{label}</p>
       <p className="mt-1 text-sm text-ink/80">{value}</p>
     </div>
   );

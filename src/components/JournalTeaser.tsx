@@ -22,7 +22,7 @@ export default function JournalTeaser() {
             <Link
               href="/journal"
               data-cursor-hover
-              className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+              className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
             >
               Read the Journal →
             </Link>

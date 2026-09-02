@@ -56,7 +56,7 @@ export default function DesignersPage() {
                   <p className="mt-1 text-xs eyebrow uppercase text-accent-deep">
                     {d.focus}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                  <p className="mt-3 text-sm leading-relaxed text-ink/70">
                     {d.bio}
                   </p>
                 </div>
@@ -65,7 +65,7 @@ export default function DesignersPage() {
           ))}
         </div>
 
-        <Reveal delay={100} className="mt-16 max-w-2xl border-t border-ink/10 pt-10 text-sm leading-relaxed text-ink/65">
+        <Reveal delay={100} className="mt-16 max-w-2xl border-t border-ink/10 pt-10 text-sm leading-relaxed text-ink/70">
           <p>
             Behind every booking is also a network of hotels, airlines, guides,
             and drivers we work with directly across the destinations we

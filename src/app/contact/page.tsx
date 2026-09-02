@@ -41,7 +41,7 @@ export default async function ContactPage({
           <h1 className="text-balance text-center font-serif text-4xl leading-tight text-ink sm:text-5xl">
             One honest conversation to start.
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -53,7 +53,7 @@ export default async function ContactPage({
             <Reveal>
               <p className="font-serif text-xl text-ink">{office.city}</p>
               <p className="mt-0.5 text-xs eyebrow uppercase text-accent-deep">{office.detail}</p>
-              <ul className="mt-3 space-y-1 text-sm text-ink/65">
+              <ul className="mt-3 space-y-1 text-sm text-ink/70">
                 {office.lines.map((l) => (
                   <li key={l}>{l}</li>
                 ))}
@@ -68,7 +68,7 @@ export default async function ContactPage({
                 Chat on WhatsApp
               </a>
             </Reveal>
-            <Reveal className="border-t border-ink/10 pt-6 text-sm text-ink/60">
+            <Reveal className="border-t border-ink/10 pt-6 text-sm text-ink/70">
               Prefer to chat now? Use the assistant in the corner of every page — it can answer most
               questions instantly and route anything else to a real person on our team.
             </Reveal>

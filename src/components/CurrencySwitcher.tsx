@@ -34,6 +34,7 @@ export default function CurrencySwitcher({ dark }: { dark: boolean }) {
 
       <div
         role="listbox"
+        aria-label="Currency options"
         className={`absolute right-0 top-full mt-3 w-40 overflow-hidden rounded-2xl border border-ink/10 bg-paper py-2 shadow-xl transition-all duration-200 ${
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
         }`}
@@ -53,7 +54,7 @@ export default function CurrencySwitcher({ dark }: { dark: boolean }) {
             }`}
           >
             <span>{c.code}</span>
-            <span className="text-ink/40">{c.symbol}</span>
+            <span className="text-ink/70">{c.symbol}</span>
           </button>
         ))}
       </div>

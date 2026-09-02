@@ -66,7 +66,7 @@ export default function TravelRequirementsPage() {
           <h1 className="text-balance text-center font-serif text-4xl leading-tight text-ink sm:text-5xl">
             Confirm it yourself, always.
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -77,7 +77,7 @@ export default function TravelRequirementsPage() {
             {sierraLeoneSections.map((s) => (
               <div key={s.title} className="border-t border-ink/10 pt-6 first:border-t-0 first:pt-0">
                 <h2 className="font-serif text-xl text-ink">{s.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-ink/65">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">{s.body}</p>
               </div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export default function TravelRequirementsPage() {
             {generalSections.map((s) => (
               <div key={s.title} className="border-t border-ink/10 pt-6 first:border-t-0 first:pt-0">
                 <h2 className="font-serif text-xl text-ink">{s.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-ink/65">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">{s.body}</p>
               </div>
             ))}
           </div>

@@ -39,7 +39,7 @@ export default function DealsPage() {
           <h1 className="text-balance text-center font-serif text-4xl leading-tight text-ink sm:text-5xl">
             Fewer trips, better numbers.
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -51,7 +51,7 @@ export default function DealsPage() {
                 <div>
                   <TourCard tour={t} />
                   {t.deal && (
-                    <p className="mt-3 text-center text-xs text-ink/45">
+                    <p className="mt-3 text-center text-xs text-ink/70">
                       Offer ends{" "}
                       {new Date(t.deal.endsIso).toLocaleDateString("en-US", {
                         month: "long",
@@ -65,7 +65,7 @@ export default function DealsPage() {
             ))}
           </div>
         ) : (
-          <p className="mt-16 text-center text-sm text-ink/50">
+          <p className="mt-16 text-center text-sm text-ink/70">
             No active offers right now — check back soon, or browse the full{" "}
             <Link href="/tours" className="text-accent-deep underline underline-offset-2">
               tour catalog

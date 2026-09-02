@@ -31,7 +31,7 @@ export default function FeaturedTours() {
             <Link
               href="/tours"
               data-cursor-hover
-              className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+              className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
             >
               See All Tours →
             </Link>

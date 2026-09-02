@@ -79,7 +79,7 @@ export default function TrustStrip() {
                 </span>
                 <div>
                   <p className="font-serif text-lg text-ink">{item.title}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink/60">
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink/70">
                     {item.body}
                   </p>
                 </div>

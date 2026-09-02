@@ -64,10 +64,10 @@ export default function JournalList({ entries }: { entries: JournalEntry[] }) {
                 <h2 className="font-serif text-2xl leading-snug text-ink transition-colors group-hover:text-accent-deep sm:text-3xl">
                   {entry.title}
                 </h2>
-                <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink/60">
+                <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink/80">
                   {entry.excerpt}
                 </p>
-                <span className="mt-4 inline-block text-xs eyebrow uppercase text-ink/60">
+                <span className="mt-4 inline-block text-xs eyebrow uppercase text-ink/80">
                   {entry.date}
                 </span>
               </div>

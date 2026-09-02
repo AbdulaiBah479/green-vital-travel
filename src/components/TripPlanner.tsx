@@ -64,7 +64,7 @@ export default function TripPlanner() {
                 i < step ? "bg-accent" : i === step ? "bg-accent/50" : "bg-ink/10"
               }`}
             />
-            <span className="text-center text-[8px] leading-tight eyebrow uppercase text-ink/60 sm:text-[10px]">
+            <span className="text-center text-[8px] leading-tight eyebrow uppercase text-ink/70 sm:text-[10px]">
               {label}
             </span>
           </div>
@@ -127,7 +127,7 @@ export default function TripPlanner() {
                 }`}
               >
                 <span className="font-serif text-3xl text-ink">{n}</span>
-                <span className="mt-1 block text-xs eyebrow uppercase text-ink/60">
+                <span className="mt-1 block text-xs eyebrow uppercase text-ink/70">
                   nights
                 </span>
               </button>
@@ -154,7 +154,7 @@ export default function TripPlanner() {
                 }`}
               >
                 <span className="font-serif text-xl text-ink">{p.label}</span>
-                <span className="mt-2 block text-sm text-ink/60">{p.hint}</span>
+                <span className="mt-2 block text-sm text-ink/70">{p.hint}</span>
               </button>
             ))}
           </div>
@@ -166,7 +166,7 @@ export default function TripPlanner() {
           <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">
             What matters most?
           </h2>
-          <p className="mb-6 text-sm text-ink/60">Choose as many as apply.</p>
+          <p className="mb-6 text-sm text-ink/70">Choose as many as apply.</p>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {interestOptions.map((opt) => {
               const active = interests.includes(opt.id);
@@ -198,7 +198,7 @@ export default function TripPlanner() {
           <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">
             {nights} nights in {destination.name}
           </h2>
-          <p className="mb-8 max-w-xl text-sm leading-relaxed text-ink/60">
+          <p className="mb-8 max-w-xl text-sm leading-relaxed text-ink/70">
             This is a starting draft, assembled from the pieces we use most in{" "}
             {destination.name} — not a finished itinerary. Our team will
             reshape it around you from here.
@@ -210,14 +210,14 @@ export default function TripPlanner() {
                 <span className="absolute -left-[31px] top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[9px] font-bold text-ink">
                   {day.day}
                 </span>
-                <p className="text-xs eyebrow uppercase text-ink/60">
+                <p className="text-xs eyebrow uppercase text-ink/70">
                   Day {day.day}
                 </p>
                 <div className="mt-1 space-y-3">
                   {day.blocks.map((block) => (
                     <div key={block.title}>
                       <p className="font-serif text-lg text-ink">{block.title}</p>
-                      <p className="text-sm leading-relaxed text-ink/60">
+                      <p className="text-sm leading-relaxed text-ink/70">
                         {block.description}
                       </p>
                     </div>
@@ -239,7 +239,7 @@ export default function TripPlanner() {
             <button
               type="button"
               onClick={reset}
-              className="text-xs eyebrow uppercase text-ink/60 hover:text-ink"
+              className="text-xs eyebrow uppercase text-ink/70 hover:text-ink"
             >
               Start Over
             </button>
@@ -253,7 +253,7 @@ export default function TripPlanner() {
             type="button"
             onClick={goBack}
             disabled={step === 0}
-            className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-ink disabled:cursor-not-allowed disabled:opacity-0"
+            className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-ink disabled:cursor-not-allowed disabled:opacity-0"
           >
             ← Back
           </button>

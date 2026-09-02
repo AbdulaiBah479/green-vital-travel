@@ -59,7 +59,7 @@ export default function InsurancePage() {
 
       <div className="mx-auto max-w-2xl px-6 pt-16 sm:px-10">
         <Reveal>
-          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -84,13 +84,13 @@ export default function InsurancePage() {
             <Reveal key={t.name} delay={i * 100}>
               <div className="rounded-3xl border border-ink/10 p-7">
                 <p className="eyebrow text-xs uppercase text-accent-deep">{t.name}</p>
-                <p className="mt-3 text-sm leading-relaxed text-ink/65">{t.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">{t.body}</p>
               </div>
             </Reveal>
           ))}
         </div>
 
-        <Reveal className="mt-6 rounded-2xl border border-ink/10 bg-paper-dim p-6 text-xs leading-relaxed text-ink/55">
+        <Reveal className="mt-6 rounded-2xl border border-ink/10 bg-paper-dim p-6 text-xs leading-relaxed text-ink/70">
           Coverage tiers and pricing vary by provider, traveler age, trip cost, and destination. Our
           team will confirm exact terms and a quote alongside your itinerary — this page is a
           starting overview, not a policy document.

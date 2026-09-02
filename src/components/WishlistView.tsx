@@ -24,7 +24,7 @@ export default function WishlistView() {
   if (savedTours.length === 0 && savedDestinations.length === 0) {
     return (
       <div className="py-16 text-center">
-        <p className="text-sm text-ink/55">
+        <p className="text-sm text-ink/70">
           Nothing saved yet — tap the heart on any tour or destination to keep it here.
         </p>
         <Link

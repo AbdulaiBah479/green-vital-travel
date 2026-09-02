@@ -17,18 +17,18 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
 
   return (
     <div className="sticky top-36 lg:top-52 rounded-3xl border border-ink/10 bg-paper-dim p-6">
-      <p className="text-[10px] eyebrow uppercase text-ink/45">From</p>
+      <p className="text-[10px] eyebrow uppercase text-ink/70">From</p>
       <div className="flex items-baseline gap-2">
         {tour.deal && (
-          <span className="text-sm text-ink/40 line-through">{formatPrice(tour.priceFrom)}</span>
+          <span className="text-sm text-ink/70 line-through">{formatPrice(tour.priceFrom)}</span>
         )}
         <span className="font-serif text-3xl text-ink">{formatPrice(unitPrice)}</span>
-        <span className="text-xs text-ink/50">/ person</span>
+        <span className="text-xs text-ink/70">/ person</span>
       </div>
 
       <div className="mt-6 space-y-4">
         <label className="block">
-          <span className="mb-1 block text-[10px] eyebrow uppercase text-ink/45">Departure Date</span>
+          <span className="mb-1 block text-[10px] eyebrow uppercase text-ink/70">Departure Date</span>
           <select
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -43,13 +43,13 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
         </label>
 
         <label className="block">
-          <span className="mb-1 block text-[10px] eyebrow uppercase text-ink/45">Travelers</span>
+          <span className="mb-1 block text-[10px] eyebrow uppercase text-ink/70">Travelers</span>
           <div className="flex items-center justify-between rounded-xl border border-ink/15 bg-paper px-4 py-2">
             <button
               type="button"
               onClick={() => setTravelers((t) => Math.max(1, t - 1))}
               aria-label="Fewer travelers"
-              className="flex h-8 w-8 items-center justify-center rounded-full text-ink/60 transition-colors hover:bg-paper-dim"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-ink/70 transition-colors hover:bg-paper-dim"
             >
               −
             </button>
@@ -58,7 +58,7 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
               type="button"
               onClick={() => setTravelers((t) => Math.min(tour.groupSizeMax, t + 1))}
               aria-label="More travelers"
-              className="flex h-8 w-8 items-center justify-center rounded-full text-ink/60 transition-colors hover:bg-paper-dim"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-ink/70 transition-colors hover:bg-paper-dim"
             >
               +
             </button>
@@ -67,7 +67,7 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
       </div>
 
       <div className="mt-6 flex items-center justify-between border-t border-ink/10 pt-4 text-sm">
-        <span className="text-ink/60">Estimated total</span>
+        <span className="text-ink/70">Estimated total</span>
         <span className="font-serif text-xl text-ink">{formatPrice(total)}</span>
       </div>
 
@@ -80,7 +80,7 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
           Reserve This Trip
         </Link>
       </Magnetic>
-      <p className="mt-3 text-center text-[11px] leading-relaxed text-ink/45">
+      <p className="mt-3 text-center text-[11px] leading-relaxed text-ink/70">
         No payment due now — our team confirms availability and takes a deposit.
       </p>
     </div>

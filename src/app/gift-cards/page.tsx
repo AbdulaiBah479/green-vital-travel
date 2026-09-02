@@ -50,7 +50,7 @@ export default function GiftCardsPage() {
 
       <div className="mx-auto max-w-2xl px-6 pt-16 sm:px-10">
         <Reveal>
-          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -64,7 +64,7 @@ export default function GiftCardsPage() {
         <Reveal className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {details.map((d) => (
             <div key={d.label} className="rounded-2xl border border-ink/10 p-5">
-              <p className="text-[10px] eyebrow uppercase text-ink/45">{d.label}</p>
+              <p className="text-[10px] eyebrow uppercase text-ink/70">{d.label}</p>
               <p className="mt-1 text-sm text-ink/75">{d.value}</p>
             </div>
           ))}

@@ -40,7 +40,7 @@ export default function DestinationsGrid({ initialRegion }: { initialRegion?: st
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-16 text-center text-sm text-ink/50">No destinations in this region yet.</p>
+        <p className="py-16 text-center text-sm text-ink/70">No destinations in this region yet.</p>
       )}
     </div>
   );
@@ -48,6 +48,6 @@ export default function DestinationsGrid({ initialRegion }: { initialRegion?: st
 
 function pillClass(active: boolean) {
   return `rounded-full border px-5 py-2 text-xs eyebrow uppercase transition-colors ${
-    active ? "border-accent bg-accent/10 text-accent-deep" : "border-ink/15 text-ink/60 hover:border-accent"
+    active ? "border-accent bg-accent/10 text-accent-deep" : "border-ink/15 text-ink/70 hover:border-accent"
   }`;
 }

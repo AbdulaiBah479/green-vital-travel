@@ -23,7 +23,7 @@ export default function ErrorPage({
       <h1 className="max-w-lg text-balance font-serif text-4xl italic leading-tight text-ink sm:text-5xl">
         That page hit a snag on our end, not yours.
       </h1>
-      <p className="mt-6 max-w-md text-balance text-sm leading-relaxed text-ink/60">
+      <p className="mt-6 max-w-md text-balance text-sm leading-relaxed text-ink/70">
         Nothing you did caused this. Try again, or head back and we&rsquo;ll
         take it from there.
       </p>
@@ -39,7 +39,7 @@ export default function ErrorPage({
         </Magnetic>
         <Link
           href="/"
-          className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+          className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
         >
           Back to Green Vital
         </Link>

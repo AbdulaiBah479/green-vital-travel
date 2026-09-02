@@ -30,7 +30,7 @@ export default function AirlinePartners() {
           <h2 className="text-balance text-center font-serif text-3xl leading-tight text-ink sm:text-4xl">
             Partner Airlines
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto mt-3 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             We&rsquo;re not limited to these carriers — as a full-service agency, we can ticket
             almost any airline serving your route.
           </p>
@@ -48,7 +48,7 @@ export default function AirlinePartners() {
                     <Image src={logo} alt={name} fill className="object-contain" />
                   </div>
                 </div>
-                <span className="text-xs leading-snug text-ink/60">{name}</span>
+                <span className="text-xs leading-snug text-ink/70">{name}</span>
               </div>
             ))}
           </div>

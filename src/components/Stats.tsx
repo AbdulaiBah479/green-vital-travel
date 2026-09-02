@@ -97,7 +97,7 @@ export default function Stats() {
                 <p className="font-serif text-3xl font-medium text-ink sm:text-4xl">
                   <Counter value={s.value} suffix={s.suffix} />
                 </p>
-                <p className="mt-1.5 text-xs leading-snug uppercase eyebrow text-ink/55">
+                <p className="mt-1.5 text-xs leading-snug uppercase eyebrow text-ink/70">
                   {s.label}
                 </p>
               </div>

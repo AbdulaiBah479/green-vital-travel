@@ -46,7 +46,7 @@ export default function PressPage() {
             kit. If you&rsquo;re working on a story that involves us, reach out and
             you&rsquo;ll hear back from a person, usually within a couple of days.
           </p>
-          <p className="mt-8 text-sm eyebrow uppercase text-ink/60">
+          <p className="mt-8 text-sm eyebrow uppercase text-ink/70">
             {contact.email}
           </p>
         </Reveal>

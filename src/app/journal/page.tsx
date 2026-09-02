@@ -37,13 +37,13 @@ export default function JournalPage() {
             Notes on planning, places, and the difference between the two.
           </h1>
           <div className="mt-4 flex items-center gap-4">
-            <p className="hidden text-xs eyebrow uppercase text-ink/60 sm:block">
+            <p className="hidden text-xs eyebrow uppercase text-ink/70 sm:block">
               Hover a title to preview
             </p>
             <a
               href="/journal/feed.xml"
               data-cursor-hover
-              className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+              className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
             >
               RSS
             </a>

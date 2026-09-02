@@ -116,7 +116,7 @@ export default function AgencyOverview() {
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-2xl text-ink">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/65">{service.description}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/70">{service.description}</p>
                 </div>
               </div>
             ))}

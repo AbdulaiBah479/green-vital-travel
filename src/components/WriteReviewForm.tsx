@@ -28,7 +28,7 @@ export default function WriteReviewForm() {
     return (
       <div className="rounded-2xl border border-ink/10 bg-paper-dim px-6 py-6 text-sm text-ink">
         <p className="font-serif text-lg italic text-ink">Thank you, {name || "traveler"}.</p>
-        <p className="mt-1 text-ink/65">
+        <p className="mt-1 text-ink/70">
           Reviews are checked against real bookings before they&rsquo;re published — yours will appear once
           that&rsquo;s confirmed.
         </p>
@@ -42,6 +42,7 @@ export default function WriteReviewForm() {
         <select
           value={tourSlug}
           onChange={(e) => setTourSlug(e.target.value)}
+          aria-label="Which tour was this?"
           className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
         >
           {tours.map((t) => (
@@ -57,7 +58,7 @@ export default function WriteReviewForm() {
               type="button"
               aria-label={`${n} star${n === 1 ? "" : "s"}`}
               onClick={() => setRating(n)}
-              className={`text-xl ${n <= rating ? "text-accent-2" : "text-ink/20"}`}
+              className={`text-xl ${n <= rating ? "text-accent-2" : "text-ink/70"}`}
             >
               ★
             </button>
@@ -70,7 +71,7 @@ export default function WriteReviewForm() {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Your name"
-        className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+        className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
       />
       <textarea
         required
@@ -78,7 +79,7 @@ export default function WriteReviewForm() {
         value={body}
         onChange={(e) => setBody(e.target.value)}
         placeholder="How was the trip?"
-        className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+        className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
       />
       <Magnetic strength={0.2}>
         <button

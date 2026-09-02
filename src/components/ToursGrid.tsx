@@ -86,7 +86,7 @@ export default function ToursGrid({
         <Select label="Sort" value={sort} onChange={(v) => setSort(v as SortKey)} options={sortOptions} />
       </div>
 
-      <p className="mb-8 text-center text-sm text-ink/50">
+      <p className="mb-8 text-center text-sm text-ink/70">
         {filtered.length} tour{filtered.length === 1 ? "" : "s"}
       </p>
 
@@ -99,7 +99,7 @@ export default function ToursGrid({
       </div>
 
       {filtered.length === 0 && (
-        <p className="py-16 text-center text-sm text-ink/50">
+        <p className="py-16 text-center text-sm text-ink/70">
           No tours match those filters yet — try widening your search.
         </p>
       )}
@@ -120,7 +120,7 @@ function Select({
 }) {
   return (
     <label className="flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 text-xs">
-      <span className="eyebrow uppercase text-ink/40">{label}</span>
+      <span className="eyebrow uppercase text-ink/70">{label}</span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}

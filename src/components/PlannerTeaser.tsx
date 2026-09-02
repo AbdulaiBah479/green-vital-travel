@@ -12,7 +12,7 @@ export default function PlannerTeaser() {
         <h2 className="max-w-2xl text-balance font-serif text-4xl leading-tight text-ink sm:text-5xl">
           Or skip the quiz — build an actual day-by-day itinerary right now.
         </h2>
-        <p className="max-w-xl text-balance text-sm leading-relaxed text-ink/60">
+        <p className="max-w-xl text-balance text-sm leading-relaxed text-ink/70">
           Pick a place, a length, a pace, and what you care about. In under a
           minute you&rsquo;ll have a real draft itinerary, built from the same
           pieces our team uses — no email, no waiting on a call.

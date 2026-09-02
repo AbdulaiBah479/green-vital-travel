@@ -74,7 +74,7 @@ export default function SustainabilityPage() {
             <Reveal key={c.title} delay={i * 80}>
               <div className="border-t border-ink/10 pt-8">
                 <h2 className="font-serif text-xl text-ink">{c.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">
                   {c.body}
                 </p>
               </div>

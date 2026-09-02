@@ -116,7 +116,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-b border-paper/10 py-8 text-[11px] uppercase tracking-wide text-paper/45">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-b border-paper/10 py-8 text-[11px] uppercase tracking-wide text-paper/50">
           {trustBadges.map((b) => (
             <span key={b} className="flex items-center gap-2">
               <span className="h-1 w-1 rounded-full bg-accent" aria-hidden="true" />

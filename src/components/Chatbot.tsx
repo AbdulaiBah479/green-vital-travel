@@ -214,7 +214,7 @@ export default function Chatbot() {
             placeholder="Ask about destinations, pricing…"
             aria-label="Message the Green Vital assistant"
             disabled={typing}
-            className="w-full rounded-full border border-ink/15 bg-paper px-4 py-2.5 text-sm text-ink placeholder:text-ink/40 outline-none focus:border-accent-deep disabled:opacity-60"
+            className="w-full rounded-full border border-ink/15 bg-paper px-4 py-2.5 text-sm text-ink placeholder:text-ink/70 outline-none focus:border-accent-deep disabled:opacity-60"
           />
           <button
             type="submit"

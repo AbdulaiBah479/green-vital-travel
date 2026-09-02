@@ -36,7 +36,7 @@ export default function TourItinerary({ stops }: { stops: ItineraryStop[] }) {
                 isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <p className="min-h-0 max-w-xl text-sm leading-relaxed text-ink/65">{s.description}</p>
+              <p className="min-h-0 max-w-xl text-sm leading-relaxed text-ink/70">{s.description}</p>
             </div>
           </div>
         );

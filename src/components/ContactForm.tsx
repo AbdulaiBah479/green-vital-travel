@@ -71,7 +71,7 @@ export default function ContactForm({
     return (
       <div className="rounded-2xl border border-ink/10 bg-paper-dim px-6 py-6 text-sm text-ink">
         <p className="font-serif text-lg italic text-ink">Thank you, {name || "there"}.</p>
-        <p className="mt-1 text-ink/65">A team member will reach out to {email} within one business day.</p>
+        <p className="mt-1 text-ink/70">A team member will reach out to {email} within one business day.</p>
       </div>
     );
   }
@@ -90,7 +90,7 @@ export default function ContactForm({
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full name"
-          className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+          className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
         />
         <input
           type="email"
@@ -98,12 +98,13 @@ export default function ContactForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
-          className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+          className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
         />
       </div>
       <select
         value={subject}
         onChange={(e) => setSubject(e.target.value)}
+        aria-label="Subject"
         className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
       >
         {subjects.map((s) => (
@@ -118,7 +119,7 @@ export default function ContactForm({
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Tell us a bit about what you're looking for"
-        className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/40 focus:border-accent"
+        className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
       />
       <Magnetic strength={0.2}>
         <button

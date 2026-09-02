@@ -18,7 +18,7 @@ export default function DealsBand() {
       <span className="text-xs eyebrow uppercase">
         {dealCount} Active Offer{dealCount === 1 ? "" : "s"}
       </span>
-      <span className="hidden text-ink/40 sm:inline">·</span>
+      <span className="hidden text-ink/70 sm:inline">·</span>
       <span className="text-sm">
         Up to {topDeal?.deal?.percentOff}% off {topDeal?.title.split(":")[0]} and more
       </span>

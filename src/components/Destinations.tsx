@@ -194,7 +194,7 @@ function DestinationModal({
           <h3 className="font-serif text-3xl leading-tight text-ink">
             {d.name}
           </h3>
-          <p className="mt-1 text-sm text-ink/60">{d.detail}</p>
+          <p className="mt-1 text-sm text-ink/70">{d.detail}</p>
 
           <p className="mt-5 text-sm leading-relaxed text-ink/70">
             {d.description}
@@ -304,7 +304,7 @@ export default function Destinations() {
               <Link
                 href="/destinations"
                 data-cursor-hover
-                className="shrink-0 text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+                className="shrink-0 text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
               >
                 See All 18 →
               </Link>

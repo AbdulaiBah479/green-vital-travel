@@ -57,7 +57,7 @@ export default function PartnersPage() {
 
       <div className="mx-auto max-w-3xl px-6 pt-16 sm:px-10">
         <Reveal>
-          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -69,7 +69,7 @@ export default function PartnersPage() {
             <Reveal key={t.title} delay={i * 100}>
               <div className="rounded-3xl border border-ink/10 p-7">
                 <h2 className="font-serif text-xl text-ink">{t.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-ink/65">{t.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">{t.body}</p>
               </div>
             </Reveal>
           ))}

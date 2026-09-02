@@ -21,7 +21,7 @@ export default function OfficeMap() {
         target="_blank"
         rel="noopener noreferrer"
         data-cursor-hover
-        className="block bg-paper-dim px-4 py-2.5 text-center text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+        className="block bg-paper-dim px-4 py-2.5 text-center text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
       >
         View Larger Map →
       </a>

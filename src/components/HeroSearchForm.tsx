@@ -36,7 +36,7 @@ export default function HeroSearchForm() {
             type="button"
             onClick={() => setTab(t)}
             className={`rounded-full px-4 py-2 text-xs eyebrow uppercase transition-colors ${
-              tab === t ? "bg-ink text-paper" : "text-ink/50 hover:text-ink"
+              tab === t ? "bg-ink text-paper" : "text-ink/70 hover:text-ink"
             }`}
           >
             {t === "tours" ? "Tours" : "Destinations"}
@@ -46,7 +46,7 @@ export default function HeroSearchForm() {
 
       <form onSubmit={onSubmit} className="flex flex-col gap-2 sm:flex-row sm:items-stretch">
         <label className="flex flex-1 flex-col gap-0.5 rounded-2xl px-4 py-2 transition-colors hover:bg-paper-dim sm:border-r sm:border-ink/10">
-          <span className="text-[10px] eyebrow uppercase text-ink/45">Region</span>
+          <span className="text-[10px] eyebrow uppercase text-ink/70">Region</span>
           <select
             value={region}
             onChange={(e) => setRegion(e.target.value)}
@@ -64,7 +64,7 @@ export default function HeroSearchForm() {
 
         {tab === "tours" && (
           <label className="flex flex-1 flex-col gap-0.5 rounded-2xl px-4 py-2 transition-colors hover:bg-paper-dim sm:border-r sm:border-ink/10">
-            <span className="text-[10px] eyebrow uppercase text-ink/45">Tour style</span>
+            <span className="text-[10px] eyebrow uppercase text-ink/70">Tour style</span>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}

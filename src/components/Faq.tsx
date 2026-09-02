@@ -47,7 +47,7 @@ export default function Faq() {
                     isOpen ? "grid-rows-[1fr] pb-6 opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <p className="min-h-0 max-w-xl text-sm leading-relaxed text-ink/65">
+                  <p className="min-h-0 max-w-xl text-sm leading-relaxed text-ink/70">
                     {faq.answer}
                   </p>
                 </div>

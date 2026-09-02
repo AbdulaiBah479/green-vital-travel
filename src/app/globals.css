@@ -5,7 +5,11 @@
   --ink-soft: #123f50;
   --paper: #ffffff;
   --paper-dim: #eef6f3;
-  --accent: #1f9d6b;
+  /* Lightened ~4 points from the original #1f9d6b — that version put
+     --ink text on an --accent button background at 4.10:1, just under
+     WCAG AA's 4.5:1 for normal text. This barely-visible shift clears
+     it (4.97:1) without reading as a different color. */
+  --accent: #22ae77;
   --accent-soft: #6fdba8;
   /* Same emerald hue, darkened for text on light backgrounds — the base
      --accent is only ~2.7:1 against --paper (WCAG AA needs 4.5:1 for text).
@@ -16,7 +20,11 @@
      ratings, deal badges, loyalty/gift-card accents) so the palette reads
      as green+blue+white *plus* a pop, not flat two-tone. */
   --accent-2: #f0a94e;
-  --accent-2-deep: #a86816;
+  /* Darkened ~7 points from the original #a86816 — that version was only
+     4.1:1 against --paper-dim and 3.74:1 against the selected gift-card
+     tint, both under WCAG AA's 4.5:1. Now 5.2:1+ against every background
+     it's actually used on. */
+  --accent-2-deep: #885412;
   --line: rgba(255, 255, 255, 0.14);
   --line-dark: rgba(10, 47, 61, 0.1);
 }

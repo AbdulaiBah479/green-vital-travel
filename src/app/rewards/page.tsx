@@ -75,7 +75,7 @@ export default function RewardsPage() {
 
       <div className="mx-auto max-w-3xl px-6 pt-16 sm:px-10">
         <Reveal>
-          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {description}
           </p>
         </Reveal>
@@ -87,7 +87,7 @@ export default function RewardsPage() {
             <Reveal key={tier.name} delay={i * 100}>
               <div className="flex h-full flex-col rounded-3xl border border-ink/10 p-7">
                 <p className="eyebrow text-xs uppercase text-accent-deep">{tier.name}</p>
-                <p className="mt-2 text-xs text-ink/50">{tier.threshold}</p>
+                <p className="mt-2 text-xs text-ink/70">{tier.threshold}</p>
                 <ul className="mt-6 flex-1 space-y-3 text-sm leading-relaxed text-ink/70">
                   {tier.perks.map((p) => (
                     <li key={p} className="flex gap-2">

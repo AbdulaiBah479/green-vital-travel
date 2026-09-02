@@ -45,7 +45,7 @@ export default async function BookPage({
           <h1 className="text-balance text-center font-serif text-4xl leading-tight text-ink sm:text-5xl">
             {tour.title}
           </h1>
-          <p className="mx-auto mt-4 max-w-md text-balance text-center text-sm leading-relaxed text-ink/60">
+          <p className="mx-auto mt-4 max-w-md text-balance text-center text-sm leading-relaxed text-ink/70">
             A four-step request — no payment now. Our team confirms availability and takes a
             deposit once everything&rsquo;s locked in.
           </p>

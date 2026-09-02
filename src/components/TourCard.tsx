@@ -44,7 +44,7 @@ export default function TourCard({ tour }: { tour: Tour }) {
         <h3 className="mt-2 font-serif text-xl leading-snug text-ink transition-colors group-hover:text-accent-deep">
           {tour.title}
         </h3>
-        <div className="mt-2 flex items-center gap-1.5 text-xs text-ink/60">
+        <div className="mt-2 flex items-center gap-1.5 text-xs text-ink/70">
           {hasReviews ? (
             <>
               <Stars rating={rating} />
@@ -58,17 +58,17 @@ export default function TourCard({ tour }: { tour: Tour }) {
         </div>
         <div className="mt-4 flex items-end justify-between border-t border-ink/10 pt-4">
           <div>
-            <p className="text-[10px] eyebrow uppercase text-ink/45">From</p>
+            <p className="text-[10px] eyebrow uppercase text-ink/70">From</p>
             {discounted ? (
               <p className="flex items-baseline gap-2">
-                <span className="text-sm text-ink/40 line-through">{formatPrice(tour.priceFrom)}</span>
+                <span className="text-sm text-ink/70 line-through">{formatPrice(tour.priceFrom)}</span>
                 <span className="font-serif text-xl text-accent-2-deep">{formatPrice(discounted)}</span>
               </p>
             ) : (
               <p className="font-serif text-xl text-ink">{formatPrice(tour.priceFrom)}</p>
             )}
           </div>
-          <span className="text-xs eyebrow uppercase text-ink/50 transition-colors group-hover:text-accent-deep">
+          <span className="text-xs eyebrow uppercase text-ink/70 transition-colors group-hover:text-accent-deep">
             View →
           </span>
         </div>

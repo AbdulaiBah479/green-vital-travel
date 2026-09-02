@@ -268,7 +268,7 @@ export default function Nav() {
           >
             Wishlist {count > 0 ? `(${count})` : ""}
           </Link>
-          <span className="text-paper/30">·</span>
+          <span className="text-paper/50">·</span>
           <div className="text-paper">
             <CurrencySwitcher dark={false} />
           </div>

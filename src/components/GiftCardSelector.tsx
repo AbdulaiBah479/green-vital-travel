@@ -33,7 +33,7 @@ export default function GiftCardSelector() {
 
       <div className="mt-8 flex items-center justify-between border-t border-ink/10 pt-6">
         <div>
-          <p className="text-[10px] eyebrow uppercase text-ink/45">Gift Card Value</p>
+          <p className="text-[10px] eyebrow uppercase text-ink/70">Gift Card Value</p>
           <p className="font-serif text-3xl text-ink">{formatPrice(amount)}</p>
         </div>
         <Magnetic strength={0.2}>
@@ -45,7 +45,7 @@ export default function GiftCardSelector() {
           </Link>
         </Magnetic>
       </div>
-      <p className="mt-4 text-xs text-ink/45">
+      <p className="mt-4 text-xs text-ink/70">
         No payment is taken on this page — we&rsquo;ll follow up to confirm delivery details and complete the
         purchase directly.
       </p>

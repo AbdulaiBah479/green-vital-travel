@@ -14,7 +14,7 @@ export default function NotFound() {
       <h1 className="max-w-lg text-balance font-serif text-4xl italic leading-tight text-ink sm:text-5xl">
         This particular route doesn&rsquo;t exist yet.
       </h1>
-      <p className="mt-6 max-w-md text-balance text-sm leading-relaxed text-ink/60">
+      <p className="mt-6 max-w-md text-balance text-sm leading-relaxed text-ink/70">
         Whatever you were looking for isn&rsquo;t at this address — but our
         team would be glad to help you find it another way.
       </p>
@@ -29,7 +29,7 @@ export default function NotFound() {
         </Magnetic>
         <Link
           href="/journal"
-          className="text-xs eyebrow uppercase text-ink/60 transition-colors hover:text-accent-deep"
+          className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
         >
           Read the Journal
         </Link>

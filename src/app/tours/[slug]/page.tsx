@@ -183,11 +183,11 @@ export default async function TourPage({
                 </ul>
               </div>
               <div>
-                <p className="eyebrow mb-4 text-xs uppercase text-ink/45">Not Included</p>
-                <ul className="space-y-3 text-sm leading-relaxed text-ink/55">
+                <p className="eyebrow mb-4 text-xs uppercase text-ink/70">Not Included</p>
+                <ul className="space-y-3 text-sm leading-relaxed text-ink/70">
                   {tour.excluded.map((i) => (
                     <li key={i} className="flex gap-3">
-                      <span className="mt-0.5 shrink-0 text-ink/30">–</span>
+                      <span className="mt-0.5 shrink-0 text-ink/70">–</span>
                       {i}
                     </li>
                   ))}
@@ -200,23 +200,23 @@ export default async function TourPage({
                 <p className="eyebrow text-xs uppercase text-accent-deep">
                   Reviews ({tourReviews.length})
                 </p>
-                <Link href="/reviews" className="text-xs eyebrow uppercase text-ink/50 hover:text-accent-deep">
+                <Link href="/reviews" className="text-xs eyebrow uppercase text-ink/70 hover:text-accent-deep">
                   All Reviews →
                 </Link>
               </div>
               {tourReviews.length === 0 ? (
-                <p className="mt-4 text-sm text-ink/50">No reviews yet for this specific tour.</p>
+                <p className="mt-4 text-sm text-ink/70">No reviews yet for this specific tour.</p>
               ) : (
                 <div className="mt-6 space-y-6">
                   {tourReviews.map((r) => (
                     <div key={r.id} className="border-t border-ink/10 pt-6">
                       <div className="flex items-center justify-between">
                         <Stars rating={r.rating} />
-                        <span className="text-xs text-ink/40">{r.date}</span>
+                        <span className="text-xs text-ink/70">{r.date}</span>
                       </div>
                       <p className="mt-2 font-serif text-lg text-ink">{r.title}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-ink/65">{r.body}</p>
-                      <p className="mt-2 text-xs eyebrow uppercase text-ink/45">
+                      <p className="mt-1 text-sm leading-relaxed text-ink/70">{r.body}</p>
+                      <p className="mt-2 text-xs eyebrow uppercase text-ink/70">
                         {r.name} · {r.location}
                       </p>
                     </div>
