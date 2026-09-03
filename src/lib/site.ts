@@ -23,32 +23,26 @@ export const siteKeywords = [
 ];
 
 export const companyRegistration = {
-  // Only "IB" initials and the National Investment Board mention survived
-  // in old page copy — no registration number or exact founding year was
-  // ever recorded in this codebase. Replace with the real figures.
-  registrationNumber: "N/A",
-  tin: "N/A",
+  // From the real National Investment Board certificate of incorporation
+  // and NRA taxpayer certificate.
+  registrationNumber: "SL200726GREEN31171",
+  tin: "1001814533",
   incorporatedDate: "Founded 2026",
   jurisdiction: "Sierra Leone",
-  entityType: "Travel agency",
+  entityType: "Private Company Limited by Shares",
 };
 
 export const founder = {
-  // Only the initials "IB" survived from the old designers-page bio —
-  // the full name was never recorded anywhere recoverable. Replace with
-  // the real founder's name.
-  name: "I. B.",
+  name: "Ibrahim Bah",
   title: "Founder & Director",
 };
 
 export const contact = {
-  // Real business email, confirmed by the site owner. Phone/WhatsApp
-  // numbers were never recorded anywhere recoverable in this codebase —
-  // these are still placeholders and must be replaced with the real
-  // numbers before going live.
+  // Real business email, confirmed by the site owner. Phones are the two
+  // mobile numbers listed on the actual NIB business registration form.
   email: "greenvitaltravelandtouragencyl@gmail.com",
-  phones: ["+232 00 000 0000"],
-  whatsapp: "23200000000",
+  phones: ["+232 78 411227", "+232 78 598481"],
+  whatsapp: "23278411227",
   address: {
     street: "57 Main Motor Road, Congo Cross",
     city: "Freetown",
