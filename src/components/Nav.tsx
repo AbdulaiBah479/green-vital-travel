@@ -12,18 +12,13 @@ const links = [
   { label: "About Us", href: "/about", id: "" },
   { label: "Our Services", href: "/services", id: "" },
   { label: "Contact Us", href: "/contact", id: "" },
-  { label: "Brochure", href: "/#brochure", id: "brochure" },
-  { label: "Career", href: "/#career", id: "career" },
 ];
 
-const aboutLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Our Services", href: "/services" },
+const moreLinks = [
   { label: "Travel Insurance", href: "/insurance" },
   { label: "Gift Cards", href: "/gift-cards" },
   { label: "Corporate Travel", href: "/groups" },
   { label: "Partners", href: "/partners" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -31,10 +26,10 @@ export default function Nav() {
   const hasDarkHero = pathname === "/";
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const [open, setOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
   const { count } = useWishlist();
-  const aboutRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!hasDarkHero) return;
@@ -89,7 +84,7 @@ export default function Nav() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
-        setAboutOpen(false);
+        setMoreOpen(false);
       }
     };
     window.addEventListener("keydown", onKey);
@@ -97,15 +92,15 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    if (!aboutOpen) return;
+    if (!moreOpen) return;
     const onPointerDown = (e: PointerEvent) => {
-      if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
-        setAboutOpen(false);
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
       }
     };
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
-  }, [aboutOpen]);
+  }, [moreOpen]);
 
   const dark = !hasDarkHero || scrolledPastHero || open;
 
@@ -158,28 +153,28 @@ export default function Nav() {
             </Link>
           ))}
 
-          <div className="relative" ref={aboutRef}>
+          <div className="relative" ref={moreRef}>
             <button
               type="button"
-              onClick={() => setAboutOpen((o) => !o)}
-              aria-expanded={aboutOpen}
+              onClick={() => setMoreOpen((o) => !o)}
+              aria-expanded={moreOpen}
               aria-haspopup="true"
               className={`whitespace-nowrap text-xs eyebrow uppercase transition-colors ${
                 dark ? "text-ink/70 hover:text-ink" : "text-paper/80 hover:text-paper"
               }`}
             >
-              About ▾
+              More ▾
             </button>
             <div
               className={`absolute right-0 top-full mt-3 w-56 overflow-hidden rounded-2xl border border-ink/10 bg-paper py-2 shadow-xl transition-all duration-200 ${
-                aboutOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
+                moreOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0"
               }`}
             >
-              {aboutLinks.map((l) => (
+              {moreLinks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
-                  onClick={() => setAboutOpen(false)}
+                  onClick={() => setMoreOpen(false)}
                   className="block px-4 py-3 text-sm text-ink/70 transition-colors hover:bg-paper-dim hover:text-accent-deep"
                 >
                   {l.label}
@@ -246,7 +241,7 @@ export default function Nav() {
         }`}
       >
         <nav className="flex flex-col gap-4">
-          {[...links, ...aboutLinks].map((link, i) => (
+          {[...links, ...moreLinks].map((link, i) => (
             <Link
               key={`${link.href}-${i}`}
               href={link.href}

@@ -12,15 +12,13 @@ const exploreLinks = [
 ];
 
 const companyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
   { label: "Travel Insurance", href: "/insurance" },
   { label: "Partners", href: "/partners" },
   { label: "Press", href: "/press" },
+  { label: "Sustainability", href: "/sustainability" },
 ];
 
 const supportLinks = [
-  { label: "Contact", href: "/contact" },
   { label: "FAQ", href: "/#faq" },
   { label: "Reviews", href: "/reviews" },
   { label: "Travel Requirements", href: "/travel-requirements" },
