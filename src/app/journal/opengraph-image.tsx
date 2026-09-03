@@ -1,6 +1,7 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import { ImageResponse } from "next/og";
+import { siteName } from "@/lib/site";
 
 export const alt = "The Journal — Greenvital";
 export const size = {
@@ -51,7 +52,7 @@ export default function Image() {
               fontFamily: "Arial, sans-serif",
             }}
           >
-            KRISHNA TRAVELS JOURNAL
+            {siteName.toUpperCase()} JOURNAL
           </div>
         </div>
         <div

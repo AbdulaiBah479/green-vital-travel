@@ -9,6 +9,7 @@ import TourCard from "@/components/TourCard";
 import { destinations, getDestination } from "@/lib/destinations";
 import { toursForDestination } from "@/lib/tours";
 import { jsonLdScript } from "@/lib/jsonLd";
+import { siteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return destinations.map((d) => ({ slug: d.slug }));
@@ -52,17 +53,36 @@ export default async function DestinationPage({
 
   const tours = toursForDestination(d.slug);
 
+  const destinationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    name: d.name,
+    description: d.description,
+    image: `${siteUrl}${d.heroImg}`,
+    url: `${siteUrl}/destinations/${d.slug}`,
+    ...(d.country && {
+      containedInPlace: {
+        "@type": "Country",
+        name: d.country,
+      },
+    }),
+  };
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Destinations", item: "/destinations" },
-      { "@type": "ListItem", position: 2, name: d.name, item: `/destinations/${d.slug}` },
+      { "@type": "ListItem", position: 1, name: "Destinations", item: `${siteUrl}/destinations` },
+      { "@type": "ListItem", position: 2, name: d.name, item: `${siteUrl}/destinations/${d.slug}` },
     ],
   };
 
   return (
     <main className="pb-24 sm:pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(destinationJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdScript(breadcrumbJsonLd) }}

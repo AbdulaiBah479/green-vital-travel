@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import { ImageResponse } from "next/og";
-import { siteTitle, siteDescription } from "@/lib/site";
+import { siteTitle, siteDescription, siteName } from "@/lib/site";
 
 export const alt = siteTitle;
 export const size = {
@@ -44,7 +44,7 @@ export default function Image() {
             }}
           />
           <div style={{ display: "flex", fontSize: 30, letterSpacing: 8, color: "#1f9d6b" }}>
-            KRISHNA TRAVELS
+            {siteName.toUpperCase()}
           </div>
         </div>
         <div

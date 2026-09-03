@@ -56,7 +56,7 @@ export default async function JournalEntryPage({ params }: Props) {
     "@type": "Article",
     headline: entry.title,
     description: entry.excerpt,
-    image: entry.img,
+    image: `${siteUrl}${entry.img}`,
     datePublished: entry.isoDate,
     dateModified: entry.isoDate,
     author: {

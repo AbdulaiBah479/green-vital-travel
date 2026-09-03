@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Cursor from "@/components/Cursor";
 import Grain from "@/components/Grain";
 import Nav from "@/components/Nav";
@@ -95,8 +97,8 @@ const organizationJsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 8.4657,
-    longitude: -13.2317,
+    latitude: 8.483077,
+    longitude: -13.258893,
   },
   areaServed: "Worldwide",
   priceRange: "$$",
@@ -128,6 +130,8 @@ export default function RootLayout({
             <Chatbot />
           </WishlistProvider>
         </CurrencyProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

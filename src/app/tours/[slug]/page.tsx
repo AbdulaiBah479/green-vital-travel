@@ -65,7 +65,7 @@ export default async function TourPage({
     "@type": "Product",
     name: tour.title,
     description: tour.summary,
-    image: tour.heroImg,
+    image: `${siteUrl}${tour.heroImg}`,
     aggregateRating:
       tourReviews.length > 0
         ? {
@@ -87,8 +87,8 @@ export default async function TourPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Tours", item: "/tours" },
-      { "@type": "ListItem", position: 2, name: tour.title, item: `/tours/${tour.slug}` },
+      { "@type": "ListItem", position: 1, name: "Tours", item: `${siteUrl}/tours` },
+      { "@type": "ListItem", position: 2, name: tour.title, item: `${siteUrl}/tours/${tour.slug}` },
     ],
   };
 

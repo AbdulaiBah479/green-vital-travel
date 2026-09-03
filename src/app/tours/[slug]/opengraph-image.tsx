@@ -2,6 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import { ImageResponse } from "next/og";
 import { getTour } from "@/lib/tours";
+import { siteName } from "@/lib/site";
 
 export const size = {
   width: 1200,
@@ -93,7 +94,7 @@ export default async function Image({
               fontFamily: "Arial, sans-serif",
             }}
           >
-            KRISHNA TRAVELS
+            {siteName.toUpperCase()}
           </div>
         </div>
       </div>
