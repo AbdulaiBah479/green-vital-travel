@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import { ImageResponse } from "next/og";
 
-export const alt = "The Journal — Green Vital";
+export const alt = "The Journal — Greenvital";
 export const size = {
   width: 1200,
   height: 630,

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/tours" },
   openGraph: {
-    title: "Tours & Packages — Green Vital",
+    title: "Tours & Packages — Greenvital",
     description,
     url: "/tours",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tours & Packages — Green Vital",
+    title: "Tours & Packages — Greenvital",
     description: description,
   },
 };

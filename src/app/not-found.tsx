@@ -24,7 +24,7 @@ export default function NotFound() {
             href="/"
             className="inline-block rounded-full bg-ink px-7 py-3 text-xs eyebrow uppercase text-paper transition-colors hover:bg-ink-soft"
           >
-            Back to Green Vital
+            Back to Greenvital
           </Link>
         </Magnetic>
         <Link

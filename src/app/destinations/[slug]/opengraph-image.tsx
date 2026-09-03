@@ -22,7 +22,7 @@ export default async function Image({
   const d = getDestination(slug);
   const name = d?.name ?? "Destinations";
   const country = d?.country ?? "";
-  const hook = d?.hook ?? "Green Vital";
+  const hook = d?.hook ?? "Greenvital";
 
   return new ImageResponse(
     (

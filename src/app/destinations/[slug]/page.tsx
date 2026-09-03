@@ -28,14 +28,14 @@ export async function generateMetadata({
     description: d.description,
     alternates: { canonical: `/destinations/${d.slug}` },
     openGraph: {
-      title: `${d.name} — Green Vital`,
+      title: `${d.name} — Greenvital`,
       description: d.description,
       url: `/destinations/${d.slug}`,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${d.name} — Green Vital`,
+      title: `${d.name} — Greenvital`,
       description: d.description,
     },
   };

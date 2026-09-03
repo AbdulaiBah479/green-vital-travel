@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   title: "Group & Corporate Travel",
   description,
   alternates: { canonical: "/groups" },
-  openGraph: { title: "Group & Corporate Travel — Green Vital", description, url: "/groups", type: "website" },
+  openGraph: { title: "Group & Corporate Travel — Greenvital", description, url: "/groups", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "Group & Corporate Travel — Green Vital",
+    title: "Group & Corporate Travel — Greenvital",
     description: description,
   },
 };

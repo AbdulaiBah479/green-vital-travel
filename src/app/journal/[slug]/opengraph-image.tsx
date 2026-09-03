@@ -21,7 +21,7 @@ export default async function Image({
   const { slug } = await params;
   const entry = getJournalEntry(slug);
   const title = entry?.title ?? "The Journal";
-  const category = entry?.category ?? "Green Vital";
+  const category = entry?.category ?? "Greenvital";
   const readTime = entry?.readTime ?? "";
 
   return new ImageResponse(

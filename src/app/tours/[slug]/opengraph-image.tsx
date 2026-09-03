@@ -21,7 +21,7 @@ export default async function Image({
   const { slug } = await params;
   const t = getTour(slug);
   const title = t?.title ?? "Tours & Packages";
-  const category = t?.category ?? "Green Vital";
+  const category = t?.category ?? "Greenvital";
   const nights = t?.nights;
 
   return new ImageResponse(

@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: "Press",
   description,
   alternates: { canonical: "/press" },
-  openGraph: { title: "Press — Green Vital", description, url: "/press", type: "website" },
+  openGraph: { title: "Press — Greenvital", description, url: "/press", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "Press — Green Vital",
+    title: "Press — Greenvital",
     description: description,
   },
 };
@@ -33,7 +33,7 @@ export default function PressPage() {
         <div className="relative z-10 mx-auto w-full max-w-2xl px-6 pb-16 sm:px-10">
           <p className="eyebrow mb-4 text-xs uppercase text-accent-soft">Press</p>
           <h1 className="max-w-xl text-balance font-serif text-4xl leading-tight text-paper sm:text-5xl">
-            Writing about Green Vital, or want to?
+            Writing about Greenvital, or want to?
           </h1>
         </div>
       </div>

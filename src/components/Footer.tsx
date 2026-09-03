@@ -83,7 +83,7 @@ export default function Footer() {
             <div className="inline-flex items-center rounded-2xl bg-paper px-5 py-4 shadow-sm sm:px-6 sm:py-5">
               <Image
                 src="/brand-logo.png"
-                alt="Green Vital"
+                alt="Greenvital"
                 width={963}
                 height={982}
                 className="h-32 w-auto sm:h-40"

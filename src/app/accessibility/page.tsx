@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { contact } from "@/lib/site";
 
-const description = "Green Vital's commitment to an accessible website, and how to report an issue.";
+const description = "Greenvital's commitment to an accessible website, and how to report an issue.";
 
 export const metadata: Metadata = {
   title: "Accessibility Statement",
   description,
   alternates: { canonical: "/accessibility" },
   openGraph: {
-    title: "Accessibility Statement — Green Vital",
+    title: "Accessibility Statement — Greenvital",
     description,
     url: "/accessibility",
     type: "website",
   },
-  twitter: { card: "summary_large_image", title: "Accessibility Statement — Green Vital", description },
+  twitter: { card: "summary_large_image", title: "Accessibility Statement — Greenvital", description },
   robots: { index: true, follow: true },
 };
 

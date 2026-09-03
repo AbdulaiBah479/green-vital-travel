@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { contact, siteFullName, companyRegistration } from "@/lib/site";
 
-const description = "The terms governing use of the Green Vital website and our travel and tour services.";
+const description = "The terms governing use of the Greenvital website and our travel and tour services.";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description,
   alternates: { canonical: "/terms" },
-  openGraph: { title: "Terms of Service — Green Vital", description, url: "/terms", type: "website" },
-  twitter: { card: "summary_large_image", title: "Terms of Service — Green Vital", description },
+  openGraph: { title: "Terms of Service — Greenvital", description, url: "/terms", type: "website" },
+  twitter: { card: "summary_large_image", title: "Terms of Service — Greenvital", description },
   robots: { index: true, follow: true },
 };
 

@@ -5,16 +5,16 @@ import Magnetic from "@/components/Magnetic";
 import { founder } from "@/lib/site";
 
 const description =
-  "Meet the founder behind Green Vital's trips, and the local network of guides and partners the agency works with directly.";
+  "Meet the founder behind Greenvital's trips, and the local network of guides and partners the agency works with directly.";
 
 export const metadata: Metadata = {
   title: "Our Team",
   description,
   alternates: { canonical: "/about/designers" },
-  openGraph: { title: "Our Team — Green Vital", description, url: "/about/designers", type: "website" },
+  openGraph: { title: "Our Team — Greenvital", description, url: "/about/designers", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "Our Team — Green Vital",
+    title: "Our Team — Greenvital",
     description: description,
   },
 };
@@ -24,7 +24,7 @@ const team = [
     initials: "IB",
     name: founder.name,
     focus: founder.title,
-    bio: "Founded Green Vital Travel and Tour Agency in Freetown to make booking a trip — flight, hotel, visa, and everything after — a conversation with one person instead of five separate errands. Still handles most enquiries personally.",
+    bio: "Founded Greenvital Travel and Tour Agency in Freetown to make booking a trip — flight, hotel, visa, and everything after — a conversation with one person instead of five separate errands. Still handles most enquiries personally.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function DesignersPage() {
           <p>
             Behind every booking is also a network of hotels, airlines, guides,
             and drivers we work with directly across the destinations we
-            serve — not an anonymous marketplace. As Green Vital grows, this
+            serve — not an anonymous marketplace. As Greenvital grows, this
             page will grow with it.
           </p>
         </Reveal>

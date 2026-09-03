@@ -12,14 +12,14 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/deals" },
   openGraph: {
-    title: "Deals & Offers — Green Vital",
+    title: "Deals & Offers — Greenvital",
     description,
     url: "/deals",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deals & Offers — Green Vital",
+    title: "Deals & Offers — Greenvital",
     description: description,
   },
 };

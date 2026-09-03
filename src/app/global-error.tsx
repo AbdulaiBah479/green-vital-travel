@@ -39,7 +39,7 @@ export default function GlobalError({
             marginBottom: "1.5rem",
           }}
         >
-          Green Vital
+          Greenvital
         </p>
         <h1 style={{ fontSize: "2rem", fontStyle: "italic", maxWidth: 480, margin: 0 }}>
           The site hit an unexpected error.
