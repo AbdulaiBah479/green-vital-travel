@@ -77,9 +77,12 @@ export default function PrivacyPage() {
             <p>
               Wherever you&rsquo;re located, you can ask us at any time what
               information we hold about you, ask us to correct it, or ask us
-              to delete it. We aim to handle these requests in line with
-              applicable data protection law, and we&rsquo;ll honor the same
-              request from anyone, regardless of where you&rsquo;re writing from.
+              to delete it. Sierra Leone doesn&rsquo;t yet have a dedicated data
+              protection law in force — a National Data Protection Policy was
+              approved in 2026 and legislation is still being developed — so
+              until it is, we hold ourselves to the same standard as the
+              GDPR and CCPA for every request, regardless of where you&rsquo;re
+              writing from.
             </p>
           </section>
 

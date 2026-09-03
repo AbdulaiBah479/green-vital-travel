@@ -69,14 +69,37 @@ export default function TermsPage() {
 
           <section>
             <h2 className="mb-3 font-serif text-xl text-ink">
+              Your rights under the Consumer Protection Act
+            </h2>
+            <p>
+              Nothing in these Terms excludes, restricts, or limits any right
+              or remedy the Consumer Protection Act, 2020 (No. 7 of 2020)
+              gives you as a consumer in Sierra Leone — including your right
+              under that Act to timely performance of a service, to a
+              service performed to the standard consumers are generally
+              entitled to expect, and to a remedy or a reasonable refund if
+              we fall short of it. A contract term that tried to take away
+              those rights would itself be void under the Act, so we
+              don&rsquo;t write our Terms that way.
+            </p>
+            <p className="mt-3">
+              If we haven&rsquo;t resolved a complaint directly to your
+              satisfaction, you can also raise it with the National
+              Consumer Protection Commission of Sierra Leone, established
+              under that Act.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 font-serif text-xl text-ink">
               Limitation of liability
             </h2>
             <p>
               We arrange trips with care, but we don&rsquo;t control weather,
               third-party providers, or circumstances beyond reasonable
-              planning. {siteFullName}&rsquo;s liability for any claim relating to a trip
-              is limited to the service fee paid for that trip, except where
-              liability cannot be limited by law.
+              planning. Subject to the statutory rights above, {siteFullName}&rsquo;s
+              liability for any other claim relating to a trip is limited to
+              the service fee paid for that trip.
             </p>
           </section>
 
@@ -85,7 +108,8 @@ export default function TermsPage() {
               Governing law
             </h2>
             <p>
-              {siteFullName} is incorporated in {companyRegistration.jurisdiction}.
+              {siteFullName} is incorporated in {companyRegistration.jurisdiction}{" "}
+              under the Companies Act, 2009 (Act No. 5 of 2009, as amended).
               These terms are governed by the laws of {companyRegistration.jurisdiction},
               without regard to conflict-of-law principles.
             </p>
