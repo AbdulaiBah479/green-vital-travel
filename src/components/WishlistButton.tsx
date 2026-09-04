@@ -1,12 +1,15 @@
 "use client";
 
+import { toast } from "sonner";
 import { useWishlist } from "@/lib/WishlistContext";
 
 export default function WishlistButton({
   slug,
+  label,
   className = "",
 }: {
   slug: string;
+  label?: string;
   className?: string;
 }) {
   const { isSaved, toggle } = useWishlist();
@@ -21,6 +24,7 @@ export default function WishlistButton({
         e.preventDefault();
         e.stopPropagation();
         toggle(slug);
+        toast(saved ? "Removed from wishlist" : `Saved${label ? ` ${label}` : ""} to wishlist`);
       }}
       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full backdrop-blur-sm transition-colors ${
         saved ? "bg-accent-2 text-ink" : "bg-ink/40 text-paper hover:bg-ink/60"

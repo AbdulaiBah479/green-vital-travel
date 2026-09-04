@@ -103,7 +103,11 @@ export default async function TourPage({
       <div className="relative flex h-[55vh] min-h-[410px] w-full items-end overflow-hidden bg-ink">
         <Image src={tour.heroImg} alt={tour.title} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
-        <WishlistButton slug={`tour:${tour.slug}`} className="absolute right-6 top-36 z-10 sm:right-10 lg:top-52" />
+        <WishlistButton
+          slug={`tour:${tour.slug}`}
+          label={tour.title}
+          className="absolute right-6 top-36 z-10 sm:right-10 lg:top-52"
+        />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 sm:px-10">
           <p className="eyebrow mb-4 text-xs uppercase text-accent-soft">
             {tour.category} · {tour.nights} nights

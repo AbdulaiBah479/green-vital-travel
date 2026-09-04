@@ -35,7 +35,7 @@ export default function TourCard({ tour }: { tour: Tour }) {
             {tour.deal.label} · {tour.deal.percentOff}% off
           </span>
         )}
-        <WishlistButton slug={`tour:${tour.slug}`} className="absolute right-4 top-4" />
+        <WishlistButton slug={`tour:${tour.slug}`} label={tour.title} className="absolute right-4 top-4" />
       </div>
       <div className="p-5">
         <p className="text-xs eyebrow uppercase text-accent-deep">

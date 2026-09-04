@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import confetti from "canvas-confetti";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
 import type { Tour } from "@/lib/tours";
@@ -76,6 +77,14 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
       }
 
       setReference(data.reference || generateReference());
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        confetti({
+          particleCount: 120,
+          spread: 90,
+          origin: { y: 0.6 },
+          colors: ["#22ae77", "#6fdba8", "#f0a94e"],
+        });
+      }
     } catch (submissionError) {
       setError(
         submissionError instanceof Error

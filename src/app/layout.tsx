@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "sonner";
 import Cursor from "@/components/Cursor";
 import Grain from "@/components/Grain";
 import Nav from "@/components/Nav";
@@ -130,6 +131,16 @@ export default function RootLayout({
             <Chatbot />
           </WishlistProvider>
         </CurrencyProvider>
+        <Toaster
+          position="bottom-center"
+          toastOptions={{
+            unstyled: true,
+            classNames: {
+              toast:
+                "flex items-center gap-3 rounded-full border border-ink/10 bg-ink px-5 py-3 text-xs eyebrow uppercase text-paper shadow-xl",
+            },
+          }}
+        />
         <Analytics />
         <SpeedInsights />
       </body>

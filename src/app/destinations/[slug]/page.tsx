@@ -93,6 +93,7 @@ export default async function DestinationPage({
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" />
         <WishlistButton
           slug={`destination:${d.slug}`}
+          label={d.name}
           className="absolute right-6 top-36 z-10 sm:right-10 lg:top-52"
         />
         <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pb-16 sm:px-10">

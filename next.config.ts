@@ -14,13 +14,17 @@ const csp = [
   // React's dev-mode error overlay reconstructs call stacks with eval(),
   // so 'unsafe-eval' is added for local dev only — production keeps the
   // stricter policy, since React never uses eval() in production mode.
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  // @vercel/analytics and @vercel/speed-insights only need an external host
+  // in dev — that's their local debug script (va.vercel-scripts.com); once
+  // actually deployed to Vercel both load from the site's own domain, so
+  // production's script-src stays locked to 'self'.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval' https://va.vercel-scripts.com" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   // All photography is self-hosted under /public/images — no remote host
   // needed here anymore.
   "img-src 'self' data:",
   "font-src 'self' data:",
-  `connect-src 'self'${isDev ? " ws://localhost:* http://localhost:*" : ""}`,
+  `connect-src 'self'${isDev ? " ws://localhost:* http://localhost:* https://va.vercel-scripts.com" : ""}`,
   // The Contact page embeds an OpenStreetMap iframe for the office location —
   // OSM's embed doesn't set tracking cookies, unlike Google Maps, which
   // matters since the site's cookie notice promises no tracking cookies.

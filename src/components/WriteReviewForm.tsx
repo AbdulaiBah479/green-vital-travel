@@ -12,8 +12,9 @@ export default function WriteReviewForm() {
   const [name, setName] = useState("");
   const [body, setBody] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.checkValidity()) {
@@ -21,7 +22,25 @@ export default function WriteReviewForm() {
       return;
     }
     setStatus("submitting");
-    window.setTimeout(() => setStatus("success"), 700);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tourSlug, rating, name, body }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "We couldn't submit your review right now.");
+      setStatus("success");
+    } catch (submissionError) {
+      setStatus("idle");
+      setError(
+        submissionError instanceof Error
+          ? submissionError.message
+          : "We couldn't submit your review right now. Please try again."
+      );
+    }
   };
 
   if (status === "success") {
@@ -38,6 +57,11 @@ export default function WriteReviewForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4 rounded-2xl border border-ink/10 bg-paper-dim p-6">
+      {error && (
+        <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
+          {error}
+        </p>
+      )}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <select
           value={tourSlug}

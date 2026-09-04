@@ -22,7 +22,7 @@ export default function DestinationCard({ destination: d }: { destination: Desti
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
       </div>
-      <WishlistButton slug={`destination:${d.slug}`} className="absolute right-4 top-4" />
+      <WishlistButton slug={`destination:${d.slug}`} label={d.name} className="absolute right-4 top-4" />
       <div className="absolute inset-x-0 bottom-0 p-5">
         <p className="text-xs eyebrow uppercase text-accent-soft">
           {d.country} · {d.region}

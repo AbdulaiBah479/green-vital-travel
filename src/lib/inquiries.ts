@@ -199,3 +199,73 @@ export async function subscribeNewsletter(email: string) {
   console.info(`[newsletter-signup] ${email}`);
   return { ok: true };
 }
+
+export type ReviewSubmission = {
+  tourSlug: string;
+  tourTitle: string;
+  rating: number;
+  name: string;
+  body: string;
+};
+
+// Reviews are hand-curated (checked against a real booking before
+// publishing, per the copy on the review form) rather than auto-published,
+// so a submission notifies the business instead of writing straight to
+// the reviews data — same fallback pattern as the other inquiry types.
+export async function submitReview(review: ReviewSubmission) {
+  const businessEmail = process.env.BUSINESS_EMAIL || process.env.CONTACT_EMAIL || contact.email;
+  const fromEmail = process.env.EMAIL_FROM || `noreply@${new URL(siteUrl).hostname}`;
+  const text = [
+    "New traveler review submitted",
+    `Tour: ${review.tourTitle}`,
+    `Rating: ${review.rating}/5`,
+    `Name: ${review.name}`,
+    "",
+    `Review:\n${review.body}`,
+    "",
+    "Verify against a real booking before adding it to src/lib/reviews.ts.",
+  ].join("\n");
+
+  if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    const response = await fetch(`${process.env.SUPABASE_URL}/rest/v1/pending_reviews`, {
+      method: "POST",
+      headers: {
+        apikey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+        Authorization: `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify({ ...review, created_at: new Date().toISOString(), source: "website-review-form" }),
+    });
+    if (!response.ok) {
+      console.error("Supabase review save failed:", await response.text());
+    }
+  }
+
+  if (process.env.RESEND_API_KEY) {
+    const emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `Greenvital <${fromEmail}>`,
+        to: [businessEmail],
+        subject: `New review: ${review.tourTitle} (${review.rating}/5)`,
+        text,
+      }),
+    });
+    if (!emailResponse.ok) {
+      console.error("Resend review notification failed:", await emailResponse.text());
+      throw new Error("Unable to submit your review right now. Please try again shortly.");
+    }
+    return { ok: true };
+  }
+
+  if (!process.env.RESEND_API_KEY && !process.env.SUPABASE_URL) {
+    console.info(`[review-submission] ${text}`);
+  }
+
+  return { ok: true };
+}
