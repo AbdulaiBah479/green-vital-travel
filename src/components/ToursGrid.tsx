@@ -14,7 +14,7 @@ function realRating(slug: string) {
   return list.length > 0 ? averageRating(list) : 0;
 }
 
-type SortKey = "recommended" | "price-asc" | "price-desc" | "rating";
+type SortKey = "recommended" | "nights-asc" | "nights-desc" | "rating";
 type DurationKey = "" | "short" | "medium" | "long";
 
 const durationOptions: { value: DurationKey; label: string }[] = [
@@ -26,8 +26,8 @@ const durationOptions: { value: DurationKey; label: string }[] = [
 
 const sortOptions: { value: SortKey; label: string }[] = [
   { value: "recommended", label: "Recommended" },
-  { value: "price-asc", label: "Price: Low to High" },
-  { value: "price-desc", label: "Price: High to Low" },
+  { value: "nights-asc", label: "Shortest First" },
+  { value: "nights-desc", label: "Longest First" },
   { value: "rating", label: "Highest Rated" },
 ];
 
@@ -60,8 +60,8 @@ export default function ToursGrid({
     });
 
     return [...list].sort((a, b) => {
-      if (sort === "price-asc") return a.priceFrom - b.priceFrom;
-      if (sort === "price-desc") return b.priceFrom - a.priceFrom;
+      if (sort === "nights-asc") return a.nights - b.nights;
+      if (sort === "nights-desc") return b.nights - a.nights;
       if (sort === "rating") return realRating(b.slug) - realRating(a.slug);
       return 0;
     });

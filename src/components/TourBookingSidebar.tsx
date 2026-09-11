@@ -18,13 +18,24 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
 
   return (
     <div className="sticky top-36 lg:top-52 rounded-3xl border border-ink/10 bg-paper-dim p-6">
-      <p className="text-[10px] eyebrow uppercase text-ink/70">From</p>
-      <div className="flex items-baseline gap-2">
-        {deal && (
-          <span className="text-sm text-ink/70 line-through">{formatPrice(tour.priceFrom)}</span>
-        )}
-        <span className="font-serif text-3xl text-ink">{formatPrice(unitPrice)}</span>
-        <span className="text-xs text-ink/70">/ person</span>
+      {deal && (
+        <span className="inline-block rounded-full bg-accent-2 px-3 py-1 text-[10px] eyebrow uppercase text-ink">
+          {deal.label} · {deal.percentOff}% off
+        </span>
+      )}
+      <div className="mt-2 grid grid-cols-3 gap-3 text-center">
+        <div>
+          <p className="text-[10px] eyebrow uppercase text-ink/70">Length</p>
+          <p className="mt-1 font-serif text-lg text-ink">{tour.nights}N</p>
+        </div>
+        <div>
+          <p className="text-[10px] eyebrow uppercase text-ink/70">Pace</p>
+          <p className="mt-1 font-serif text-lg text-ink">{tour.difficulty}</p>
+        </div>
+        <div>
+          <p className="text-[10px] eyebrow uppercase text-ink/70">Group</p>
+          <p className="mt-1 font-serif text-lg text-ink">Up to {tour.groupSizeMax}</p>
+        </div>
       </div>
 
       <div className="mt-6 space-y-4">

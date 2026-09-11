@@ -2,15 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCurrency } from "@/lib/CurrencyContext";
 import WishlistButton from "./WishlistButton";
 import { reviewsForTour, averageRating } from "@/lib/reviews";
 import { activeDeal, type Tour } from "@/lib/tours";
 
 export default function TourCard({ tour }: { tour: Tour }) {
-  const { formatPrice } = useCurrency();
   const deal = activeDeal(tour);
-  const discounted = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : null;
   // Real reviews only — never the tour's own baked-in rating/reviewCount,
   // which is leftover placeholder data, not something travelers actually left.
   const tourReviews = reviewsForTour(tour.slug);
@@ -57,20 +54,11 @@ export default function TourCard({ tour }: { tour: Tour }) {
             <span className="eyebrow text-[10px] uppercase text-accent-deep">New</span>
           )}
         </div>
-        <div className="mt-4 flex items-end justify-between border-t border-ink/10 pt-4">
-          <div>
-            <p className="text-[10px] eyebrow uppercase text-ink/70">From</p>
-            {discounted ? (
-              <p className="flex items-baseline gap-2">
-                <span className="text-sm text-ink/70 line-through">{formatPrice(tour.priceFrom)}</span>
-                <span className="font-serif text-xl text-accent-2-deep">{formatPrice(discounted)}</span>
-              </p>
-            ) : (
-              <p className="font-serif text-xl text-ink">{formatPrice(tour.priceFrom)}</p>
-            )}
-          </div>
-          <span className="text-xs eyebrow uppercase text-ink/70 transition-colors group-hover:text-accent-deep">
-            View →
+        <div className="mt-4 border-t border-ink/10 pt-4">
+          <p className="text-[10px] eyebrow uppercase text-ink/70">Why This Trip</p>
+          <p className="mt-1 line-clamp-2 text-sm leading-snug text-ink/80">{tour.highlights[0]}</p>
+          <span className="mt-3 inline-flex items-center gap-1 text-xs eyebrow uppercase text-ink/70 transition-colors group-hover:text-accent-deep">
+            View Itinerary →
           </span>
         </div>
       </div>
