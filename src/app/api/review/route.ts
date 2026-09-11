@@ -2,10 +2,18 @@ import { NextResponse } from "next/server";
 import { submitReview } from "@/lib/inquiries";
 import { tours } from "@/lib/tours";
 import { firstIssueMessage, isSpam, reviewSchema } from "@/lib/validation";
+import { clientKey, rateLimit } from "@/lib/rateLimit";
 
 const SUCCESS_MESSAGE = "Thanks — we'll verify it against your booking before it goes live.";
 
 export async function POST(request: Request) {
+  if (!rateLimit(`review:${clientKey(request)}`, 5, 10 * 60 * 1000)) {
+    return NextResponse.json(
+      { error: "Too many submissions recently. Please try again in a few minutes." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
 

@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
 import { submitInquiry } from "@/lib/inquiries";
 import { bookingSchema, firstIssueMessage, isSpam } from "@/lib/validation";
+import { clientKey, rateLimit } from "@/lib/rateLimit";
 
 export async function POST(request: Request) {
+  if (!rateLimit(`booking:${clientKey(request)}`, 5, 10 * 60 * 1000)) {
+    return NextResponse.json(
+      { error: "Too many requests sent recently. Please try again in a few minutes." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
 

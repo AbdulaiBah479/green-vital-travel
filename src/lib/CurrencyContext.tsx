@@ -1,7 +1,13 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { FALLBACK_RATES, type CurrencyCode, type Rates, formatPrice as formatPriceFor } from "./currency";
+import {
+  FALLBACK_RATES,
+  isCurrencyCode,
+  type CurrencyCode,
+  type Rates,
+  formatPrice as formatPriceFor,
+} from "./currency";
 
 type CurrencyContextValue = {
   currency: CurrencyCode;
@@ -21,9 +27,12 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     // initializer on purpose — the initializer would run during SSR (where
     // localStorage doesn't exist) and produce a client/server markup
     // mismatch on first paint. The one-render cost here is intentional.
-    const stored = window.localStorage.getItem(STORAGE_KEY) as CurrencyCode | null;
+    // Validated rather than trusted outright — a stale value from a previous
+    // version of this key, or manual tampering, would otherwise flow straight
+    // into convert()/formatPrice() and print "$NaN" as every price on the site.
+    const stored = window.localStorage.getItem(STORAGE_KEY);
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (stored) setCurrencyState(stored);
+    if (isCurrencyCode(stored)) setCurrencyState(stored);
   }, []);
 
   useEffect(() => {

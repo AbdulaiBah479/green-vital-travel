@@ -1,10 +1,18 @@
 import { NextResponse } from "next/server";
 import { submitInquiry } from "@/lib/inquiries";
 import { contactSchema, firstIssueMessage, isSpam } from "@/lib/validation";
+import { clientKey, rateLimit } from "@/lib/rateLimit";
 
 const SUCCESS_MESSAGE = "Thanks — a member of our team will respond within one business day.";
 
 export async function POST(request: Request) {
+  if (!rateLimit(`contact:${clientKey(request)}`, 5, 10 * 60 * 1000)) {
+    return NextResponse.json(
+      { error: "Too many messages sent recently. Please try again in a few minutes." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
 

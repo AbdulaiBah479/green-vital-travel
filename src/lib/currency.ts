@@ -24,8 +24,17 @@ export const FALLBACK_RATES: Rates = {
   CAD: 1.36,
 };
 
+export function isCurrencyCode(value: unknown): value is CurrencyCode {
+  return typeof value === "string" && currencies.some((c) => c.code === value);
+}
+
 export function convert(usd: number, currency: CurrencyCode, rates: Rates = FALLBACK_RATES): number {
-  return usd * rates[currency];
+  // rates[currency] is only undefined if `currency` reached here without
+  // going through isCurrencyCode first (e.g. a stale/tampered localStorage
+  // value cast without validation) — fall back to USD's rate (1) rather
+  // than silently produce NaN and show "$NaN" throughout the site.
+  const rate = rates[currency] ?? 1;
+  return usd * rate;
 }
 
 export function formatPrice(usd: number, currency: CurrencyCode, rates: Rates = FALLBACK_RATES): string {

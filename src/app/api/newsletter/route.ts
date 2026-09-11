@@ -1,10 +1,18 @@
 import { NextResponse } from "next/server";
 import { subscribeNewsletter } from "@/lib/inquiries";
 import { firstIssueMessage, isSpam, newsletterSchema } from "@/lib/validation";
+import { clientKey, rateLimit } from "@/lib/rateLimit";
 
 const SUCCESS_MESSAGE = "You're on the list — welcome aboard.";
 
 export async function POST(request: Request) {
+  if (!rateLimit(`newsletter:${clientKey(request)}`, 5, 10 * 60 * 1000)) {
+    return NextResponse.json(
+      { error: "Too many attempts recently. Please try again in a few minutes." },
+      { status: 429 }
+    );
+  }
+
   try {
     const body = await request.json();
 

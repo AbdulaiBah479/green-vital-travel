@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Keeps npm packages patched automatically — this is how the Next.js
+  # RCE (GHSA-p293-qw3h-jr36 / GHSA-2xp9-vwfh-vxw4) would have surfaced as a
+  # PR within a week instead of sitting undetected until someone happened to
+  # run `npm audit` by hand.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      dev-dependencies:
+        dependency-type: "development"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
