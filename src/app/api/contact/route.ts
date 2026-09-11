@@ -1,33 +1,31 @@
 import { NextResponse } from "next/server";
 import { submitInquiry } from "@/lib/inquiries";
+import { contactSchema, firstIssueMessage, isSpam } from "@/lib/validation";
+
+const SUCCESS_MESSAGE = "Thanks — a member of our team will respond within one business day.";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const name = String(body.name ?? "").trim();
-    const email = String(body.email ?? "").trim();
-    const subject = String(body.subject ?? "").trim();
-    const message = String(body.message ?? "").trim();
 
-    if (!name || !email || !subject || !message) {
+    // Spam is accepted with a normal success response and silently dropped —
+    // never sent, never charged against the email quota, and the bot never
+    // learns it was caught.
+    if (isSpam(body)) {
+      return NextResponse.json({ ok: true, message: SUCCESS_MESSAGE });
+    }
+
+    const parsed = contactSchema.safeParse(body);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "Please complete all fields before sending your message." },
+        { error: firstIssueMessage(parsed.error, "Please complete all fields before sending your message.") },
         { status: 400 }
       );
     }
 
-    await submitInquiry("contact", {
-      name,
-      email,
-      subject,
-      message,
-      source: "website-contact-form",
-    });
+    await submitInquiry("contact", { ...parsed.data, source: "website-contact-form" });
 
-    return NextResponse.json({
-      ok: true,
-      message: "Thanks — a member of our team will respond within one business day.",
-    });
+    return NextResponse.json({ ok: true, message: SUCCESS_MESSAGE });
   } catch (error) {
     console.error("Contact form submission failed:", error);
     return NextResponse.json(

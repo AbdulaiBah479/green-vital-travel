@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useSyncExternalStore } from "react";
 
-const STORAGE_KEY = "krishna-travels-storage-notice-dismissed";
+const STORAGE_KEY = "greenvital-storage-notice-dismissed";
 
 // useSyncExternalStore (rather than an effect + setState) so the server
 // render and the client's first render agree on nothing — localStorage

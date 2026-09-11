@@ -27,6 +27,7 @@ export default function ContactForm({
     subjects.find((s) => s.toLowerCase().includes(initialSubject?.toLowerCase() ?? "___")) ?? subjects[0]
   );
   const [message, setMessage] = useState(initialMessage ?? "");
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -47,7 +48,7 @@ export default function ContactForm({
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, subject, message, companyWebsite }),
       });
 
       const data = await response.json();
@@ -83,6 +84,18 @@ export default function ContactForm({
           {error}
         </p>
       )}
+      {/* Honeypot: invisible and unreachable by keyboard, so only a bot that
+          blindly fills every field on the page ever puts anything here. */}
+      <input
+        type="text"
+        name="companyWebsite"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+      />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <input
           type="text"

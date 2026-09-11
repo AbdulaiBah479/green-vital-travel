@@ -1,42 +1,36 @@
 import { NextResponse } from "next/server";
 import { submitInquiry } from "@/lib/inquiries";
+import { bookingSchema, firstIssueMessage, isSpam } from "@/lib/validation";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const tourSlug = String(body.tourSlug ?? "").trim();
-    const tourTitle = String(body.tourTitle ?? "").trim();
-    const departureDate = String(body.departureDate ?? "").trim();
-    const travelers = Number(body.travelers ?? 1);
-    const leadName = String(body.leadName ?? "").trim();
-    const leadEmail = String(body.leadEmail ?? "").trim();
-    const leadPhone = String(body.leadPhone ?? "").trim();
-    const addOns = {
-      insurance: Boolean(body.addOns?.insurance),
-      transfer: Boolean(body.addOns?.transfer),
-      roomUpgrade: Boolean(body.addOns?.roomUpgrade),
-    };
-    const total = Number(body.total ?? 0);
-    const notes = String(body.notes ?? "").trim();
 
-    if (!tourSlug || !tourTitle || !departureDate || !leadName || !leadEmail) {
+    if (isSpam(body)) {
+      return NextResponse.json({
+        ok: true,
+        reference: undefined,
+        message: "Your reservation request has been received and our team will follow up shortly.",
+      });
+    }
+
+    const parsed = bookingSchema.safeParse(body);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "Please complete the trip and traveler details before submitting your request." },
+        {
+          error: firstIssueMessage(
+            parsed.error,
+            "Please complete the trip and traveler details before submitting your request."
+          ),
+        },
         { status: 400 }
       );
     }
 
     const result = await submitInquiry("booking", {
-      tourSlug,
-      tourTitle,
-      departureDate,
-      travelers,
-      leadName,
-      leadEmail,
-      leadPhone: leadPhone || undefined,
-      addOns,
-      total,
-      notes,
+      ...parsed.data,
+      leadPhone: parsed.data.leadPhone || undefined,
+      notes: parsed.data.notes || "",
       source: "website-booking-wizard",
     });
 

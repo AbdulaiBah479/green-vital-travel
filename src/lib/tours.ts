@@ -842,6 +842,15 @@ export function toursForDestination(destinationSlug: string) {
   return tours.filter((t) => t.destinationSlug === destinationSlug);
 }
 
+// A tour's `deal` has no code path that ever clears it once `endsIso`
+// passes — read through this everywhere a deal drives price or a badge, so
+// an expired promotion stops showing itself as live instead of lingering
+// until someone remembers to edit the data by hand.
+export function activeDeal(tour: Tour): Deal | undefined {
+  if (!tour.deal) return undefined;
+  return new Date(tour.deal.endsIso).getTime() >= Date.now() ? tour.deal : undefined;
+}
+
 export const categories: TourCategory[] = [
   "Cultural",
   "Adventure",

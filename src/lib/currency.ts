@@ -9,10 +9,13 @@ export const currencies: { code: CurrencyCode; label: string; symbol: string }[]
   { code: "CAD", label: "Canadian Dollar", symbol: "C$" },
 ];
 
-// Indicative rates off USD — fixed rather than fetched live, since this
-// site has no backend/API budget. Good enough for "what would this
-// roughly cost in my currency," not for anything transactional.
-const RATES: Record<CurrencyCode, number> = {
+export type Rates = Record<CurrencyCode, number>;
+
+// Used the instant the page loads (before the live feed answers) and again
+// any time that feed is unreachable — kept close to real-world rates so the
+// fallback is never wildly off, but it will drift over time. See
+// /api/rates for the actual live source.
+export const FALLBACK_RATES: Rates = {
   USD: 1,
   SLE: 22.5,
   EUR: 0.92,
@@ -21,12 +24,12 @@ const RATES: Record<CurrencyCode, number> = {
   CAD: 1.36,
 };
 
-export function convert(usd: number, currency: CurrencyCode): number {
-  return usd * RATES[currency];
+export function convert(usd: number, currency: CurrencyCode, rates: Rates = FALLBACK_RATES): number {
+  return usd * rates[currency];
 }
 
-export function formatPrice(usd: number, currency: CurrencyCode): string {
-  const amount = convert(usd, currency);
+export function formatPrice(usd: number, currency: CurrencyCode, rates: Rates = FALLBACK_RATES): string {
+  const amount = convert(usd, currency, rates);
   const symbol = currencies.find((c) => c.code === currency)?.symbol ?? "$";
   const rounded = amount >= 1000 ? Math.round(amount / 10) * 10 : Math.round(amount);
   return `${symbol}${rounded.toLocaleString("en-US")}`;

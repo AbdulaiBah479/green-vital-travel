@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
-import type { Tour } from "@/lib/tours";
+import { activeDeal, type Tour } from "@/lib/tours";
 
 const steps = ["Trip Details", "Traveler Info", "Add-Ons", "Review"];
 
@@ -33,8 +33,10 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
   const [submitting, setSubmitting] = useState(false);
   const [reference, setReference] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [companyWebsite, setCompanyWebsite] = useState("");
 
-  const unitPrice = tour.deal ? tour.priceFrom * (1 - tour.deal.percentOff / 100) : tour.priceFrom;
+  const deal = activeDeal(tour);
+  const unitPrice = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : tour.priceFrom;
   const addOnTotal =
     (addOns.insurance ? ADDON_COST.insurance * travelers : 0) +
     (addOns.transfer ? ADDON_COST.transfer * travelers : 0) +
@@ -67,6 +69,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
           addOns,
           total,
           source: "website-booking-wizard",
+          companyWebsite,
         }),
       });
 
@@ -127,6 +130,16 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
 
   return (
     <div className="rounded-3xl border border-ink/10 bg-paper-dim p-6 sm:p-10">
+      <input
+        type="text"
+        name="companyWebsite"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+      />
       <div className="mb-10 flex items-center gap-2">
         {steps.map((label, i) => (
           <div key={label} className="flex flex-1 flex-col gap-2">

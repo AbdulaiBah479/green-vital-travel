@@ -6,6 +6,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -23,7 +24,7 @@ export default function NewsletterForm() {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, companyWebsite }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
@@ -40,6 +41,16 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate>
+      <input
+        type="text"
+        name="companyWebsite"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+      />
       <div className="flex gap-2">
         <input
           type="email"

@@ -11,6 +11,7 @@ export default function WriteReviewForm() {
   const [rating, setRating] = useState(5);
   const [name, setName] = useState("");
   const [body, setBody] = useState("");
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -28,7 +29,7 @@ export default function WriteReviewForm() {
       const response = await fetch("/api/review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tourSlug, rating, name, body }),
+        body: JSON.stringify({ tourSlug, rating, name, body, companyWebsite }),
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "We couldn't submit your review right now.");
@@ -62,6 +63,16 @@ export default function WriteReviewForm() {
           {error}
         </p>
       )}
+      <input
+        type="text"
+        name="companyWebsite"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+      />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <select
           value={tourSlug}

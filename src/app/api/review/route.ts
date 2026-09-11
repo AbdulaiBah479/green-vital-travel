@@ -1,30 +1,35 @@
 import { NextResponse } from "next/server";
 import { submitReview } from "@/lib/inquiries";
 import { tours } from "@/lib/tours";
+import { firstIssueMessage, isSpam, reviewSchema } from "@/lib/validation";
+
+const SUCCESS_MESSAGE = "Thanks — we'll verify it against your booking before it goes live.";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const tourSlug = String(body.tourSlug ?? "").trim();
-    const rating = Number(body.rating);
-    const name = String(body.name ?? "").trim();
-    const reviewBody = String(body.body ?? "").trim();
 
-    const tour = tours.find((t) => t.slug === tourSlug);
+    if (isSpam(body)) {
+      return NextResponse.json({ ok: true, message: SUCCESS_MESSAGE });
+    }
 
-    if (!tour || !name || !reviewBody || !Number.isInteger(rating) || rating < 1 || rating > 5) {
+    const parsed = reviewSchema.safeParse(body);
+    const tour = parsed.success ? tours.find((t) => t.slug === parsed.data.tourSlug) : undefined;
+
+    if (!parsed.success || !tour) {
       return NextResponse.json(
-        { error: "Please complete all fields before submitting your review." },
+        {
+          error: parsed.success
+            ? "Please choose a valid tour."
+            : firstIssueMessage(parsed.error, "Please complete all fields before submitting your review."),
+        },
         { status: 400 }
       );
     }
 
-    await submitReview({ tourSlug, tourTitle: tour.title, rating, name, body: reviewBody });
+    await submitReview({ ...parsed.data, tourTitle: tour.title });
 
-    return NextResponse.json({
-      ok: true,
-      message: "Thanks — we'll verify it against your booking before it goes live.",
-    });
+    return NextResponse.json({ ok: true, message: SUCCESS_MESSAGE });
   } catch (error) {
     console.error("Review submission failed:", error);
     return NextResponse.json(

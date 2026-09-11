@@ -4,14 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
-import type { Tour } from "@/lib/tours";
+import { activeDeal, type Tour } from "@/lib/tours";
 
 export default function TourBookingSidebar({ tour }: { tour: Tour }) {
   const { formatPrice } = useCurrency();
   const [date, setDate] = useState(tour.departureDates[0] ?? "");
   const [travelers, setTravelers] = useState(2);
 
-  const unitPrice = tour.deal ? tour.priceFrom * (1 - tour.deal.percentOff / 100) : tour.priceFrom;
+  const deal = activeDeal(tour);
+  const unitPrice = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : tour.priceFrom;
   const total = unitPrice * travelers;
   const bookHref = `/book/${tour.slug}?date=${encodeURIComponent(date)}&travelers=${travelers}`;
 
@@ -19,7 +20,7 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
     <div className="sticky top-36 lg:top-52 rounded-3xl border border-ink/10 bg-paper-dim p-6">
       <p className="text-[10px] eyebrow uppercase text-ink/70">From</p>
       <div className="flex items-baseline gap-2">
-        {tour.deal && (
+        {deal && (
           <span className="text-sm text-ink/70 line-through">{formatPrice(tour.priceFrom)}</span>
         )}
         <span className="font-serif text-3xl text-ink">{formatPrice(unitPrice)}</span>

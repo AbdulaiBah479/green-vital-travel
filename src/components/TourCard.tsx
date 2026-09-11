@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useCurrency } from "@/lib/CurrencyContext";
 import WishlistButton from "./WishlistButton";
 import { reviewsForTour, averageRating } from "@/lib/reviews";
-import type { Tour } from "@/lib/tours";
+import { activeDeal, type Tour } from "@/lib/tours";
 
 export default function TourCard({ tour }: { tour: Tour }) {
   const { formatPrice } = useCurrency();
-  const discounted = tour.deal ? tour.priceFrom * (1 - tour.deal.percentOff / 100) : null;
+  const deal = activeDeal(tour);
+  const discounted = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : null;
   // Real reviews only — never the tour's own baked-in rating/reviewCount,
   // which is leftover placeholder data, not something travelers actually left.
   const tourReviews = reviewsForTour(tour.slug);
@@ -30,9 +31,9 @@ export default function TourCard({ tour }: { tour: Tour }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        {tour.deal && (
+        {deal && (
           <span className="absolute left-4 top-4 rounded-full bg-accent-2 px-3 py-1 text-[10px] eyebrow uppercase text-ink">
-            {tour.deal.label} · {tour.deal.percentOff}% off
+            {deal.label} · {deal.percentOff}% off
           </span>
         )}
         <WishlistButton slug={`tour:${tour.slug}`} label={tour.title} className="absolute right-4 top-4" />

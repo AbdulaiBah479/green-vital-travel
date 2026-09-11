@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
-import { type CurrencyCode, formatPrice as formatPriceFor } from "./currency";
+import { FALLBACK_RATES, type CurrencyCode, type Rates, formatPrice as formatPriceFor } from "./currency";
 
 type CurrencyContextValue = {
   currency: CurrencyCode;
@@ -10,10 +10,11 @@ type CurrencyContextValue = {
 };
 
 const CurrencyContext = createContext<CurrencyContextValue | null>(null);
-const STORAGE_KEY = "krishna-travels-currency";
+const STORAGE_KEY = "greenvital-currency";
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const [currency, setCurrencyState] = useState<CurrencyCode>("USD");
+  const [rates, setRates] = useState<Rates>(FALLBACK_RATES);
 
   useEffect(() => {
     // Reads localStorage after mount rather than in a lazy useState
@@ -25,12 +26,29 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     if (stored) setCurrencyState(stored);
   }, []);
 
+  useEffect(() => {
+    // Live rates are a nice-to-have layered on top of the fallback table,
+    // never a requirement — any failure here (offline, upstream down) just
+    // leaves FALLBACK_RATES in place, so prices are always at least
+    // approximately right and never blocked on this request.
+    let cancelled = false;
+    fetch("/api/rates")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data?.rates) setRates(data.rates);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const setCurrency = useCallback((c: CurrencyCode) => {
     setCurrencyState(c);
     window.localStorage.setItem(STORAGE_KEY, c);
   }, []);
 
-  const formatPrice = useCallback((usd: number) => formatPriceFor(usd, currency), [currency]);
+  const formatPrice = useCallback((usd: number) => formatPriceFor(usd, currency, rates), [currency, rates]);
 
   return (
     <CurrencyContext.Provider value={{ currency, setCurrency, formatPrice }}>

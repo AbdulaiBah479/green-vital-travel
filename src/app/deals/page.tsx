@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import TourCard from "@/components/TourCard";
-import { tours } from "@/lib/tours";
+import { activeDeal, tours } from "@/lib/tours";
 
 const description =
   "Time-limited offers on a handful of tours — early-bird, seasonal, and last-minute pricing. Same trip, same team, a better number.";
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 
 export default function DealsPage() {
   const deals = tours
-    .filter((t) => !!t.deal)
-    .sort((a, b) => (b.deal?.percentOff ?? 0) - (a.deal?.percentOff ?? 0));
+    .filter((t) => !!activeDeal(t))
+    .sort((a, b) => (activeDeal(b)?.percentOff ?? 0) - (activeDeal(a)?.percentOff ?? 0));
 
   return (
     <main className="pt-40 pb-24 sm:pb-32 lg:pt-48">
@@ -50,10 +50,10 @@ export default function DealsPage() {
               <Reveal key={t.slug} delay={(i % 3) * 90}>
                 <div>
                   <TourCard tour={t} />
-                  {t.deal && (
+                  {activeDeal(t) && (
                     <p className="mt-3 text-center text-xs text-ink/70">
                       Offer ends{" "}
-                      {new Date(t.deal.endsIso).toLocaleDateString("en-US", {
+                      {new Date(activeDeal(t)!.endsIso).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
                         year: "numeric",

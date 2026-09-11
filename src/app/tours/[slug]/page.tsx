@@ -7,7 +7,7 @@ import TourCard, { Stars } from "@/components/TourCard";
 import TourItinerary from "@/components/TourItinerary";
 import TourBookingSidebar from "@/components/TourBookingSidebar";
 import WishlistButton from "@/components/WishlistButton";
-import { tours, getTour } from "@/lib/tours";
+import { tours, getTour, activeDeal } from "@/lib/tours";
 import { getDestination } from "@/lib/destinations";
 import { reviewsForTour, averageRating } from "@/lib/reviews";
 import { siteUrl } from "@/lib/site";
@@ -58,7 +58,8 @@ export default async function TourPage({
   const hasReviews = tourReviews.length > 0;
   const rating = hasReviews ? averageRating(tourReviews) : 0;
   const related = tours.filter((t) => t.category === tour.category && t.slug !== tour.slug).slice(0, 3);
-  const discounted = tour.deal ? tour.priceFrom * (1 - tour.deal.percentOff / 100) : null;
+  const deal = activeDeal(tour);
+  const discounted = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
