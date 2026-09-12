@@ -62,6 +62,12 @@ const nextConfig: NextConfig = {
     // These source photos never change once published — cache the
     // optimized variants for a year instead of Next's 60s default.
     minimumCacheTTL: 31536000,
+    // Next.js 16 restricts quality props to an explicit allow-list (default
+    // is [75] only) and silently coerces anything else to the nearest
+    // allowed value. The services-section imagery deliberately requests 85
+    // for extra sharpness — without listing it here that request would be
+    // silently downgraded back to 75.
+    qualities: [75, 85],
   },
   async headers() {
     return [
