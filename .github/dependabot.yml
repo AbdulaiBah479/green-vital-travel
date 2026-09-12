@@ -4,14 +4,39 @@ updates:
   # RCE (GHSA-p293-qw3h-jr36 / GHSA-2xp9-vwfh-vxw4) would have surfaced as a
   # PR within a week instead of sitting undetected until someone happened to
   # run `npm audit` by hand.
+  #
+  # Security-vulnerability PRs (GitHub's separate Dependabot Security
+  # Updates feature) are NOT affected by the `ignore` rule below and will
+  # still open regardless of how large the version jump is — only routine,
+  # no-vulnerability version-update noise is being held back here.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
     groups:
+      # react and react-dom must stay on matching versions — react-dom
+      # pins an exact peer range on react (e.g. react-dom@19.2.8 requires
+      # react@^19.2.8), so bumping one without the other breaks `npm ci`.
+      # Learned this the hard way: Dependabot's first run proposed them as
+      # two separate PRs, and CI correctly failed both.
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
       dev-dependencies:
         dependency-type: "development"
+        update-types: ["minor", "patch"]
+    ignore:
+      # Major-version bumps (typescript 5->7, eslint 9->10, @types/node
+      # 20->26, etc.) routinely carry real breaking changes and deserve a
+      # deliberate look rather than an auto-generated PR piling up weekly
+      # on a solo-maintained project — bump these by hand when there's a
+      # real reason to.
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
