@@ -41,7 +41,7 @@ const items = [
   },
   {
     title: "Pay by Card or Mobile Money",
-    body: "Orange Money, Afrimoney, bank transfer, or card — pay the way that's actually convenient for you.",
+    body: "Orange Money, Afrimoney, bank transfer, or card — arranged directly with our team once your booking is confirmed, the way that's actually convenient for you.",
     icon: <path d="M2 7h20M6 15h4M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" />,
   },
 ];
