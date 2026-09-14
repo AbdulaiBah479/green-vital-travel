@@ -15,9 +15,15 @@ const serviceCards = [
   },
   {
     title: "Car Rentals",
-    description: "Flexible airport transfers and self-drive options for business trips and private journeys.",
+    description: "Self-drive and private-driver options for business trips and private journeys, in Freetown and beyond.",
     image: "/images/unsplash/1533473359331-0135ef1b58bf.jpg",
     alt: "Rental SUV parked on a desert road",
+  },
+  {
+    title: "Airport Transfers",
+    description: "Booked as part of the itinerary and timed against your actual flight — not a generic pickup window and a driver holding a sign.",
+    image: "/images/unsplash/1449965408869-eaa3f722e40d.jpg",
+    alt: "A driver's hand on the steering wheel at dusk, city lights ahead",
   },
   {
     title: "Visa Assistance",
