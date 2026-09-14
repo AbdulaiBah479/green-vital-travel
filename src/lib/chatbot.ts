@@ -172,6 +172,62 @@ const rules: Rule[] = [
     }),
   },
   {
+    id: "visa-documents",
+    test: (t) =>
+      includesAny(t, [
+        "visa",
+        "visas",
+        "passport",
+        "entry requirement",
+        "entry requirements",
+        "documentation",
+        "what documents",
+        "what do i need",
+      ]),
+    respond: () => ({
+      text: "We handle visa assistance and travel documentation as part of the booking — requirements vary by destination and by passport, so we check yours against exactly where you're headed rather than guessing here. The Travel Requirements page has the general picture, and our team confirms the specifics for your trip.",
+      quickReplies: [
+        { label: "Travel Requirements page", href: "/travel-requirements" },
+        { label: "Talk to our team", href: "/#contact" },
+      ],
+    }),
+  },
+  {
+    id: "services-general",
+    test: (t) =>
+      includesAny(t, [
+        "hotel",
+        "hotels",
+        "accommodation",
+        "villa",
+        "villas",
+        "car hire",
+        "car rental",
+        "car rentals",
+        "rent a car",
+        "airport transfer",
+        "airport transfers",
+        "airport pickup",
+        "private driver",
+        "insurance",
+        "travel insurance",
+        "boat ticket",
+        "boat tickets",
+        "ferry",
+        "water taxi",
+        "flight ticket",
+        "air ticket",
+        "ticketing",
+      ]),
+    respond: () => ({
+      text: "Yes — flights, boat and ferry tickets, hotels and villas, car hire, airport transfers, travel insurance, and visa documentation are all things we arrange directly, as part of one itinerary rather than five separate bookings.",
+      quickReplies: [
+        { label: "See all services", href: "/services" },
+        { label: "Talk to our team", href: "/#contact" },
+      ],
+    }),
+  },
+  {
     id: "destinations-general",
     test: (t) =>
       includesAny(t, ["where do you", "destinations", "where can i go", "recommend a place", "where should i go"]),

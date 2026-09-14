@@ -29,3 +29,27 @@ describe("chatbot identity", () => {
     expect(reply.text.toLowerCase()).toContain("ai");
   });
 });
+
+describe("chatbot fallback answers real, common questions", () => {
+  it("answers a visa question instead of giving up", () => {
+    const reply = getBotReply("what do I need for a visa to Dubai");
+    expect(reply.text.toLowerCase()).toContain("visa");
+    expect(reply.text).not.toContain("I don't have a confident answer");
+  });
+
+  it("confirms hotel bookings are a real service", () => {
+    const reply = getBotReply("do you help with hotel bookings");
+    expect(reply.text.toLowerCase()).toContain("hotel");
+    expect(reply.text).not.toContain("I don't have a confident answer");
+  });
+
+  it("confirms car hire is a real service", () => {
+    const reply = getBotReply("can I rent a car through you");
+    expect(reply.text).not.toContain("I don't have a confident answer");
+  });
+
+  it("confirms travel insurance is a real service", () => {
+    const reply = getBotReply("what about travel insurance");
+    expect(reply.text).not.toContain("I don't have a confident answer");
+  });
+});

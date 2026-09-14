@@ -42,7 +42,7 @@ export const contact = {
   // Real business email, confirmed by the site owner.
   email: "greenvitaltravelandtouragencyl@gmail.com",
   phones: ["+232 78 411227", "+232 99 979607", "+232 75 101044"],
-  whatsapp: "23278411227",
+  whatsapp: "23275101044",
   address: {
     street: "57 Main Motor Road, Congo Cross",
     city: "Freetown",
