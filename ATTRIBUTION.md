@@ -68,6 +68,14 @@ License: [Unsplash License](https://unsplash.com/license) — free to use commer
 | `1781709246027-8c8f59aed2e8.jpg` | <https://images.unsplash.com/photo-1781709246027-8c8f59aed2e8> |
 | `1781861799305-d22ee4b22795.jpg` | <https://images.unsplash.com/photo-1781861799305-d22ee4b22795> |
 
+## Service photography (`public/images/services/`)
+
+| File | Source | License | Author |
+|---|---|---|---|
+| `boat-ticketing.jpg` | <https://commons.wikimedia.org/wiki/File:FLO_Water_Taxi_in_Boston_Harbor.jpg> | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Fletcher6 (copyright: Matthew Hill) |
+
+Resized from the original 5059×3377 to 2400px wide and re-encoded at quality 82 before self-hosting, matching the rest of this project's photography.
+
 ## Airline partner logos (`public/airlines/`)
 
 Sourced individually from freely-licensed sources (primarily Wikimedia Commons), checked one at a time to avoid the common trap of pulling a "non-free" logo scoped to a single Wikipedia article rather than a genuinely freely-licensed Commons upload. Exact per-file source URLs weren't logged at the time, unlike the Unsplash photos above — if any of these is ever challenged, re-verify by searching Wikimedia Commons for the airline's official logo file rather than assuming this note already covers it.

@@ -10,12 +10,13 @@ export const siteFullName = "Greenvital Travel and Tour Agency Limited";
 export const siteTitle = "Greenvital | Travel with confidence";
 
 export const siteDescription =
-  "Greenvital offers air ticketing, car rentals, visa assistance, hotel bookings, tours, and travel insurance across Sierra Leone and West Africa.";
+  "Greenvital offers air and boat ticketing, car rentals, visa assistance, hotel bookings, tours, and travel insurance across Sierra Leone and West Africa.";
 
 export const siteKeywords = [
   "Greenvital",
   "travel agency Sierra Leone",
   "air ticketing Freetown",
+  "boat ticketing Sierra Leone",
   "visa assistance Sierra Leone",
   "hotel bookings West Africa",
   "holiday packages",
@@ -38,14 +39,28 @@ export const founder = {
 };
 
 export const contact = {
-  // Real business email, confirmed by the site owner. Phones are the two
-  // mobile numbers listed on the actual NIB business registration form.
+  // Real business email, confirmed by the site owner.
   email: "greenvitaltravelandtouragencyl@gmail.com",
-  phones: ["+232 78 411227", "+232 78 598481"],
+  phones: ["+232 78 411227", "+232 71 170292", "+232 75 101044"],
   whatsapp: "23278411227",
   address: {
     street: "57 Main Motor Road, Congo Cross",
     city: "Freetown",
     country: "Sierra Leone",
   },
+};
+
+// Handle normalized from the name given for these accounts ("G~travel and
+// tours") into the alphanumeric-only format every one of these platforms
+// requires — none allow the tilde or the spaces in the original. Confirm
+// each of these actually matches the registered account before relying on
+// them; a name and a live handle aren't guaranteed to be the same string.
+const socialHandle = "gtravelandtours";
+
+export const social = {
+  facebook: `https://www.facebook.com/${socialHandle}`,
+  instagram: `https://www.instagram.com/${socialHandle}`,
+  twitter: `https://x.com/${socialHandle}`,
+  tiktok: `https://www.tiktok.com/@${socialHandle}`,
+  linkedin: `https://www.linkedin.com/company/${socialHandle}`,
 };

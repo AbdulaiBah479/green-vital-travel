@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
+import SocialLinks from "./SocialLinks";
 import { contact, companyRegistration, siteFullName } from "@/lib/site";
 
 const exploreLinks = [
@@ -111,6 +112,7 @@ export default function Footer() {
                 <li key={l}>{l}</li>
               ))}
             </ul>
+            <SocialLinks className="mt-5" />
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import Magnetic from "@/components/Magnetic";
 
 const description =
-  "Flights, hotels, cruises, car hire, transfers, and insurance — arranged as part of your trip by our team, not booked blind through a search engine.";
+  "Flights, boat tickets, hotels, cruises, car hire, transfers, and insurance — arranged as part of your trip by our team, not booked blind through a search engine.";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -28,6 +28,13 @@ const services = [
     icon: (
       <path d="M10 21v-6l8-5-1-3-9 3-4-3H2l2 5-2 1 1 2 4-1 4 6h1Z" />
     ),
+  },
+  {
+    title: "Boat Ticketing",
+    body: "Water taxi and ferry tickets across the peninsula and out to the islands — including the Lungi airport crossing, timed against your flight, not left to chance at the jetty.",
+    img: "/images/services/boat-ticketing.jpg",
+    imgAlt: "A small passenger water taxi crossing the harbor",
+    icon: <path d="M3 17c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0M5 17l1.5-6h9L17 17M11 11V4l5 3-5 3" />,
   },
   {
     title: "Hotels & Villas",

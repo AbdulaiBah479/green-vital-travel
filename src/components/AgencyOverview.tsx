@@ -8,6 +8,12 @@ const serviceCards = [
     alt: "Airplane wing above the clouds",
   },
   {
+    title: "Boat Ticketing",
+    description: "Water taxi and ferry tickets across the peninsula and out to the islands, including the Lungi airport crossing.",
+    image: "/images/services/boat-ticketing.jpg",
+    alt: "A small passenger water taxi crossing the harbor",
+  },
+  {
     title: "Car Rentals",
     description: "Flexible airport transfers and self-drive options for business trips and private journeys.",
     image: "/images/unsplash/1533473359331-0135ef1b58bf.jpg",
