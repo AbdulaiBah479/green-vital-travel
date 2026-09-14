@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "node scripts/tina-build.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
@@ -19,11 +19,13 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "sonner": "^2.0.8",
+    "tinacms": "^3.14.0",
     "zod": "^4.5.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
+    "@tinacms/cli": "^3.0.0",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^20",
     "@types/react": "^19",

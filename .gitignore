@@ -44,3 +44,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tinacms (generated on build; not source)
+/tina/__generated__/

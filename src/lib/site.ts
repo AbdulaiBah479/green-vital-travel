@@ -1,3 +1,7 @@
+// Editable from the admin panel (content/settings/index.json) so the site
+// owner can update contact details without touching code.
+import settings from "../../content/settings/index.json";
+
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.NODE_ENV === "production" ? "https://gtravelsandtours.com" : "http://localhost:3000")
@@ -39,10 +43,9 @@ export const founder = {
 };
 
 export const contact = {
-  // Real business email, confirmed by the site owner.
-  email: "greenvitaltravelandtouragencyl@gmail.com",
-  phones: ["+232 78 411227", "+232 99 979607", "+232 75 101044"],
-  whatsapp: "23275101044",
+  email: settings.email,
+  phones: settings.phones,
+  whatsapp: settings.whatsapp,
   address: {
     street: "57 Main Motor Road, Congo Cross",
     city: "Freetown",
