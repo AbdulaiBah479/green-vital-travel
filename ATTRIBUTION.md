@@ -76,6 +76,15 @@ License: [Unsplash License](https://unsplash.com/license) — free to use commer
 
 Resized from the original 5059×3377 to 2400px wide and re-encoded at quality 82 before self-hosting, matching the rest of this project's photography.
 
+| `china-great-wall.jpg` | <https://commons.wikimedia.org/wiki/File:Great_Wall_of_China,_Mutianyu_Section.jpg> | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | Francisco Diez |
+| `china-shanghai.jpg` | <https://commons.wikimedia.org/wiki/File:Lujiazui_skyline_by_night_from_Bund,_fully_illuminated.jpg> | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Daniel Case |
+| `china-terracotta-army.jpg` | <https://commons.wikimedia.org/wiki/File:51900-Terracota-Army.jpg> | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | Xiquinho Silva |
+| `usa-nyc-liberty.jpg` | <https://commons.wikimedia.org/wiki/File:Statue_of_liberty_and_nyc_skyline.jpg> | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Gustavo Collins |
+| `usa-grand-canyon.jpg` | <https://commons.wikimedia.org/wiki/File:Grand_Canyon_South_Rim_at_Sunrise.jpg> | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Jonathan Zander (Digon3) |
+| `usa-las-vegas.jpg` | <https://commons.wikimedia.org/wiki/File:Las_Vegas_Strip_from_Resorts_World_February_2023_HDR_1.jpg> | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | King of Hearts |
+
+All four resized to a 1920px-wide max (matching this project's other photography) and re-encoded at quality 82 before self-hosting.
+
 ## Airline partner logos (`public/airlines/`)
 
 Sourced individually from freely-licensed sources (primarily Wikimedia Commons), checked one at a time to avoid the common trap of pulling a "non-free" logo scoped to a single Wikipedia article rather than a genuinely freely-licensed Commons upload. Exact per-file source URLs weren't logged at the time, unlike the Unsplash photos above — if any of these is ever challenged, re-verify by searching Wikimedia Commons for the airline's official logo file rather than assuming this note already covers it.

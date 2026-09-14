@@ -516,6 +516,56 @@ export const destinations: Destination[] = [
     ],
     relatedTourSlugs: ["umrah-guided-pilgrimage"],
   },
+  {
+    slug: "china",
+    name: "China",
+    country: "China",
+    region: "Asia",
+    heroImg: "/images/destinations/china-great-wall.jpg",
+    gallery: ["/images/destinations/china-shanghai.jpg", "/images/destinations/china-terracotta-army.jpg"],
+    hook: "The Great Wall, the Terracotta Army, and a skyline built overnight",
+    description:
+      "Three cities, three very different Chinas — Beijing's imperial past and hutong alleys, Xi'an's buried army of ten thousand, and Shanghai's neon-lit Pudong skyline across the Bund.",
+    bestTime: "March–May and September–November",
+    quickFacts: {
+      currency: "Chinese Yuan (¥)",
+      language: "Mandarin",
+      flightNote: "~15–18hr via one connection, usually Istanbul, Addis Ababa, or Dubai",
+      climate: "Continental and dry in the north, humid and subtropical in Shanghai",
+    },
+    topExperiences: [
+      "Walking the Mutianyu section of the Great Wall",
+      "The Terracotta Army outside Xi'an",
+      "Beijing's hutongs and the Forbidden City",
+      "The Bund at night, facing Pudong's skyline",
+    ],
+    relatedTourSlugs: ["china-beijing-xian-shanghai"],
+  },
+  {
+    slug: "usa",
+    name: "USA",
+    country: "United States",
+    region: "Americas",
+    heroImg: "/images/destinations/usa-nyc-liberty.jpg",
+    gallery: ["/images/destinations/usa-grand-canyon.jpg", "/images/destinations/usa-las-vegas.jpg"],
+    hook: "From the Manhattan skyline to the rim of the Grand Canyon",
+    description:
+      "New York's energy, a night on the Las Vegas Strip, and the sheer scale of the Grand Canyon at sunrise — the classic first look at America, coast to desert.",
+    bestTime: "April–June and September–October",
+    quickFacts: {
+      currency: "US Dollar ($)",
+      language: "English",
+      flightNote: "~10–14hr via one connection, usually through Europe",
+      climate: "Varies widely — temperate in New York, desert-dry across the Southwest",
+    },
+    topExperiences: [
+      "The Manhattan skyline from a Statue of Liberty ferry",
+      "Sunrise at the Grand Canyon's South Rim",
+      "A night on the Las Vegas Strip",
+      "Broadway and Central Park in one weekend",
+    ],
+    relatedTourSlugs: ["usa-newyork-vegas-grandcanyon"],
+  },
 ];
 
 export function getDestination(slug: string) {

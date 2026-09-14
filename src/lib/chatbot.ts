@@ -177,7 +177,7 @@ const rules: Rule[] = [
     test: (t) =>
       includesAny(t, ["where do you", "destinations", "where can i go", "recommend a place", "where should i go"]),
     respond: () => ({
-      text: `Right now we're deepest in ${destinations.map((d) => d.name.split(",")[0]).join(" · ")}. Name one and I'll tell you what it's actually good for.`,
+      text: `We've already built detailed trips to ${destinations.map((d) => d.name.split(",")[0]).join(" · ")} — but that's a starting point, not the limit. We book flights and arrange trips to any destination, globally. Name a place and I'll tell you what we can do, or tell us somewhere else entirely.`,
       quickReplies: destinations.map((d) => ({ label: d.name, message: d.name })),
     }),
   },

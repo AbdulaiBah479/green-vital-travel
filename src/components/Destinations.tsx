@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 import Magnetic from "./Magnetic";
 import SectionDivider from "./SectionDivider";
+import { destinations as allDestinations } from "@/lib/destinations";
 
 const destinations = [
   {
@@ -306,7 +307,7 @@ export default function Destinations() {
                 data-cursor-hover
                 className="shrink-0 text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
               >
-                See All 18 →
+                See All {allDestinations.length} →
               </Link>
               <div className="flex shrink-0 gap-2">
                 <button

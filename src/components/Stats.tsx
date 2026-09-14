@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
+import { destinations } from "@/lib/destinations";
+import { tours } from "@/lib/tours";
 
+// Counts are computed from the real catalogs, not hand-typed, so this
+// stops drifting stale every time a destination or tour is added — it
+// already had once (stuck at 18/20 after the count moved on).
 const stats = [
   {
     value: 24,
@@ -11,13 +16,13 @@ const stats = [
     icon: <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" />,
   },
   {
-    value: 18,
+    value: destinations.length,
     suffix: "",
     label: "Destinations curated",
     icon: <path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z" />,
   },
   {
-    value: 20,
+    value: tours.length,
     suffix: "",
     label: "Tour packages",
     icon: <path d="M4 4h16v16H4z M8 9h8M8 13h5M8 17h3" />,
