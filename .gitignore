@@ -47,3 +47,4 @@ next-env.d.ts
 
 # tinacms (generated on build; not source)
 /tina/__generated__/
+/public/tina-build-status.txt
