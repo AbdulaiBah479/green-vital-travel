@@ -14,20 +14,10 @@ function realRating(slug: string) {
   return list.length > 0 ? averageRating(list) : 0;
 }
 
-type SortKey = "recommended" | "nights-asc" | "nights-desc" | "rating";
-type DurationKey = "" | "short" | "medium" | "long";
-
-const durationOptions: { value: DurationKey; label: string }[] = [
-  { value: "", label: "Any length" },
-  { value: "short", label: "Up to 7 nights" },
-  { value: "medium", label: "8–10 nights" },
-  { value: "long", label: "11+ nights" },
-];
+type SortKey = "recommended" | "rating";
 
 const sortOptions: { value: SortKey; label: string }[] = [
   { value: "recommended", label: "Recommended" },
-  { value: "nights-asc", label: "Shortest First" },
-  { value: "nights-desc", label: "Longest First" },
   { value: "rating", label: "Highest Rated" },
 ];
 
@@ -46,26 +36,20 @@ export default function ToursGrid({
   const [category, setCategory] = useState<TourCategory | "">(
     categories.find((c) => c === initialCategory) ?? ""
   );
-  const [duration, setDuration] = useState<DurationKey>("");
   const [sort, setSort] = useState<SortKey>("recommended");
 
   const filtered = useMemo(() => {
     const list = allTours.filter((t) => {
       if (region && destinationRegion(t.destinationSlug) !== region) return false;
       if (category && t.category !== category) return false;
-      if (duration === "short" && t.nights > 7) return false;
-      if (duration === "medium" && (t.nights < 8 || t.nights > 10)) return false;
-      if (duration === "long" && t.nights < 11) return false;
       return true;
     });
 
     return [...list].sort((a, b) => {
-      if (sort === "nights-asc") return a.nights - b.nights;
-      if (sort === "nights-desc") return b.nights - a.nights;
       if (sort === "rating") return realRating(b.slug) - realRating(a.slug);
       return 0;
     });
-  }, [region, category, duration, sort]);
+  }, [region, category, sort]);
 
   return (
     <div>
@@ -82,7 +66,6 @@ export default function ToursGrid({
           onChange={(v) => setCategory(v as TourCategory | "")}
           options={[{ value: "", label: "All Styles" }, ...categories.map((c) => ({ value: c, label: c }))]}
         />
-        <Select label="Length" value={duration} onChange={(v) => setDuration(v as DurationKey)} options={durationOptions} />
         <Select label="Sort" value={sort} onChange={(v) => setSort(v as SortKey)} options={sortOptions} />
       </div>
 

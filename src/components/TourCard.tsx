@@ -4,10 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import WishlistButton from "./WishlistButton";
 import { reviewsForTour, averageRating } from "@/lib/reviews";
-import { activeDeal, type Tour } from "@/lib/tours";
+import type { Tour } from "@/lib/tours";
 
 export default function TourCard({ tour }: { tour: Tour }) {
-  const deal = activeDeal(tour);
   // Real reviews only — never the tour's own baked-in rating/reviewCount,
   // which is leftover placeholder data, not something travelers actually left.
   const tourReviews = reviewsForTour(tour.slug);
@@ -28,17 +27,10 @@ export default function TourCard({ tour }: { tour: Tour }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        {deal && (
-          <span className="absolute left-4 top-4 rounded-full bg-accent-2 px-3 py-1 text-[10px] eyebrow uppercase text-ink">
-            {deal.label} · {deal.percentOff}% off
-          </span>
-        )}
         <WishlistButton slug={`tour:${tour.slug}`} label={tour.title} className="absolute right-4 top-4" />
       </div>
       <div className="p-5">
-        <p className="text-xs eyebrow uppercase text-accent-deep">
-          {tour.category} · {tour.nights} nights
-        </p>
+        <p className="text-xs eyebrow uppercase text-accent-deep">{tour.category}</p>
         <h3 className="mt-2 font-serif text-xl leading-snug text-ink transition-colors group-hover:text-accent-deep">
           {tour.title}
         </h3>

@@ -4,30 +4,19 @@ import { useState } from "react";
 import Link from "next/link";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
-import { activeDeal, type Tour } from "@/lib/tours";
+import type { Tour } from "@/lib/tours";
 
 export default function TourBookingSidebar({ tour }: { tour: Tour }) {
   const { formatPrice } = useCurrency();
   const [date, setDate] = useState(tour.departureDates[0] ?? "");
   const [travelers, setTravelers] = useState(2);
 
-  const deal = activeDeal(tour);
-  const unitPrice = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : tour.priceFrom;
-  const total = unitPrice * travelers;
+  const total = tour.priceFrom * travelers;
   const bookHref = `/book/${tour.slug}?date=${encodeURIComponent(date)}&travelers=${travelers}`;
 
   return (
     <div className="sticky top-36 lg:top-52 rounded-3xl border border-ink/10 bg-paper-dim p-6">
-      {deal && (
-        <span className="inline-block rounded-full bg-accent-2 px-3 py-1 text-[10px] eyebrow uppercase text-ink">
-          {deal.label} · {deal.percentOff}% off
-        </span>
-      )}
-      <div className="mt-2 grid grid-cols-3 gap-3 text-center">
-        <div>
-          <p className="text-[10px] eyebrow uppercase text-ink/70">Length</p>
-          <p className="mt-1 font-serif text-lg text-ink">{tour.nights}N</p>
-        </div>
+      <div className="grid grid-cols-2 gap-3 text-center">
         <div>
           <p className="text-[10px] eyebrow uppercase text-ink/70">Pace</p>
           <p className="mt-1 font-serif text-lg text-ink">{tour.difficulty}</p>

@@ -33,11 +33,7 @@ const legalLinks = [
   { label: "Accessibility", href: "/accessibility" },
 ];
 
-const contactLines = [
-  contact.email,
-  contact.phones.join(" · "),
-  `${contact.address.street}, ${contact.address.city}, ${contact.address.country}`,
-];
+const officeAddress = `${contact.address.street}, ${contact.address.city}, ${contact.address.country}`;
 
 const trustBadges = [
   "Freetown-Based, Personally Run",
@@ -108,9 +104,23 @@ export default function Footer() {
           <div>
             <p className="eyebrow mb-4 text-xs uppercase text-paper/50">Contact</p>
             <ul className="space-y-3 text-sm break-words text-paper/75">
-              {contactLines.map((l) => (
-                <li key={l}>{l}</li>
+              <li>
+                <a href={`mailto:${contact.email}`} data-cursor-hover className="transition-colors hover:text-accent">
+                  {contact.email}
+                </a>
+              </li>
+              {contact.phones.map((phone) => (
+                <li key={phone}>
+                  <a
+                    href={`tel:${phone.replace(/\s/g, "")}`}
+                    data-cursor-hover
+                    className="transition-colors hover:text-accent"
+                  >
+                    {phone}
+                  </a>
+                </li>
               ))}
+              <li>{officeAddress}</li>
             </ul>
             <SocialLinks className="mt-5" />
           </div>

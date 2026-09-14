@@ -23,7 +23,6 @@ export default async function Image({
   const t = getTour(slug);
   const title = t?.title ?? "Tours & Packages";
   const category = t?.category ?? "Greenvital";
-  const nights = t?.nights;
 
   return new ImageResponse(
     (
@@ -49,7 +48,7 @@ export default async function Image({
             fontFamily: "Arial, sans-serif",
           }}
         >
-          {category.toUpperCase()} {nights ? `· ${nights} NIGHTS` : ""}
+          {category.toUpperCase()}
         </div>
         <div
           style={{

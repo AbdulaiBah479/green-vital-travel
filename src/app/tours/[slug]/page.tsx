@@ -7,7 +7,7 @@ import TourCard, { Stars } from "@/components/TourCard";
 import TourItinerary from "@/components/TourItinerary";
 import TourBookingSidebar from "@/components/TourBookingSidebar";
 import WishlistButton from "@/components/WishlistButton";
-import { tours, getTour, activeDeal } from "@/lib/tours";
+import { tours, getTour } from "@/lib/tours";
 import { getDestination } from "@/lib/destinations";
 import { reviewsForTour, averageRating } from "@/lib/reviews";
 import { siteUrl } from "@/lib/site";
@@ -58,8 +58,6 @@ export default async function TourPage({
   const hasReviews = tourReviews.length > 0;
   const rating = hasReviews ? averageRating(tourReviews) : 0;
   const related = tours.filter((t) => t.category === tour.category && t.slug !== tour.slug).slice(0, 3);
-  const deal = activeDeal(tour);
-  const discounted = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -78,7 +76,7 @@ export default async function TourPage({
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      price: discounted ?? tour.priceFrom,
+      price: tour.priceFrom,
       availability: "https://schema.org/InStock",
       url: `${siteUrl}/tours/${tour.slug}`,
     },
@@ -111,7 +109,7 @@ export default async function TourPage({
         />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 sm:px-10">
           <p className="eyebrow mb-4 text-xs uppercase text-accent-soft">
-            {tour.category} · {tour.nights} nights
+            {tour.category}
             {destination && (
               <>
                 {" "}

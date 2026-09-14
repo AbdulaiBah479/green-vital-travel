@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 const office = {
   city: contact.address.city,
   detail: `${contact.address.street}, ${contact.address.city}, ${contact.address.country}`,
-  lines: [contact.email, ...contact.phones],
 };
 
 export default async function ContactPage({
@@ -54,8 +53,25 @@ export default async function ContactPage({
               <p className="font-serif text-xl text-ink">{office.city}</p>
               <p className="mt-0.5 text-xs eyebrow uppercase text-accent-deep">{office.detail}</p>
               <ul className="mt-3 space-y-1 text-sm text-ink/70">
-                {office.lines.map((l) => (
-                  <li key={l}>{l}</li>
+                <li>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    data-cursor-hover
+                    className="transition-colors hover:text-accent-deep"
+                  >
+                    {contact.email}
+                  </a>
+                </li>
+                {contact.phones.map((phone) => (
+                  <li key={phone}>
+                    <a
+                      href={`tel:${phone.replace(/\s/g, "")}`}
+                      data-cursor-hover
+                      className="transition-colors hover:text-accent-deep"
+                    >
+                      {phone}
+                    </a>
+                  </li>
                 ))}
               </ul>
               <a

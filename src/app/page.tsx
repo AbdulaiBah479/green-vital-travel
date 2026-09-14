@@ -5,7 +5,6 @@ import Stats from "@/components/Stats";
 import Philosophy from "@/components/Philosophy";
 import Destinations from "@/components/Destinations";
 import FeaturedTours from "@/components/FeaturedTours";
-import DealsBand from "@/components/DealsBand";
 import Journey from "@/components/Journey";
 import TripMatcher from "@/components/TripMatcher";
 import PlannerTeaser from "@/components/PlannerTeaser";
@@ -63,7 +62,6 @@ export default function Home() {
       <AgencyOverview />
       <Destinations />
       <FeaturedTours />
-      <DealsBand />
       <Philosophy />
       <Journey />
       <TripMatcher />

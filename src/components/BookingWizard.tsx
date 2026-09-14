@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
-import { activeDeal, type Tour } from "@/lib/tours";
+import type { Tour } from "@/lib/tours";
 
 const steps = ["Trip Details", "Traveler Info", "Add-Ons", "Review"];
 
@@ -35,8 +35,7 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
   const [error, setError] = useState<string | null>(null);
   const [companyWebsite, setCompanyWebsite] = useState("");
 
-  const deal = activeDeal(tour);
-  const unitPrice = deal ? tour.priceFrom * (1 - deal.percentOff / 100) : tour.priceFrom;
+  const unitPrice = tour.priceFrom;
   const addOnTotal =
     (addOns.insurance ? ADDON_COST.insurance * travelers : 0) +
     (addOns.transfer ? ADDON_COST.transfer * travelers : 0) +

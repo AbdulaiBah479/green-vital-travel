@@ -21,12 +21,6 @@ export type ItineraryStop = {
   description: string;
 };
 
-export type Deal = {
-  percentOff: number;
-  label: string;
-  endsIso: string;
-};
-
 export type Tour = {
   slug: string;
   title: string;
@@ -46,7 +40,6 @@ export type Tour = {
   included: string[];
   excluded: string[];
   departureDates: string[];
-  deal?: Deal;
 };
 
 function destImages(slug: string) {
@@ -228,7 +221,6 @@ export const tours: Tour[] = [
       "A permanent-camp safari built around families — shorter drives, family tents, a kids' tracking program, and a pool to cool off between game drives.",
     heroImg: destImages("serengeti").hero,
     gallery: destImages("serengeti").gallery,
-    deal: { percentOff: 12, label: "Seasonal Offer", endsIso: "2026-09-15" },
     highlights: [
       "Family-sized tents with connecting rooms",
       "A junior ranger tracking program for kids",
@@ -309,7 +301,6 @@ export const tours: Tour[] = [
       "A private, slow six nights above the caldera — a sunset catamaran, a table held just for two, and a cliffside suite in Oia's quieter northern edge.",
     heroImg: destImages("santorini").hero,
     gallery: destImages("santorini").gallery,
-    deal: { percentOff: 15, label: "Spring Sale", endsIso: "2026-09-30" },
     highlights: [
       "A private sunset catamaran along the caldera",
       "A private dinner table over the caldera",
@@ -349,7 +340,6 @@ export const tours: Tour[] = [
       "Ubud's terraced hills, a sunrise volcano climb, and a coastline with quieter corners — built for travelers who want more than the beach clubs.",
     heroImg: destImages("bali").hero,
     gallery: destImages("bali").gallery,
-    deal: { percentOff: 20, label: "Early Bird", endsIso: "2026-10-15" },
     highlights: [
       "Sunrise trek up Mount Batur",
       "Tegalalang's rice terraces at first light",
@@ -428,7 +418,6 @@ export const tours: Tour[] = [
       "A paced loop of the Ring Road with room for the weather to change your plans — glacier lagoons, black-sand coastlines, and nights left open for the aurora.",
     heroImg: destImages("iceland").hero,
     gallery: destImages("iceland").gallery,
-    deal: { percentOff: 18, label: "Aurora Season Sale", endsIso: "2026-11-01" },
     highlights: [
       "Glacier hiking on Vatnajökull",
       "The Jökulsárlón glacier lagoon by boat",
@@ -509,7 +498,6 @@ export const tours: Tour[] = [
       "A single-island stay built for doing very little, very well — a private overwater villa, a house reef, and dinners served on the sand.",
     heroImg: destImages("maldives").hero,
     gallery: destImages("maldives").gallery,
-    deal: { percentOff: 10, label: "Last-Minute", endsIso: "2026-08-31" },
     highlights: [
       "A private overwater villa with direct lagoon access",
       "Snorkeling the house reef at sunrise",
@@ -840,15 +828,6 @@ export function getTour(slug: string) {
 
 export function toursForDestination(destinationSlug: string) {
   return tours.filter((t) => t.destinationSlug === destinationSlug);
-}
-
-// A tour's `deal` has no code path that ever clears it once `endsIso`
-// passes — read through this everywhere a deal drives price or a badge, so
-// an expired promotion stops showing itself as live instead of lingering
-// until someone remembers to edit the data by hand.
-export function activeDeal(tour: Tour): Deal | undefined {
-  if (!tour.deal) return undefined;
-  return new Date(tour.deal.endsIso).getTime() >= Date.now() ? tour.deal : undefined;
 }
 
 export const categories: TourCategory[] = [

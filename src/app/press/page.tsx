@@ -47,7 +47,9 @@ export default function PressPage() {
             you&rsquo;ll hear back from a person, usually within a couple of days.
           </p>
           <p className="mt-8 text-sm eyebrow uppercase text-ink/70">
-            {contact.email}
+            <a href={`mailto:${contact.email}`} data-cursor-hover className="underline underline-offset-2 hover:text-accent-deep">
+              {contact.email}
+            </a>
           </p>
         </Reveal>
       </div>
