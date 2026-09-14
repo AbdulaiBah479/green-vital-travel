@@ -33,16 +33,26 @@ const stats = [
     label: "Travel partner for every step",
     icon: <path d="M3 12a9 9 0 1 1 9 9M3 12h4m-4 0v4a2 2 0 0 0 2 2h2v-6H3Zm18 0h-4m4 0v4a2 2 0 0 1-2 2h-2v-6h4Z" />,
   },
+  {
+    value: "∞",
+    suffix: "",
+    label: "Any destination, any airline, worldwide",
+    icon: <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" />,
+  },
 ];
 
-function Counter({ value, suffix }: { value: number; suffix: string }) {
+function Counter({ value, suffix }: { value: number | string; suffix: string }) {
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
+  // Non-numeric stats (the "∞" for "we book anywhere") have nothing to
+  // count up to — render them as-is and skip the animation entirely.
+  const isNumeric = typeof value === "number";
+
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || !isNumeric) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -67,11 +77,11 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [value]);
+  }, [value, isNumeric]);
 
   return (
     <span ref={ref}>
-      {display}
+      {isNumeric ? display : value}
       {suffix}
     </span>
   );
@@ -80,7 +90,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 export default function Stats() {
   return (
     <section className="bg-paper px-6 py-16 sm:px-10">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-5">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 100} variant="scale">
             <div className="flex h-full flex-col items-start gap-4 rounded-2xl border border-ink/8 bg-paper-dim/60 p-5 sm:p-6">

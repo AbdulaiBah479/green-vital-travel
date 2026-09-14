@@ -18,12 +18,12 @@ export type BotReply = {
 const START_REPLIES: QuickReply[] = [
   { label: "Plan a trip", href: "/planner" },
   { label: "See destinations", message: "Where do you send people?" },
-  { label: "Pricing & fees", message: "How much does this cost?" },
+  { label: "How booking works", message: "How does booking work?" },
   { label: "Talk to a human", href: "/#contact" },
 ];
 
 const GREETING: BotReply = {
-  text: "Hello — I'm the Greenvital assistant. I can help with destinations, pricing, flights, visas, or point you to a real person on our team. What are you curious about?",
+  text: "Hello — I'm the Greenvital assistant. I can help with destinations, flights, visas, or point you to a real person on our team. What are you curious about?",
   quickReplies: START_REPLIES,
 };
 
@@ -81,7 +81,7 @@ const rules: Rule[] = [
         "you a person",
       ]),
     respond: () => ({
-      text: "I'm a guided assistant built into this site — not a general AI model, and not a person. I work from Greenvital's actual destinations, pricing, and policies, so I'm reliable on those. For anything that needs judgment, I'll hand you to a real person on our team.",
+      text: "I'm an AI assistant built into this site, not a person. I work from Greenvital's actual destinations, tours, and policies, so I'm reliable on those — pricing is quoted directly by the team, not by me. For anything that needs judgment, I'll hand you to a real person.",
       quickReplies: [
         { label: "Talk to our team", href: "/#contact" },
         { label: "See destinations", message: "Where do you send people?" },
@@ -118,24 +118,23 @@ const rules: Rule[] = [
       text: "The fastest way in is the Trip Planner — four quick questions and you'll get a real day-by-day draft, no email required. It's a starting sketch; our team refines it from there, or books it as-is.",
       quickReplies: [
         { label: "Open the Trip Planner", href: "/planner" },
-        { label: "How much does that cost?", message: "How much does this cost?" },
+        { label: "How does booking work?", message: "How does booking work?" },
       ],
     }),
   },
   {
+    // Pricing isn't something this bot quotes or estimates — every trip is
+    // different, and a guessed number here is worse than no number at all.
+    // It always hands off to the team or the reservation flow instead.
     id: "pricing",
     test: (t) => includesAny(t, ["price", "pricing", "cost", "fee", "budget", "expensive", "cheap", "how much"]),
-    respond: () => {
-      const fee = faqs.find((f) => f.question.toLowerCase().includes("planning fee"));
-      const min = faqs.find((f) => f.question.toLowerCase().includes("minimum budget"));
-      return {
-        text: `${fee?.answer ?? ""} ${min?.answer ?? ""}`.trim(),
-        quickReplies: [
-          { label: "Open the Trip Planner", href: "/planner" },
-          { label: "Talk to our team", href: "/#contact" },
-        ],
-      };
-    },
+    respond: () => ({
+      text: "Pricing depends on your exact trip, so I won't guess at a number here — send us the details and our team will quote it directly. Starting a reservation request also gets you a real quote before anything's charged.",
+      quickReplies: [
+        { label: "Start a reservation request", href: "/tours" },
+        { label: "Talk to our team", href: "/#contact" },
+      ],
+    }),
   },
   {
     id: "sustainability",
@@ -208,8 +207,15 @@ function matchFaq(text: string): BotReply | null {
   const tokens = new Set(norm(text).split(/\s+/).filter((w) => w.length > 3));
   if (tokens.size === 0) return null;
 
+  // Pricing FAQs are excluded here for the same reason the dedicated
+  // "pricing" rule above never quotes a number — this is the fuzzy-match
+  // fallback, and a token-overlap match on a fee/budget question would
+  // route around that boundary rather than respect it.
+  const pricingWords = ["fee", "fees", "budget", "cost", "price", "pricing"];
+  const nonPricingFaqs = faqs.filter((f) => !includesAny(norm(f.question), pricingWords));
+
   let best: { score: number; answer: string } | null = null;
-  for (const faq of faqs) {
+  for (const faq of nonPricingFaqs) {
     const qTokens = norm(faq.question).split(/\s+/).filter((w) => w.length > 3);
     const score = qTokens.filter((w) => tokens.has(w)).length;
     if (score >= 2 && (!best || score > best.score)) {

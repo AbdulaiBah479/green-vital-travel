@@ -33,6 +33,29 @@ test.describe("wishlist", () => {
   });
 });
 
+test.describe("chatbot", () => {
+  test("answers a real question and never mentions pricing in the greeting", async ({ page }) => {
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+    // The cookie banner overlaps the chat toggle's corner on first visit.
+    await page.getByRole("button", { name: "Got it" }).click().catch(() => {});
+
+    await page.getByRole("button", { name: "Open chat with the Greenvital assistant" }).click();
+
+    const log = page.getByRole("log", { name: "Conversation" });
+    await expect(log).toContainText("Hello");
+    await expect(log).not.toContainText("pricing");
+
+    await page.getByPlaceholder("Ask about destinations, visas, flights…").fill("Tell me about Kyoto");
+    await page.keyboard.press("Enter");
+
+    // The assistant's most recent reply bubble specifically — asserting on
+    // the whole log would also match the user's own just-sent message, and
+    // `.first()` here would just re-match the earlier greeting bubble.
+    const latestBotBubble = log.locator("div.items-start > div").last();
+    await expect(latestBotBubble).toContainText("Kyoto", { timeout: 15_000 });
+  });
+});
+
 test.describe("contact form", () => {
   test("submits successfully with valid details", async ({ page }) => {
     await page.goto("/contact", { waitUntil: "domcontentloaded" });

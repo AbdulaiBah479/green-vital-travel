@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { getBotReply, GREETING, type QuickReply } from "@/lib/chatbot";
+import { GREETING, type QuickReply } from "@/lib/chatbot";
 
 type Message = {
   id: number;
@@ -61,31 +61,68 @@ export default function Chatbot() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     // Guards against a reply-in-flight: without this, sending a second
-    // message before the first's timeout fires lets that timeout's
-    // setTyping(false) hide the indicator out from under the second
-    // message. Checked against the ref, not the `typing` state — two sends
+    // message before the first request resolves lets that request's
+    // completion hide the indicator out from under the second message.
+    // Checked against the ref, not the `typing` state — two sends
     // dispatched in the same tick both close over the same pre-render
     // `typing` value, so the state check alone doesn't actually block it.
     if (pendingRef.current) return;
     pendingRef.current = true;
 
     const trimmed = text.trim();
-    if (trimmed) {
-      setMessages((m) => [...m, { id: nextId++, from: "user", text: trimmed }]);
-    }
-    setInput("");
-    setTyping(true);
-    const reply = getBotReply(trimmed);
-    window.setTimeout(() => {
+
+    // An empty message is the "Ask something else" quick-reply's way of
+    // resetting to the greeting — there's nothing to ask the assistant, so
+    // skip the network round-trip entirely rather than fail validation.
+    if (!trimmed) {
       pendingRef.current = false;
-      setTyping(false);
       setMessages((m) => [
         ...m,
-        { id: nextId++, from: "bot", text: reply.text, quickReplies: reply.quickReplies },
+        { id: nextId++, from: "bot", text: GREETING.text, quickReplies: GREETING.quickReplies },
       ]);
-    }, 500);
+      return;
+    }
+
+    setMessages((m) => [...m, { id: nextId++, from: "user", text: trimmed }]);
+    setInput("");
+    setTyping(true);
+
+    // Last few turns only — enough for the model to follow the thread,
+    // not so much that one visitor can run up an unbounded token bill.
+    const history = messages.slice(-8).map((m) => ({
+      role: m.from === "bot" ? ("assistant" as const) : ("user" as const),
+      content: m.text,
+    }));
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: trimmed, history }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+
+      setMessages((m) => [
+        ...m,
+        { id: nextId++, from: "bot", text: data.text, quickReplies: data.quickReplies },
+      ]);
+    } catch {
+      setMessages((m) => [
+        ...m,
+        {
+          id: nextId++,
+          from: "bot",
+          text: "Sorry, something went wrong on my end — try again, or reach the team directly.",
+          quickReplies: [{ label: "Talk to our team", href: "/#contact" }],
+        },
+      ]);
+    } finally {
+      pendingRef.current = false;
+      setTyping(false);
+    }
   };
 
   const onQuickReply = (qr: QuickReply) => {
@@ -211,7 +248,7 @@ export default function Chatbot() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about destinations, pricing…"
+            placeholder="Ask about destinations, visas, flights…"
             aria-label="Message the Greenvital assistant"
             disabled={typing}
             className="w-full rounded-full border border-ink/15 bg-paper px-4 py-2.5 text-sm text-ink placeholder:text-ink/70 outline-none focus:border-accent-deep disabled:opacity-60"
