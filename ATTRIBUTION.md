@@ -82,6 +82,7 @@ Resized from the original 5059×3377 to 2400px wide and re-encoded at quality 82
 | `usa-nyc-liberty.jpg` | <https://commons.wikimedia.org/wiki/File:Statue_of_liberty_and_nyc_skyline.jpg> | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Gustavo Collins |
 | `usa-grand-canyon.jpg` | <https://commons.wikimedia.org/wiki/File:Grand_Canyon_South_Rim_at_Sunrise.jpg> | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Jonathan Zander (Digon3) |
 | `usa-las-vegas.jpg` | <https://commons.wikimedia.org/wiki/File:Las_Vegas_Strip_from_Resorts_World_February_2023_HDR_1.jpg> | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | King of Hearts |
+| `airport-transfers.jpg` | <https://commons.wikimedia.org/wiki/File:New_PIT_terminal_passenger_drop_off_zone.jpg> | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain) | User 痛 (Designism) |
 
 All four resized to a 1920px-wide max (matching this project's other photography) and re-encoded at quality 82 before self-hosting.
 

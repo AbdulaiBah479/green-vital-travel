@@ -53,8 +53,8 @@ const services = [
   {
     title: "Airport & Private Transfers",
     body: "Booked as part of the itinerary, timed against real flight schedules — not a generic pickup window and a driver holding a sign.",
-    img: "/images/unsplash/1449965408869-eaa3f722e40d.jpg",
-    imgAlt: "A driver's hand on the steering wheel at dusk, city lights ahead",
+    img: "/images/services/airport-transfers.jpg",
+    imgAlt: "The passenger drop-off zone outside an airport terminal, with cars at the curb",
     icon: <path d="M12 2 4 8v13h16V8l-8-6Zm0 6v7" />,
   },
   {

@@ -22,8 +22,8 @@ const serviceCards = [
   {
     title: "Airport Transfers",
     description: "Booked as part of the itinerary and timed against your actual flight — not a generic pickup window and a driver holding a sign.",
-    image: "/images/unsplash/1449965408869-eaa3f722e40d.jpg",
-    alt: "A driver's hand on the steering wheel at dusk, city lights ahead",
+    image: "/images/services/airport-transfers.jpg",
+    alt: "The passenger drop-off zone outside an airport terminal, with cars at the curb",
   },
   {
     title: "Visa Assistance",
