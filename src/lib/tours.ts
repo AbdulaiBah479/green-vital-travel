@@ -9,7 +9,6 @@ export type TourCategory =
   | "Honeymoon"
   | "Small-Group"
   | "Luxury Private"
-  | "Cruise & Sail"
   | "City & Food"
   | "Pilgrimage";
 
@@ -128,43 +127,6 @@ export const tours: Tour[] = [
     ],
     excluded: ["International flights", "Travel insurance", "Personal spending & remaining meals", "Gratuities for boat crew and guides"],
     departureDates: ["2026-09-18", "2027-05-08", "2027-06-19", "2027-09-05"],
-  },
-  {
-    slug: "amalfi-aegean-small-ship-sail",
-    title: "Amalfi to the Aegean: Small-Ship Sail",
-    destinationSlug: "amalfi",
-    category: "Cruise & Sail",
-    nights: 7,
-    priceFrom: 4800,
-    rating: 4.8,
-    reviewCount: 47,
-    groupSizeMax: 24,
-    difficulty: "Easy",
-    summary:
-      "A small ship, not a floating city — a slow sail from the Amalfi Coast across to the Cyclades, docking in coves the larger cruise lines can't reach.",
-    heroImg: destImages("amalfi").hero,
-    gallery: destImages("amalfi").gallery,
-    highlights: [
-      "A 24-guest ship, not a 4,000-passenger one",
-      "Overnight in Santorini's caldera",
-      "Swim stops in coves without a jetty",
-      "Onboard dinners from a chef who shops each port",
-    ],
-    itinerary: [
-      { day: "1", title: "Board in Salerno", description: "Embark near the Amalfi Coast and settle in before the first night's dinner." },
-      { day: "2–3", title: "Amalfi & Capri", description: "Two days along the coast, with a full day docked off Capri." },
-      { day: "4", title: "Crossing day", description: "A sea day across to the Aegean — deck time, a wine tasting, nothing scheduled." },
-      { day: "5–6", title: "The Cyclades", description: "Santorini overnight in the caldera, then a full day in Naxos or Milos." },
-      { day: "7", title: "Mykonos & disembark", description: "A final morning in Mykonos's old town before disembarking." },
-    ],
-    included: [
-      "7 nights aboard a 24-guest small ship",
-      "All meals onboard, including a farewell dinner",
-      "Port transfers on both ends",
-      "A dedicated trip consultant, reachable throughout",
-    ],
-    excluded: ["International flights", "Travel insurance", "Shore excursions beyond those listed", "Onboard gratuities"],
-    departureDates: ["2027-05-15", "2027-06-26", "2027-09-11"],
   },
   {
     slug: "serengeti-great-migration-safari",
@@ -916,7 +878,6 @@ export const categories: TourCategory[] = [
   "Honeymoon",
   "Small-Group",
   "Luxury Private",
-  "Cruise & Sail",
   "City & Food",
   "Pilgrimage",
 ];

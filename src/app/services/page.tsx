@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import Magnetic from "@/components/Magnetic";
 
 const description =
-  "Flights, boat tickets, hotels, cruises, car hire, transfers, and insurance — arranged as part of your trip by our team, not booked blind through a search engine.";
+  "Flights, boat tickets, hotels, car hire, transfers, and insurance — arranged as part of your trip by our team, not booked blind through a search engine.";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -42,13 +42,6 @@ const services = [
     img: "/images/unsplash/1543489822-c49534f3271f.jpg",
     imgAlt: "An infinity pool overlooking a blue bay from a villa terrace",
     icon: <path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6" />,
-  },
-  {
-    title: "Cruises & Small-Ship Sailing",
-    body: "From a 24-guest expedition ship to a classic ocean liner — cabin category, itinerary, and shore excursions matched to how you actually want to travel.",
-    img: "/images/unsplash/1636730740168-c94f3ab802e6.jpg",
-    imgAlt: "A small sailboat on calm open water, seen from above",
-    icon: <path d="M3 18c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0M5 14l1-8h12l1 8M9 6V3h4v3" />,
   },
   {
     title: "Car Hire & Private Drivers",

@@ -86,7 +86,7 @@ export const destinations: Destination[] = [
       "The Path of the Gods hike, timed early",
       "Capri by boat, around the Blue Grotto's tide",
     ],
-    relatedTourSlugs: ["amalfi-coast-sail-and-supper", "amalfi-aegean-small-ship-sail"],
+    relatedTourSlugs: ["amalfi-coast-sail-and-supper"],
   },
   {
     slug: "serengeti",

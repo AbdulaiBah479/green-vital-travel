@@ -2,7 +2,7 @@ import SectionDivider from "./SectionDivider";
 import HeroSearchForm from "./HeroSearchForm";
 import HeroSlider from "./HeroSlider";
 
-const headline = "Travel with confidence.";
+const headline = "Discover the world.";
 
 const trustChips = [
   "Freetown, Sierra Leone",

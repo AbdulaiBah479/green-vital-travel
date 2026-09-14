@@ -7,7 +7,7 @@ export const siteName = "Greenvital";
 
 export const siteFullName = "Greenvital Travel and Tour Agency Limited";
 
-export const siteTitle = "Greenvital | Travel with confidence";
+export const siteTitle = "Greenvital | Discover the world";
 
 export const siteDescription =
   "Greenvital offers air and boat ticketing, car rentals, visa assistance, hotel bookings, tours, and travel insurance across Sierra Leone and West Africa.";
