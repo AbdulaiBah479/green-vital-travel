@@ -36,8 +36,10 @@ const stats = [
   {
     value: "∞",
     suffix: "",
-    label: "Any destination, any airline, worldwide",
-    icon: <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" />,
+    label: "Unlimited destinations, worldwide",
+    icon: (
+      <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.578 0-4.578 8 0 8 5.606 0 7.644-8 12.74-8z" />
+    ),
   },
 ];
 
