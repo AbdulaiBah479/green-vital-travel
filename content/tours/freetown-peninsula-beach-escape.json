@@ -1,0 +1,65 @@
+{
+  "slug": "freetown-peninsula-beach-escape",
+  "title": "Freetown Peninsula: Beach Escape",
+  "destinationSlug": "freetown-peninsula",
+  "category": "Beach & Island",
+  "nights": 4,
+  "priceFrom": 650,
+  "rating": 4.8,
+  "reviewCount": 34,
+  "groupSizeMax": 12,
+  "difficulty": "Easy",
+  "summary": "Four easy nights along the peninsula's best beaches — surf lessons at Bureh, grilled fish on the sand at River No. 2, and a sunset to close each day.",
+  "heroImg": "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+  "gallery": [
+    "/images/unsplash/1624832040555-d9f92f7be672.jpg",
+    "/images/unsplash/1540202404-a2f29016b523.jpg"
+  ],
+  "highlights": [
+    "A surf lesson at Bureh Beach with the local surf club",
+    "Grilled barracuda and jollof on the sand at River No. 2",
+    "A guided hike to Leicester Peak at sunrise",
+    "A full free day to do absolutely nothing"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive & settle in",
+      "description": "Airport transfer, water-taxi across the estuary, and a first sunset at Lumley Beach."
+    },
+    {
+      "day": "2",
+      "title": "Bureh Beach",
+      "description": "A morning surf lesson with the local surf club, lunch at a beachfront grill."
+    },
+    {
+      "day": "3",
+      "title": "River No. 2 & Leicester Peak",
+      "description": "A sunrise hike for the view over Freetown, then an afternoon at River No. 2 with fresh-grilled fish."
+    },
+    {
+      "day": "4",
+      "title": "Free day & departure",
+      "description": "An open morning on the sand before your transfer back for departure."
+    }
+  ],
+  "included": [
+    "3 nights in a beachfront guesthouse",
+    "The Bureh Beach surf lesson",
+    "Daily breakfast, 2 lunches on the beach",
+    "All ground and water-taxi transfers",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Yellow fever vaccination, if not already held"
+  ],
+  "departureDates": [
+    "2026-11-21",
+    "2026-12-12",
+    "2027-01-16",
+    "2027-02-13"
+  ]
+}

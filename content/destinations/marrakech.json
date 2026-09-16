@@ -1,0 +1,29 @@
+{
+  "slug": "marrakech",
+  "name": "Marrakech",
+  "country": "Morocco",
+  "region": "Africa",
+  "heroImg": "/images/unsplash/1489493887464-892be6d1daae.jpg",
+  "gallery": [
+    "/images/unsplash/1571902943202-507ec2618e8f.jpg",
+    "/images/unsplash/1466442929976-97f336a657be.jpg"
+  ],
+  "hook": "Souks by day, dunes by night",
+  "description": "The medina's maze of souks and riads, then out past the Atlas Mountains to a private camp in the Sahara — camel silhouettes, and a sky with no ambient light for a hundred miles.",
+  "bestTime": "March–May and September–November",
+  "quickFacts": {
+    "currency": "Moroccan Dirham",
+    "language": "Arabic & French",
+    "flightNote": "~7hr seasonal direct from the US East Coast, or via Europe",
+    "climate": "Arid — hot summers, mild winters"
+  },
+  "topExperiences": [
+    "A private guide through the medina's souks",
+    "Jardin Majorelle's cobalt-blue gardens",
+    "Crossing the High Atlas by 4x4",
+    "A night in a private Sahara camp"
+  ],
+  "relatedTourSlugs": [
+    "marrakech-souks-and-sahara-dunes"
+  ]
+}

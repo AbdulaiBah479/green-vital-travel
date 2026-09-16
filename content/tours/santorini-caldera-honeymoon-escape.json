@@ -1,0 +1,75 @@
+{
+  "slug": "santorini-caldera-honeymoon-escape",
+  "title": "Santorini: Caldera Honeymoon Escape",
+  "destinationSlug": "santorini",
+  "category": "Honeymoon",
+  "nights": 6,
+  "priceFrom": 3200,
+  "rating": 4.9,
+  "reviewCount": 97,
+  "groupSizeMax": 2,
+  "difficulty": "Easy",
+  "summary": "A private, slow six nights above the caldera — a sunset catamaran, a table held just for two, and a cliffside suite in Oia's quieter northern edge.",
+  "heroImg": "/images/unsplash/1570077188670-e3a8d69ac5ff.jpg",
+  "gallery": [
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg",
+    "/images/unsplash/1540202404-a2f29016b523.jpg"
+  ],
+  "highlights": [
+    "A private sunset catamaran along the caldera",
+    "A private dinner table over the caldera",
+    "A cliffside suite with a private plunge pool",
+    "A family vineyard wine tasting for two"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive, settle in",
+      "description": "A transfer to a cliffside suite in Oia's quieter northern edge."
+    },
+    {
+      "day": "2",
+      "title": "Sunset catamaran",
+      "description": "The classic view, without the forty-person tour boat."
+    },
+    {
+      "day": "3",
+      "title": "Wine & Akrotiri",
+      "description": "Assyrtiko tasted where it's grown, then the Bronze Age ruins at Akrotiri."
+    },
+    {
+      "day": "4",
+      "title": "Nothing planned",
+      "description": "The pool, the village lanes, whatever the day turns into."
+    },
+    {
+      "day": "5",
+      "title": "Caldera hike & private dinner",
+      "description": "The Fira-to-Oia trail, then a table held just for you at sunset."
+    },
+    {
+      "day": "6",
+      "title": "Depart Santorini",
+      "description": "A last caldera sunrise before your transfer to the ferry or airport."
+    }
+  ],
+  "included": [
+    "5 nights in a cliffside suite with private pool",
+    "The sunset catamaran and private dinner",
+    "Daily breakfast",
+    "All transfers on the island",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Gratuities"
+  ],
+  "departureDates": [
+    "2026-09-21",
+    "2027-04-19",
+    "2027-05-24",
+    "2027-09-13"
+  ]
+}

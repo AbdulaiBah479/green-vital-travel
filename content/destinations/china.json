@@ -1,0 +1,29 @@
+{
+  "slug": "china",
+  "name": "China",
+  "country": "China",
+  "region": "Asia",
+  "heroImg": "/images/destinations/china-great-wall.jpg",
+  "gallery": [
+    "/images/destinations/china-shanghai.jpg",
+    "/images/destinations/china-terracotta-army.jpg"
+  ],
+  "hook": "The Great Wall, the Terracotta Army, and a skyline built overnight",
+  "description": "Three cities, three very different Chinas — Beijing's imperial past and hutong alleys, Xi'an's buried army of ten thousand, and Shanghai's neon-lit Pudong skyline across the Bund.",
+  "bestTime": "March–May and September–November",
+  "quickFacts": {
+    "currency": "Chinese Yuan (¥)",
+    "language": "Mandarin",
+    "flightNote": "~15–18hr via one connection, usually Istanbul, Addis Ababa, or Dubai",
+    "climate": "Continental and dry in the north, humid and subtropical in Shanghai"
+  },
+  "topExperiences": [
+    "Walking the Mutianyu section of the Great Wall",
+    "The Terracotta Army outside Xi'an",
+    "Beijing's hutongs and the Forbidden City",
+    "The Bund at night, facing Pudong's skyline"
+  ],
+  "relatedTourSlugs": [
+    "china-beijing-xian-shanghai"
+  ]
+}

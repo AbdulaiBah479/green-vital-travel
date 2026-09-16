@@ -1,0 +1,29 @@
+{
+  "slug": "maldives",
+  "name": "Maldives",
+  "country": "Maldives",
+  "region": "Asia",
+  "heroImg": "/images/unsplash/1573843981267-be1999ff37cd.jpg",
+  "gallery": [
+    "/images/unsplash/1540202404-a2f29016b523.jpg",
+    "/images/unsplash/1571902943202-507ec2618e8f.jpg"
+  ],
+  "hook": "Overwater villas, endless turquoise",
+  "description": "A single-island stay built for doing very little, very well — a private overwater villa, a house reef worth snorkeling before breakfast, and dinners served on the sand.",
+  "bestTime": "November through April (dry season)",
+  "quickFacts": {
+    "currency": "Maldivian Rufiyaa (USD widely accepted)",
+    "language": "Dhivehi",
+    "flightNote": "~16hr via one connection, usually Dubai, Doha, or Colombo",
+    "climate": "Tropical — warm and humid year-round"
+  },
+  "topExperiences": [
+    "Snorkeling the house reef at sunrise",
+    "A private sandbank picnic",
+    "Dolphin cruise at dusk",
+    "An overwater spa treatment"
+  ],
+  "relatedTourSlugs": [
+    "maldives-overwater-luxury-retreat"
+  ]
+}

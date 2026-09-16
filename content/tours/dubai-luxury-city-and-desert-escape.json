@@ -1,0 +1,69 @@
+{
+  "slug": "dubai-luxury-city-and-desert-escape",
+  "title": "Dubai: Luxury City & Desert Escape",
+  "destinationSlug": "dubai",
+  "category": "City & Food",
+  "nights": 5,
+  "priceFrom": 2900,
+  "rating": 4.7,
+  "reviewCount": 29,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "A short, dense trip built to contrast — rooftop dinners above the skyline, a private desert safari at golden hour, and a souk crawl for anyone who wants to haggle.",
+  "heroImg": "/images/unsplash/1512453979798-5ea266f8880c.jpg",
+  "gallery": [
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg",
+    "/images/unsplash/1540202404-a2f29016b523.jpg"
+  ],
+  "highlights": [
+    "A private desert safari at golden hour",
+    "Dinner at a rooftop table over the skyline",
+    "The Gold and Spice Souks",
+    "A dhow cruise along Dubai Creek"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive in Dubai",
+      "description": "Settle into a skyline-view hotel, dinner at a rooftop table."
+    },
+    {
+      "day": "2",
+      "title": "Old Dubai",
+      "description": "The Gold and Spice Souks, then a dhow cruise along the Creek."
+    },
+    {
+      "day": "3",
+      "title": "Desert safari",
+      "description": "A private 4x4 desert safari timed for golden hour, dinner under the stars."
+    },
+    {
+      "day": "4",
+      "title": "City day",
+      "description": "Free time to explore, with a recommended itinerary from your travel consultant."
+    },
+    {
+      "day": "5",
+      "title": "Depart Dubai",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "4 nights in a skyline-view hotel",
+    "The private desert safari with dinner",
+    "Daily breakfast, 2 dinners",
+    "All ground transfers",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Optional at-sea/skydive add-ons"
+  ],
+  "departureDates": [
+    "2026-11-14",
+    "2026-12-05",
+    "2027-02-27"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "china-beijing-xian-shanghai",
+  "title": "China: Beijing, Xi'an & Shanghai",
+  "destinationSlug": "china",
+  "category": "Cultural",
+  "nights": 10,
+  "priceFrom": 3900,
+  "rating": 0,
+  "reviewCount": 0,
+  "groupSizeMax": 12,
+  "difficulty": "Moderate",
+  "summary": "Three cities, three centuries apart — the Great Wall and the Forbidden City in Beijing, the buried army outside Xi'an, and Shanghai's skyline lit up across the Bund.",
+  "heroImg": "/images/destinations/china-great-wall.jpg",
+  "gallery": [
+    "/images/destinations/china-shanghai.jpg",
+    "/images/destinations/china-terracotta-army.jpg"
+  ],
+  "highlights": [
+    "Walking the Mutianyu section of the Great Wall",
+    "The Terracotta Army outside Xi'an",
+    "Beijing's hutongs and the Forbidden City",
+    "The Bund at night, facing Pudong's skyline"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive in Beijing",
+      "description": "Settle in near the Forbidden City, then a first full day inside it."
+    },
+    {
+      "day": "3",
+      "title": "The Great Wall",
+      "description": "A guided morning on the Mutianyu section, quieter and less rebuilt than the closer sections."
+    },
+    {
+      "day": "4",
+      "title": "Beijing's hutongs",
+      "description": "A bicycle ride through the old alleyways, ending at a local courtyard-home dinner."
+    },
+    {
+      "day": "5–6",
+      "title": "Xi'an",
+      "description": "A high-speed rail transfer, then the Terracotta Army and the old city wall."
+    },
+    {
+      "day": "7–9",
+      "title": "Shanghai",
+      "description": "A flight to Shanghai, the Bund at night, and a day trip out to a nearby water town."
+    },
+    {
+      "day": "10",
+      "title": "Depart Shanghai",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "9 nights across 3 cities",
+    "All internal flights and high-speed rail transfers",
+    "Daily breakfast, 4 dinners",
+    "A local guide in every city",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Chinese visa fees"
+  ],
+  "departureDates": [
+    "2026-10-20",
+    "2027-04-10",
+    "2027-05-15"
+  ]
+}

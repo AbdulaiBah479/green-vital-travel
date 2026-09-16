@@ -1,0 +1,29 @@
+{
+  "slug": "banana-islands",
+  "name": "Banana Islands",
+  "country": "Sierra Leone",
+  "region": "Africa",
+  "heroImg": "/images/unsplash/1625001071825-0a85373c8972.jpg",
+  "gallery": [
+    "/images/unsplash/1600550132115-64a9ee300763.jpg",
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg"
+  ],
+  "hook": "Three islands, no cars, no crowds",
+  "description": "A short boat ride from the peninsula to Dublin, Ricketts, and Mes-Meheux — reef snorkeling, a slave-trade-era history that's still visible on the shoreline, and an off-grid pace that's part of the draw.",
+  "bestTime": "November through April (dry season, calmest seas)",
+  "quickFacts": {
+    "currency": "Sierra Leonean Leone (NLe)",
+    "language": "Krio & English",
+    "flightNote": "Road transfer to Kent, then a roughly 20-minute boat crossing",
+    "climate": "Tropical — hot and humid, calmest seas in dry season"
+  },
+  "topExperiences": [
+    "Snorkeling the reef off Dublin island",
+    "A walk to the old British gun emplacements",
+    "Fishing with local boat crews",
+    "A slow crossing back to the peninsula at sunset"
+  ],
+  "relatedTourSlugs": [
+    "banana-islands-snorkel-and-history"
+  ]
+}

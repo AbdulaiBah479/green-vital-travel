@@ -1,0 +1,29 @@
+{
+  "slug": "kyoto",
+  "name": "Kyoto",
+  "country": "Japan",
+  "region": "Asia",
+  "heroImg": "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
+  "gallery": [
+    "/images/unsplash/1540202404-a2f29016b523.jpg",
+    "/images/unsplash/1512100356356-de1b84283e18.jpg"
+  ],
+  "hook": "Temple gardens and quiet mornings",
+  "description": "The old imperial capital, unhurried — machiya guesthouses, moss gardens before the crowds, and kaiseki dinners built around the season rather than the calendar.",
+  "bestTime": "March–May and October–November",
+  "quickFacts": {
+    "currency": "Japanese Yen (¥)",
+    "language": "Japanese",
+    "flightNote": "~11hr direct from the US West Coast",
+    "climate": "Temperate, with four distinct seasons"
+  },
+  "topExperiences": [
+    "Dawn walk through the Fushimi Inari gates",
+    "A tea ceremony with a third-generation host",
+    "Arashiyama's bamboo grove by river boat",
+    "Nishiki Market, stall by stall, with a guide"
+  ],
+  "relatedTourSlugs": [
+    "kyoto-temples-and-tea-culture"
+  ]
+}

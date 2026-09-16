@@ -1,0 +1,29 @@
+{
+  "slug": "peru",
+  "name": "Peru",
+  "country": "Peru",
+  "region": "Americas",
+  "heroImg": "/images/unsplash/1526392060635-9d6019884377.jpg",
+  "gallery": [
+    "/images/unsplash/1466442929976-97f336a657be.jpg",
+    "/images/unsplash/1469521669194-babb45599def.jpg"
+  ],
+  "hook": "Machu Picchu, earned on foot",
+  "description": "The Sacred Valley and the Inca Trail, timed and paced by a guide who knows the altitude better than the map does — ending, on the fourth morning, at the Sun Gate.",
+  "bestTime": "May through September (dry season)",
+  "quickFacts": {
+    "currency": "Peruvian Sol",
+    "language": "Spanish & Quechua",
+    "flightNote": "~8hr direct from the US, then a domestic flight to Cusco",
+    "climate": "Varies hugely by altitude — warm coast, cold highlands"
+  },
+  "topExperiences": [
+    "The four-day Inca Trail trek",
+    "Sunrise at Machu Picchu's Sun Gate",
+    "The Sacred Valley's weaving villages",
+    "Cusco's San Pedro Market with a local guide"
+  ],
+  "relatedTourSlugs": [
+    "peru-machu-picchu-inca-trail"
+  ]
+}

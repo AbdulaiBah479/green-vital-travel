@@ -1,0 +1,29 @@
+{
+  "slug": "dubai",
+  "name": "Dubai",
+  "country": "United Arab Emirates",
+  "region": "Middle East",
+  "heroImg": "/images/unsplash/1512453979798-5ea266f8880c.jpg",
+  "gallery": [
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg",
+    "/images/unsplash/1540202404-a2f29016b523.jpg"
+  ],
+  "hook": "Skyline by night, dunes by day",
+  "description": "A short, dense trip built to contrast — rooftop dinners above the skyline, a private desert safari at golden hour, and a souk crawl for anyone who still wants to haggle.",
+  "bestTime": "November through March",
+  "quickFacts": {
+    "currency": "UAE Dirham",
+    "language": "Arabic & English",
+    "flightNote": "~13–14hr direct from the US East Coast",
+    "climate": "Desert — extremely hot summers, mild winters"
+  },
+  "topExperiences": [
+    "A private desert safari at golden hour",
+    "Dinner at a rooftop table over the skyline",
+    "The Gold and Spice Souks",
+    "A dhow cruise along Dubai Creek"
+  ],
+  "relatedTourSlugs": [
+    "dubai-luxury-city-and-desert-escape"
+  ]
+}

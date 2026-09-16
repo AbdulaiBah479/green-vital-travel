@@ -1,0 +1,29 @@
+{
+  "slug": "santorini",
+  "name": "Santorini",
+  "country": "Greece",
+  "region": "Europe",
+  "heroImg": "/images/unsplash/1570077188670-e3a8d69ac5ff.jpg",
+  "gallery": [
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg",
+    "/images/unsplash/1540202404-a2f29016b523.jpg"
+  ],
+  "hook": "Whitewashed cliffs, endless blue",
+  "description": "The caldera without the cruise-ship hours — a base in a quieter village, a sunset sail instead of the crowded viewpoint, and a table that doesn't need six months' notice.",
+  "bestTime": "April, May, or September",
+  "quickFacts": {
+    "currency": "Euro (€)",
+    "language": "Greek",
+    "flightNote": "~10hr direct from the US East Coast to Athens, then a short hop",
+    "climate": "Mediterranean — hot, dry summers"
+  },
+  "topExperiences": [
+    "A sunset catamaran along the caldera",
+    "Assyrtiko wine tasting on volcanic soil",
+    "Akrotiri's Bronze Age ruins and the red beach",
+    "The Fira-to-Oia caldera hike, started early"
+  ],
+  "relatedTourSlugs": [
+    "santorini-caldera-honeymoon-escape"
+  ]
+}

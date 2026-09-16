@@ -1,0 +1,59 @@
+{
+  "slug": "tiwai-island-rainforest-safari",
+  "title": "Tiwai Island: Rainforest Safari",
+  "destinationSlug": "tiwai-island",
+  "category": "Safari & Wildlife",
+  "nights": 3,
+  "priceFrom": 480,
+  "rating": 4.9,
+  "reviewCount": 21,
+  "groupSizeMax": 8,
+  "difficulty": "Moderate",
+  "summary": "Three nights on a rainforest island in the Moa River — primate walks at dawn, a canoe crossing for hippo sign at dusk, and evenings with almost no light but the stars.",
+  "heroImg": "/images/unsplash/1602298674761-700e96568f5f.jpg",
+  "gallery": [
+    "/images/unsplash/1544519954-6aeb4816f0ab.jpg",
+    "/images/unsplash/1466442929976-97f336a657be.jpg"
+  ],
+  "highlights": [
+    "A dawn primate walk with a community guide",
+    "Canoeing the Moa River at dusk for hippo sign",
+    "A guided night walk for nocturnal wildlife",
+    "A visit to a Mende village bordering the reserve"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive on Tiwai",
+      "description": "Road transfer from Bo, then a canoe crossing onto the island and a welcome briefing on the reserve."
+    },
+    {
+      "day": "2",
+      "title": "Primates at dawn, hippos at dusk",
+      "description": "An early primate walk, a slow afternoon, and a canoe trip at dusk watching for hippo sign."
+    },
+    {
+      "day": "3",
+      "title": "Night walk & village visit",
+      "description": "A guided night walk for nocturnal wildlife, then a morning visit to a bordering Mende village."
+    }
+  ],
+  "included": [
+    "2 nights in island tented camps",
+    "All guided walks and the river canoe trip",
+    "Daily breakfast, 2 dinners",
+    "Ground transfer from Bo or Kenema",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International & domestic flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Community conservation fee, paid on arrival"
+  ],
+  "departureDates": [
+    "2026-11-28",
+    "2027-01-09",
+    "2027-02-20"
+  ]
+}

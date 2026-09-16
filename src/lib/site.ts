@@ -53,12 +53,9 @@ export const contact = {
   },
 };
 
-// Handle normalized from the name given for these accounts ("G~travel and
-// tours") into the alphanumeric-only format every one of these platforms
-// requires — none allow the tilde or the spaces in the original. Confirm
-// each of these actually matches the registered account before relying on
-// them; a name and a live handle aren't guaranteed to be the same string.
-const socialHandle = "gtravelandtours";
+// Confirmed by the site owner as the real, live handle across these
+// platforms.
+const socialHandle = "greenvitaltravelandtouragency";
 
 export const social = {
   facebook: `https://www.facebook.com/${socialHandle}`,

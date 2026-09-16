@@ -1,0 +1,74 @@
+{
+  "slug": "maldives-overwater-luxury-retreat",
+  "title": "Maldives: Overwater Luxury Retreat",
+  "destinationSlug": "maldives",
+  "category": "Luxury Private",
+  "nights": 6,
+  "priceFrom": 5600,
+  "rating": 4.9,
+  "reviewCount": 68,
+  "groupSizeMax": 2,
+  "difficulty": "Easy",
+  "summary": "A single-island stay built for doing very little, very well — a private overwater villa, a house reef, and dinners served on the sand.",
+  "heroImg": "/images/unsplash/1573843981267-be1999ff37cd.jpg",
+  "gallery": [
+    "/images/unsplash/1540202404-a2f29016b523.jpg",
+    "/images/unsplash/1571902943202-507ec2618e8f.jpg"
+  ],
+  "highlights": [
+    "A private overwater villa with direct lagoon access",
+    "Snorkeling the house reef at sunrise",
+    "A private sandbank picnic",
+    "An overwater spa treatment"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive by seaplane",
+      "description": "A scenic seaplane transfer straight to your overwater villa."
+    },
+    {
+      "day": "2",
+      "title": "House reef",
+      "description": "Snorkeling at sunrise, then an open afternoon by your villa's plunge pool."
+    },
+    {
+      "day": "3",
+      "title": "Sandbank picnic",
+      "description": "A private boat to a sandbank for lunch, just the two of you."
+    },
+    {
+      "day": "4",
+      "title": "Spa day",
+      "description": "An overwater spa treatment, timed around the tide."
+    },
+    {
+      "day": "5",
+      "title": "Dolphin cruise",
+      "description": "An evening cruise, dolphins permitting, ending in a beach dinner."
+    },
+    {
+      "day": "6",
+      "title": "Depart",
+      "description": "A final morning swim before your seaplane transfer out."
+    }
+  ],
+  "included": [
+    "5 nights in a private overwater villa",
+    "Daily breakfast, 3 dinners including one on the sand",
+    "Seaplane transfers both ways",
+    "The sandbank picnic and spa treatment",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Alcoholic beverages",
+    "Optional diving excursions"
+  ],
+  "departureDates": [
+    "2026-11-08",
+    "2026-12-27",
+    "2027-02-07"
+  ]
+}

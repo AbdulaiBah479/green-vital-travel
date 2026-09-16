@@ -1,0 +1,29 @@
+{
+  "slug": "vietnam",
+  "name": "Vietnam",
+  "country": "Vietnam",
+  "region": "Asia",
+  "heroImg": "/images/unsplash/1528127269322-539801943592.jpg",
+  "gallery": [
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg",
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg"
+  ],
+  "hook": "Limestone bays and a coastline that keeps unfolding",
+  "description": "North to south in one trip — Hanoi's old quarter, a night on a Ha Long Bay boat, and the Mekong Delta by smaller and smaller boats the further you go.",
+  "bestTime": "February–April and August–October",
+  "quickFacts": {
+    "currency": "Vietnamese Đồng",
+    "language": "Vietnamese",
+    "flightNote": "~16hr via one connection from the US",
+    "climate": "Tropical, with real variation north to south"
+  },
+  "topExperiences": [
+    "A night aboard a Ha Long Bay junk boat",
+    "Hanoi's old quarter by street-food crawl",
+    "Hoi An's lantern-lit ancient town",
+    "The Mekong Delta by small boat"
+  ],
+  "relatedTourSlugs": [
+    "vietnam-north-to-south-explorer"
+  ]
+}

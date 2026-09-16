@@ -1,0 +1,29 @@
+{
+  "slug": "patagonia",
+  "name": "Patagonia",
+  "country": "Chile",
+  "region": "Americas",
+  "heroImg": "/images/unsplash/1544735716-392fe2489ffa.jpg",
+  "gallery": [
+    "/images/unsplash/1587595431973-160d0d94add1.jpg",
+    "/images/unsplash/1469521669194-babb45599def.jpg"
+  ],
+  "hook": "Glaciers, granite, and silence",
+  "description": "Torres del Paine without the crowds at the viewpoints — timed hikes, a private refugio, and enough slack in the schedule for the weather to cooperate.",
+  "bestTime": "November through March",
+  "quickFacts": {
+    "currency": "Chilean Peso",
+    "language": "Spanish",
+    "flightNote": "~13hr direct to Santiago, then a domestic flight south",
+    "climate": "Sub-polar — famously all four seasons in a day"
+  },
+  "topExperiences": [
+    "The Torres del Paine base trek",
+    "Grey Glacier by boat",
+    "An estancia horseback ride",
+    "A condor lookout at sunrise"
+  ],
+  "relatedTourSlugs": [
+    "patagonia-towers-trekking-expedition"
+  ]
+}

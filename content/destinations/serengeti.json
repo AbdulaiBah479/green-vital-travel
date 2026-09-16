@@ -1,0 +1,30 @@
+{
+  "slug": "serengeti",
+  "name": "Serengeti",
+  "country": "Tanzania",
+  "region": "Africa",
+  "heroImg": "/images/unsplash/1516426122078-c23e76319801.jpg",
+  "gallery": [
+    "/images/unsplash/1466442929976-97f336a657be.jpg",
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg"
+  ],
+  "hook": "The great migration, up close",
+  "description": "Mobile camps that follow the herds rather than a fixed lodge, run by naturalists we've traveled with ourselves — built for the days the migration actually moves.",
+  "bestTime": "June through September",
+  "quickFacts": {
+    "currency": "Tanzanian Shilling",
+    "language": "Swahili & English",
+    "flightNote": "~16hr via one connection from the US or Europe",
+    "climate": "Tropical savanna — dry season June–October"
+  },
+  "topExperiences": [
+    "Dawn and sundowner game drives",
+    "A hot-air balloon safari over the plains",
+    "A guided bush walk with a Maasai tracker",
+    "A full day following that week's migration"
+  ],
+  "relatedTourSlugs": [
+    "serengeti-great-migration-safari",
+    "serengeti-family-safari-in-comfort"
+  ]
+}

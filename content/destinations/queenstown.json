@@ -1,0 +1,29 @@
+{
+  "slug": "queenstown",
+  "name": "Queenstown",
+  "country": "New Zealand",
+  "region": "Oceania",
+  "heroImg": "/images/unsplash/1518837695005-2083093ee35b.jpg",
+  "gallery": [
+    "/images/unsplash/1469521669194-babb45599def.jpg",
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg"
+  ],
+  "hook": "Alps, fjords, and a taste for adrenaline",
+  "description": "New Zealand's adventure capital, used properly — the Southern Alps on foot, Milford Sound by boat at dawn before the day-trip crowds arrive, and a Central Otago vineyard to slow back down.",
+  "bestTime": "December–February (summer) or June–August (ski season)",
+  "quickFacts": {
+    "currency": "New Zealand Dollar",
+    "language": "English",
+    "flightNote": "~13hr from the US West Coast, plus a domestic connection",
+    "climate": "Temperate alpine, four distinct seasons"
+  },
+  "topExperiences": [
+    "Milford Sound by boat at first light",
+    "A guided hike in the Remarkables",
+    "Central Otago vineyard tastings",
+    "Jet-boating the Shotover River"
+  ],
+  "relatedTourSlugs": [
+    "queenstown-southern-alps-adrenaline"
+  ]
+}

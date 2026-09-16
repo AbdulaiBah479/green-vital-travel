@@ -1,0 +1,73 @@
+{
+  "slug": "usa-newyork-vegas-grandcanyon",
+  "title": "USA: New York, Vegas & the Grand Canyon",
+  "destinationSlug": "usa",
+  "category": "City & Food",
+  "nights": 9,
+  "priceFrom": 4600,
+  "rating": 0,
+  "reviewCount": 0,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "Manhattan's energy, a night on the Strip, and sunrise at the rim of the Grand Canyon — the classic first look at America, coast to desert.",
+  "heroImg": "/images/destinations/usa-nyc-liberty.jpg",
+  "gallery": [
+    "/images/destinations/usa-grand-canyon.jpg",
+    "/images/destinations/usa-las-vegas.jpg"
+  ],
+  "highlights": [
+    "The Manhattan skyline from a Statue of Liberty ferry",
+    "Sunrise at the Grand Canyon's South Rim",
+    "A night on the Las Vegas Strip",
+    "Broadway and Central Park in one weekend"
+  ],
+  "itinerary": [
+    {
+      "day": "1–3",
+      "title": "New York City",
+      "description": "Central Park, the Statue of Liberty by ferry, and an evening on Broadway."
+    },
+    {
+      "day": "4",
+      "title": "Fly to Las Vegas",
+      "description": "Check in on the Strip and settle in for the evening."
+    },
+    {
+      "day": "5",
+      "title": "Las Vegas",
+      "description": "A free day on the Strip — shows, casinos, or a spa day, as you like."
+    },
+    {
+      "day": "6–7",
+      "title": "The Grand Canyon",
+      "description": "A drive to the South Rim, timed for sunrise at one of its quieter viewpoints."
+    },
+    {
+      "day": "8",
+      "title": "Return to Las Vegas",
+      "description": "A final evening on the Strip."
+    },
+    {
+      "day": "9",
+      "title": "Depart",
+      "description": "Transfer to the airport for your flight home."
+    }
+  ],
+  "included": [
+    "8 nights across New York, Las Vegas, and the Grand Canyon",
+    "Domestic flights and all ground transfers",
+    "Daily breakfast",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "US visa/ESTA fees"
+  ],
+  "departureDates": [
+    "2026-11-05",
+    "2027-04-18",
+    "2027-06-20"
+  ]
+}

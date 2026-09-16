@@ -1,0 +1,29 @@
+{
+  "slug": "mecca-medina",
+  "name": "Mecca & Medina",
+  "country": "Saudi Arabia",
+  "region": "Middle East",
+  "heroImg": "/images/unsplash/1579305796538-03268c05b65c.jpg",
+  "gallery": [
+    "/images/unsplash/1568009167523-043c39300e67.jpg",
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg"
+  ],
+  "hook": "Hajj and Umrah, planned end to end",
+  "description": "Pilgrimage travel handled the way it should be — flights, Saudi entry permits, and vetted accommodation near the Haramain, arranged by a team that treats the paperwork as seriously as the journey itself.",
+  "bestTime": "Hajj falls on the Islamic lunar calendar; Umrah can be made most of the year",
+  "quickFacts": {
+    "currency": "Saudi Riyal (SAR)",
+    "language": "Arabic",
+    "flightNote": "Direct and connecting flights into Jeddah (JED) or Madinah (MED)",
+    "climate": "Arid desert — extremely hot April–October, mild November–March"
+  },
+  "topExperiences": [
+    "Tawaf at the Kaaba in Mecca's Masjid al-Haram",
+    "Prayers at the Prophet's Mosque in Medina",
+    "A guided orientation on the rites of Hajj/Umrah before you travel",
+    "Group departures organized around the Hajj season"
+  ],
+  "relatedTourSlugs": [
+    "umrah-guided-pilgrimage"
+  ]
+}

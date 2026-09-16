@@ -1,0 +1,29 @@
+{
+  "slug": "costa-rica",
+  "name": "Costa Rica",
+  "country": "Costa Rica",
+  "region": "Americas",
+  "heroImg": "/images/unsplash/1518259102261-b40117eabbc9.jpg",
+  "gallery": [
+    "/images/unsplash/1587595431973-160d0d94add1.jpg",
+    "/images/unsplash/1512100356356-de1b84283e18.jpg"
+  ],
+  "hook": "Rainforest canopy to volcanic coastline",
+  "description": "Built for families and first-time adventurers alike — cloud forest zip-lines, a wildlife-dense national park, and a beach stretch quiet enough to actually notice the sloths.",
+  "bestTime": "December through April (dry season)",
+  "quickFacts": {
+    "currency": "Costa Rican Colón (USD widely accepted)",
+    "language": "Spanish",
+    "flightNote": "~5hr direct from the US",
+    "climate": "Tropical, with distinct wet and dry seasons"
+  },
+  "topExperiences": [
+    "A canopy zip-line through cloud forest",
+    "Wildlife spotting in Manuel Antonio",
+    "Arenal Volcano hot springs",
+    "A guided night walk for nocturnal wildlife"
+  ],
+  "relatedTourSlugs": [
+    "costa-rica-family-rainforest-adventure"
+  ]
+}

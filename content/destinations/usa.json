@@ -1,0 +1,29 @@
+{
+  "slug": "usa",
+  "name": "USA",
+  "country": "United States",
+  "region": "Americas",
+  "heroImg": "/images/destinations/usa-nyc-liberty.jpg",
+  "gallery": [
+    "/images/destinations/usa-grand-canyon.jpg",
+    "/images/destinations/usa-las-vegas.jpg"
+  ],
+  "hook": "From the Manhattan skyline to the rim of the Grand Canyon",
+  "description": "New York's energy, a night on the Las Vegas Strip, and the sheer scale of the Grand Canyon at sunrise — the classic first look at America, coast to desert.",
+  "bestTime": "April–June and September–October",
+  "quickFacts": {
+    "currency": "US Dollar ($)",
+    "language": "English",
+    "flightNote": "~10–14hr via one connection, usually through Europe",
+    "climate": "Varies widely — temperate in New York, desert-dry across the Southwest"
+  },
+  "topExperiences": [
+    "The Manhattan skyline from a Statue of Liberty ferry",
+    "Sunrise at the Grand Canyon's South Rim",
+    "A night on the Las Vegas Strip",
+    "Broadway and Central Park in one weekend"
+  ],
+  "relatedTourSlugs": [
+    "usa-newyork-vegas-grandcanyon"
+  ]
+}

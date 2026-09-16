@@ -1,0 +1,79 @@
+{
+  "slug": "iceland-ring-road-fire-and-ice",
+  "title": "Iceland: Ring Road, Fire & Ice",
+  "destinationSlug": "iceland",
+  "category": "Adventure",
+  "nights": 8,
+  "priceFrom": 4400,
+  "rating": 4.8,
+  "reviewCount": 45,
+  "groupSizeMax": 10,
+  "difficulty": "Moderate",
+  "summary": "A paced loop of the Ring Road with room for the weather to change your plans — glacier lagoons, black-sand coastlines, and nights left open for the aurora.",
+  "heroImg": "/images/unsplash/1531168556467-80aace0d0144.jpg",
+  "gallery": [
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg",
+    "/images/unsplash/1587595431973-160d0d94add1.jpg"
+  ],
+  "highlights": [
+    "Glacier hiking on Vatnajökull",
+    "The Jökulsárlón glacier lagoon by boat",
+    "Black-sand beaches at Reynisfjara",
+    "Open evenings for the northern lights"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive in Reykjavík",
+      "description": "Settle in, and a first look at the Golden Circle the next morning."
+    },
+    {
+      "day": "2",
+      "title": "The Golden Circle",
+      "description": "Geysir, Gullfoss, and Þingvellir National Park."
+    },
+    {
+      "day": "3–4",
+      "title": "South coast",
+      "description": "Black-sand beaches at Reynisfjara, then the Jökulsárlón glacier lagoon by boat."
+    },
+    {
+      "day": "5",
+      "title": "Glacier hiking",
+      "description": "A guided ice walk on Vatnajökull, Europe's largest glacier."
+    },
+    {
+      "day": "6",
+      "title": "East fjords",
+      "description": "A quieter, less-touristed stretch of coastline."
+    },
+    {
+      "day": "7",
+      "title": "Aurora night",
+      "description": "An evening left open, away from town light, weather permitting."
+    },
+    {
+      "day": "8",
+      "title": "Depart Reykjavík",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "7 nights in guesthouses and small hotels along the route",
+    "A rental vehicle for the full loop",
+    "Daily breakfast, 3 dinners",
+    "The glacier hike and glacier lagoon boat trip",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Fuel & personal spending",
+    "Aurora sightings are weather-dependent and not guaranteed"
+  ],
+  "departureDates": [
+    "2026-09-27",
+    "2026-10-18",
+    "2027-02-14"
+  ]
+}

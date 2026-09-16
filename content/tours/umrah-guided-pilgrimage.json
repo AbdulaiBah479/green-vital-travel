@@ -1,0 +1,63 @@
+{
+  "slug": "umrah-guided-pilgrimage",
+  "title": "Guided Umrah Pilgrimage",
+  "destinationSlug": "mecca-medina",
+  "category": "Pilgrimage",
+  "nights": 10,
+  "priceFrom": 2400,
+  "rating": 5,
+  "reviewCount": 12,
+  "groupSizeMax": 25,
+  "difficulty": "Easy",
+  "summary": "Ten nights across Mecca and Medina, with the flights, entry permits, and accommodation handled in advance — so the only thing you have to plan for is the pilgrimage itself.",
+  "heroImg": "/images/unsplash/1579305796538-03268c05b65c.jpg",
+  "gallery": [
+    "/images/unsplash/1568009167523-043c39300e67.jpg",
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg"
+  ],
+  "highlights": [
+    "A pre-departure orientation on the rites of Umrah",
+    "Hotel walking distance from Masjid al-Haram in Mecca",
+    "Hotel walking distance from the Prophet's Mosque in Medina",
+    "A group departure, traveling together throughout"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Depart & arrive in Medina",
+      "description": "Group flight departure, arriving in Medina for two days of prayer at the Prophet's Mosque."
+    },
+    {
+      "day": "3–8",
+      "title": "Medina to Mecca",
+      "description": "Road transfer to Mecca and six nights within walking distance of Masjid al-Haram for Umrah and daily prayer."
+    },
+    {
+      "day": "9",
+      "title": "Final rites",
+      "description": "A closing day for any remaining rites and personal time near the Haram."
+    },
+    {
+      "day": "10",
+      "title": "Depart",
+      "description": "Group transfer to Jeddah for the return flight."
+    }
+  ],
+  "included": [
+    "9 nights across two hotels, both walking distance from the Haramain",
+    "Return group flights and all ground transfers",
+    "Umrah visa and entry permit processing",
+    "The pre-departure orientation session",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Optional Ziyarat (historical site) tours"
+  ],
+  "departureDates": [
+    "2027-01-15",
+    "2027-03-05",
+    "2027-09-10"
+  ]
+}

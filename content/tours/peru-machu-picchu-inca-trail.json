@@ -1,0 +1,69 @@
+{
+  "slug": "peru-machu-picchu-inca-trail",
+  "title": "Peru: Machu Picchu on the Inca Trail",
+  "destinationSlug": "peru",
+  "category": "Adventure",
+  "nights": 9,
+  "priceFrom": 3800,
+  "rating": 4.9,
+  "reviewCount": 76,
+  "groupSizeMax": 10,
+  "difficulty": "Challenging",
+  "summary": "The Sacred Valley and the classic four-day Inca Trail, paced by a guide who knows the altitude better than the map does — ending at the Sun Gate.",
+  "heroImg": "/images/unsplash/1526392060635-9d6019884377.jpg",
+  "gallery": [
+    "/images/unsplash/1466442929976-97f336a657be.jpg",
+    "/images/unsplash/1469521669194-babb45599def.jpg"
+  ],
+  "highlights": [
+    "The four-day Inca Trail trek",
+    "Sunrise at Machu Picchu's Sun Gate",
+    "The Sacred Valley's weaving villages",
+    "Cusco's San Pedro Market with a local guide"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive & acclimatize",
+      "description": "Two nights in Cusco to adjust to altitude before the trail."
+    },
+    {
+      "day": "3",
+      "title": "Sacred Valley",
+      "description": "Weaving villages and Inca ruins on the way to the trailhead."
+    },
+    {
+      "day": "4–7",
+      "title": "The Inca Trail",
+      "description": "Four days on the classic trail, camping each night with a full support crew."
+    },
+    {
+      "day": "8",
+      "title": "Machu Picchu",
+      "description": "Arrival at the Sun Gate at dawn, then a full guided tour of the citadel."
+    },
+    {
+      "day": "9",
+      "title": "Depart Cusco",
+      "description": "A train back to Cusco and your transfer to the airport."
+    }
+  ],
+  "included": [
+    "8 nights across Cusco hotels and trail camping",
+    "A certified guide and full trekking support crew",
+    "All camping equipment and meals on the trail",
+    "Entrance to Machu Picchu and the return train",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Sleeping bag rental, if needed",
+    "Tips for the trekking crew"
+  ],
+  "departureDates": [
+    "2027-05-02",
+    "2027-06-13",
+    "2027-07-04"
+  ]
+}

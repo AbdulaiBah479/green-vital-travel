@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "title": "Air Ticketing",
+      "description": "Flight bookings and travel planning designed around schedules, budgets, and personal preferences.",
+      "image": "/images/unsplash/1436491865332-7a61a109cc05.jpg",
+      "alt": "Airplane wing above the clouds"
+    },
+    {
+      "title": "Boat Ticketing",
+      "description": "Water taxi and ferry tickets across the peninsula and out to the islands, including the Lungi airport crossing.",
+      "image": "/images/services/boat-ticketing.jpg",
+      "alt": "A small passenger water taxi crossing the harbor"
+    },
+    {
+      "title": "Car Rentals",
+      "description": "Self-drive and private-driver options for business trips and private journeys, in Freetown and beyond.",
+      "image": "/images/unsplash/1533473359331-0135ef1b58bf.jpg",
+      "alt": "Rental SUV parked on a desert road"
+    },
+    {
+      "title": "Airport Transfers",
+      "description": "Booked as part of the itinerary and timed against your actual flight — not a generic pickup window and a driver holding a sign.",
+      "image": "/images/services/airport-transfers.jpg",
+      "alt": "The passenger drop-off zone outside an airport terminal, with cars at the curb"
+    },
+    {
+      "title": "Visa Assistance",
+      "description": "Clear, guided support through documentation and application steps for key destinations.",
+      "image": "/images/unsplash/1581553673739-c4906b5d0de8.jpg",
+      "alt": "Open passport with visa stamps"
+    },
+    {
+      "title": "Holiday Packages",
+      "description": "Curated travel packages that balance timing, comfort, and value for each traveler.",
+      "image": "/images/unsplash/1625001071825-0a85373c8972.jpg",
+      "alt": "Banana Islands, Sierra Leone"
+    },
+    {
+      "title": "Hotel Bookings",
+      "description": "Comfortable stays chosen to fit your itinerary, destination, and budget.",
+      "image": "/images/unsplash/1566073771259-6a8506099945.jpg",
+      "alt": "Beachfront hotel resort with pool"
+    },
+    {
+      "title": "Travel Insurance",
+      "description": "Practical protection for smoother, more confident travel planning.",
+      "image": "/images/unsplash/1614451558582-96f3c35d3e5f.jpg",
+      "alt": "Life ring mounted on a scenic waterside railing"
+    }
+  ]
+}

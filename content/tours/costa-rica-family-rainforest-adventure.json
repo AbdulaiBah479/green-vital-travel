@@ -1,0 +1,69 @@
+{
+  "slug": "costa-rica-family-rainforest-adventure",
+  "title": "Costa Rica: Family Rainforest Adventure",
+  "destinationSlug": "costa-rica",
+  "category": "Family",
+  "nights": 8,
+  "priceFrom": 3400,
+  "rating": 4.8,
+  "reviewCount": 55,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "Cloud forest zip-lines, a wildlife-dense national park, and a quiet stretch of coastline — paced for families and first-time adventurers alike.",
+  "heroImg": "/images/unsplash/1518259102261-b40117eabbc9.jpg",
+  "gallery": [
+    "/images/unsplash/1587595431973-160d0d94add1.jpg",
+    "/images/unsplash/1512100356356-de1b84283e18.jpg"
+  ],
+  "highlights": [
+    "A canopy zip-line through cloud forest",
+    "Wildlife spotting in Manuel Antonio",
+    "Arenal Volcano hot springs",
+    "A guided night walk for nocturnal wildlife"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arenal",
+      "description": "Volcano views and an evening soak in the hot springs."
+    },
+    {
+      "day": "3",
+      "title": "Zip-lining",
+      "description": "A cloud-forest canopy tour, paced for all ages."
+    },
+    {
+      "day": "4",
+      "title": "Night walk",
+      "description": "A guided walk for nocturnal wildlife — frogs, sloths, and more."
+    },
+    {
+      "day": "5–7",
+      "title": "Manuel Antonio",
+      "description": "Three nights near the national park, with a guided wildlife walk and beach time."
+    },
+    {
+      "day": "8",
+      "title": "Depart",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "7 nights across Arenal and the Pacific coast",
+    "The zip-line canopy tour and night walk",
+    "Daily breakfast, 4 dinners",
+    "All ground transfers",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Optional water-sports add-ons"
+  ],
+  "departureDates": [
+    "2026-12-19",
+    "2027-01-02",
+    "2027-03-27"
+  ]
+}

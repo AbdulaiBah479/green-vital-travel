@@ -1,0 +1,73 @@
+{
+  "slug": "serengeti-family-safari-in-comfort",
+  "title": "Serengeti Family Safari, in Comfort",
+  "destinationSlug": "serengeti",
+  "category": "Family",
+  "nights": 7,
+  "priceFrom": 5400,
+  "rating": 4.8,
+  "reviewCount": 39,
+  "groupSizeMax": 8,
+  "difficulty": "Easy",
+  "summary": "A permanent-camp safari built around families — shorter drives, family tents, a kids' tracking program, and a pool to cool off between game drives.",
+  "heroImg": "/images/unsplash/1516426122078-c23e76319801.jpg",
+  "gallery": [
+    "/images/unsplash/1466442929976-97f336a657be.jpg",
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg"
+  ],
+  "highlights": [
+    "Family-sized tents with connecting rooms",
+    "A junior ranger tracking program for kids",
+    "Shorter, family-paced game drives",
+    "A swimming pool back at camp"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive & settle in",
+      "description": "A private transfer to a permanent camp with a pool and family tents."
+    },
+    {
+      "day": "2–3",
+      "title": "Family game drives",
+      "description": "Shorter morning drives paced for kids, with afternoons free at camp."
+    },
+    {
+      "day": "4",
+      "title": "Junior ranger day",
+      "description": "Kids join a tracking and conservation program while adults game-drive."
+    },
+    {
+      "day": "5",
+      "title": "Full-day safari",
+      "description": "A longer drive out toward the migration, packed lunch included."
+    },
+    {
+      "day": "6",
+      "title": "Village visit",
+      "description": "A local school visit, arranged directly, not a staged stop."
+    },
+    {
+      "day": "7",
+      "title": "Depart camp",
+      "description": "A final morning drive before transferring out."
+    }
+  ],
+  "included": [
+    "6 nights in a family-friendly permanent camp",
+    "All meals and a private vehicle & guide",
+    "The junior ranger program",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Park fees (billed at cost)",
+    "Gratuities for camp staff and guides"
+  ],
+  "departureDates": [
+    "2026-12-20",
+    "2027-04-03",
+    "2027-07-17"
+  ]
+}

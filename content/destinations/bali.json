@@ -1,0 +1,29 @@
+{
+  "slug": "bali",
+  "name": "Bali",
+  "country": "Indonesia",
+  "region": "Asia",
+  "heroImg": "/images/unsplash/1537996194471-e657df975ab4.jpg",
+  "gallery": [
+    "/images/unsplash/1512100356356-de1b84283e18.jpg",
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg"
+  ],
+  "hook": "Rice terraces, temples, and tide pools",
+  "description": "Beyond the beach clubs — a stay built around Ubud's terraced hills, a sunrise volcano climb, and a coastline that still has quiet corners if you know where to look.",
+  "bestTime": "April through October (dry season)",
+  "quickFacts": {
+    "currency": "Indonesian Rupiah",
+    "language": "Indonesian & Balinese",
+    "flightNote": "~20hr via one connection from the US",
+    "climate": "Tropical — dry season April–October"
+  },
+  "topExperiences": [
+    "Sunrise trek up Mount Batur",
+    "Tegalalang's rice terraces at first light",
+    "A traditional Balinese cooking class",
+    "Uluwatu's cliffside temple at sunset"
+  ],
+  "relatedTourSlugs": [
+    "bali-temples-and-terraces"
+  ]
+}

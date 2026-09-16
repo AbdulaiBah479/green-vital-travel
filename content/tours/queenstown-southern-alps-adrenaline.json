@@ -1,0 +1,79 @@
+{
+  "slug": "queenstown-southern-alps-adrenaline",
+  "title": "Queenstown: Southern Alps Adrenaline",
+  "destinationSlug": "queenstown",
+  "category": "Adventure",
+  "nights": 9,
+  "priceFrom": 4900,
+  "rating": 4.8,
+  "reviewCount": 41,
+  "groupSizeMax": 8,
+  "difficulty": "Moderate",
+  "summary": "New Zealand's adventure capital, used properly — Milford Sound at dawn, a Southern Alps hike, jet-boating, and a Central Otago vineyard to slow back down.",
+  "heroImg": "/images/unsplash/1518837695005-2083093ee35b.jpg",
+  "gallery": [
+    "/images/unsplash/1469521669194-babb45599def.jpg",
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg"
+  ],
+  "highlights": [
+    "Milford Sound by boat at first light",
+    "A guided hike in the Remarkables",
+    "Jet-boating the Shotover River",
+    "Central Otago vineyard tastings"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive in Queenstown",
+      "description": "Settle in, lakefront, with a day to acclimatize."
+    },
+    {
+      "day": "3",
+      "title": "Milford Sound",
+      "description": "An early departure to beat the day-trip crowds, boat cruise included."
+    },
+    {
+      "day": "4",
+      "title": "Remarkables hike",
+      "description": "A guided alpine hike with views over Lake Wakatipu."
+    },
+    {
+      "day": "5",
+      "title": "Jet boat & free afternoon",
+      "description": "The Shotover River by jet boat, then time to explore town."
+    },
+    {
+      "day": "6–7",
+      "title": "Central Otago",
+      "description": "Two nights among the vineyards, tastings included."
+    },
+    {
+      "day": "8",
+      "title": "Glenorchy day",
+      "description": "A scenic drive to the head of the lake, on foot for part of it."
+    },
+    {
+      "day": "9",
+      "title": "Depart Queenstown",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "8 nights across Queenstown & Central Otago",
+    "The Milford Sound cruise and jet boat ride",
+    "Daily breakfast, 3 dinners including a vineyard lunch",
+    "All ground transfers",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Optional bungy/skydive add-ons"
+  ],
+  "departureDates": [
+    "2026-12-06",
+    "2027-01-10",
+    "2027-02-21"
+  ]
+}

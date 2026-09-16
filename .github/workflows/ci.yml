@@ -19,6 +19,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Build content index
+        run: node scripts/build-content-index.mjs
+
       - name: Type check
         run: npx tsc --noEmit
 

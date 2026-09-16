@@ -1,0 +1,29 @@
+{
+  "slug": "amalfi",
+  "name": "Amalfi Coast",
+  "country": "Italy",
+  "region": "Europe",
+  "heroImg": "/images/unsplash/1533104816931-20fa691ff6ca.jpg",
+  "gallery": [
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg",
+    "/images/unsplash/1571902943202-507ec2618e8f.jpg"
+  ],
+  "hook": "Cliffside towns, slow dinners",
+  "description": "Fewer stops and more time in each — a private boat instead of the coastal road, and dinners with families who've run the same three tables for decades.",
+  "bestTime": "May through early October",
+  "quickFacts": {
+    "currency": "Euro (€)",
+    "language": "Italian",
+    "flightNote": "~9–10hr direct from the US East Coast to Naples/Rome",
+    "climate": "Mediterranean — hot, dry summers"
+  },
+  "topExperiences": [
+    "Private boat from Positano to Nerano",
+    "Pasta-making in a Ravello home kitchen",
+    "The Path of the Gods hike, timed early",
+    "Capri by boat, around the Blue Grotto's tide"
+  ],
+  "relatedTourSlugs": [
+    "amalfi-coast-sail-and-supper"
+  ]
+}

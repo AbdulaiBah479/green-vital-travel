@@ -1,0 +1,90 @@
+{
+  "slug": "patagonia-towers-trekking-expedition",
+  "title": "Patagonia: Towers Trekking Expedition",
+  "destinationSlug": "patagonia",
+  "category": "Adventure",
+  "nights": 9,
+  "priceFrom": 5200,
+  "rating": 4.9,
+  "reviewCount": 58,
+  "groupSizeMax": 8,
+  "difficulty": "Challenging",
+  "summary": "Torres del Paine without the crowds at the viewpoints — timed hikes with a certified guide, a private refugio, and weather-buffer days built in on purpose.",
+  "heroImg": "/images/unsplash/1544735716-392fe2489ffa.jpg",
+  "gallery": [
+    "/images/unsplash/1587595431973-160d0d94add1.jpg",
+    "/images/unsplash/1469521669194-babb45599def.jpg"
+  ],
+  "highlights": [
+    "The Torres del Paine base trek",
+    "The French Valley's hanging glaciers",
+    "Grey Glacier by boat",
+    "An estancia horseback ride"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive in Puerto Natales",
+      "description": "A transfer into the park with your first real look at the towers."
+    },
+    {
+      "day": "2",
+      "title": "Base trek",
+      "description": "The park's signature hike, timed with a certified guide to miss the worst crowds."
+    },
+    {
+      "day": "3",
+      "title": "French Valley",
+      "description": "Hanging glaciers and avalanche thunder from a trail most day-trippers never reach."
+    },
+    {
+      "day": "4",
+      "title": "Grey Glacier",
+      "description": "By boat, close enough to hear the ice moving."
+    },
+    {
+      "day": "5",
+      "title": "Estancia day",
+      "description": "A working sheep ranch, ridden the way the gauchos actually ride it."
+    },
+    {
+      "day": "6",
+      "title": "Weather-buffer day",
+      "description": "Built in on purpose — Patagonia sets the schedule, not the itinerary."
+    },
+    {
+      "day": "7",
+      "title": "Condor lookout",
+      "description": "A short, steep climb for one of the park's best views, before the day tours arrive."
+    },
+    {
+      "day": "8",
+      "title": "Asado dinner",
+      "description": "Patagonian lamb, slow-cooked, with the guide who's walked you through the park."
+    },
+    {
+      "day": "9",
+      "title": "Depart the park",
+      "description": "A final morning view of the towers before the drive back to Puerto Natales."
+    }
+  ],
+  "included": [
+    "8 nights across a boutique lodge & private refugio",
+    "A certified mountain guide for every hike",
+    "Daily breakfast, 5 dinners including the asado",
+    "All ground transfers within the park",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Park entrance fees",
+    "Technical gear rental, if needed"
+  ],
+  "departureDates": [
+    "2026-11-21",
+    "2026-12-12",
+    "2027-01-16",
+    "2027-02-13"
+  ]
+}

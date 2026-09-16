@@ -1,0 +1,54 @@
+{
+  "slug": "banana-islands-snorkel-and-history",
+  "title": "Banana Islands: Snorkel & History",
+  "destinationSlug": "banana-islands",
+  "category": "Beach & Island",
+  "nights": 2,
+  "priceFrom": 320,
+  "rating": 4.7,
+  "reviewCount": 18,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "A short, unhurried crossing to three off-grid islands — reef snorkeling, old gun emplacements, and no cars, no roads, and no schedule but your own.",
+  "heroImg": "/images/unsplash/1625001071825-0a85373c8972.jpg",
+  "gallery": [
+    "/images/unsplash/1600550132115-64a9ee300763.jpg",
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg"
+  ],
+  "highlights": [
+    "Snorkeling the reef off Dublin island",
+    "A walk to the old British gun emplacements",
+    "An afternoon fishing with a local boat crew",
+    "A slow sunset crossing back to the peninsula"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Cross to the islands",
+      "description": "Road transfer to Kent, a short boat crossing, and an afternoon snorkeling the reef off Dublin."
+    },
+    {
+      "day": "2",
+      "title": "History & fishing, then home",
+      "description": "A morning walk to the old gun emplacements and a fishing trip with a local crew, then a sunset crossing back."
+    }
+  ],
+  "included": [
+    "1 night in a beachfront guesthouse",
+    "The boat crossing and reef snorkeling gear",
+    "Daily breakfast, 1 lunch",
+    "Road transfer to and from Kent",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals"
+  ],
+  "departureDates": [
+    "2026-11-14",
+    "2026-12-05",
+    "2027-01-23",
+    "2027-02-27"
+  ]
+}

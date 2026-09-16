@@ -1,0 +1,29 @@
+{
+  "slug": "tiwai-island",
+  "name": "Tiwai Island",
+  "country": "Sierra Leone",
+  "region": "Africa",
+  "heroImg": "/images/unsplash/1602298674761-700e96568f5f.jpg",
+  "gallery": [
+    "/images/unsplash/1544519954-6aeb4816f0ab.jpg",
+    "/images/unsplash/1466442929976-97f336a657be.jpg"
+  ],
+  "hook": "Rainforest island, eleven primate species",
+  "description": "A protected wildlife sanctuary on the Moa River in the Gola rainforest belt — pygmy hippos, eleven primate species including the rare Diana monkey, and forest walks led by guides from the communities who co-manage the reserve.",
+  "bestTime": "November through April (dry season, easier trails)",
+  "quickFacts": {
+    "currency": "Sierra Leonean Leone (NLe)",
+    "language": "Mende & English",
+    "flightNote": "Domestic transfer to Bo or Kenema, then a road and canoe crossing to the island",
+    "climate": "Tropical rainforest — humid year-round, heaviest rain June–September"
+  },
+  "topExperiences": [
+    "A dawn primate walk with a community guide",
+    "Canoeing the Moa River at dusk for hippo sign",
+    "A guided night walk for nocturnal wildlife",
+    "Visiting the Mende villages that co-manage the reserve"
+  ],
+  "relatedTourSlugs": [
+    "tiwai-island-rainforest-safari"
+  ]
+}

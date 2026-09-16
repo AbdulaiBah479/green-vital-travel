@@ -1,0 +1,80 @@
+{
+  "slug": "amalfi-coast-sail-and-supper",
+  "title": "Amalfi Coast: Sail & Supper",
+  "destinationSlug": "amalfi",
+  "category": "Beach & Island",
+  "nights": 7,
+  "priceFrom": 3600,
+  "rating": 4.8,
+  "reviewCount": 112,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "A week paced around the water and the table — a private boat between towns, a pasta-making morning, and dinners that don't need a reservation six months out.",
+  "heroImg": "/images/unsplash/1533104816931-20fa691ff6ca.jpg",
+  "gallery": [
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg",
+    "/images/unsplash/1571902943202-507ec2618e8f.jpg"
+  ],
+  "highlights": [
+    "Private boat from Positano to Nerano",
+    "Pasta-making in a Ravello family kitchen",
+    "The Path of the Gods hike, timed early",
+    "A family vineyard wine tasting above the water"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive on the coast",
+      "description": "A private transfer along the coast road into a quiet town most itineraries skip."
+    },
+    {
+      "day": "2",
+      "title": "Boat day",
+      "description": "Your own boat and driver, Positano to Nerano, swim stops chosen as you go."
+    },
+    {
+      "day": "3",
+      "title": "Ravello",
+      "description": "A morning pasta-making class, then Villa Cimbrone's gardens and a cliffside lunch."
+    },
+    {
+      "day": "4",
+      "title": "Path of the Gods",
+      "description": "The coast's best trail, started early to beat both heat and crowds."
+    },
+    {
+      "day": "5",
+      "title": "Open day",
+      "description": "A quiet beach club, a book, nowhere to be."
+    },
+    {
+      "day": "6",
+      "title": "Capri",
+      "description": "A full day by private boat, timed around the Blue Grotto's tide."
+    },
+    {
+      "day": "7",
+      "title": "Depart the coast",
+      "description": "One last coffee with a sea view before your transfer to Naples."
+    }
+  ],
+  "included": [
+    "6 nights in boutique coastal hotels",
+    "Private transfers and two full boat days",
+    "Daily breakfast, 3 dinners",
+    "All guided experiences listed in the itinerary",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Gratuities for boat crew and guides"
+  ],
+  "departureDates": [
+    "2026-09-18",
+    "2027-05-08",
+    "2027-06-19",
+    "2027-09-05"
+  ]
+}

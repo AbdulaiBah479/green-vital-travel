@@ -1,0 +1,29 @@
+{
+  "slug": "iceland",
+  "name": "Iceland",
+  "country": "Iceland",
+  "region": "Europe",
+  "heroImg": "/images/unsplash/1531168556467-80aace0d0144.jpg",
+  "gallery": [
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg",
+    "/images/unsplash/1587595431973-160d0d94add1.jpg"
+  ],
+  "hook": "Waterfalls, ice caves, and the aurora",
+  "description": "The Ring Road at a pace that leaves room for the weather to change your plans — glacier lagoons, black-sand coastlines, and nights left open for the lights.",
+  "bestTime": "June–August for the Ring Road, September–March for the aurora",
+  "quickFacts": {
+    "currency": "Icelandic Króna",
+    "language": "Icelandic",
+    "flightNote": "~5–6hr direct from the US East Coast",
+    "climate": "Subarctic — mild summers, cold, dark winters"
+  },
+  "topExperiences": [
+    "A self-driven stretch of the Ring Road",
+    "Glacier hiking on Vatnajökull",
+    "The Jökulsárlón glacier lagoon by boat",
+    "A night chasing the aurora, away from town light"
+  ],
+  "relatedTourSlugs": [
+    "iceland-ring-road-fire-and-ice"
+  ]
+}

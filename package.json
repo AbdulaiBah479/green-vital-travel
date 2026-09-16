@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/build-content-index.mjs",
     "dev": "tinacms dev -c \"next dev\"",
+    "prebuild": "node scripts/build-content-index.mjs",
     "build": "node scripts/tina-build.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "pretest": "node scripts/build-content-index.mjs",
     "test": "vitest run",
     "test:e2e": "playwright test"
   },

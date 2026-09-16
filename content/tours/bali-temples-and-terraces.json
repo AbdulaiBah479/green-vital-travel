@@ -1,0 +1,74 @@
+{
+  "slug": "bali-temples-and-terraces",
+  "title": "Bali: Temples & Terraces",
+  "destinationSlug": "bali",
+  "category": "Cultural",
+  "nights": 8,
+  "priceFrom": 2600,
+  "rating": 4.7,
+  "reviewCount": 71,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "Ubud's terraced hills, a sunrise volcano climb, and a coastline with quieter corners — built for travelers who want more than the beach clubs.",
+  "heroImg": "/images/unsplash/1537996194471-e657df975ab4.jpg",
+  "gallery": [
+    "/images/unsplash/1512100356356-de1b84283e18.jpg",
+    "/images/unsplash/1502602898657-3e91760cbb34.jpg"
+  ],
+  "highlights": [
+    "Sunrise trek up Mount Batur",
+    "Tegalalang's rice terraces at first light",
+    "A traditional Balinese cooking class",
+    "Uluwatu's cliffside temple at sunset"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive in Ubud",
+      "description": "Settle into a rice-terrace villa, no plans for the first day."
+    },
+    {
+      "day": "3",
+      "title": "Mount Batur sunrise",
+      "description": "A pre-dawn trek up the volcano, breakfast at the summit."
+    },
+    {
+      "day": "4",
+      "title": "Rice terraces & cooking class",
+      "description": "Tegalalang at first light, then a hands-on Balinese cooking class."
+    },
+    {
+      "day": "5",
+      "title": "Temples day",
+      "description": "A guided visit to Tirta Empul and a lesser-visited water temple."
+    },
+    {
+      "day": "6–7",
+      "title": "The south coast",
+      "description": "Relocate to the coast for two nights, ending at Uluwatu for sunset."
+    },
+    {
+      "day": "8",
+      "title": "Depart Bali",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "7 nights across an Ubud villa & coastal resort",
+    "The Mount Batur trek and cooking class",
+    "Daily breakfast, 3 dinners",
+    "All ground transfers",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Temple donations (small, cash)"
+  ],
+  "departureDates": [
+    "2026-10-05",
+    "2027-04-11",
+    "2027-07-26"
+  ]
+}

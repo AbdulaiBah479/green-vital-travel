@@ -1,0 +1,79 @@
+{
+  "slug": "serengeti-great-migration-safari",
+  "title": "Serengeti: The Great Migration",
+  "destinationSlug": "serengeti",
+  "category": "Safari & Wildlife",
+  "nights": 8,
+  "priceFrom": 6800,
+  "rating": 4.9,
+  "reviewCount": 64,
+  "groupSizeMax": 6,
+  "difficulty": "Moderate",
+  "summary": "A mobile tented camp that follows the herds, run by naturalists we've traveled with ourselves — built for the days the migration actually moves.",
+  "heroImg": "/images/unsplash/1516426122078-c23e76319801.jpg",
+  "gallery": [
+    "/images/unsplash/1466442929976-97f336a657be.jpg",
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg"
+  ],
+  "highlights": [
+    "A mobile camp repositioned to that week's migration",
+    "A private vehicle and guide for the full stay",
+    "A hot-air balloon safari at first light",
+    "A guided bush walk with a Maasai tracker"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Fly into the bush",
+      "description": "A light aircraft to the airstrip nearest that week's migration, then straight to camp."
+    },
+    {
+      "day": "2–3",
+      "title": "Dawn & sundowner drives",
+      "description": "Two full days of game drives with a guide who reads the plains like a page."
+    },
+    {
+      "day": "4",
+      "title": "Balloon safari",
+      "description": "The migration from above at first light, then a bush breakfast where you land."
+    },
+    {
+      "day": "5",
+      "title": "Bush walk",
+      "description": "On foot with a Maasai tracker — a completely different way of reading the same land."
+    },
+    {
+      "day": "6",
+      "title": "Full day with the herds",
+      "description": "Wherever the migration is that week, with a packed lunch and no fixed return time."
+    },
+    {
+      "day": "7",
+      "title": "Community visit & camp day",
+      "description": "A school or conservancy project, then a treatment at the camp spa."
+    },
+    {
+      "day": "8",
+      "title": "Depart camp",
+      "description": "One last dawn drive on the way to the airstrip, weather and wildlife permitting."
+    }
+  ],
+  "included": [
+    "7 nights in a mobile tented safari camp",
+    "All meals and a private 4x4 vehicle & guide",
+    "Light aircraft transfers to/from the bush",
+    "The balloon safari and bush walk",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Park & conservancy fees (billed at cost)",
+    "Gratuities for camp staff and guides"
+  ],
+  "departureDates": [
+    "2027-06-14",
+    "2027-07-05",
+    "2027-08-02"
+  ]
+}

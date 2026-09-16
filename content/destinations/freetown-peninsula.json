@@ -1,0 +1,29 @@
+{
+  "slug": "freetown-peninsula",
+  "name": "Freetown Peninsula",
+  "country": "Sierra Leone",
+  "region": "Africa",
+  "heroImg": "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+  "gallery": [
+    "/images/unsplash/1624832040555-d9f92f7be672.jpg",
+    "/images/unsplash/1540202404-a2f29016b523.jpg"
+  ],
+  "hook": "Golden beaches, twenty minutes from the airport",
+  "description": "The coastline south of Freetown — Lumley, Tokeh, Bureh, and River No. 2 — palm-backed sand, fresh grilled fish, and some of West Africa's best surf, without the crowds of better-known coasts.",
+  "bestTime": "November through April (dry season)",
+  "quickFacts": {
+    "currency": "Sierra Leonean Leone (NLe)",
+    "language": "Krio & English",
+    "flightNote": "Direct international flights into Freetown (FNA), then a short ferry or water-taxi across the estuary",
+    "climate": "Tropical — hot and humid, with a May–October rainy season"
+  },
+  "topExperiences": [
+    "Surfing at Bureh Beach with the local surf club",
+    "Grilled barracuda on the sand at River No. 2",
+    "Sunset drinks at Lumley Beach",
+    "A hike up to Leicester Peak for a view over Freetown"
+  ],
+  "relatedTourSlugs": [
+    "freetown-peninsula-beach-escape"
+  ]
+}

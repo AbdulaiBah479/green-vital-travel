@@ -1,0 +1,74 @@
+{
+  "slug": "vietnam-north-to-south-explorer",
+  "title": "Vietnam: North-to-South Explorer",
+  "destinationSlug": "vietnam",
+  "category": "Small-Group",
+  "nights": 12,
+  "priceFrom": 3100,
+  "rating": 4.7,
+  "reviewCount": 34,
+  "groupSizeMax": 14,
+  "difficulty": "Moderate",
+  "summary": "Hanoi to the Mekong Delta in one trip — a night on a Ha Long Bay junk boat, Hoi An's lantern-lit old town, and progressively smaller boats the further south you go.",
+  "heroImg": "/images/unsplash/1528127269322-539801943592.jpg",
+  "gallery": [
+    "/images/unsplash/1506461883276-594a12b11cf3.jpg",
+    "/images/unsplash/1544644181-1484b3fdfc62.jpg"
+  ],
+  "highlights": [
+    "A night aboard a Ha Long Bay junk boat",
+    "Hanoi's old quarter by street-food crawl",
+    "Hoi An's lantern-lit ancient town",
+    "The Mekong Delta by small boat"
+  ],
+  "itinerary": [
+    {
+      "day": "1–3",
+      "title": "Hanoi & Ha Long Bay",
+      "description": "The old quarter by foot, then an overnight junk boat in Ha Long Bay."
+    },
+    {
+      "day": "4–5",
+      "title": "Hue",
+      "description": "The old imperial capital and its citadel."
+    },
+    {
+      "day": "6–7",
+      "title": "Hoi An",
+      "description": "Lantern-lit evenings and a bicycle ride through the rice paddies."
+    },
+    {
+      "day": "8–9",
+      "title": "Ho Chi Minh City",
+      "description": "War history, street food, and the city's relentless energy."
+    },
+    {
+      "day": "10–11",
+      "title": "Mekong Delta",
+      "description": "Progressively smaller boats through the delta's floating markets."
+    },
+    {
+      "day": "12",
+      "title": "Depart",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "11 nights across 5 destinations",
+    "All internal flights and train transfers",
+    "Daily breakfast, 6 dinners",
+    "A local guide in every city",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Visa fees, if applicable"
+  ],
+  "departureDates": [
+    "2027-02-06",
+    "2027-03-13",
+    "2027-09-25"
+  ]
+}

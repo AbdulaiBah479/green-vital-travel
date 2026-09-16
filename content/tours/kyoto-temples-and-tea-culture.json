@@ -1,0 +1,85 @@
+{
+  "slug": "kyoto-temples-and-tea-culture",
+  "title": "Kyoto: Temples & Tea Culture",
+  "destinationSlug": "kyoto",
+  "category": "Cultural",
+  "nights": 10,
+  "priceFrom": 4200,
+  "rating": 4.9,
+  "reviewCount": 86,
+  "groupSizeMax": 8,
+  "difficulty": "Easy",
+  "summary": "Ten unhurried nights in the old capital — machiya guesthouses, a private tea ceremony, and mornings built around temples before the crowds arrive.",
+  "heroImg": "/images/unsplash/1493976040374-85c8e12f0c0e.jpg",
+  "gallery": [
+    "/images/unsplash/1540202404-a2f29016b523.jpg",
+    "/images/unsplash/1512100356356-de1b84283e18.jpg"
+  ],
+  "highlights": [
+    "Dawn walk through the Fushimi Inari gates",
+    "Private tea ceremony with a third-generation host",
+    "A day trip into the Kitayama mountains, onsen included",
+    "Nishiki Market food crawl with a local guide"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive & settle in",
+      "description": "Private transfer into the city and two unplanned days in your machiya guesthouse's neighborhood."
+    },
+    {
+      "day": "3",
+      "title": "Fushimi Inari at dawn",
+      "description": "A guided walk through the gates before they belong to anyone else."
+    },
+    {
+      "day": "4",
+      "title": "Tea ceremony & Gion",
+      "description": "An afternoon tea ceremony, then a quiet walk through the old geisha district into a kaiseki dinner."
+    },
+    {
+      "day": "5",
+      "title": "Arashiyama",
+      "description": "The bamboo grove early, then a slow boat down the Hozugawa river."
+    },
+    {
+      "day": "6",
+      "title": "Nishiki Market",
+      "description": "A stall-by-stall food crawl with a guide who knows which queues are worth it."
+    },
+    {
+      "day": "7–8",
+      "title": "Kitayama mountains",
+      "description": "A two-night trip north into the hills, ending each day in a private hot-spring bath."
+    },
+    {
+      "day": "9",
+      "title": "Kiyomizu-dera & pottery quarter",
+      "description": "The wooden temple stage, then an afternoon browsing working potters' studios."
+    },
+    {
+      "day": "10",
+      "title": "Depart Kyoto",
+      "description": "A final quiet morning before your private transfer to the airport."
+    }
+  ],
+  "included": [
+    "9 nights in hand-picked machiya guesthouses & a mountain ryokan",
+    "Private airport and intercity transfers",
+    "Daily breakfast, 4 dinners including one kaiseki",
+    "All guided experiences listed in the itinerary",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Visa fees, if applicable"
+  ],
+  "departureDates": [
+    "2026-10-12",
+    "2026-11-02",
+    "2027-03-14",
+    "2027-04-04"
+  ]
+}

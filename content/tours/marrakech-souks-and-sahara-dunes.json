@@ -1,0 +1,74 @@
+{
+  "slug": "marrakech-souks-and-sahara-dunes",
+  "title": "Marrakech: Souks & Sahara Dunes",
+  "destinationSlug": "marrakech",
+  "category": "Adventure",
+  "nights": 7,
+  "priceFrom": 2400,
+  "rating": 4.7,
+  "reviewCount": 53,
+  "groupSizeMax": 12,
+  "difficulty": "Moderate",
+  "summary": "The medina's souks and riads, then over the High Atlas to a private Sahara camp — camel silhouettes and a sky with no ambient light for a hundred miles.",
+  "heroImg": "/images/unsplash/1489493887464-892be6d1daae.jpg",
+  "gallery": [
+    "/images/unsplash/1571902943202-507ec2618e8f.jpg",
+    "/images/unsplash/1466442929976-97f336a657be.jpg"
+  ],
+  "highlights": [
+    "A private guide through the medina's souks",
+    "Jardin Majorelle's cobalt-blue gardens",
+    "Crossing the High Atlas by 4x4",
+    "A night in a private Sahara camp"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive in Marrakech",
+      "description": "Settle into a riad, then a private guide through the medina's souks."
+    },
+    {
+      "day": "3",
+      "title": "Gardens & Atlas foothills",
+      "description": "Jardin Majorelle in the morning, then depart for the mountains."
+    },
+    {
+      "day": "4",
+      "title": "Crossing the High Atlas",
+      "description": "A dramatic 4x4 crossing, overnighting in a Berber guesthouse."
+    },
+    {
+      "day": "5",
+      "title": "Into the Sahara",
+      "description": "Camel trek to a private desert camp for the night."
+    },
+    {
+      "day": "6",
+      "title": "Return to Marrakech",
+      "description": "A scenic drive back, with time to revisit the souks."
+    },
+    {
+      "day": "7",
+      "title": "Depart Marrakech",
+      "description": "A final breakfast before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "6 nights across a riad, mountain guesthouse & desert camp",
+    "A private 4x4 and driver-guide throughout",
+    "Daily breakfast, 4 dinners",
+    "The camel trek and desert camp",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Gratuities for guides and drivers"
+  ],
+  "departureDates": [
+    "2026-10-24",
+    "2027-03-20",
+    "2027-04-17"
+  ]
+}
