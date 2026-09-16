@@ -28,7 +28,18 @@ if (!process.env.TINA_TOKEN || !process.env.NEXT_PUBLIC_TINA_CLIENT_ID) {
   process.exit(0);
 }
 
-const result = spawnSync("npx", ["@tinacms/cli", "build"], { shell: true, encoding: "utf-8" });
+// --skip-cloud-checks bypasses Tina's remote-vs-local GraphQL schema diff.
+// TinaCloud's own indexed schema has been stuck (not auto-updating after a
+// schema-changing push, even after manually refreshing branches in its
+// dashboard) — a platform-side issue, not something fixable from here. This
+// keeps the site and already-indexed collections working while that gets
+// sorted out with TinaCloud support; any newly added collection may not be
+// editable through the live admin panel until their index catches up.
+const result = spawnSync(
+  "npx",
+  ["@tinacms/cli", "build", "--skip-cloud-checks"],
+  { shell: true, encoding: "utf-8" }
+);
 log(`tinacms build exit code: ${result.status}`);
 if (result.error) log(`spawn error: ${result.error.message}`);
 const output = `${result.stdout || ""}${result.stderr || ""}`;
