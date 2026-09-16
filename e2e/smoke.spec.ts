@@ -7,7 +7,7 @@ test.describe("homepage", () => {
     // slow to fully finish loading, and none of these tests depend on it.
     // Real visitors aren't blocked by it either; the test shouldn't be.
     await page.goto("/", { waitUntil: "domcontentloaded" });
-    await expect(page).toHaveTitle(/Greenvital/);
+    await expect(page).toHaveTitle(/Green Vital/);
     // Scoped to the nav landmark — "About Us" etc. legitimately also
     // appear in the footer, and an unscoped getByRole would (correctly)
     // fail strict mode on that ambiguity rather than a real bug.
@@ -39,7 +39,7 @@ test.describe("chatbot", () => {
     // The cookie banner overlaps the chat toggle's corner on first visit.
     await page.getByRole("button", { name: "Got it" }).click().catch(() => {});
 
-    await page.getByRole("button", { name: "Open chat with the Greenvital assistant" }).click();
+    await page.getByRole("button", { name: "Open chat with the Green Vital assistant" }).click();
 
     const log = page.getByRole("log", { name: "Conversation" });
     await expect(log).toContainText("Hello");
