@@ -28,13 +28,12 @@ if (!process.env.TINA_TOKEN || !process.env.NEXT_PUBLIC_TINA_CLIENT_ID) {
   process.exit(0);
 }
 
-// --skip-cloud-checks bypasses Tina's remote-vs-local GraphQL schema diff.
-// TinaCloud's own indexed schema has been stuck (not auto-updating after a
-// schema-changing push, even after manually refreshing branches in its
-// dashboard) — a platform-side issue, not something fixable from here. This
-// keeps the site and already-indexed collections working while that gets
-// sorted out with TinaCloud support; any newly added collection may not be
-// editable through the live admin panel until their index catches up.
+// --skip-cloud-checks bypasses Tina's remote-vs-local GraphQL schema diff at
+// build time, kept as a safety net while confirming that committing a fresh
+// tina-lock.json (see the commit that added this comment) is enough on its
+// own to get TinaCloud to recognize the new collections. Remove this flag
+// once the live admin panel no longer shows a "GraphQL Schema Mismatch"
+// banner.
 const result = spawnSync(
   "npx",
   ["@tinacms/cli", "build", "--skip-cloud-checks"],
