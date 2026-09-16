@@ -49,6 +49,30 @@ const securityHeaders = [
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
 ];
 
+// The TinaCMS admin panel (a separate static app under /public/admin) needs
+// to talk to TinaCloud directly from the browser — auth, content API, and
+// media uploads. Scoped to /admin only so the rest of the site keeps the
+// stricter policy above.
+const adminCsp = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://assets.tinajs.io",
+  "font-src 'self' data:",
+  `connect-src 'self' https://content.tinajs.io https://identity.tinajs.io https://identity-v2.tinajs.io https://assets.tinajs.io https://app.tina.io${isDev ? " ws://localhost:* http://localhost:*" : ""}`,
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+].join("; ");
+
+const adminSecurityHeaders = [
+  { key: "Content-Security-Policy", value: adminCsp },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+];
+
 const nextConfig: NextConfig = {
   // Drops the "X-Powered-By: Next.js" response header — free information
   // disclosure otherwise handed to anyone fingerprinting the stack.
@@ -74,6 +98,13 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        // Placed after the rule above — Next.js lets the last matching
+        // header value win for a given path, so this overrides the CSP
+        // (and only the CSP-related headers) for /admin specifically.
+        source: "/admin/:path*",
+        headers: adminSecurityHeaders,
       },
       {
         // Static /public assets aren't content-hashed, so this is a
