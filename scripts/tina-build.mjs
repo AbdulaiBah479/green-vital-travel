@@ -28,9 +28,13 @@ if (!process.env.TINA_TOKEN || !process.env.NEXT_PUBLIC_TINA_CLIENT_ID) {
   process.exit(0);
 }
 
-const result = spawnSync("npx", ["@tinacms/cli", "build"], { stdio: "inherit", shell: true });
+const result = spawnSync("npx", ["@tinacms/cli", "build"], { shell: true, encoding: "utf-8" });
 log(`tinacms build exit code: ${result.status}`);
 if (result.error) log(`spawn error: ${result.error.message}`);
+const output = `${result.stdout || ""}${result.stderr || ""}`;
+console.log(output);
+log("--- tinacms build output (last 4000 chars) ---");
+log(output.slice(-4000));
 log(`public/admin/index.html exists after build: ${existsSync("public/admin/index.html")}`);
 log(`Result: ${result.status === 0 ? "SUCCESS" : "FAILED"}`);
 
