@@ -29,11 +29,14 @@ if (!process.env.TINA_TOKEN || !process.env.NEXT_PUBLIC_TINA_CLIENT_ID) {
 }
 
 // --skip-cloud-checks bypasses Tina's remote-vs-local GraphQL schema diff at
-// build time, kept as a safety net while confirming that committing a fresh
-// tina-lock.json (see the commit that added this comment) is enough on its
-// own to get TinaCloud to recognize the new collections. Remove this flag
-// once the live admin panel no longer shows a "GraphQL Schema Mismatch"
-// banner.
+// build time. Kept permanently: this project's TinaCloud project has no
+// GitHub webhook configured, so every future schema change (a new field or
+// collection) re-triggers the same indexing lag it took hours to diagnose
+// once already — committing a fresh tina/tina-lock.json alongside the
+// schema change is what actually gets TinaCloud caught up. Without this
+// flag, that lag would fail the whole site's build, not just leave the
+// admin panel briefly behind — same reasoning as the rest of this file's
+// graceful-degradation pattern.
 const result = spawnSync(
   "npx",
   ["@tinacms/cli", "build", "--skip-cloud-checks"],
