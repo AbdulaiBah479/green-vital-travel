@@ -39,7 +39,7 @@ export default function AgencyOverview() {
               One traveler, one real person, from the first enquiry to the last day on the ground.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/70">
-              Greenvital Travel and Tour Agency started in Freetown with a simple idea: booking a trip
+              Green Vital Travel and Tour Agency started in Freetown with a simple idea: booking a trip
               shouldn&rsquo;t mean juggling five different errands with five different people. We&rsquo;ve grown
               through operational discipline, a strong client-first mindset, and a long-term view of what
               dependable travel support should look like.

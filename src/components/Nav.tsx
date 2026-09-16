@@ -119,13 +119,13 @@ export default function Nav() {
         <Link
           href="/#top"
           data-cursor-hover
-          aria-label="Greenvital — home"
+          aria-label="Green Vital — home"
           className="shrink-0 py-1"
         >
           <span className="inline-flex items-center rounded-xl bg-paper px-3 py-2 shadow-sm lg:px-4 lg:py-3">
             <Image
               src="/brand-logo.png"
-              alt="Greenvital"
+              alt="Green Vital"
               width={963}
               height={982}
               className="h-24 w-auto lg:h-36"

@@ -7,17 +7,17 @@ export const siteUrl = (
     (process.env.NODE_ENV === "production" ? "https://gtravelsandtours.com" : "http://localhost:3000")
 ).replace(/\/$/, "");
 
-export const siteName = "Greenvital";
+export const siteName = "Green Vital";
 
-export const siteFullName = "Greenvital Travel and Tour Agency Limited";
+export const siteFullName = "Green Vital Travel and Tour Agency Limited";
 
-export const siteTitle = "Greenvital | Discover the world";
+export const siteTitle = "Green Vital | Discover the world";
 
 export const siteDescription =
-  "Greenvital offers air and boat ticketing, car rentals, visa assistance, hotel bookings, tours, and travel insurance across Sierra Leone and West Africa.";
+  "Green Vital offers air and boat ticketing, car rentals, visa assistance, hotel bookings, tours, and travel insurance across Sierra Leone and West Africa.";
 
 export const siteKeywords = [
-  "Greenvital",
+  "Green Vital",
   "travel agency Sierra Leone",
   "air ticketing Freetown",
   "boat ticketing Sierra Leone",

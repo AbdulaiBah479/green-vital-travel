@@ -4,11 +4,11 @@ export default function WhatsAppButton() {
   return (
     <a
       href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-        "Hi Greenvital — I'd like some help planning a trip."
+        "Hi Green Vital — I'd like some help planning a trip."
       )}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Greenvital on WhatsApp"
+      aria-label="Chat with Green Vital on WhatsApp"
       data-cursor-hover
       className="pulse-ring fixed bottom-24 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-ink/20 transition-transform hover:scale-105"
     >

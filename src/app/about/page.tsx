@@ -6,16 +6,16 @@ import Magnetic from "@/components/Magnetic";
 import { founder, companyRegistration } from "@/lib/site";
 
 const description =
-  "Greenvital is a full-service travel agency in Freetown, Sierra Leone — flights, hotels, visas, and tours, handled by a real person, not a database.";
+  "Green Vital is a full-service travel agency in Freetown, Sierra Leone — flights, hotels, visas, and tours, handled by a real person, not a database.";
 
 export const metadata: Metadata = {
   title: "About",
   description,
   alternates: { canonical: "/about" },
-  openGraph: { title: "About — Greenvital", description, url: "/about", type: "website" },
+  openGraph: { title: "About — Green Vital", description, url: "/about", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "About — Greenvital",
+    title: "About — Green Vital",
     description: description,
   },
 };
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="space-y-6 text-lg leading-relaxed text-ink/80">
             <p className="font-serif text-2xl italic leading-snug text-ink">
-              Greenvital Travel and Tour Agency Limited was incorporated in{" "}
+              Green Vital Travel and Tour Agency Limited was incorporated in{" "}
               {companyRegistration.jurisdiction} in {companyRegistration.incorporatedDate.split(" ").slice(1).join(" ")}, on a simple idea: one traveler
               should be able to reach one real person for everything a trip
               needs — the flight, the hotel, the visa, and the plan for the

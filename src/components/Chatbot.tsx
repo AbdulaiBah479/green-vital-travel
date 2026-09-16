@@ -143,7 +143,7 @@ export default function Chatbot() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        aria-label={open ? "Close chat" : "Open chat with the Greenvital assistant"}
+        aria-label={open ? "Close chat" : "Open chat with the Green Vital assistant"}
         aria-expanded={open}
         data-cursor-hover
         className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-ink shadow-lg shadow-ink/20 transition-transform hover:scale-105"
@@ -167,7 +167,7 @@ export default function Chatbot() {
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Chat with the Greenvital assistant"
+        aria-label="Chat with the Green Vital assistant"
         aria-hidden={!open}
         inert={!open}
         className={`fixed inset-x-4 bottom-24 z-40 flex h-[70vh] max-h-[560px] flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-2xl shadow-ink/30 transition-all duration-300 sm:inset-x-auto sm:right-6 sm:w-96 ${
@@ -176,7 +176,7 @@ export default function Chatbot() {
       >
         <div className="flex items-center justify-between border-b border-ink/10 bg-ink px-6 py-4">
           <div>
-            <p className="font-serif text-lg italic text-paper">Greenvital Assistant</p>
+            <p className="font-serif text-lg italic text-paper">Green Vital Assistant</p>
             <p className="text-[11px] uppercase tracking-wide text-paper/50">
               Guided answers, not a person
             </p>
@@ -232,7 +232,7 @@ export default function Chatbot() {
           {typing && (
             <div
               role="status"
-              aria-label="Greenvital assistant is typing"
+              aria-label="Green Vital assistant is typing"
               className="flex items-center gap-1 rounded-2xl bg-paper-dim px-4 py-3"
             >
               <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-ink/40 [animation-delay:-0.3s]" />
@@ -249,7 +249,7 @@ export default function Chatbot() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask about destinations, visas, flights…"
-            aria-label="Message the Greenvital assistant"
+            aria-label="Message the Green Vital assistant"
             disabled={typing}
             className="w-full rounded-full border border-ink/15 bg-paper px-4 py-2.5 text-sm text-ink placeholder:text-ink/70 outline-none focus:border-accent-deep disabled:opacity-60"
           />

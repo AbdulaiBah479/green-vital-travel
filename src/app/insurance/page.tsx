@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   title: "Travel Insurance",
   description,
   alternates: { canonical: "/insurance" },
-  openGraph: { title: "Travel Insurance — Greenvital", description, url: "/insurance", type: "website" },
+  openGraph: { title: "Travel Insurance — Green Vital", description, url: "/insurance", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "Travel Insurance — Greenvital",
+    title: "Travel Insurance — Green Vital",
     description: description,
   },
 };

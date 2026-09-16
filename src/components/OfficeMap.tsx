@@ -11,7 +11,7 @@ export default function OfficeMap() {
   return (
     <div className="overflow-hidden rounded-2xl border border-ink/10">
       <iframe
-        title="Greenvital office — Congo Cross, Freetown, Sierra Leone"
+        title="Green Vital office — Congo Cross, Freetown, Sierra Leone"
         src={`https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}`}
         className="h-64 w-full sm:h-72"
         loading="lazy"

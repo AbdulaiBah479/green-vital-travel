@@ -41,7 +41,7 @@ export default function ErrorPage({
           href="/"
           className="text-xs eyebrow uppercase text-ink/70 transition-colors hover:text-accent-deep"
         >
-          Back to Greenvital
+          Back to Green Vital
         </Link>
       </div>
     </main>

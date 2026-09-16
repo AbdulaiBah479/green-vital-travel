@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   title: "Rewards",
   description,
   alternates: { canonical: "/rewards" },
-  openGraph: { title: "Rewards — Greenvital", description, url: "/rewards", type: "website" },
+  openGraph: { title: "Rewards — Green Vital", description, url: "/rewards", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "Rewards — Greenvital",
+    title: "Rewards — Green Vital",
     description: description,
   },
 };

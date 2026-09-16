@@ -103,7 +103,7 @@ export async function submitInquiry(kind: "contact" | "booking", payload: Contac
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Greenvital <${fromEmail}>`,
+        from: `Green Vital <${fromEmail}>`,
         to: [businessEmail],
         subject,
         text,
@@ -182,7 +182,7 @@ export async function subscribeNewsletter(email: string) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Greenvital <${fromEmail}>`,
+        from: `Green Vital <${fromEmail}>`,
         to: [businessEmail],
         subject: "New newsletter signup",
         text: `New newsletter signup: ${email}\n\nNo RESEND_AUDIENCE_ID is configured yet, so this wasn't added to a mailing list automatically — add it manually or set RESEND_AUDIENCE_ID.`,
@@ -250,7 +250,7 @@ export async function submitReview(review: ReviewSubmission) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Greenvital <${fromEmail}>`,
+        from: `Green Vital <${fromEmail}>`,
         to: [businessEmail],
         subject: `New review: ${review.tourTitle} (${review.rating}/5)`,
         text,

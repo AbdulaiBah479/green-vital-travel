@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { contact } from "@/lib/site";
 
-const description = "How Greenvital collects, uses, and protects your information.";
+const description = "How Green Vital collects, uses, and protects your information.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description,
   alternates: { canonical: "/privacy" },
-  openGraph: { title: "Privacy Policy — Greenvital", description, url: "/privacy", type: "website" },
-  twitter: { card: "summary_large_image", title: "Privacy Policy — Greenvital", description },
+  openGraph: { title: "Privacy Policy — Green Vital", description, url: "/privacy", type: "website" },
+  twitter: { card: "summary_large_image", title: "Privacy Policy — Green Vital", description },
   robots: { index: true, follow: true },
 };
 

@@ -52,7 +52,7 @@ export default function TrustStrip() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="eyebrow mb-3 text-center text-xs uppercase text-accent-deep">
-            Why Greenvital
+            Why Green Vital
           </p>
           <h2 className="mx-auto max-w-xl text-balance text-center font-serif text-3xl leading-tight text-ink sm:text-4xl">
             Booked with confidence, not just hope.

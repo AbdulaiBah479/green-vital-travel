@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     canonical: "/journal",
   },
   openGraph: {
-    title: "The Journal — Greenvital",
+    title: "The Journal — Green Vital",
     description,
     url: "/journal",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Journal — Greenvital",
+    title: "The Journal — Green Vital",
     description: description,
   },
 };

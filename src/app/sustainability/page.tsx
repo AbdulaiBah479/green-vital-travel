@@ -3,16 +3,16 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 const description =
-  "How Greenvital thinks about responsible travel — supporting the people and places our trips depend on, not just visiting them.";
+  "How Green Vital thinks about responsible travel — supporting the people and places our trips depend on, not just visiting them.";
 
 export const metadata: Metadata = {
   title: "Sustainability",
   description,
   alternates: { canonical: "/sustainability" },
-  openGraph: { title: "Sustainability — Greenvital", description, url: "/sustainability", type: "website" },
+  openGraph: { title: "Sustainability — Green Vital", description, url: "/sustainability", type: "website" },
   twitter: {
     card: "summary_large_image",
-    title: "Sustainability — Greenvital",
+    title: "Sustainability — Green Vital",
     description: description,
   },
 };

@@ -3,7 +3,7 @@ import { join } from "path";
 import { ImageResponse } from "next/og";
 import { siteName } from "@/lib/site";
 
-export const alt = "The Journal — Greenvital";
+export const alt = "The Journal — Green Vital";
 export const size = {
   width: 1200,
   height: 630,

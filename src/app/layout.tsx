@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s — Greenvital",
+    template: "%s — Green Vital",
   },
   description: siteDescription,
   keywords: siteKeywords,

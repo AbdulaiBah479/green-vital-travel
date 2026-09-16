@@ -23,7 +23,7 @@ const START_REPLIES: QuickReply[] = [
 ];
 
 const GREETING: BotReply = {
-  text: "Hello — I'm the Greenvital assistant. I can help with destinations, flights, visas, or point you to a real person on our team. What are you curious about?",
+  text: "Hello — I'm the Green Vital assistant. I can help with destinations, flights, visas, or point you to a real person on our team. What are you curious about?",
   quickReplies: START_REPLIES,
 };
 
@@ -81,7 +81,7 @@ const rules: Rule[] = [
         "you a person",
       ]),
     respond: () => ({
-      text: "I'm an AI assistant built into this site, not a person. I work from Greenvital's actual destinations, tours, and policies, so I'm reliable on those — pricing is quoted directly by the team, not by me. For anything that needs judgment, I'll hand you to a real person.",
+      text: "I'm an AI assistant built into this site, not a person. I work from Green Vital's actual destinations, tours, and policies, so I'm reliable on those — pricing is quoted directly by the team, not by me. For anything that needs judgment, I'll hand you to a real person.",
       quickReplies: [
         { label: "Talk to our team", href: "/#contact" },
         { label: "See destinations", message: "Where do you send people?" },
@@ -154,9 +154,9 @@ const rules: Rule[] = [
   },
   {
     id: "about",
-    test: (t) => includesAny(t, ["who are you", "about Greenvital", "founded", "your team", "your designers", "how long have you"]),
+    test: (t) => includesAny(t, ["who are you", "about Green Vital", "founded", "your team", "your designers", "how long have you"]),
     respond: () => ({
-      text: "Greenvital Travel and Tour Agency is registered and based in Freetown, Sierra Leone — flights, hotels, visas, tours, and corporate travel, run by a small, founder-led team that actually answers the phone.",
+      text: "Green Vital Travel and Tour Agency is registered and based in Freetown, Sierra Leone — flights, hotels, visas, tours, and corporate travel, run by a small, founder-led team that actually answers the phone.",
       quickReplies: [
         { label: "Meet the team", href: "/about/designers" },
         { label: "Read our story", href: "/about" },
