@@ -23,4 +23,12 @@ describe("buildSystemPrompt", () => {
   it("does not contain a literal dollar amount anywhere in the prompt itself", () => {
     expect(prompt).not.toMatch(/\$\d/);
   });
+
+  it("instructs the model to reply in the visitor's own language", () => {
+    const lower = prompt.toLowerCase();
+    expect(lower).toContain("same language the visitor writes in");
+    for (const lang of ["french", "mandarin", "hindi", "arabic", "spanish"]) {
+      expect(lower).toContain(lang);
+    }
+  });
 });
