@@ -31,7 +31,7 @@ export function getConfiguredProviders(): AiProvider[] {
           name: "gemini",
           apiKey: process.env.GEMINI_API_KEY,
           baseURL: "https://generativelanguage.googleapis.com/v1beta/openai",
-          model: process.env.GEMINI_MODEL || "gemini-2.0-flash",
+          model: process.env.GEMINI_MODEL || "gemini-3.6-flash",
         }
       : null,
   ];
