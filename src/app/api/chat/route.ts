@@ -90,9 +90,6 @@ export async function POST(request: Request) {
     // land here — the visitor still gets a real answer instead of an error.
     console.error("Groq chat completion failed, falling back to rule-based bot:", error);
     const reply = getBotReply(message);
-    // TEMPORARY diagnostic field — remove once the Groq failure is
-    // understood. Never ship raw error text to end users permanently.
-    const debugError = error instanceof Error ? error.message : String(error);
-    return NextResponse.json({ text: reply.text, quickReplies: reply.quickReplies, source: "rules-fallback", debugError, debugModel: AI_MODEL, debugHasKey: Boolean(process.env.GROQ_API_KEY) });
+    return NextResponse.json({ text: reply.text, quickReplies: reply.quickReplies, source: "rules-fallback" });
   }
 }
