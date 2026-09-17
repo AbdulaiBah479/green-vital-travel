@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { FAQPage, WithContext } from "schema-dts";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import Stats from "@/components/Stats";
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-const faqJsonLd = {
+const faqJsonLd: WithContext<FAQPage> = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map((faq) => ({

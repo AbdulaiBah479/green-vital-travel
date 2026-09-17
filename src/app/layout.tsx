@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import type { TravelAgency, WithContext } from "schema-dts";
 import { Fraunces, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -82,7 +83,7 @@ export const viewport: Viewport = {
   themeColor: "#0a2f3d",
 };
 
-const organizationJsonLd = {
+const organizationJsonLd: WithContext<TravelAgency> = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
   name: siteName,

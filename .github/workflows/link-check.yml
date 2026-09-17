@@ -1,0 +1,30 @@
+name: Link Check
+
+# Catches exactly the kind of thing found manually on 2026-09-17: a dead
+# LinkedIn company page and an unreachable Instagram profile, both linked
+# from the site footer. Runs weekly against the live site rather than on
+# every push, since a broken external link isn't something this repo's own
+# code changes would cause or fix.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays, 06:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --exclude-mail
+            --accept 200,206,999
+            --retry-wait-time 5
+            --max-retries 2
+            https://gtravelsandtours.com
+          fail: true

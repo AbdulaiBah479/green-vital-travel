@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Article, BreadcrumbList, WithContext } from "schema-dts";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -51,7 +52,7 @@ export default async function JournalEntryPage({ params }: Props) {
   const more = journalEntries.filter((e) => e.slug !== slug).slice(0, 2);
   const url = `${siteUrl}/journal/${entry.slug}`;
 
-  const articleJsonLd = {
+  const articleJsonLd: WithContext<Article> = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: entry.title,
@@ -73,7 +74,7 @@ export default async function JournalEntryPage({ params }: Props) {
     },
   };
 
-  const breadcrumbJsonLd = {
+  const breadcrumbJsonLd: WithContext<BreadcrumbList> = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [

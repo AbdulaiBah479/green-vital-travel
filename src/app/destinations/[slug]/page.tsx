@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { BreadcrumbList, TouristDestination, WithContext } from "schema-dts";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -53,7 +54,7 @@ export default async function DestinationPage({
 
   const tours = toursForDestination(d.slug);
 
-  const destinationJsonLd = {
+  const destinationJsonLd: WithContext<TouristDestination> = {
     "@context": "https://schema.org",
     "@type": "TouristDestination",
     name: d.name,
@@ -68,7 +69,7 @@ export default async function DestinationPage({
     }),
   };
 
-  const breadcrumbJsonLd = {
+  const breadcrumbJsonLd: WithContext<BreadcrumbList> = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [

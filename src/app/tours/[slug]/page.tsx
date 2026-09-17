@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { BreadcrumbList, Product, WithContext } from "schema-dts";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -59,7 +60,7 @@ export default async function TourPage({
   const rating = hasReviews ? averageRating(tourReviews) : 0;
   const related = tours.filter((t) => t.category === tour.category && t.slug !== tour.slug).slice(0, 3);
 
-  const jsonLd = {
+  const jsonLd: WithContext<Product> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: tour.title,
@@ -82,7 +83,7 @@ export default async function TourPage({
     },
   };
 
-  const breadcrumbJsonLd = {
+  const breadcrumbJsonLd: WithContext<BreadcrumbList> = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
