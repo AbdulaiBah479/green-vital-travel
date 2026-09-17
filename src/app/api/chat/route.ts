@@ -69,6 +69,11 @@ export async function POST(request: Request) {
       model: AI_MODEL,
       temperature: 0.4,
       max_tokens: 350,
+      // gpt-oss (and other reasoning-capable) models otherwise mix a visible
+      // chain-of-thought preamble into the same content string — "hidden"
+      // keeps that internal, so the chat bubble only ever gets the final
+      // answer. Harmless no-op on models that don't support reasoning.
+      reasoning_format: "hidden",
       messages: [
         { role: "system", content: getSystemPrompt() },
         ...history.map((h) => ({ role: h.role, content: h.content })),
