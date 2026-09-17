@@ -50,7 +50,11 @@ export async function callProvider(provider: AiProvider, messages: ChatMessage[]
     body: JSON.stringify({
       model: provider.model,
       temperature: 0.4,
-      max_tokens: 350,
+      // High enough for a genuine "what do I need to know before visiting
+      // X" travel briefing, not just a one-line answer — the system prompt
+      // asks the model to match length to the question, so this is a
+      // ceiling for the thorough case, not a target for every reply.
+      max_tokens: 800,
       messages,
       ...provider.extraBody,
     }),

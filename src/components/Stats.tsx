@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
-import { destinations } from "@/lib/destinations";
 import { tours } from "@/lib/tours";
 
 // Counts are computed from the real catalogs, not hand-typed, so this
@@ -14,12 +13,6 @@ const stats = [
     suffix: "/7",
     label: "In-trip support",
     icon: <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" />,
-  },
-  {
-    value: destinations.length,
-    suffix: "",
-    label: "Destinations curated",
-    icon: <path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z" />,
   },
   {
     value: tours.length,
@@ -92,7 +85,7 @@ function Counter({ value, suffix }: { value: number | string; suffix: string }) 
 export default function Stats() {
   return (
     <section className="bg-paper px-6 py-16 sm:px-10">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 100} variant="scale">
             <div className="flex h-full flex-col items-start gap-4 rounded-2xl border border-ink/8 bg-paper-dim/60 p-5 sm:p-6">

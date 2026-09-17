@@ -7,8 +7,14 @@ import { contact } from "./site";
 describe("buildSystemPrompt", () => {
   const prompt = buildSystemPrompt();
 
-  it("instructs the model never to quote a price", () => {
-    expect(prompt.toLowerCase()).toContain("never state, estimate, imply, or guess a specific price");
+  it("instructs the model never to discuss money in any form", () => {
+    expect(prompt.toLowerCase()).toContain("never discuss money in any form");
+  });
+
+  it("instructs the model to still give real travel knowledge for any destination worldwide", () => {
+    const lower = prompt.toLowerCase();
+    expect(lower).toContain("any destination on earth");
+    expect(lower).toContain("genuinely useful travel guidance");
   });
 
   it("grounds the model in every real destination and tour", () => {
