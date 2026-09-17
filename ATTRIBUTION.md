@@ -86,6 +86,15 @@ Resized from the original 5059×3377 to 2400px wide and re-encoded at quality 82
 
 All four resized to a 1920px-wide max (matching this project's other photography) and re-encoded at quality 82 before self-hosting.
 
+| `paris-eiffel-tower.jpg` | <https://commons.wikimedia.org/wiki/File:Eiffel_Tower_High_Res.jpg> | Public domain (released by the author) | Andyxox |
+| `paris-louvre-pyramid.jpg` | <https://commons.wikimedia.org/wiki/File:Louvre_Pyramid_(Unsplash).jpg> | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain) | Irene Ledyaeva |
+| `paris-montmartre-sacre-coeur.jpg` | <https://commons.wikimedia.org/wiki/File:Paris,_Sacr%C3%A9-C%C5%93ur_de_Montmartre_--_2014_--_1176.jpg> | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Dietmar Rabich |
+| `london-big-ben.jpg` | <https://commons.wikimedia.org/wiki/File:Big_Ben_Elizabeth_Tower_London_2023_01.jpg> | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Julian Herzog |
+| `london-tower-bridge.jpg` | <https://commons.wikimedia.org/wiki/File:Tower_Bridge,_London,_United_Kingdom_(Unsplash).jpg> | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain) | Susan Yin |
+| `london-canary-wharf-thames.jpg` | <https://commons.wikimedia.org/wiki/File:Canary_Wharf_skyline_from_a_boat_on_the_Thames.jpg> | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Rædwald |
+
+All six resized to a 1920px-longest-edge max (matching this project's other photography) and re-encoded as JPEG quality 82 before self-hosting.
+
 ## Airline partner logos (`public/airlines/`)
 
 Sourced individually from freely-licensed sources (primarily Wikimedia Commons), checked one at a time to avoid the common trap of pulling a "non-free" logo scoped to a single Wikipedia article rather than a genuinely freely-licensed Commons upload. Exact per-file source URLs weren't logged at the time, unlike the Unsplash photos above — if any of these is ever challenged, re-verify by searching Wikimedia Commons for the airline's official logo file rather than assuming this note already covers it.

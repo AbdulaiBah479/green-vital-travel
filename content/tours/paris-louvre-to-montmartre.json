@@ -1,0 +1,80 @@
+{
+  "slug": "paris-louvre-to-montmartre",
+  "title": "Paris: Louvre to Montmartre",
+  "destinationSlug": "paris",
+  "category": "City & Food",
+  "nights": 6,
+  "priceFrom": 3400,
+  "rating": 0,
+  "reviewCount": 0,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "Six nights built around the city's rhythm rather than a checklist — a proper half-day inside the Louvre, a Versailles day trip, and evenings that end on the Seine or the steps of Montmartre.",
+  "heroImg": "/images/destinations/paris-eiffel-tower.jpg",
+  "gallery": [
+    "/images/destinations/paris-louvre-pyramid.jpg",
+    "/images/destinations/paris-montmartre-sacre-coeur.jpg"
+  ],
+  "highlights": [
+    "The Louvre, given a proper half-day rather than a rush",
+    "Sunset from the steps of Sacré-Cœur",
+    "A slow river cruise past Notre-Dame",
+    "Pastry-shop hopping through the Marais"
+  ],
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Arrive in Paris",
+      "description": "Settle into a Left Bank hotel, then an easy first evening walking the Seine as the bridges light up."
+    },
+    {
+      "day": "2",
+      "title": "The Louvre",
+      "description": "A guided morning through the essentials, then the afternoon left open to wander the wings that caught your eye."
+    },
+    {
+      "day": "3",
+      "title": "Notre-Dame & the Marais",
+      "description": "A slow river cruise past the restored cathedral, then a pastry-shop crawl through the Marais's old streets."
+    },
+    {
+      "day": "4",
+      "title": "Montmartre",
+      "description": "The funicular up to Sacré-Cœur, an afternoon among the artists at Place du Tertre, and sunset from the basilica steps."
+    },
+    {
+      "day": "5",
+      "title": "Versailles",
+      "description": "A full day trip to the palace and gardens, timed to beat the tour-bus crowds through the Hall of Mirrors."
+    },
+    {
+      "day": "6",
+      "title": "The Eiffel Tower & farewell dinner",
+      "description": "A morning visit up the tower, then a dinner cruise on the Seine as it lights up for the night."
+    },
+    {
+      "day": "7",
+      "title": "Depart Paris",
+      "description": "A final café breakfast before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "6 nights in a Left Bank boutique hotel",
+    "Skip-the-line Louvre entry with a guide",
+    "Versailles day trip with a guide",
+    "A Seine dinner cruise",
+    "Daily breakfast",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "Eiffel Tower summit access (optional upgrade)"
+  ],
+  "departureDates": [
+    "2027-04-12",
+    "2027-05-24",
+    "2027-09-13"
+  ]
+}

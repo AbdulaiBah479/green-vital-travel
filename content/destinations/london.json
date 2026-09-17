@@ -1,0 +1,29 @@
+{
+  "slug": "london",
+  "name": "London",
+  "country": "United Kingdom",
+  "region": "Europe",
+  "heroImg": "/images/destinations/london-big-ben.jpg",
+  "gallery": [
+    "/images/destinations/london-tower-bridge.jpg",
+    "/images/destinations/london-canary-wharf-thames.jpg"
+  ],
+  "hook": "Old bells, new skyline, a pub for every mood",
+  "description": "A city that wears its centuries in layers — Big Ben and the Tower of London a short walk from glass towers and a food market that changes with the season, held together by a river you'll cross more times than you plan to.",
+  "bestTime": "May–June and September",
+  "quickFacts": {
+    "currency": "British Pound (£)",
+    "language": "English",
+    "flightNote": "~7hr direct from the US East Coast",
+    "climate": "Temperate maritime — mild, often overcast, rain in any season"
+  },
+  "topExperiences": [
+    "The Tower of London and the Crown Jewels",
+    "A walk across Tower Bridge at golden hour",
+    "Borough Market on a Saturday morning",
+    "A West End show followed by a proper pub dinner"
+  ],
+  "relatedTourSlugs": [
+    "london-royal-city-explorer"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "london-royal-city-explorer",
+  "title": "London: Royal City Explorer",
+  "destinationSlug": "london",
+  "category": "City & Food",
+  "nights": 7,
+  "priceFrom": 3800,
+  "rating": 0,
+  "reviewCount": 0,
+  "groupSizeMax": 10,
+  "difficulty": "Easy",
+  "summary": "Seven nights across the centuries — the Tower of London and Westminster one day, Borough Market and Canary Wharf's glass towers the next, with a countryside day trip in between.",
+  "heroImg": "/images/destinations/london-big-ben.jpg",
+  "gallery": [
+    "/images/destinations/london-tower-bridge.jpg",
+    "/images/destinations/london-canary-wharf-thames.jpg"
+  ],
+  "highlights": [
+    "The Tower of London and the Crown Jewels",
+    "A walk across Tower Bridge at golden hour",
+    "Borough Market on a Saturday morning",
+    "A West End show followed by a proper pub dinner"
+  ],
+  "itinerary": [
+    {
+      "day": "1–2",
+      "title": "Arrive & Westminster",
+      "description": "Settle in near Westminster, then a guided morning past Big Ben and through Westminster Abbey."
+    },
+    {
+      "day": "3",
+      "title": "The Tower & Tower Bridge",
+      "description": "The Tower of London and the Crown Jewels, then a walk across Tower Bridge as the sun drops."
+    },
+    {
+      "day": "4",
+      "title": "Borough Market & the Thames",
+      "description": "A Saturday-morning food crawl through Borough Market, then an afternoon river cruise down to Greenwich."
+    },
+    {
+      "day": "5",
+      "title": "Windsor Castle",
+      "description": "A day trip out to Windsor, the oldest occupied castle in the world, with time in the town before the drive back."
+    },
+    {
+      "day": "6",
+      "title": "The British Museum & the West End",
+      "description": "A guided morning through the British Museum's highlights, then a West End show followed by a proper pub dinner."
+    },
+    {
+      "day": "7",
+      "title": "Canary Wharf & Camden",
+      "description": "A free morning at Camden Market, then an evening view of the glass towers of Canary Wharf from the river."
+    },
+    {
+      "day": "8",
+      "title": "Depart London",
+      "description": "A final morning before your transfer to the airport."
+    }
+  ],
+  "included": [
+    "7 nights in a Westminster-area hotel",
+    "Tower of London entry with a Beefeater-led tour",
+    "Windsor Castle day trip with a guide",
+    "One West End show ticket",
+    "Daily breakfast",
+    "A dedicated trip consultant, reachable throughout"
+  ],
+  "excluded": [
+    "International flights",
+    "Travel insurance",
+    "Personal spending & remaining meals",
+    "UK visa fees, if applicable"
+  ],
+  "departureDates": [
+    "2027-05-02",
+    "2027-06-14",
+    "2027-09-20"
+  ]
+}

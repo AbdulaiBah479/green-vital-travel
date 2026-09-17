@@ -1,0 +1,29 @@
+{
+  "slug": "paris",
+  "name": "Paris",
+  "country": "France",
+  "region": "Europe",
+  "heroImg": "/images/destinations/paris-eiffel-tower.jpg",
+  "gallery": [
+    "/images/destinations/paris-louvre-pyramid.jpg",
+    "/images/destinations/paris-montmartre-sacre-coeur.jpg"
+  ],
+  "hook": "Café mornings, the Seine at dusk",
+  "description": "The city that invented the long lunch — bakeries queued before nine, an afternoon lost inside the Louvre rather than rushed through it, and a Seine-side walk home as the Eiffel Tower starts to sparkle.",
+  "bestTime": "April–June and September–October",
+  "quickFacts": {
+    "currency": "Euro (€)",
+    "language": "French",
+    "flightNote": "~7–8hr direct from the US East Coast",
+    "climate": "Temperate — mild summers, cool and grey winters"
+  },
+  "topExperiences": [
+    "The Louvre, given a proper half-day rather than a rush",
+    "Sunset from the steps of Sacré-Cœur",
+    "A slow river cruise past Notre-Dame",
+    "Pastry-shop hopping through the Marais"
+  ],
+  "relatedTourSlugs": [
+    "paris-louvre-to-montmartre"
+  ]
+}
