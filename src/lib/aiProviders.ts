@@ -64,5 +64,20 @@ export async function callProvider(provider: AiProvider, messages: ChatMessage[]
   const data = await response.json();
   const text = data?.choices?.[0]?.message?.content?.trim();
   if (!text) throw new Error(`${provider.name} returned an empty completion`);
-  return text;
+  return stripMarkdown(text);
+}
+
+// The system prompt tells every model not to use markdown, since replies
+// render as plain text in a chat bubble — but models don't reliably follow
+// that, so strip the common cases defensively rather than show visitors
+// literal "**", "#", or "`" characters.
+export function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/__(.+?)__/g, "$1")
+    .replace(/(?<!\w)\*(?!\s)(.+?)(?<!\s)\*(?!\w)/g, "$1")
+    .replace(/(?<!\w)_(?!\s)(.+?)(?<!\s)_(?!\w)/g, "$1")
+    .replace(/`{1,3}(.+?)`{1,3}/g, "$1")
+    .replace(/^#{1,6}\s+/gm, "")
+    .replace(/^[-*+]\s+/gm, "• ");
 }
