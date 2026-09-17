@@ -80,15 +80,6 @@ body {
     opacity: 1 !important;
   }
 
-  .reveal,
-  .reveal-scale,
-  .reveal-left,
-  .reveal-right {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
   .card-lift:hover {
     transform: none !important;
   }
@@ -206,52 +197,10 @@ body {
   animation: marquee 32s linear infinite;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Reveal variants — same intersection-triggered mechanism as .reveal,
-   different starting transform, so different sections of a long page
-   don't all move identically and start to feel mechanical. */
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.92);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-scale.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-36px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-left.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(36px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-right.is-visible {
-  opacity: 1;
-  transform: none;
-}
+/* .reveal / .reveal-scale / .reveal-left / .reveal-right used to live here
+   as CSS-transition classes — replaced by the Reveal component's own
+   spring-based Motion animation, which respects prefers-reduced-motion via
+   useReducedMotion() instead of this file's media query. */
 
 /* Card hover-lift: layered on top of a card's own internal hover effects
    (image zoom, border color) for a bit of physical depth. */

@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
+import type { ReactNode } from "react";
 
 export default function Magnetic({
   children,
@@ -11,31 +12,35 @@ export default function Magnetic({
   strength?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  // A spring rather than the raw motion value: it pulls toward the target
+  // instead of snapping straight to it, so the pull-in and (especially)
+  // the release-back-to-center both feel physical rather than mechanical.
+  const springX = useSpring(x, { stiffness: 150, damping: 15, mass: 0.3 });
+  const springY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.3 });
 
   const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+    if (reduceMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set((e.clientX - rect.left - rect.width / 2) * strength);
+    y.set((e.clientY - rect.top - rect.height / 2) * strength);
   };
 
   const onMouseLeave = () => {
-    const el = ref.current;
-    if (!el) return;
-    el.style.transform = "translate(0, 0)";
+    x.set(0);
+    y.set(0);
   };
 
   return (
-    <div
-      ref={ref}
+    <motion.div
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      className={`inline-block transition-transform duration-300 ease-out ${className}`}
+      style={reduceMotion ? undefined : { x: springX, y: springY }}
+      className={`inline-block ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
