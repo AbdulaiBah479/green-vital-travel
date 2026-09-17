@@ -55,7 +55,12 @@ const securityHeaders = [
 // stricter policy above.
 const adminCsp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  // Local dev only: TinaCMS's local editor serves its admin bundle from a
+  // separate Vite dev server (localhost:4001), a different origin from the
+  // Next.js dev server — needs its own script-src/connect-src allowance.
+  // Production doesn't need this at all: `tinacms build` bundles the admin
+  // app as same-origin static files, no separate dev server involved.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval' http://localhost:*" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://assets.tinajs.io",
   "font-src 'self' data:",
