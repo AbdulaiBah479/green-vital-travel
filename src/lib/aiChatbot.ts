@@ -56,5 +56,3 @@ ${toursList()}
 
 Contact: ${contact.email} · ${contact.phones.join(" / ")} · ${contact.address.street}, ${contact.address.city}, ${contact.address.country}.`;
 }
-
-export const AI_MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-20b";

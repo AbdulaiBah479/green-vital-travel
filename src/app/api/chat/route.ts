@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import Groq from "groq-sdk";
 import { getBotReply } from "@/lib/chatbot";
-import { buildSystemPrompt, AI_MODEL } from "@/lib/aiChatbot";
+import { buildSystemPrompt } from "@/lib/aiChatbot";
+import { getConfiguredProviders, callProvider } from "@/lib/aiProviders";
 import { clientKey, rateLimit } from "@/lib/rateLimit";
 import { firstIssueMessage } from "@/lib/validation";
 
@@ -54,42 +54,36 @@ export async function POST(request: Request) {
   }
 
   const { message, history } = parsed.data;
+  const providers = getConfiguredProviders();
 
-  // No API key configured — fall back to the original rule-based assistant
-  // rather than break the chat entirely. Same "degrade, don't break" pattern
-  // as the email/database fallbacks in lib/inquiries.ts.
-  if (!process.env.GROQ_API_KEY) {
+  // No AI provider configured at all — fall back to the rule-based
+  // assistant rather than break the chat entirely. Same "degrade, don't
+  // break" pattern as the email/database fallbacks in lib/inquiries.ts.
+  if (providers.length === 0) {
     const reply = getBotReply(message);
     return NextResponse.json({ text: reply.text, quickReplies: reply.quickReplies, source: "rules" });
   }
 
-  try {
-    const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-    const completion = await groq.chat.completions.create({
-      model: AI_MODEL,
-      temperature: 0.4,
-      max_tokens: 350,
-      // gpt-oss (and other reasoning-capable) models otherwise mix a visible
-      // chain-of-thought preamble into the same content string — "hidden"
-      // keeps that internal, so the chat bubble only ever gets the final
-      // answer. Harmless no-op on models that don't support reasoning.
-      reasoning_format: "hidden",
-      messages: [
-        { role: "system", content: getSystemPrompt() },
-        ...history.map((h) => ({ role: h.role, content: h.content })),
-        { role: "user", content: message },
-      ],
-    });
+  const messages = [
+    { role: "system" as const, content: getSystemPrompt() },
+    ...history.map((h) => ({ role: h.role, content: h.content })),
+    { role: "user" as const, content: message },
+  ];
 
-    const text = completion.choices[0]?.message?.content?.trim();
-    if (!text) throw new Error("Empty completion returned from Groq");
-
-    return NextResponse.json({ text, source: "ai" });
-  } catch (error) {
-    // A bad/missing key, an exhausted free quota, or a transient outage all
-    // land here — the visitor still gets a real answer instead of an error.
-    console.error("Groq chat completion failed, falling back to rule-based bot:", error);
-    const reply = getBotReply(message);
-    return NextResponse.json({ text: reply.text, quickReplies: reply.quickReplies, source: "rules-fallback" });
+  // Try each configured provider in order — a rate limit, quota exhaustion,
+  // or outage on one just moves to the next, rather than dropping straight
+  // to the rule-based bot the way a single-provider setup would.
+  for (const provider of providers) {
+    try {
+      const text = await callProvider(provider, messages);
+      return NextResponse.json({ text, source: "ai" });
+    } catch (error) {
+      console.error(`${provider.name} chat completion failed, trying next provider:`, error);
+    }
   }
+
+  // Every provider failed — the visitor still gets a real answer instead of
+  // an error.
+  const reply = getBotReply(message);
+  return NextResponse.json({ text: reply.text, quickReplies: reply.quickReplies, source: "rules-fallback" });
 }
