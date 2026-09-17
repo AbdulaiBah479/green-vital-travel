@@ -45,7 +45,12 @@ export const founder = {
 export const contact = {
   email: settings.email,
   phones: settings.phones,
-  whatsapp: settings.whatsapp,
+  // wa.me links need bare digits (country code + number, no "+", no
+  // spaces) — the admin panel doesn't enforce that format, so normalize
+  // here rather than relying on whoever edits it to type it exactly
+  // right. A real broken WhatsApp link on the live site (a "+" and
+  // spaces made it through untouched) is what surfaced this.
+  whatsapp: settings.whatsapp.replace(/\D/g, ""),
   address: {
     street: "57 Main Motor Road, Congo Cross",
     city: "Freetown",
