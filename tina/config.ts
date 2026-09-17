@@ -42,6 +42,11 @@ export default defineConfig({
             list: true,
           },
           { type: "string", name: "whatsapp", label: "WhatsApp Number (digits only, with country code)" },
+          { type: "string", name: "facebook", label: "Facebook page URL" },
+          { type: "string", name: "instagram", label: "Instagram profile URL" },
+          { type: "string", name: "twitter", label: "X (Twitter) profile URL" },
+          { type: "string", name: "tiktok", label: "TikTok profile URL" },
+          { type: "string", name: "linkedin", label: "LinkedIn company page URL" },
         ],
       },
       {

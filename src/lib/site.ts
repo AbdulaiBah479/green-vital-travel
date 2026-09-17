@@ -58,14 +58,14 @@ export const contact = {
   },
 };
 
-// Confirmed by the site owner as the real, live handle across these
-// platforms.
-const socialHandle = "greenvitaltravelandtouragency";
-
+// Editable from the admin panel (content/settings/index.json), each
+// platform independently — LinkedIn and Instagram in particular don't
+// necessarily share the same handle as the others, so these aren't
+// derived from one shared string.
 export const social = {
-  facebook: `https://www.facebook.com/${socialHandle}`,
-  instagram: `https://www.instagram.com/${socialHandle}`,
-  twitter: `https://x.com/${socialHandle}`,
-  tiktok: `https://www.tiktok.com/@${socialHandle}`,
-  linkedin: `https://www.linkedin.com/company/${socialHandle}`,
+  facebook: settings.facebook,
+  instagram: settings.instagram,
+  twitter: settings.twitter,
+  tiktok: settings.tiktok,
+  linkedin: settings.linkedin,
 };
