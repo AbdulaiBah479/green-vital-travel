@@ -3,7 +3,8 @@
 // down — only the rule-based bot (a separate, final fallback) is used if
 // every provider in this list fails. All of these expose an OpenAI-compatible
 // chat completions endpoint, so one plain-fetch caller works for all of them
-// — no need for a separate SDK per provider.
+// — no need for a separate SDK per provider. Four independent free tiers
+// means all of them running dry on the same day is very unlikely.
 export type AiProvider = {
   name: string;
   apiKey: string;
@@ -11,6 +12,8 @@ export type AiProvider = {
   model: string;
   /** Provider-specific request fields beyond the standard OpenAI shape. */
   extraBody?: Record<string, unknown>;
+  /** Provider-specific headers beyond Content-Type/Authorization. */
+  extraHeaders?: Record<string, string>;
 };
 
 export function getConfiguredProviders(): AiProvider[] {
@@ -34,6 +37,26 @@ export function getConfiguredProviders(): AiProvider[] {
           model: process.env.GEMINI_MODEL || "gemini-3.5-flash-lite",
         }
       : null,
+    process.env.CEREBRAS_API_KEY
+      ? {
+          name: "cerebras",
+          apiKey: process.env.CEREBRAS_API_KEY,
+          baseURL: "https://api.cerebras.ai/v1",
+          model: process.env.CEREBRAS_MODEL || "llama-3.3-70b",
+        }
+      : null,
+    process.env.OPENROUTER_API_KEY
+      ? {
+          name: "openrouter",
+          apiKey: process.env.OPENROUTER_API_KEY,
+          baseURL: "https://openrouter.ai/api/v1",
+          model: process.env.OPENROUTER_MODEL || "meta-llama/llama-3.3-70b-instruct:free",
+          // OpenRouter asks free-tier callers to identify the calling site —
+          // it's optional, but omitting it makes usage harder for them to
+          // attribute and can affect free-tier rate limits.
+          extraHeaders: { "HTTP-Referer": "https://gtravelsandtours.com", "X-Title": "Green Vital" },
+        }
+      : null,
   ];
   return providers.filter((p): p is AiProvider => p !== null);
 }
@@ -46,6 +69,7 @@ export async function callProvider(provider: AiProvider, messages: ChatMessage[]
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${provider.apiKey}`,
+      ...provider.extraHeaders,
     },
     body: JSON.stringify({
       model: provider.model,

@@ -1,37 +1,59 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { getConfiguredProviders, stripMarkdown } from "./aiProviders";
 
+const ALL_PROVIDER_KEYS = ["GROQ_API_KEY", "GEMINI_API_KEY", "CEREBRAS_API_KEY", "OPENROUTER_API_KEY"];
+
+function stubNoProviders() {
+  for (const key of ALL_PROVIDER_KEYS) vi.stubEnv(key, "");
+}
+
 afterEach(() => {
   vi.unstubAllEnvs();
 });
 
 describe("getConfiguredProviders", () => {
-  it("returns no providers when neither key is set", () => {
-    vi.stubEnv("GROQ_API_KEY", "");
-    vi.stubEnv("GEMINI_API_KEY", "");
+  it("returns no providers when no key is set", () => {
+    stubNoProviders();
     expect(getConfiguredProviders()).toEqual([]);
   });
 
-  it("puts Groq first and Gemini second when both are configured", () => {
+  it("orders providers Groq, Gemini, Cerebras, OpenRouter when all four are configured", () => {
+    stubNoProviders();
     vi.stubEnv("GROQ_API_KEY", "groq-key");
     vi.stubEnv("GEMINI_API_KEY", "gemini-key");
+    vi.stubEnv("CEREBRAS_API_KEY", "cerebras-key");
+    vi.stubEnv("OPENROUTER_API_KEY", "openrouter-key");
     const providers = getConfiguredProviders();
-    expect(providers.map((p) => p.name)).toEqual(["groq", "gemini"]);
+    expect(providers.map((p) => p.name)).toEqual(["groq", "gemini", "cerebras", "openrouter"]);
   });
 
-  it("only includes the provider whose key is actually set", () => {
-    vi.stubEnv("GROQ_API_KEY", "");
+  it("only includes the providers whose keys are actually set", () => {
+    stubNoProviders();
     vi.stubEnv("GEMINI_API_KEY", "gemini-key");
+    vi.stubEnv("OPENROUTER_API_KEY", "openrouter-key");
     const providers = getConfiguredProviders();
-    expect(providers.map((p) => p.name)).toEqual(["gemini"]);
+    expect(providers.map((p) => p.name)).toEqual(["gemini", "openrouter"]);
   });
 
-  it("hides Groq's reasoning trace but leaves Gemini's request plain", () => {
+  it("hides Groq's reasoning trace but leaves Gemini's and Cerebras's requests plain", () => {
+    stubNoProviders();
     vi.stubEnv("GROQ_API_KEY", "groq-key");
     vi.stubEnv("GEMINI_API_KEY", "gemini-key");
-    const [groq, gemini] = getConfiguredProviders();
+    vi.stubEnv("CEREBRAS_API_KEY", "cerebras-key");
+    const [groq, gemini, cerebras] = getConfiguredProviders();
     expect(groq.extraBody).toEqual({ reasoning_format: "hidden" });
     expect(gemini.extraBody).toBeUndefined();
+    expect(cerebras.extraBody).toBeUndefined();
+  });
+
+  it("sends OpenRouter's required site-attribution headers", () => {
+    stubNoProviders();
+    vi.stubEnv("OPENROUTER_API_KEY", "openrouter-key");
+    const [openrouter] = getConfiguredProviders();
+    expect(openrouter.extraHeaders).toEqual({
+      "HTTP-Referer": "https://gtravelsandtours.com",
+      "X-Title": "Green Vital",
+    });
   });
 });
 
