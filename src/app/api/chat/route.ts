@@ -70,15 +70,31 @@ export async function POST(request: Request) {
     { role: "user" as const, content: message },
   ];
 
+  // TEMPORARY: lets a specific provider be tested directly (bypassing the
+  // ones ahead of it in the chain) — e.g. ?debugProvider=gemini — since
+  // otherwise Groq succeeding first would mask whether Gemini itself works.
+  // Remove once both layers are confirmed working independently.
+  const debugProviderName = new URL(request.url).searchParams.get("debugProvider");
+  const orderedProviders = debugProviderName
+    ? providers.filter((p) => p.name === debugProviderName)
+    : providers;
+  if (debugProviderName && orderedProviders.length === 0) {
+    return NextResponse.json({ error: `No configured provider named "${debugProviderName}"` }, { status: 400 });
+  }
+
   // Try each configured provider in order — a rate limit, quota exhaustion,
   // or outage on one just moves to the next, rather than dropping straight
   // to the rule-based bot the way a single-provider setup would.
-  for (const provider of providers) {
+  for (const provider of orderedProviders) {
     try {
       const text = await callProvider(provider, messages);
-      return NextResponse.json({ text, source: "ai" });
+      return NextResponse.json({ text, source: "ai", provider: provider.name });
     } catch (error) {
       console.error(`${provider.name} chat completion failed, trying next provider:`, error);
+      if (debugProviderName) {
+        const debugError = error instanceof Error ? error.message : String(error);
+        return NextResponse.json({ error: "debug provider failed", debugError }, { status: 502 });
+      }
     }
   }
 
