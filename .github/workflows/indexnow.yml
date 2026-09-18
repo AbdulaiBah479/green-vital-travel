@@ -1,0 +1,25 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+
+      # Gives Vercel a little time to finish deploying before search
+      # engines try to fetch the URLs this submits.
+      - name: Wait for deployment
+        run: sleep 90
+
+      - name: Submit changed URLs to IndexNow
+        run: node scripts/submit-indexnow.mjs
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
