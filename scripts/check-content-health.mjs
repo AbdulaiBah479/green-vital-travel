@@ -1,4 +1,4 @@
-// Two classes of problem that nothing else in the pipeline catches:
+// Three classes of problem that nothing else in the pipeline catches:
 //
 // 1. A content JSON referencing an image file that doesn't actually exist
 //    under public/ — e.g. from a bad import, a deleted upload, or a typo
@@ -12,6 +12,12 @@
 //    check alone would miss it. This is why this script is run both in CI
 //    (catches new bad content immediately) and on a weekly schedule
 //    (catches dates lapsing with no new push at all).
+//
+// 3. A tour's destinationSlug (or a destination's relatedTourSlugs) that no
+//    longer points at anything real — e.g. a destination gets renamed or
+//    deleted in the admin panel and whatever referenced its old slug is
+//    never updated. toursForDestination() would just silently return an
+//    empty list rather than error, so nothing else would ever surface this.
 import fs from "node:fs";
 
 function loadJson(path) {
@@ -51,6 +57,25 @@ for (const t of tours) {
       `Tour "${t.slug}" has no upcoming departure dates left — the booking form will show ` +
         `"message us for the next available date" until new dates are added in the admin panel.`
     );
+  }
+}
+
+const destinationSlugs = new Set(destinations.map((d) => d.slug));
+const tourSlugs = new Set(tours.map((t) => t.slug));
+
+for (const t of tours) {
+  if (t.destinationSlug && !destinationSlugs.has(t.destinationSlug)) {
+    problems.push(
+      `Tour "${t.slug}" has destinationSlug "${t.destinationSlug}", which doesn't match any real destination.`
+    );
+  }
+}
+
+for (const d of destinations) {
+  for (const rt of d.relatedTourSlugs ?? []) {
+    if (!tourSlugs.has(rt)) {
+      problems.push(`Destination "${d.slug}" lists relatedTourSlugs entry "${rt}", which doesn't match any real tour.`);
+    }
   }
 }
 
