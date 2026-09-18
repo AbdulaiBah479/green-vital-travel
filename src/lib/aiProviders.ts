@@ -63,7 +63,17 @@ export function getConfiguredProviders(): AiProvider[] {
 
 export type ChatMessage = { role: "system" | "user" | "assistant"; content: string };
 
-export async function callProvider(provider: AiProvider, messages: ChatMessage[]): Promise<string> {
+export async function callProvider(
+  provider: AiProvider,
+  messages: ChatMessage[],
+  // High enough for a genuine "what do I need to know before visiting X"
+  // travel briefing, not just a one-line answer — the system prompt asks
+  // the model to match length to the question, so this is a ceiling for the
+  // thorough case, not a target for every reply. Callers with a
+  // legitimately longer output (e.g. a multi-day itinerary draft) can raise
+  // this rather than get silently truncated at chatbot-reply length.
+  maxTokens = 800
+): Promise<string> {
   const response = await fetch(`${provider.baseURL}/chat/completions`, {
     method: "POST",
     headers: {
@@ -74,11 +84,7 @@ export async function callProvider(provider: AiProvider, messages: ChatMessage[]
     body: JSON.stringify({
       model: provider.model,
       temperature: 0.4,
-      // High enough for a genuine "what do I need to know before visiting
-      // X" travel briefing, not just a one-line answer — the system prompt
-      // asks the model to match length to the question, so this is a
-      // ceiling for the thorough case, not a target for every reply.
-      max_tokens: 800,
+      max_tokens: maxTokens,
       messages,
       ...provider.extraBody,
     }),
