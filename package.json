@@ -12,7 +12,8 @@
     "pretest": "node scripts/build-content-index.mjs",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "indexnow": "node scripts/submit-indexnow.mjs"
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "content-health": "node scripts/check-content-health.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

@@ -22,6 +22,9 @@ jobs:
       - name: Build content index
         run: node scripts/build-content-index.mjs
 
+      - name: Content health check
+        run: node scripts/check-content-health.mjs
+
       - name: Type check
         run: npx tsc --noEmit
 

@@ -1,0 +1,28 @@
+name: Content Health Check (scheduled)
+
+# Runs on every push too (via ci.yml), which catches a bad edit the moment
+# it's committed. This weekly schedule exists for the failure mode a push
+# trigger can't catch: a tour's departure dates quietly running out with no
+# new commit at all — just time passing. A failed scheduled run emails the
+# repo's admins by default (GitHub's built-in behavior), so this needs no
+# separate notification setup.
+on:
+  schedule:
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+
+      - name: Build content index
+        run: node scripts/build-content-index.mjs
+
+      - name: Content health check
+        run: node scripts/check-content-health.mjs
