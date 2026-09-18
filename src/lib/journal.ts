@@ -148,6 +148,57 @@ export const journalEntries: JournalEntry[] = [
       "We'd rather under-promise the word and over-deliver the substance. So we've mostly stopped saying it. You can decide for yourself whether the trip earns it.",
     ],
   },
+  {
+    slug: "flying-out-of-lungi-what-to-actually-know",
+    title: "Flying Out of Lungi: What to Actually Know Before You Go",
+    excerpt:
+      "Freetown's airport isn't in Freetown. That single fact changes more about your travel day than anything on your packing list.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "August 2026",
+    isoDate: "2026-08-06",
+    img: "/images/unsplash/1436491865332-7a61a109cc05.jpg",
+    content: [
+      "First-time flyers out of Freetown are almost always caught off guard by the same fact: Lungi International Airport sits across the estuary from the city, not in it. Getting to your gate is a two-part trip — the road or river crossing first, then the airport itself — and treating it as one continuous journey is where travel days start to go sideways.",
+      "There are a few ways to make that crossing: a fast boat across the water, or the longer road route around the bay. Which option is actually running, at what price, and on what schedule shifts more often than any timetable printed online suggests — so we confirm the crossing itself as its own step, separately from confirming the flight, every time.",
+      "The buffer that matters here isn't the usual two-hours-before-departure advice you'd apply anywhere else. It's the buffer before that — enough slack in the estuary crossing that a delay there doesn't cascade into a missed check-in. We build that padding into every itinerary that starts or ends in Freetown, because it's the single most common reason a trip's first day goes wrong.",
+      "If you're arranging this yourself: confirm the crossing the day before, not the week before, and build in more slack than feels reasonable. If we're booking it, this is one of the things we're already handling quietly in the background — it's a large part of what a ticket booked through an actual agency buys you here, versus a fare booked online with no one thinking about the water in between.",
+    ],
+  },
+  {
+    slug: "sierra-leone-passport-visa-free-how-to-actually-check",
+    title: "Sierra Leonean Passport Holders: How to Actually Check Where You Can Go Visa-Free",
+    excerpt:
+      "The forwarded WhatsApp list is almost always out of date. Here's the honest, slower way to actually get the answer right.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "August 2026",
+    isoDate: "2026-08-21",
+    img: "/images/unsplash/1504609773096-104ff2c73ba4.jpg",
+    content: [
+      "This is the single most common question we get, and the honest answer is less satisfying than the one circulating on WhatsApp: there isn't one fixed list. Visa-free access depends on bilateral and regional agreements that shift over time, sometimes with little public notice, and a screenshot from two years ago is not a reliable source today.",
+      "What is stable: as an ECOWAS member state, Sierra Leone is part of the regional free movement arrangement, which is the one piece of this that genuinely doesn't require the same country-by-country checking as travel further afield. Everything outside the region needs to be verified individually, for the specific dates you're actually traveling.",
+      "The reliable way to check: the destination country's own embassy or consular website, not a travel blog, not a forwarded message, and — we'll say this plainly, the same way we do for every itinerary we build — not us either, without confirming it first. We'll tell you what we know, and we'll flag anything that looks like it's changed recently, but we treat our own knowledge as a starting point for verification, not a substitute for it.",
+      "This is exactly the check we run before we ticket anything, precisely because getting it wrong doesn't surface until you're standing at a check-in counter with no good options left. If you're booking it yourself, budget the same twenty minutes we would — it's cheap insurance against an expensive mistake.",
+    ],
+  },
+  {
+    slug: "booking-through-an-agency-vs-yourself-what-you-actually-get",
+    title: "What You Actually Get Booking Through an Agency vs. Doing It Yourself",
+    excerpt:
+      "Sometimes going direct really is the right call. Here's the honest version of when it is, and when it isn't.",
+    category: "Philosophy",
+    readTime: "5 min read",
+    date: "September 2026",
+    isoDate: "2026-09-10",
+    img: "/images/unsplash/1449965408869-eaa3f722e40d.jpg",
+    content: [
+      "The assumption we hear most often is that booking direct is automatically cheaper, and an agency's value is mostly upselling. Sometimes the first half of that is true. A single, simple point-to-point ticket, no visa complexity, no connections worth worrying about — book that yourself. We'll say so if you ask us.",
+      "What changes the calculation is everything a fare comparison site doesn't show you: whether your passport actually clears for that itinerary, whether a tight connection is realistic or a paper one, whether the \"refundable\" fare is refundable in the way you assume. None of that shows up next to the price, and all of it is exactly where a booking quietly goes wrong.",
+      "What an agency is actually buying you isn't a secret discount — it's a person to call when a flight changes at 11pm the night before, who already knows your itinerary instead of starting from zero. That has a real value, but it isn't free, and we'd rather price it honestly as a planning fee on complex trips than hide it inside an inflated fare on simple ones.",
+      "So the honest advice, even though it costs us the occasional booking: if your trip is simple, book it yourself and keep the difference. If it has more than one moving part — connections, visas, a group, a special occasion you don't want to gamble on — that's where we actually earn the fee. Ask us which one your trip is; it costs nothing to find out.",
+    ],
+  },
 ];
 
 export function getJournalEntry(slug: string) {
