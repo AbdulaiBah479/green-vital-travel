@@ -23,7 +23,7 @@
     "react-dom": "^19.2.8",
     "sonner": "^2.0.8",
     "tinacms": "^3.14.0",
-    "zod": "^4.5.4"
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
