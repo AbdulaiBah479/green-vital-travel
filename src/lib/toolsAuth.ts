@@ -18,13 +18,23 @@ async function signToken(secret: string): Promise<string> {
   return bufferToHex(signature);
 }
 
+// Trimmed on both sides — a stray trailing newline or space is an easy
+// thing to end up with pasting a secret into Vercel's env var UI (this bit
+// INDEXNOW_KEY earlier for exactly this reason), and would otherwise make
+// the password permanently unmatchable no matter how correctly it's typed
+// into the login form.
+function configuredPassword(): string | null {
+  const password = process.env.TOOLS_PASSWORD?.trim();
+  return password || null;
+}
+
 export function checkPassword(input: string): boolean {
-  const password = process.env.TOOLS_PASSWORD;
-  return !!password && input === password;
+  const password = configuredPassword();
+  return !!password && input.trim() === password;
 }
 
 export async function expectedSessionToken(): Promise<string | null> {
-  const password = process.env.TOOLS_PASSWORD;
+  const password = configuredPassword();
   if (!password) return null;
   return signToken(password);
 }

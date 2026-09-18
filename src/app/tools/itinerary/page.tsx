@@ -71,7 +71,7 @@ export default function ItineraryToolPage() {
   };
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-24 sm:py-32">
+    <main className="mx-auto max-w-3xl px-6 pb-24 pt-40 sm:pb-32 lg:pt-48">
       <h1 className="font-serif text-3xl text-ink sm:text-4xl">Itinerary Draft Assistant</h1>
       <p className="mt-3 text-sm text-ink/70">
         Internal drafting tool only — nothing here is ever sent to a client automatically, and it never includes

@@ -34,7 +34,7 @@ export default function ToolsLoginPage() {
   };
 
   return (
-    <main className="mx-auto flex min-h-[70vh] max-w-sm flex-col justify-center px-6 py-24">
+    <main className="mx-auto flex min-h-[70vh] max-w-sm flex-col justify-center px-6 pb-24 pt-40 lg:pt-48">
       <h1 className="mb-6 font-serif text-2xl text-ink">Staff Tools</h1>
       <form onSubmit={onSubmit} className="space-y-4">
         <input
