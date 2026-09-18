@@ -134,11 +134,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // `images` triggers Next.js's built-in Google Image Sitemap extension
+  // (<image:image>) — a free, standard way to get destination/tour photos
+  // surfaced in Google Images search, a real traffic channel for a travel
+  // site that a plain page sitemap entry doesn't cover on its own.
   const destinationRoutes: MetadataRoute.Sitemap = destinations.map((d) => ({
     url: `${siteUrl}/destinations/${d.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,
+    images: [d.heroImg, ...d.gallery].map((img) => `${siteUrl}${img}`),
   }));
 
   const tourRoutes: MetadataRoute.Sitemap = tours.map((t) => ({
@@ -146,6 +151,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.7,
+    images: [t.heroImg, ...t.gallery].map((img) => `${siteUrl}${img}`),
   }));
 
   const journalRoutes: MetadataRoute.Sitemap = journalEntries.map((entry) => ({
