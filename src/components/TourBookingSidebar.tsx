@@ -4,11 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
-import type { Tour } from "@/lib/tours";
+import { upcomingDepartureDates, type Tour } from "@/lib/tours";
 
 export default function TourBookingSidebar({ tour }: { tour: Tour }) {
   const { formatPrice } = useCurrency();
-  const [date, setDate] = useState(tour.departureDates[0] ?? "");
+  const dates = upcomingDepartureDates(tour);
+  const [date, setDate] = useState(dates[0] ?? "");
   const [travelers, setTravelers] = useState(2);
 
   const total = tour.priceFrom * travelers;
@@ -30,17 +31,23 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
       <div className="mt-6 space-y-4">
         <label className="block">
           <span className="mb-1 block text-[10px] eyebrow uppercase text-ink/70">Departure Date</span>
-          <select
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
-          >
-            {tour.departureDates.map((d) => (
-              <option key={d} value={d}>
-                {new Date(d).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-              </option>
-            ))}
-          </select>
+          {dates.length > 0 ? (
+            <select
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
+            >
+              {dates.map((d) => (
+                <option key={d} value={d}>
+                  {new Date(d).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <p className="rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
+              No fixed departures listed right now — message us for the next available date.
+            </p>
+          )}
         </label>
 
         <label className="block">

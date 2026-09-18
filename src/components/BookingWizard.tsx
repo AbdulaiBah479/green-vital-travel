@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import confetti from "canvas-confetti";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
-import type { Tour } from "@/lib/tours";
+import { upcomingDepartureDates, type Tour } from "@/lib/tours";
 
 const steps = ["Trip Details", "Traveler Info", "Add-Ons", "Review"];
 
@@ -20,8 +20,13 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
   const searchParams = useSearchParams();
   const { formatPrice } = useCurrency();
 
+  const dates = upcomingDepartureDates(tour);
+  const requestedDate = searchParams.get("date");
+
   const [step, setStep] = useState(0);
-  const [date, setDate] = useState(searchParams.get("date") || tour.departureDates[0] || "");
+  const [date, setDate] = useState(
+    (requestedDate && dates.includes(requestedDate) ? requestedDate : dates[0]) || ""
+  );
   const [travelers, setTravelers] = useState(
     Math.min(Math.max(Number(searchParams.get("travelers")) || 2, 1), tour.groupSizeMax)
   );
@@ -158,17 +163,23 @@ export default function BookingWizard({ tour }: { tour: Tour }) {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <label className="block">
               <span className="mb-2 block text-xs eyebrow uppercase text-ink/70">Departure Date</span>
-              <select
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
-              >
-                {tour.departureDates.map((d) => (
-                  <option key={d} value={d}>
-                    {formatDate(d)}
-                  </option>
-                ))}
-              </select>
+              {dates.length > 0 ? (
+                <select
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
+                >
+                  {dates.map((d) => (
+                    <option key={d} value={d}>
+                      {formatDate(d)}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <p className="rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
+                  No fixed departures listed right now — message us for the next available date.
+                </p>
+              )}
             </label>
             <label className="block">
               <span className="mb-2 block text-xs eyebrow uppercase text-ink/70">
