@@ -1,0 +1,28 @@
+name: Notify New Content
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+
+      - name: Notify of new destinations/tours
+        run: node scripts/notify-new-content.mjs
+        env:
+          GIT_BEFORE_SHA: ${{ github.event.before }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          BUSINESS_EMAIL: ${{ secrets.BUSINESS_EMAIL }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
