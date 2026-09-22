@@ -1,5 +1,33 @@
 import { siteUrl, contact } from "./site";
 
+// Best-effort CRM logging to Airtable. Never blocks or fails the caller —
+// the email notification below is the channel that must work; this is a
+// bonus running record of every lead, so a hiccup here should never stop a
+// contact/booking/review submission from reaching the business.
+async function logToAirtable(fields: Record<string, unknown>) {
+  if (!process.env.AIRTABLE_API_KEY || !process.env.AIRTABLE_BASE_ID) return;
+
+  try {
+    const response = await fetch(
+      `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Inquiries%20%26%20Bookings`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ fields, typecast: true }),
+      }
+    );
+
+    if (!response.ok) {
+      console.error("Airtable save failed:", await response.text());
+    }
+  } catch (error) {
+    console.error("Airtable save threw:", error);
+  }
+}
+
 export type ContactInquiry = {
   name: string;
   email: string;
@@ -95,6 +123,44 @@ export async function submitInquiry(kind: "contact" | "booking", payload: Contac
     }
   }
 
+  if (kind === "contact") {
+    const contactPayload = payload as ContactInquiry;
+    await logToAirtable({
+      Name: contactPayload.name,
+      Email: contactPayload.email,
+      Type: "Contact Inquiry",
+      "Subject / Tour": contactPayload.subject,
+      Message: contactPayload.message,
+      Source: contactPayload.source ?? "website",
+      Status: "New",
+      Priority: "Normal",
+      "Date Received": submissionTime,
+    });
+  } else {
+    const bookingPayload = payload as BookingInquiry;
+    await logToAirtable({
+      Name: bookingPayload.leadName,
+      Email: bookingPayload.leadEmail,
+      ...(bookingPayload.leadPhone ? { Phone: bookingPayload.leadPhone } : {}),
+      Type: "Booking Request",
+      "Subject / Tour": bookingPayload.tourTitle,
+      "Departure Date": bookingPayload.departureDate,
+      Travelers: bookingPayload.travelers,
+      "Add-ons": [
+        ...(bookingPayload.addOns.insurance ? ["Insurance"] : []),
+        ...(bookingPayload.addOns.transfer ? ["Airport Transfer"] : []),
+        ...(bookingPayload.addOns.roomUpgrade ? ["Cabin Upgrade"] : []),
+      ],
+      "Estimated Total": bookingPayload.total,
+      Message: bookingPayload.notes,
+      Reference: reference,
+      Source: bookingPayload.source ?? "website",
+      Status: "New",
+      Priority: "Normal",
+      "Date Received": submissionTime,
+    });
+  }
+
   if (process.env.RESEND_API_KEY) {
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -127,6 +193,16 @@ export async function submitInquiry(kind: "contact" | "booking", payload: Contac
 
 export async function subscribeNewsletter(email: string) {
   const submissionTime = new Date().toISOString();
+
+  await logToAirtable({
+    Name: email,
+    Email: email,
+    Type: "Newsletter Signup",
+    Source: "website-newsletter",
+    Status: "New",
+    Priority: "Low",
+    "Date Received": submissionTime,
+  });
 
   // Preferred path: add the address to a real Resend audience, so it's an
   // actual mailing list, not just a one-off notification.
@@ -215,6 +291,18 @@ export type ReviewSubmission = {
 export async function submitReview(review: ReviewSubmission) {
   const businessEmail = process.env.BUSINESS_EMAIL || process.env.CONTACT_EMAIL || contact.email;
   const fromEmail = process.env.EMAIL_FROM || `noreply@${new URL(siteUrl).hostname}`;
+
+  await logToAirtable({
+    Name: review.name,
+    Type: "Review Submission",
+    "Subject / Tour": review.tourTitle,
+    Message: `Rating: ${review.rating}/5\n\n${review.body}`,
+    Source: "website-review-form",
+    Status: "New",
+    Priority: "Normal",
+    "Date Received": new Date().toISOString(),
+  });
+
   const text = [
     "New traveler review submitted",
     `Tour: ${review.tourTitle}`,
