@@ -37,4 +37,9 @@ describe("buildSystemPrompt", () => {
       expect(lower).toContain(lang);
     }
   });
+
+  it("instructs the model to reply in natural Krio, not textbook English", () => {
+    const lower = prompt.toLowerCase();
+    expect(lower).toContain("krio");
+  });
 });

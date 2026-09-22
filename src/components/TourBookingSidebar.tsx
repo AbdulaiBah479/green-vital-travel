@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Magnetic from "./Magnetic";
 import { useCurrency } from "@/lib/CurrencyContext";
@@ -11,6 +11,32 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
   const dates = upcomingDepartureDates(tour);
   const [date, setDate] = useState(dates[0] ?? "");
   const [travelers, setTravelers] = useState(2);
+
+  // Real confirmed-booking counts from the Airtable CRM, per departure date —
+  // never a made-up number. A date missing from the map means zero confirmed
+  // bookings against it, which is a real (not guessed) full-capacity value.
+  // `null` means "don't know yet / not configured" — nothing is shown then.
+  const [spotsLeftByDate, setSpotsLeftByDate] = useState<Record<string, number> | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`/api/tours/${tour.slug}/availability`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (cancelled || !data?.configured) return;
+        setSpotsLeftByDate(data.spotsLeftByDate ?? {});
+      })
+      .catch(() => {
+        // Silently stays null — the sidebar just doesn't show a spots-left
+        // line rather than guessing at one.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [tour.slug]);
+
+  const spotsForSelectedDate =
+    spotsLeftByDate && date ? spotsLeftByDate[date] ?? tour.groupSizeMax : null;
 
   const total = tour.priceFrom * travelers;
   const bookHref = `/book/${tour.slug}?date=${encodeURIComponent(date)}&travelers=${travelers}`;
@@ -46,6 +72,21 @@ export default function TourBookingSidebar({ tour }: { tour: Tour }) {
           ) : (
             <p className="rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink/70">
               No fixed departures listed right now — message us for the next available date.
+            </p>
+          )}
+          {spotsForSelectedDate !== null && (
+            <p
+              className={`mt-2 text-xs eyebrow uppercase ${
+                spotsForSelectedDate === 0
+                  ? "text-red-600"
+                  : spotsForSelectedDate <= 3
+                    ? "text-amber-600"
+                    : "text-ink/60"
+              }`}
+            >
+              {spotsForSelectedDate === 0
+                ? "Fully booked — join the waitlist"
+                : `${spotsForSelectedDate} of ${tour.groupSizeMax} spots left`}
             </p>
           )}
         </label>

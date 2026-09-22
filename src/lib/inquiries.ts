@@ -144,6 +144,7 @@ export async function submitInquiry(kind: "contact" | "booking", payload: Contac
       ...(bookingPayload.leadPhone ? { Phone: bookingPayload.leadPhone } : {}),
       Type: "Booking Request",
       "Subject / Tour": bookingPayload.tourTitle,
+      "Tour Slug": bookingPayload.tourSlug,
       "Departure Date": bookingPayload.departureDate,
       Travelers: bookingPayload.travelers,
       "Add-ons": [
