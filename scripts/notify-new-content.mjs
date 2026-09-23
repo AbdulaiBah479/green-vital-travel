@@ -18,6 +18,12 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL;
 const EMAIL_FROM = process.env.EMAIL_FROM || "noreply@gtravelsandtours.com";
 const BEFORE_SHA = process.env.GIT_BEFORE_SHA;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://gtravelsandtours.com";
+
+// Optional: a Make.com webhook that fans a caption + photo out to Facebook,
+// Instagram, and LinkedIn at once. Without it, the email still drafts a
+// caption — there's just no one-click "publish" link under it.
+const MAKE_PUBLISH_WEBHOOK = process.env.MAKE_PUBLISH_WEBHOOK_URL;
 
 if (!RESEND_API_KEY || !BUSINESS_EMAIL) {
   console.log("RESEND_API_KEY or BUSINESS_EMAIL not set — skipping new-content notification.");
@@ -106,11 +112,19 @@ async function draftCaption(prompt) {
   return null;
 }
 
-async function buildSection(label, promptText) {
+function publishLink(caption, heroImg) {
+  if (!MAKE_PUBLISH_WEBHOOK) return "";
+  const imageUrl = `${SITE_URL}${heroImg}`;
+  const params = new URLSearchParams({ caption, imageUrl });
+  return `\nPublish to Facebook, Instagram & LinkedIn now:\n${MAKE_PUBLISH_WEBHOOK}?${params}\n`;
+}
+
+async function buildSection(label, promptText, heroImg) {
   const caption = PROVIDERS.length > 0 ? await draftCaption(promptText) : null;
-  return caption
-    ? `${label}\n\nDraft caption:\n${caption}\n`
-    : `${label}\n\n(No AI provider configured — add one to get a draft caption here automatically.)\n`;
+  if (!caption) {
+    return `${label}\n\n(No AI provider configured — add one to get a draft caption here automatically.)\n`;
+  }
+  return `${label}\n\nDraft caption:\n${caption}\n${publishLink(caption, heroImg)}`;
 }
 
 async function main() {
@@ -120,7 +134,8 @@ async function main() {
     sections.push(
       await buildSection(
         `New destination: ${d.name}, ${d.country}`,
-        `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) announcing that Green Vital Travel now offers trips to ${d.name}, ${d.country}. Hook: "${d.hook}". No markdown, plain text only.`
+        `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) announcing that Green Vital Travel now offers trips to ${d.name}, ${d.country}. Hook: "${d.hook}". No markdown, plain text only.`,
+        d.heroImg
       )
     );
   }
@@ -129,7 +144,8 @@ async function main() {
     sections.push(
       await buildSection(
         `New tour package: ${t.title}`,
-        `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) announcing Green Vital Travel's new tour package "${t.title}" — ${t.nights} nights, ${t.category} style, ${t.difficulty} pace. Summary: "${t.summary}". No markdown, plain text only.`
+        `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) announcing Green Vital Travel's new tour package "${t.title}" — ${t.nights} nights, ${t.category} style, ${t.difficulty} pace. Summary: "${t.summary}". No markdown, plain text only.`,
+        t.heroImg
       )
     );
   }
