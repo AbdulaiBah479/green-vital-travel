@@ -1,0 +1,406 @@
+<title>Green Vital Systems Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --ink: #0a2f3d;
+    --ink-soft: #3c5866;
+    --paper: #faf7f1;
+    --paper-dim: #f0ebe1;
+    --card: #ffffff;
+    --line: rgba(10, 47, 61, 0.14);
+    --accent: #1c8f5c;
+    --accent-soft: #6fdba8;
+    --accent-wash: rgba(28, 143, 92, 0.1);
+    --amber: #c98a2e;
+    --amber-wash: rgba(201, 138, 46, 0.12);
+    --plum: #7a4fae;
+    --plum-wash: rgba(122, 79, 174, 0.1);
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #eef3f1; --ink-soft: #aebfc2; --paper: #0b2129; --paper-dim: #102a33;
+      --card: #12313b; --line: rgba(238, 243, 241, 0.14);
+      --accent: #4fce93; --accent-soft: #2a6b4c; --accent-wash: rgba(79, 206, 147, 0.14);
+      --amber: #e0a94f; --amber-wash: rgba(224, 169, 79, 0.14);
+      --plum: #b596e0; --plum-wash: rgba(181, 150, 224, 0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #eef3f1; --ink-soft: #aebfc2; --paper: #0b2129; --paper-dim: #102a33;
+    --card: #12313b; --line: rgba(238, 243, 241, 0.14);
+    --accent: #4fce93; --accent-soft: #2a6b4c; --accent-wash: rgba(79, 206, 147, 0.14);
+    --amber: #e0a94f; --amber-wash: rgba(224, 169, 79, 0.14);
+    --plum: #b596e0; --plum-wash: rgba(181, 150, 224, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-body); -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding-inline: 20px; padding-block: 44px 90px; }
+
+  header.masthead {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 24px; flex-wrap: wrap; border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px; margin-bottom: 20px;
+  }
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin: 0 0 6px;
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.08; margin: 0; text-wrap: balance;
+  }
+  .masthead-meta { text-align: right; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .masthead-meta strong { color: var(--ink); }
+
+  .intro { font-size: 15px; color: var(--ink-soft); max-width: 64ch; line-height: 1.6; margin: 4px 0 28px; }
+
+  .progress-bar-track {
+    height: 8px; border-radius: 999px; background: var(--paper-dim);
+    overflow: hidden; margin-bottom: 6px;
+  }
+  .progress-bar-fill { height: 100%; background: var(--accent); border-radius: 999px; transition: width 0.3s ease; }
+  .progress-label {
+    display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-soft);
+    margin-bottom: 40px; font-variant-numeric: tabular-nums;
+  }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; color: var(--ink-soft); margin-bottom: 36px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  section.category { margin-bottom: 44px; }
+  .category-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .category-head h2 { font-family: var(--font-display); font-weight: 600; font-size: 21px; margin: 0; }
+  .category-count { font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+  .item-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .item {
+    display: grid; grid-template-columns: 28px 1fr auto; gap: 14px; align-items: start;
+    padding: 15px 4px; border-bottom: 1px solid var(--line);
+  }
+  .item.is-checked .item-title { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: var(--line); }
+
+  .checkbox-btn {
+    width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--line);
+    background: var(--card); cursor: pointer; padding: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .checkbox-btn:hover { border-color: var(--accent); }
+  .checkbox-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .checkbox-btn.checked { background: var(--accent); border-color: var(--accent); }
+  .checkbox-btn svg { width: 13px; height: 13px; display: none; }
+  .checkbox-btn.checked svg { display: block; }
+
+  .item-title { font-weight: 600; font-size: 14.5px; margin: 0 0 4px; }
+  .item-note { font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 58ch; }
+
+  .pill {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap; margin-top: 1px;
+  }
+  .pill.done { background: var(--accent-wash); color: var(--accent); }
+  .pill.action { background: var(--amber-wash); color: var(--amber); }
+  .pill.pro { background: var(--plum-wash); color: var(--plum); }
+
+  footer {
+    border-top: 1px solid var(--line); padding-top: 18px; margin-top: 20px;
+    font-size: 12.5px; color: var(--ink-soft); line-height: 1.6;
+  }
+
+  @media (max-width: 560px) {
+    .masthead-meta { text-align: left; }
+    header.masthead { flex-direction: column; align-items: flex-start; }
+    .item { grid-template-columns: 24px 1fr; }
+    .pill { grid-column: 2; margin-top: 6px; justify-self: start; }
+  }
+</style>
+
+<div id="page-root"></div>
+
+<script>window.__INITIAL_STATE__ = ["chatbot","itinerary-tool","indexnow","content-health","sitemap-llms","structured-data","image-sitemap","security-headers","ci-pipeline","dependabot","link-check","currency","admin-panel","nib","nra","social-links","review-process","runbook"];</script>
+<script>
+function greenVitalChecklistApp() {
+  var CATEGORIES = [
+    {
+      name: "AI Agents & Automations",
+      items: [
+        { id: "chatbot", title: "Customer-facing AI chatbot", note: "Live on the site, 4 free providers chained (Groq → Gemini → Cerebras → OpenRouter) so one running dry doesn't drop it to the rule-based fallback.", pill: "done" },
+        { id: "itinerary-tool", title: "Internal itinerary draft assistant", note: "Password-protected staff tool. Works for any destination worldwide, pulls in real historical weather data, never states pricing.", pill: "done" },
+        { id: "indexnow", title: "Instant search-engine notification (IndexNow)", note: "Bing, Yandex, and others are pinged the moment content changes, instead of waiting on their own crawl schedule.", pill: "done" },
+        { id: "content-health", title: "Automated content health monitoring", note: "Catches broken images, tours with no upcoming departure dates, and broken destination/tour cross-references — on every push and weekly.", pill: "done" },
+        { id: "social-caption", title: "New-listing social caption emailer", note: "Drafts an Instagram/Facebook caption and emails it to you the moment a new destination or tour goes live. Built — needs 2–3 secrets mirrored into GitHub to switch on.", pill: "action" },
+        { id: "crm-automation", title: "Lead auto-logging to a CRM", note: "Every contact-form/booking submission automatically added to a running list instead of living only in email. Needs a free Airtable account created first.", pill: "action" },
+        { id: "whatsapp-quickreplies", title: "WhatsApp Business quick replies & greeting", note: "Free, built into the WhatsApp Business app — automated greeting message, away message, and saved replies for common questions.", pill: "action" }
+      ]
+    },
+    {
+      name: "Website & Technical Infrastructure",
+      items: [
+        { id: "sitemap-llms", title: "Sitemap, robots.txt, and llms.txt", note: "Search engines and AI systems can both discover and correctly summarize the site.", pill: "done" },
+        { id: "structured-data", title: "Structured data for rich search results", note: "Organization, FAQ, breadcrumb, product, and article markup — the technical basis for star ratings, breadcrumbs, and FAQ dropdowns in search results.", pill: "done" },
+        { id: "image-sitemap", title: "Google Images sitemap extension", note: "Destination and tour photos are indexable in Google Images search, not just the page itself.", pill: "done" },
+        { id: "security-headers", title: "Security headers, rate limiting, spam protection", note: "CSP, HSTS, and per-endpoint rate limits are already live across the site.", pill: "done" },
+        { id: "ci-pipeline", title: "Automated testing & deployment pipeline", note: "Every change is type-checked, linted, tested, and browser-tested before it reaches the live site.", pill: "done" },
+        { id: "dependabot", title: "Automated dependency security updates", note: "Weekly automated pull requests patch known vulnerabilities without waiting for someone to remember to check.", pill: "done" },
+        { id: "link-check", title: "Broken link checking", note: "Every link on the site is automatically verified as part of the pipeline.", pill: "done" },
+        { id: "currency", title: "Live currency conversion", note: "Free, open-source exchange rate feed, mirrored across two hosts so one going down doesn't break pricing display.", pill: "done" },
+        { id: "admin-panel", title: "Non-technical content admin panel", note: "Destinations, tours, services, and settings are all editable without touching code.", pill: "done" }
+      ]
+    },
+    {
+      name: "Business Registration & Legal",
+      items: [
+        { id: "nib", title: "Company registration (NIB)", note: "SL200726GREEN31171 — already on file.", pill: "done" },
+        { id: "nra", title: "Tax registration (NRA)", note: "Taxpayer ID already on file.", pill: "done" },
+        { id: "ntb", title: "National Tourist Board registration", note: "The actual regulatory legitimacy marker for a Sierra Leonean travel agency, and a strong, real backlink for the site.", pill: "action" },
+        { id: "iata", title: "IATA or regional travel association accreditation", note: "Matters most for direct airline ticketing access and for the international credibility marker it carries.", pill: "action" },
+        { id: "tos", title: "Terms of Service — cancellation & refund policy", note: "Needs your actual policy decisions written into real clauses, not placeholder text.", pill: "action" },
+        { id: "legal-review", title: "Full legal review of Terms & Privacy", note: "A Sierra Leonean lawyer needs to confirm what's actually enforceable — not something to guess at.", pill: "pro" }
+      ]
+    },
+    {
+      name: "Financial Systems",
+      items: [
+        { id: "deposit-handling", title: "Separate handling for customer deposits", note: "Keeping deposits distinguishable from operating cash makes refunds simple instead of a cash-flow problem.", pill: "action" },
+        { id: "liability-insurance", title: "Travel agent liability insurance", note: "Covers claims when a booking goes wrong through no fault of the traveler — ask a local insurance broker what's available.", pill: "pro" },
+        { id: "bookkeeping", title: "Bookkeeping / invoicing system", note: "Only worth setting up if the current process (manual invoicing) is actually painful — free tools like Wave exist if so.", pill: "action" }
+      ]
+    },
+    {
+      name: "Marketing & Credibility",
+      items: [
+        { id: "search-console", title: "Google Search Console", note: "Verified and sitemap submitted — use \"Request Indexing\" on key pages to speed things up.", pill: "action" },
+        { id: "bing-webmaster", title: "Bing Webmaster Tools", note: "Import directly from Search Console — skips a separate verification step entirely.", pill: "action" },
+        { id: "gbp", title: "Google Business Profile", note: "Listing exists; location pin needs correcting to the real Congo Cross address.", pill: "action" },
+        { id: "directories", title: "Free Sierra Leone business directories", note: "Real leads already found: National Tourist Board, Salone LinkUp, Africa Listings, Afrikta, E-Sierra Leone, SLIEPA.", pill: "action" },
+        { id: "tripadvisor", title: "TripAdvisor listing", note: "High-intent travel discovery traffic, free to list.", pill: "action" },
+        { id: "pro-email", title: "Professional domain email", note: "info@gtravelsandtours.com reads as more established than a Gmail address to a comparing customer.", pill: "action" },
+        { id: "google-ads", title: "Google Ads campaign", note: "Headlines, descriptions, and keyword targeting already drafted and ready to paste in.", pill: "action" },
+        { id: "social-links", title: "Social profile links kept current", note: "Every platform independently editable from the admin panel now — fix any dead links there directly.", pill: "done" },
+        { id: "review-process", title: "Review generation process", note: "Documented as a required step in the booking runbook — ask every client, every time.", pill: "done" }
+      ]
+    },
+    {
+      name: "Operations",
+      items: [
+        { id: "runbook", title: "Written booking process (Runbook)", note: "All 8 stages from inquiry to post-trip review documented in one place.", pill: "done" },
+        { id: "suppliers", title: "Sierra Leone supplier relationships", note: "Real leads researched for Banana Islands and Tiwai Island — relationships still need building.", pill: "action" },
+        { id: "calendar", title: "Booking / consultation calendar", note: "Only worth it if doing scheduled client calls regularly — skip otherwise.", pill: "action" }
+      ]
+    }
+  ];
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function pillLabel(p) {
+    if (p === "done") return "Done";
+    if (p === "action") return "Needs your action";
+    return "Needs a professional";
+  }
+
+  function checkIcon() {
+    return '<svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.2 11.5L13 4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+
+  function isChecked(checkedIds, id) { return checkedIds.indexOf(id) !== -1; }
+
+  function dynamicHTML(checkedIds) {
+    var totalItems = 0, totalChecked = 0;
+    var catHTML = CATEGORIES.map(function (cat) {
+      var catChecked = 0;
+      var rows = cat.items.map(function (item) {
+        totalItems++;
+        var checked = isChecked(checkedIds, item.id);
+        if (checked) { catChecked++; totalChecked++; }
+        return (
+          '<div class="item' + (checked ? " is-checked" : "") + '">' +
+            '<button class="checkbox-btn' + (checked ? " checked" : "") + '" data-toggle-id="' + esc(item.id) + '" ' +
+              'aria-label="' + (checked ? "Mark incomplete: " : "Mark complete: ") + esc(item.title) + '" aria-pressed="' + checked + '">' +
+              checkIcon() +
+            '</button>' +
+            '<div>' +
+              '<p class="item-title">' + esc(item.title) + '</p>' +
+              '<p class="item-note">' + esc(item.note) + '</p>' +
+            '</div>' +
+            '<span class="pill ' + item.pill + '">' + pillLabel(item.pill) + '</span>' +
+          '</div>'
+        );
+      }).join("");
+
+      return (
+        '<section class="category">' +
+          '<div class="category-head"><h2>' + esc(cat.name) + '</h2>' +
+            '<span class="category-count">' + catChecked + ' / ' + cat.items.length + '</span></div>' +
+          '<div class="item-list">' + rows + '</div>' +
+        '</section>'
+      );
+    }).join("");
+
+    var pct = totalItems ? Math.round((100 * totalChecked) / totalItems) : 0;
+    var progressHTML =
+      '<div class="progress-bar-track"><div class="progress-bar-fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="progress-label"><span>' + totalChecked + ' of ' + totalItems + ' complete</span><span>Updated automatically</span></div>';
+
+    return progressHTML + catHTML;
+  }
+
+  function shellHTML(checkedIds) {
+    return (
+      '<div class="wrap">' +
+        '<header class="masthead">' +
+          '<div><p class="eyebrow">Company Systems Reference</p><h1>Green Vital Systems Checklist</h1></div>' +
+          '<div class="masthead-meta"><div><strong>Green Vital Travel &amp; Tour Agency Ltd.</strong></div><div>Freetown, Sierra Leone</div></div>' +
+        '</header>' +
+        '<p class="intro">Every agent, automation, and system discussed for the business — technical and non-technical — in one place. Check items off as you complete them; it’s saved automatically for next time you open this.</p>' +
+        '<div class="legend">' +
+          '<span class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Done / built already</span>' +
+          '<span class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Needs your action</span>' +
+          '<span class="legend-item"><span class="legend-dot" style="background:var(--plum)"></span>Needs a professional</span>' +
+        '</div>' +
+        '<div id="dynamic">' + dynamicHTML(checkedIds) + '</div>' +
+        '<footer>Living document — the pill shows what kind of item it is; the checkbox is your own progress tracker, independent of it. “Needs a professional” items genuinely can’t be self-served: a lawyer, an insurance broker, or a licensing body has to be the one to act.</footer>' +
+      '</div>'
+    );
+  }
+
+  var checkedIds = (window.__INITIAL_STATE__ || []).slice();
+  var artifactNs = null;
+  var root = document.getElementById("page-root");
+
+  function renderDynamicOnly() {
+    var el = document.getElementById("dynamic");
+    if (el) el.innerHTML = dynamicHTML(checkedIds);
+  }
+
+  function toggle(id) {
+    var idx = checkedIds.indexOf(id);
+    if (idx === -1) checkedIds.push(id); else checkedIds.splice(idx, 1);
+    renderDynamicOnly();
+    persist();
+  }
+
+  root.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-toggle-id]");
+    if (btn) toggle(btn.getAttribute("data-toggle-id"));
+  });
+
+  root.innerHTML = shellHTML(checkedIds);
+
+  // Static head, kept as a plain string (never read from the live DOM) so
+  // republishing only ever depends on this function's own source and this
+  // constant — both fixed at authoring time, never on page state.
+  var HEAD_HTML =
+    "<title>Green Vital Systems Checklist</title>\n" +
+    '<link rel="preconnect" href="https://fonts.googleapis.com">\n' +
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' +
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap">\n' +
+    "<style>\n" +
+    "  :root {\n" +
+    "    --ink: #0a2f3d;\n" +
+    "    --ink-soft: #3c5866;\n" +
+    "    --paper: #faf7f1;\n" +
+    "    --paper-dim: #f0ebe1;\n" +
+    "    --card: #ffffff;\n" +
+    "    --line: rgba(10, 47, 61, 0.14);\n" +
+    "    --accent: #1c8f5c;\n" +
+    "    --accent-soft: #6fdba8;\n" +
+    "    --accent-wash: rgba(28, 143, 92, 0.1);\n" +
+    "    --amber: #c98a2e;\n" +
+    "    --amber-wash: rgba(201, 138, 46, 0.12);\n" +
+    "    --plum: #7a4fae;\n" +
+    "    --plum-wash: rgba(122, 79, 174, 0.1);\n" +
+    '    --font-display: "Fraunces", Georgia, "Times New Roman", serif;\n' +
+    '    --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\n' +
+    "  }\n" +
+    "  @media (prefers-color-scheme: dark) {\n" +
+    '    :root:not([data-theme="light"]) {\n' +
+    "      --ink: #eef3f1; --ink-soft: #aebfc2; --paper: #0b2129; --paper-dim: #102a33;\n" +
+    "      --card: #12313b; --line: rgba(238, 243, 241, 0.14);\n" +
+    "      --accent: #4fce93; --accent-soft: #2a6b4c; --accent-wash: rgba(79, 206, 147, 0.14);\n" +
+    "      --amber: #e0a94f; --amber-wash: rgba(224, 169, 79, 0.14);\n" +
+    "      --plum: #b596e0; --plum-wash: rgba(181, 150, 224, 0.14);\n" +
+    "    }\n" +
+    "  }\n" +
+    '  :root[data-theme="dark"] {\n' +
+    "    --ink: #eef3f1; --ink-soft: #aebfc2; --paper: #0b2129; --paper-dim: #102a33;\n" +
+    "    --card: #12313b; --line: rgba(238, 243, 241, 0.14);\n" +
+    "    --accent: #4fce93; --accent-soft: #2a6b4c; --accent-wash: rgba(79, 206, 147, 0.14);\n" +
+    "    --amber: #e0a94f; --amber-wash: rgba(224, 169, 79, 0.14);\n" +
+    "    --plum: #b596e0; --plum-wash: rgba(181, 150, 224, 0.14);\n" +
+    "  }\n" +
+    "  * { box-sizing: border-box; }\n" +
+    "  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }\n" +
+    "  .wrap { max-width: 900px; margin: 0 auto; padding-inline: 20px; padding-block: 44px 90px; }\n" +
+    "  header.masthead { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 20px; }\n" +
+    "  .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 6px; }\n" +
+    "  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 5vw, 38px); line-height: 1.08; margin: 0; text-wrap: balance; }\n" +
+    "  .masthead-meta { text-align: right; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }\n" +
+    "  .masthead-meta strong { color: var(--ink); }\n" +
+    "  .intro { font-size: 15px; color: var(--ink-soft); max-width: 64ch; line-height: 1.6; margin: 4px 0 28px; }\n" +
+    "  .progress-bar-track { height: 8px; border-radius: 999px; background: var(--paper-dim); overflow: hidden; margin-bottom: 6px; }\n" +
+    "  .progress-bar-fill { height: 100%; background: var(--accent); border-radius: 999px; transition: width 0.3s ease; }\n" +
+    "  .progress-label { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-soft); margin-bottom: 40px; font-variant-numeric: tabular-nums; }\n" +
+    "  .legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; color: var(--ink-soft); margin-bottom: 36px; }\n" +
+    "  .legend-item { display: flex; align-items: center; gap: 6px; }\n" +
+    "  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }\n" +
+    "  section.category { margin-bottom: 44px; }\n" +
+    "  .category-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }\n" +
+    "  .category-head h2 { font-family: var(--font-display); font-weight: 600; font-size: 21px; margin: 0; }\n" +
+    "  .category-count { font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }\n" +
+    "  .item-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }\n" +
+    "  .item { display: grid; grid-template-columns: 28px 1fr auto; gap: 14px; align-items: start; padding: 15px 4px; border-bottom: 1px solid var(--line); }\n" +
+    "  .item.is-checked .item-title { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: var(--line); }\n" +
+    "  .checkbox-btn { width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--card); cursor: pointer; padding: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }\n" +
+    "  .checkbox-btn:hover { border-color: var(--accent); }\n" +
+    "  .checkbox-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }\n" +
+    "  .checkbox-btn.checked { background: var(--accent); border-color: var(--accent); }\n" +
+    "  .checkbox-btn svg { width: 13px; height: 13px; display: none; }\n" +
+    "  .checkbox-btn.checked svg { display: block; }\n" +
+    "  .item-title { font-weight: 600; font-size: 14.5px; margin: 0 0 4px; }\n" +
+    "  .item-note { font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 58ch; }\n" +
+    "  .pill { font-size: 11px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; white-space: nowrap; margin-top: 1px; }\n" +
+    "  .pill.done { background: var(--accent-wash); color: var(--accent); }\n" +
+    "  .pill.action { background: var(--amber-wash); color: var(--amber); }\n" +
+    "  .pill.pro { background: var(--plum-wash); color: var(--plum); }\n" +
+    "  footer { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 20px; font-size: 12.5px; color: var(--ink-soft); line-height: 1.6; }\n" +
+    "  @media (max-width: 560px) {\n" +
+    "    .masthead-meta { text-align: left; }\n" +
+    "    header.masthead { flex-direction: column; align-items: flex-start; }\n" +
+    "    .item { grid-template-columns: 24px 1fr; }\n" +
+    "    .pill { grid-column: 2; margin-top: 6px; justify-self: start; }\n" +
+    "  }\n" +
+    "</style>";
+
+  function persist() {
+    if (!artifactNs) return;
+    var appSource = "(" + greenVitalChecklistApp.toString() + ")();";
+    var html =
+      "<!doctype html>\n" +
+      HEAD_HTML + "\n" +
+      '<div id="page-root"></div>\n' +
+      "<script>window.__INITIAL_STATE__ = " + JSON.stringify(checkedIds) + ";<" + "/script>\n" +
+      "<script>" + appSource + "<" + "/script>";
+    artifactNs.publish(html).catch(function () {
+      // Conflict or not-writer: every open view reloads to whatever the
+      // shared version actually is — no retry, per the capability's contract.
+    });
+  }
+
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("artifact").then(function (ns) { artifactNs = ns; });
+  }
+}
+greenVitalChecklistApp();
+</script>
