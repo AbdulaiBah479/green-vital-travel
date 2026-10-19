@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
 import SocialLinks from "./SocialLinks";
-import { contact, companyRegistration, siteFullName } from "@/lib/site";
+import { contact, companyRegistration, siteFullName, businessHours } from "@/lib/site";
 
 const exploreLinks = [
   { label: "Home", href: "/" },
@@ -130,6 +130,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>{officeAddress}</li>
+              <li>{businessHours.label}</li>
             </ul>
             <SocialLinks className="mt-5" />
           </div>

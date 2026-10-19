@@ -43,6 +43,18 @@ export const companyRegistration = {
   entityType: "Private Company Limited by Shares",
 };
 
+// Public opening hours. Kept in one place so the visible text and the
+// structured data Google reads can't drift apart.
+export const businessHours = {
+  days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] as const,
+  opens: "09:00",
+  closes: "18:00",
+  label: "Monday to Friday, 9:00 to 18:00",
+};
+
+// The business's Google Search / Maps knowledge-panel entry.
+export const googleBusinessUrl = "https://www.google.com/search?kgmid=%2Fg%2F11nw2fzdgz";
+
 export const founder = {
   name: "Ibrahim Bah",
   title: "Founder & Director",

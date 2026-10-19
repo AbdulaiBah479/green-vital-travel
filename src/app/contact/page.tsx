@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import OfficeMap from "@/components/OfficeMap";
-import { contact } from "@/lib/site";
+import { contact, businessHours } from "@/lib/site";
 
 const description =
   "One office in Freetown, one team — reach us directly, or start with the form and we'll route it to the right person.";
@@ -54,6 +54,7 @@ export default async function ContactPage({
             <Reveal>
               <p className="font-serif text-xl text-ink">{office.city}</p>
               <p className="mt-0.5 text-xs eyebrow uppercase text-accent-deep">{office.detail}</p>
+              <p className="mt-1 text-sm text-ink/70">Open {businessHours.label}</p>
               <ul className="mt-3 space-y-1 text-sm text-ink/70">
                 <li>
                   <a

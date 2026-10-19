@@ -26,6 +26,8 @@ import {
   siteKeywords,
   contact,
   social,
+  businessHours,
+  googleBusinessUrl,
 } from "@/lib/site";
 import "./globals.css";
 
@@ -124,7 +126,16 @@ const organizationJsonLd: WithContext<TravelAgency> = {
     { "@type": "Place", name: "West Africa" },
   ],
   knowsLanguage: "en",
-  sameAs: Object.values(social).filter(Boolean),
+  sameAs: [...Object.values(social).filter(Boolean), googleBusinessUrl],
+  hasMap: googleBusinessUrl,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [...businessHours.days],
+      opens: businessHours.opens,
+      closes: businessHours.closes,
+    },
+  ],
   priceRange: "$$",
 };
 
