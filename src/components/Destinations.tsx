@@ -12,7 +12,7 @@ const destinations = [
   {
     slug: "freetown-peninsula",
     name: "Freetown Peninsula, Sierra Leone",
-    hook: "Golden beaches, twenty minutes from the airport",
+    hook: "Golden beaches along the peninsula coast",
     detail: "Best November through April",
     nights: "3–5 nights suggested",
     description:

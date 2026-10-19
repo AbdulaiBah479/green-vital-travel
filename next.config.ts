@@ -3,6 +3,25 @@ import path from "path";
 
 const isDev = process.env.NODE_ENV === "development";
 
+// Hosts that used to serve this site and should forward to the canonical one.
+const LEGACY_HOSTS = ["gtravelsandtours.com", "www.gtravelsandtours.com"];
+
+const canonicalOrigin = (process.env.NEXT_PUBLIC_SITE_URL || "").trim().replace(/\/$/, "");
+let canonicalHost = "";
+try {
+  canonicalHost = canonicalOrigin ? new URL(canonicalOrigin).hostname : "";
+} catch {
+  canonicalHost = "";
+}
+// Redirect everything except localhost-style hosts and the canonical host
+// itself; if the canonical host is www.x.com, the bare x.com forwards to it too.
+const redirectSources =
+  canonicalHost && canonicalHost !== "localhost"
+    ? [...LEGACY_HOSTS, ...(canonicalHost.startsWith("www.") ? [canonicalHost.slice(4)] : [])].filter(
+        (h) => h !== canonicalHost
+      )
+    : [];
+
 // Next.js injects its own inline hydration/RSC-payload <script> tags and
 // this app sets a couple of inline styles for computed values (stagger
 // delays, dynamic widths) — neither carries a nonce, so 'unsafe-inline' is
@@ -97,6 +116,20 @@ const nextConfig: NextConfig = {
     // for extra sharpness — without listing it here that request would be
     // silently downgraded back to 75.
     qualities: [75, 85],
+  },
+  // Domain consolidation. Only active once NEXT_PUBLIC_SITE_URL is set to the
+  // site's canonical address (e.g. https://www.example.com): every other host
+  // the site is reachable on (the old domain, and the bare/non-www form of the
+  // canonical host) then gets a permanent redirect to the same path on the
+  // canonical host, so links and search rankings carry over. With the variable
+  // unset (local dev, or before the switch) nothing is redirected.
+  async redirects() {
+    return redirectSources.map((host) => ({
+      source: "/:path*",
+      has: [{ type: "host" as const, value: host.replace(/\./g, "\\.") }],
+      destination: `${canonicalOrigin}/:path*`,
+      permanent: true,
+    }));
   },
   async headers() {
     return [

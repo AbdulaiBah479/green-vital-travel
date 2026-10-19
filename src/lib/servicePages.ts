@@ -111,7 +111,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "How do I get from Freetown to the airport at Lungi?",
         answer:
-          "The airport is across the estuary, so the journey normally involves a water crossing plus road transfers at each end. Green Vital can arrange the crossing and transfers together and time them to your flight.",
+          "The airport is across the estuary from the city. The usual choice for visitors is a water taxi, which takes roughly half an hour; the public ferry is cheaper but slower, and driving around via Port Loko takes about three to four hours. Green Vital can arrange the crossing and the road transfers together and time them to your flight.",
       },
       {
         question: "Can you book the Lungi crossing before I land?",
@@ -122,6 +122,11 @@ export const servicePages: ServicePage[] = [
         question: "Do you sell boat tickets for the islands?",
         answer:
           "Yes. We arrange water taxi and ferry tickets across the peninsula and out to the islands. Ask us for the trip you have in mind.",
+      },
+      {
+        question: "How long does the crossing take?",
+        answer:
+          "By water taxi it is roughly 30 minutes, plus time for the road transfers and boarding at each end. The public ferry is slower and can be delayed, which is why we plan the whole journey backwards from your flight.",
       },
       {
         question: "Are schedules and fares fixed?",
