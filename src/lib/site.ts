@@ -4,7 +4,7 @@ import settings from "../../content/settings/index.json";
 
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.NODE_ENV === "production" ? "https://greenvitaltravelandtour.com" : "http://localhost:3000")
+    (process.env.NODE_ENV === "production" ? "https://gtravelsandtours.com" : "http://localhost:3000")
 ).replace(/\/$/, "");
 
 export const siteName = "Green Vital";

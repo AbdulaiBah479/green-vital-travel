@@ -51,7 +51,7 @@ describe("getConfiguredProviders", () => {
     vi.stubEnv("OPENROUTER_API_KEY", "openrouter-key");
     const [openrouter] = getConfiguredProviders();
     expect(openrouter.extraHeaders).toEqual({
-      "HTTP-Referer": "https://greenvitaltravelandtour.com",
+      "HTTP-Referer": "https://gtravelsandtours.com",
       "X-Title": "Green Vital",
     });
   });

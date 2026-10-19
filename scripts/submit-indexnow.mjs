@@ -4,7 +4,7 @@
 // Reads the live sitemap so the submitted URL list can never drift out of
 // sync with what actually exists — same anti-staleness pattern as
 // src/app/sitemap.ts and src/app/llms.txt/route.ts.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://greenvitaltravelandtour.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://gtravelsandtours.com";
 // Trimmed defensively — a stray trailing newline/space is an easy thing to
 // paste into a GitHub secret by accident, and IndexNow rejects it outright
 // rather than trimming it for you. Not a real secret either way: this same
