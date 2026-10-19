@@ -55,6 +55,10 @@ export const businessHours = {
 // The business's Google Search / Maps knowledge-panel entry.
 export const googleBusinessUrl = "https://www.google.com/search?kgmid=%2Fg%2F11nw2fzdgz";
 
+// Opens Google's "write a review" box for the business — shared with customers
+// and linked from the Reviews page and footer.
+export const googleReviewUrl = "https://g.page/r/CXXFXqzi85e4EBM/review";
+
 export const founder = {
   name: "Ibrahim Bah",
   title: "Founder & Director",

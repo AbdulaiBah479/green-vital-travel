@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
 import SocialLinks from "./SocialLinks";
-import { contact, companyRegistration, siteFullName, businessHours } from "@/lib/site";
+import { contact, companyRegistration, siteFullName, businessHours, googleReviewUrl } from "@/lib/site";
 
 const exploreLinks = [
   { label: "Home", href: "/" },
@@ -131,6 +131,17 @@ export default function Footer() {
               ))}
               <li>{officeAddress}</li>
               <li>{businessHours.label}</li>
+              <li>
+                <a
+                  href={googleReviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cursor-hover
+                  className="transition-colors hover:text-accent"
+                >
+                  Review us on Google
+                </a>
+              </li>
             </ul>
             <SocialLinks className="mt-5" />
           </div>

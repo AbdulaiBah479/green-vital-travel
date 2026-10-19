@@ -3,6 +3,7 @@ import Reveal from "@/components/Reveal";
 import ReviewsList from "@/components/ReviewsList";
 import WriteReviewForm from "@/components/WriteReviewForm";
 import { reviews, averageRating, ratingBreakdown } from "@/lib/reviews";
+import { googleReviewUrl } from "@/lib/site";
 
 const description =
   "What travelers actually say after the trip is over — every review tied to a real tour, filterable by destination or rating.";
@@ -80,6 +81,21 @@ export default function ReviewsPage() {
             Traveled with us? We&rsquo;d like to hear how it went.
           </h2>
           <WriteReviewForm />
+        </Reveal>
+
+        <Reveal className="mt-16 flex flex-col items-center gap-4 rounded-3xl bg-ink px-8 py-12 text-center text-paper">
+          <p className="eyebrow text-xs uppercase text-accent-soft">Review us on Google</p>
+          <h2 className="max-w-md text-balance font-serif text-2xl leading-tight">
+            Happy with our service? A Google review helps other travelers find us.
+          </h2>
+          <a
+            href={googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-full bg-accent px-8 py-4 text-xs eyebrow uppercase text-ink transition-colors hover:bg-accent-soft"
+          >
+            Leave a Google review
+          </a>
         </Reveal>
       </div>
     </main>
