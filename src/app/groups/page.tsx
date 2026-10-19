@@ -11,8 +11,10 @@ export const metadata: Metadata = {
   title: "Group & Corporate Travel from Freetown",
   description,
   alternates: { canonical: "/groups" },
-  openGraph: { title: "Group & Corporate Travel — Green Vital", description, url: "/groups", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Group & Corporate Travel — Green Vital", description, url: "/groups", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Group & Corporate Travel — Green Vital",
     description: description,

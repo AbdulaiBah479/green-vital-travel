@@ -22,14 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const entry = getJournalEntry(slug);
   if (!entry) return {};
 
+  const seoTitle = entry.metaTitle ?? entry.title;
+
   return {
-    title: entry.title,
+    title: seoTitle,
     description: entry.excerpt,
     alternates: {
       canonical: `/journal/${entry.slug}`,
     },
     openGraph: {
-      title: entry.title,
+      title: seoTitle,
       description: entry.excerpt,
       url: `/journal/${entry.slug}`,
       type: "article",
@@ -38,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: entry.title,
+      title: seoTitle,
       description: entry.excerpt,
     },
   };

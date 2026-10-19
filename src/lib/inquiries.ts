@@ -28,6 +28,18 @@ async function logToAirtable(fields: Record<string, unknown>) {
   }
 }
 
+// Visitor-supplied text is embedded in an HTML email body, so it must be
+// escaped — otherwise a form submission could inject markup (phishing links,
+// tracking pixels) into the message the business owner opens.
+export function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export type ContactInquiry = {
   name: string;
   email: string;
@@ -174,7 +186,7 @@ export async function submitInquiry(kind: "contact" | "booking", payload: Contac
         to: [businessEmail],
         subject,
         text,
-        html: `<pre style="font-family: sans-serif; white-space: pre-wrap;">${text}</pre>`,
+        html: `<pre style="font-family: sans-serif; white-space: pre-wrap;">${escapeHtml(text)}</pre>`,
       }),
     });
 

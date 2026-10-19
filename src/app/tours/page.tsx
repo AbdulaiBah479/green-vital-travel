@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { metaDescription } from "@/lib/seo";
 import Magnetic from "@/components/Magnetic";
 import ToursGrid from "@/components/ToursGrid";
 import { tours } from "@/lib/tours";
@@ -9,18 +10,20 @@ const description = `${tours.length} small-group and private tours across our de
 
 export const metadata: Metadata = {
   title: "Tour Packages from Sierra Leone",
-  description,
+  description: metaDescription(description),
   alternates: { canonical: "/tours" },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Tours & Packages — Green Vital",
-    description,
+    description: metaDescription(description),
     url: "/tours",
     type: "website",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Tours & Packages — Green Vital",
-    description: description,
+    description: metaDescription(description),
   },
 };
 

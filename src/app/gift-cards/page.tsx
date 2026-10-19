@@ -10,8 +10,10 @@ export const metadata: Metadata = {
   title: "Gift Cards",
   description,
   alternates: { canonical: "/gift-cards" },
-  openGraph: { title: "Gift Cards — Green Vital", description, url: "/gift-cards", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Gift Cards — Green Vital", description, url: "/gift-cards", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Gift Cards — Green Vital",
     description: description,

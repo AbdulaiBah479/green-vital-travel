@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { metaDescription } from "@/lib/seo";
 import Magnetic from "@/components/Magnetic";
 
 const description =
@@ -9,13 +10,15 @@ const description =
 
 export const metadata: Metadata = {
   title: "Travel Agency Services in Freetown",
-  description,
+  description: metaDescription(description),
   alternates: { canonical: "/services" },
-  openGraph: { title: "Services — Green Vital", description, url: "/services", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Services — Green Vital", description: metaDescription(description), url: "/services", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Services — Green Vital",
-    description: description,
+    description: metaDescription(description),
   },
 };
 

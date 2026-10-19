@@ -11,8 +11,10 @@ export const metadata: Metadata = {
   title: "Partners",
   description,
   alternates: { canonical: "/partners" },
-  openGraph: { title: "Partners — Green Vital", description, url: "/partners", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Partners — Green Vital", description, url: "/partners", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Partners — Green Vital",
     description: description,

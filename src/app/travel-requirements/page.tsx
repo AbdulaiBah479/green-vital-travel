@@ -9,12 +9,14 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/travel-requirements" },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Travel Requirements — Green Vital",
     description,
     url: "/travel-requirements",
     type: "website",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Travel Requirements — Green Vital",
     description: description,

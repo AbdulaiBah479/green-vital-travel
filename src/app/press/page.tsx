@@ -9,8 +9,10 @@ export const metadata: Metadata = {
   title: "Press",
   description,
   alternates: { canonical: "/press" },
-  openGraph: { title: "Press — Green Vital", description, url: "/press", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Press — Green Vital", description, url: "/press", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Press — Green Vital",
     description: description,

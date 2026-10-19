@@ -11,8 +11,10 @@ export const metadata: Metadata = {
   title: "Travel Insurance in Sierra Leone",
   description,
   alternates: { canonical: "/insurance" },
-  openGraph: { title: "Travel Insurance — Green Vital", description, url: "/insurance", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Travel Insurance — Green Vital", description, url: "/insurance", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Travel Insurance — Green Vital",
     description: description,

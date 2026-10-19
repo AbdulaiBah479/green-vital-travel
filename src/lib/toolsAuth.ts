@@ -5,6 +5,18 @@
 // in both the Edge middleware and the Node.js API route without branching.
 export const TOOLS_COOKIE_NAME = "tools_session";
 
+// Constant-time string comparison: every character position is always
+// visited, so response time doesn't reveal how many leading characters of a
+// guess were correct. A plain `===` short-circuits on the first mismatch.
+function safeEqual(a: string, b: string): boolean {
+  let diff = a.length ^ b.length;
+  const len = Math.max(a.length, b.length);
+  for (let i = 0; i < len; i++) {
+    diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
+  }
+  return diff === 0;
+}
+
 function bufferToHex(buffer: ArrayBuffer): string {
   return [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
@@ -30,7 +42,7 @@ function configuredPassword(): string | null {
 
 export function checkPassword(input: string): boolean {
   const password = configuredPassword();
-  return !!password && input.trim() === password;
+  return !!password && safeEqual(input.trim(), password);
 }
 
 export async function expectedSessionToken(): Promise<string | null> {
@@ -42,5 +54,5 @@ export async function expectedSessionToken(): Promise<string | null> {
 export async function isValidSession(cookieValue: string | undefined | null): Promise<boolean> {
   if (!cookieValue) return false;
   const expected = await expectedSessionToken();
-  return !!expected && cookieValue === expected;
+  return !!expected && safeEqual(cookieValue, expected);
 }

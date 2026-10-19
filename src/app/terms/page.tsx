@@ -8,8 +8,10 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description,
   alternates: { canonical: "/terms" },
-  openGraph: { title: "Terms of Service — Green Vital", description, url: "/terms", type: "website" },
-  twitter: { card: "summary_large_image", title: "Terms of Service — Green Vital", description },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Terms of Service — Green Vital", description, url: "/terms", type: "website" },
+  twitter: {
+    images: ["/opengraph-image"], card: "summary_large_image", title: "Terms of Service — Green Vital", description },
   robots: { index: true, follow: true },
 };
 

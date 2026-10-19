@@ -14,7 +14,7 @@ export const siteFullName = "Green Vital Travel and Tour Agency Limited";
 export const siteTitle = "Green Vital | Travel Agency in Freetown, Sierra Leone";
 
 export const siteDescription =
-  "Green Vital is a travel agency in Freetown, Sierra Leone — air tickets, Lungi ferry and boat tickets, visa assistance, hotel bookings, car rentals, tour packages and travel insurance. Call, WhatsApp or visit us at Congo Cross.";
+  "Green Vital is a travel agency in Freetown, Sierra Leone: air tickets, Lungi ferry tickets, visas, hotels, car hire, tours and travel insurance.";
 
 export const siteKeywords = [
   "Green Vital",

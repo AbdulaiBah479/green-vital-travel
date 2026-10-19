@@ -12,8 +12,10 @@ export const metadata: Metadata = {
   title: "About Us — Freetown Travel Agency",
   description,
   alternates: { canonical: "/about" },
-  openGraph: { title: "About — Green Vital", description, url: "/about", type: "website" },
+  openGraph: {
+    images: ["/opengraph-image"], title: "About — Green Vital", description, url: "/about", type: "website" },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "About — Green Vital",
     description: description,

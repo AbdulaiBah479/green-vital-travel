@@ -27,7 +27,7 @@ export const servicePages: ServicePage[] = [
     name: "Air Tickets",
     metaTitle: "Air Tickets & Flights in Freetown, Sierra Leone",
     metaDescription:
-      "Book flights from Sierra Leone with a Freetown travel agency. Air ticketing on almost any airline, routing and baggage advice, and visa checks before you pay. Call or WhatsApp Green Vital.",
+      "Book flights from Sierra Leone with a Freetown travel agency. Tickets on almost any airline, routing advice and visa checks before you pay.",
     h1: "Air tickets and flight booking in Freetown",
     eyebrow: "Air Ticketing · Sierra Leone",
     heroImg: "/images/unsplash/1527605158555-853f200063e9.jpg",
@@ -135,7 +135,7 @@ export const servicePages: ServicePage[] = [
     name: "Visa Assistance",
     metaTitle: "Visa Assistance in Sierra Leone",
     metaDescription:
-      "Visa and travel documentation support from a Freetown travel agency. We check entry requirements for your passport before you book, and guide you through the application steps.",
+      "Visa and travel documents support from a Freetown travel agency. We check entry requirements for your passport before you book.",
     h1: "Visa assistance and travel documentation in Sierra Leone",
     eyebrow: "Visa Assistance · Sierra Leone",
     heroImg: "/images/unsplash/1581553673739-c4906b5d0de8.jpg",

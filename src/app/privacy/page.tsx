@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { contact } from "@/lib/site";
 
-const description = "How Green Vital collects, uses, and protects your information.";
+const description =
+  "How Green Vital, a travel agency in Freetown, Sierra Leone, collects, uses, and protects your personal information when you book or contact us.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description,
   alternates: { canonical: "/privacy" },
-  openGraph: { title: "Privacy Policy — Green Vital", description, url: "/privacy", type: "website" },
-  twitter: { card: "summary_large_image", title: "Privacy Policy — Green Vital", description },
+  openGraph: {
+    images: ["/opengraph-image"], title: "Privacy Policy — Green Vital", description, url: "/privacy", type: "website" },
+  twitter: {
+    images: ["/opengraph-image"], card: "summary_large_image", title: "Privacy Policy — Green Vital", description },
   robots: { index: true, follow: true },
 };
 

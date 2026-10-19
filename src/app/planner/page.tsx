@@ -12,12 +12,14 @@ export const metadata: Metadata = {
     canonical: "/planner",
   },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Trip Planner — Green Vital",
     description,
     url: "/planner",
     type: "website",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Trip Planner — Green Vital",
     description: description,

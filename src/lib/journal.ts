@@ -1,6 +1,8 @@
 export type JournalEntry = {
   slug: string;
   title: string;
+  /** Shorter title for search results and link previews (keeps the full title under ~60 chars with the site suffix). */
+  metaTitle?: string;
   excerpt: string;
   category: string;
   readTime: string;
@@ -48,6 +50,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "visa-and-entry-requirements-what-to-actually-check",
+    metaTitle: "Visa & Entry Requirements: What to Check",
     title: "Visa & Entry Requirements: What to Actually Check Before You Book",
     excerpt:
       "Requirements change more often than people expect, and the consequences of getting them wrong land at the gate, not before it.",
@@ -99,6 +102,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "how-we-actually-decide-best-time-to-visit",
+    metaTitle: "How We Decide the Best Time to Visit",
     title: "How We Actually Decide \"Best Time to Visit\"",
     excerpt:
       "It's rarely just weather — the honest version accounts for crowds, prices, and what's actually happening on the ground that month.",
@@ -150,6 +154,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "flying-out-of-lungi-what-to-actually-know",
+    metaTitle: "Flying Out of Lungi: What to Know",
     title: "Flying Out of Lungi: What to Actually Know Before You Go",
     excerpt:
       "Freetown's airport isn't in Freetown. That single fact changes more about your travel day than anything on your packing list.",
@@ -167,6 +172,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "sierra-leone-passport-visa-free-how-to-actually-check",
+    metaTitle: "Sierra Leone Passport: Check Visa-Free Travel",
     title: "Sierra Leonean Passport Holders: How to Actually Check Where You Can Go Visa-Free",
     excerpt:
       "The forwarded WhatsApp list is almost always out of date. Here's the honest, slower way to actually get the answer right.",
@@ -184,6 +190,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "booking-through-an-agency-vs-yourself-what-you-actually-get",
+    metaTitle: "Travel Agency vs Booking It Yourself",
     title: "What You Actually Get Booking Through an Agency vs. Doing It Yourself",
     excerpt:
       "Sometimes going direct really is the right call. Here's the honest version of when it is, and when it isn't.",
@@ -201,6 +208,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "traveling-with-family-how-to-plan-for-everyone",
+    metaTitle: "Family Travel: Planning for Everyone",
     title: "Traveling With Family: How to Plan for Everyone, Not Just the Planner",
     excerpt:
       "A good family trip isn't the one with the most in it. It's the one where nobody, at any age, spends a day waiting for it to be over.",
@@ -219,6 +227,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "honeymoons-and-anniversaries-planning-it-without-the-pressure",
+    metaTitle: "Honeymoon & Anniversary Trip Planning",
     title: "Honeymoons & Anniversaries: Planning It Without the Pressure",
     excerpt:
       "A milestone trip carries expectations a normal holiday never has to meet. Here's how we plan so it can simply be good.",

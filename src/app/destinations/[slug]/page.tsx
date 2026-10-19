@@ -10,6 +10,7 @@ import TourCard from "@/components/TourCard";
 import { destinations, getDestination } from "@/lib/destinations";
 import { toursForDestination } from "@/lib/tours";
 import { jsonLdScript } from "@/lib/jsonLd";
+import { metaDescription } from "@/lib/seo";
 import { siteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -27,18 +28,18 @@ export async function generateMetadata({
 
   return {
     title: d.name,
-    description: d.description,
+    description: metaDescription(d.description),
     alternates: { canonical: `/destinations/${d.slug}` },
     openGraph: {
       title: `${d.name} — Green Vital`,
-      description: d.description,
+      description: metaDescription(d.description),
       url: `/destinations/${d.slug}`,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title: `${d.name} — Green Vital`,
-      description: d.description,
+      description: metaDescription(d.description),
     },
   };
 }

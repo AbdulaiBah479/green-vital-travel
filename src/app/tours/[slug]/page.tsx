@@ -13,6 +13,7 @@ import { getDestination } from "@/lib/destinations";
 import { reviewsForTour, averageRating } from "@/lib/reviews";
 import { siteUrl } from "@/lib/site";
 import { jsonLdScript } from "@/lib/jsonLd";
+import { metaDescription } from "@/lib/seo";
 
 export function generateStaticParams() {
   return tours.map((t) => ({ slug: t.slug }));
@@ -29,18 +30,18 @@ export async function generateMetadata({
 
   return {
     title: t.title,
-    description: t.summary,
+    description: metaDescription(t.summary),
     alternates: { canonical: `/tours/${t.slug}` },
     openGraph: {
       title: `${t.title} — Green Vital`,
-      description: t.summary,
+      description: metaDescription(t.summary),
       url: `/tours/${t.slug}`,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title: `${t.title} — Green Vital`,
-      description: t.summary,
+      description: metaDescription(t.summary),
     },
   };
 }

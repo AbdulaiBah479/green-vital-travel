@@ -9,12 +9,14 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/accessibility" },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Accessibility Statement — Green Vital",
     description,
     url: "/accessibility",
     type: "website",
   },
-  twitter: { card: "summary_large_image", title: "Accessibility Statement — Green Vital", description },
+  twitter: {
+    images: ["/opengraph-image"], card: "summary_large_image", title: "Accessibility Statement — Green Vital", description },
   robots: { index: true, follow: true },
 };
 

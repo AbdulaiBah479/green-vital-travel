@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { metaDescription } from "@/lib/seo";
 import Magnetic from "@/components/Magnetic";
 import DestinationsGrid from "@/components/DestinationsGrid";
 import { destinations } from "@/lib/destinations";
@@ -9,18 +10,20 @@ const description = `${destinations.length} places we've already built trips aro
 
 export const metadata: Metadata = {
   title: "Holiday Destinations from Sierra Leone",
-  description,
+  description: metaDescription(description),
   alternates: { canonical: "/destinations" },
   openGraph: {
+    images: ["/opengraph-image"],
     title: "Destinations — Green Vital",
-    description,
+    description: metaDescription(description),
     url: "/destinations",
     type: "website",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Destinations — Green Vital",
-    description: description,
+    description: metaDescription(description),
   },
 };
 
