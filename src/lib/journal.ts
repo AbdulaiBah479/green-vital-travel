@@ -3,6 +3,8 @@ export type JournalEntry = {
   title: string;
   /** Shorter title for search results and link previews (keeps the full title under ~60 chars with the site suffix). */
   metaTitle?: string;
+  /** Groups an entry under a topic hub page, e.g. "visit-sierra-leone". */
+  hub?: string;
   excerpt: string;
   category: string;
   readTime: string;
@@ -264,6 +266,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "getting-from-freetown-to-lungi-airport",
+    hub: "visit-sierra-leone",
     metaTitle: "Freetown to Lungi Airport: How to Get There",
     title: "Getting From Freetown to Lungi Airport: Ferry, Water Taxi and Road",
     excerpt:
@@ -284,6 +287,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "best-time-to-visit-sierra-leone",
+    hub: "visit-sierra-leone",
     metaTitle: "Best Time to Visit Sierra Leone",
     title: "The Best Time to Visit Sierra Leone: Dry Season vs. Rainy Season",
     excerpt:
@@ -303,6 +307,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     slug: "beaches-near-freetown-peninsula-guide",
+    hub: "visit-sierra-leone",
     metaTitle: "Beaches Near Freetown: A Short Guide",
     title: "Beaches Near Freetown: A Short Guide to the Peninsula Coast",
     excerpt:
@@ -379,8 +384,173 @@ export const journalEntries: JournalEntry[] = [
       "Finally, check the visa and transit requirements for your whole route before you pay, including any country you only pass through. If you tell us where you are going, we will check the route against your passport, and can also arrange your transfers, hotel and travel insurance in the same booking.",
     ],
   },
+  {
+    slug: "sierra-leone-travel-guide-for-first-time-visitors",
+    metaTitle: "Sierra Leone Travel Guide for First-Timers",
+    hub: "visit-sierra-leone",
+    title: "Sierra Leone Travel Guide for First-Time Visitors",
+    excerpt:
+      "Beaches, rainforest, history and welcoming people. A practical introduction to planning your first trip to Sierra Leone.",
+    category: "Visit Sierra Leone",
+    readTime: "6 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+    content: [
+      "Sierra Leone is a small West African country with a lot packed in: a long Atlantic coastline of palm-fringed beaches, rainforest with wildlife, hills and mountains, and a rich and sometimes painful history. English is the official language and Krio is widely spoken, which makes getting around easier for English-speaking visitors.",
+      "Most trips begin in and around Freetown, the capital, on the peninsula. From here you can reach beaches such as Lumley, River No. 2, Tokeh and Bureh, take a boat to the Banana Islands, or visit Bunce Island, a historic site on the Sierra Leone River. Further afield, Tiwai Island and the national parks offer wildlife and rainforest for travelers with more time.",
+      "The dry season, roughly November to April, is the most popular time to visit, with easier travel and more reliable weather. The rainy season brings heavy rain, greener scenery and fewer visitors, but can disrupt roads and boat crossings.",
+      "Practical points to sort early: check the visa and entry rules for your passport, ask a doctor or travel clinic about vaccinations and malaria precautions well before you travel (a yellow fever certificate is commonly required), and arrange travel insurance. The airport is at Lungi, across the estuary from Freetown, so plan the crossing into your arrival and departure.",
+      "A local agency can save time and stress, particularly on transfers, boat crossings and trips beyond the capital. Tell us how many days you have and what you want to see, and we will suggest a plan and arrange flights, hotels, transfers and guides in one booking.",
+    ],
+  },
+  {
+    slug: "bunce-island-day-trip-guide",
+    metaTitle: "Bunce Island Day Trip From Freetown",
+    hub: "visit-sierra-leone",
+    title: "Visiting Bunce Island: A Day Trip From Freetown",
+    excerpt:
+      "Bunce Island was a major British slave-trading fort on the Sierra Leone River. Here is what to know before you go.",
+    category: "Visit Sierra Leone",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1624832040555-d9f92f7be672.jpg",
+    content: [
+      "Bunce Island sits in the Sierra Leone River, upriver from Freetown, and is the ruin of a fort used in the Atlantic slave trade. The remains of the walls, buildings and cannon are a sobering place, and for many visitors, including descendants of enslaved people and the Sierra Leonean diaspora, an important and emotional one.",
+      "The island is reached by boat from Freetown, and the journey is typically less than an hour each way depending on where you depart and the conditions. Because the trip depends on the tides and the weather, it is best arranged in advance with a boat and a guide.",
+      "A guide makes a big difference. The ruins are not heavily signposted, and an informed guide can explain what each part of the site was for, and the history of the people who passed through it.",
+      "Practical tips: wear sun protection and comfortable shoes, bring water, and allow a half day or more, including the boat journey. The dry season generally makes the crossing more comfortable. Conditions, access arrangements and fees can change, so confirm current details when you book.",
+      "We can arrange the boat, transfers and a guide for a Bunce Island day trip, and combine it with a stay in Freetown or on the peninsula. Tell us your dates and group size.",
+    ],
+  },
+  {
+    slug: "tiwai-island-wildlife-sanctuary-guide",
+    metaTitle: "Tiwai Island Wildlife Sanctuary Guide",
+    hub: "visit-sierra-leone",
+    title: "Tiwai Island Wildlife Sanctuary: What to Expect",
+    excerpt:
+      "A river island of rainforest in southern Sierra Leone, known for primates and birdlife. A planning guide for visitors.",
+    category: "Visit Sierra Leone",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1602298674761-700e96568f5f.jpg",
+    content: [
+      "Tiwai Island is a wildlife sanctuary on a river in southern Sierra Leone, covered in rainforest and known for its primates and birdlife. It is managed with the involvement of local communities, so a visit supports the people who live around it.",
+      "Visitors usually come for guided walks and canoe trips. Early morning and evening are the best times to look for wildlife, and a local guide will help you spot and identify what you see. Expect simple facilities, so it suits travelers who enjoy a rustic, nature-focused stay.",
+      "Getting there takes time, because the island is a long way from Freetown. Plan the journey carefully, allow a full day of travel each way, and check road and river conditions. The dry season is generally the easiest time to reach it.",
+      "Bring insect repellent, lightweight long sleeves, sturdy shoes, a torch and any medication you need, and speak to a doctor about malaria precautions before you travel. Facilities and access arrangements can change, so confirm them before you go.",
+      "We arrange Tiwai Island trips as part of a wider itinerary, with transport, guides and accommodation planned together. Our Tiwai Island rainforest safari tour is a good starting point.",
+    ],
+  },
+  {
+    slug: "how-to-visit-the-banana-islands-from-freetown",
+    metaTitle: "How to Visit the Banana Islands",
+    hub: "visit-sierra-leone",
+    title: "How to Visit the Banana Islands From Freetown",
+    excerpt:
+      "A short boat crossing from the Freetown Peninsula leads to quiet beaches, snorkeling and history. Here is how the trip works.",
+    category: "Visit Sierra Leone",
+    readTime: "4 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1625001071825-0a85373c8972.jpg",
+    content: [
+      "The Banana Islands lie off the southern end of the Freetown Peninsula, and offer quiet beaches, clear water for snorkeling and some interesting history. They are a popular day trip or overnight stay for visitors who want a break from the capital.",
+      "The journey has two parts: a road transfer from Freetown to the departure point at Kent, followed by a boat crossing of roughly twenty minutes. Allow for the road journey, which varies with traffic and conditions, and for waiting for the boat.",
+      "The best time to go is the dry season, roughly November to April, when the sea is calmer and the weather is more reliable. In the rainy season, crossings can be rougher or disrupted, so keep your plans flexible.",
+      "Pack sun protection, a swimsuit, water, cash for small purchases, and a waterproof bag for your belongings during the crossing. Facilities on the islands are simple.",
+      "We organise Banana Islands trips with transfers, boat crossings and accommodation arranged together, and can combine them with other stops on the peninsula. Our Banana Islands snorkel and history tour is a good place to start.",
+    ],
+  },
+  {
+    slug: "money-sim-cards-and-staying-connected-in-sierra-leone",
+    metaTitle: "Money and SIM Cards in Sierra Leone",
+    hub: "visit-sierra-leone",
+    title: "Money, SIM Cards and Staying Connected in Sierra Leone",
+    excerpt:
+      "How to pay, what to carry and how to get mobile data when you arrive. A practical guide for visitors.",
+    category: "Visit Sierra Leone",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1526857240824-92be52581d9b.jpg",
+    content: [
+      "Sierra Leone's currency is the leone. The country redenominated its currency in 2022, so older notes and prices you may see in older guides can be confusing. Check the current notes and rates before you travel, and ask what a price is quoted in if it is unclear.",
+      "Cash is widely used, and card payments cannot be assumed away from larger hotels and some restaurants. Carry enough cash for everyday purchases, and keep it in more than one place. Changing money is usually best done at licensed exchange points or banks, not informally on the street.",
+      "Mobile money is widely used by locals, but may be hard for visitors to set up, so do not rely on it. Ask your hotel or guide what works for visitors at the time you travel.",
+      "For data and calls, the simplest approach is to buy a local SIM card on arrival, with networks such as Orange and Africell operating in the country, or to check whether your own provider offers affordable roaming. You will need your passport to register a SIM. Coverage varies outside the main towns.",
+      "Download offline maps and keep copies of your documents on your phone. If you would like help with your first days, we can arrange an airport pickup and talk you through payments and connectivity before you land.",
+    ],
+  },
+  {
+    slug: "is-sierra-leone-safe-for-travelers",
+    metaTitle: "Is Sierra Leone Safe for Travelers?",
+    hub: "visit-sierra-leone",
+    title: "Is Sierra Leone Safe for Travelers? Practical Advice for Visitors",
+    excerpt:
+      "An honest look at the practical side of staying safe and healthy while visiting Sierra Leone.",
+    category: "Visit Sierra Leone",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1504609773096-104ff2c73ba4.jpg",
+    content: [
+      "Many visitors find Sierra Leone welcoming and friendly, and the civil war that ended in 2002 no longer defines daily life for travelers. Like anywhere, it pays to be informed. Always read your own government's current travel advice before you go, because conditions can change.",
+      "Everyday precautions are the same ones you would take in many cities: keep valuables out of sight, avoid walking alone at night, use trusted transport, and stay away from large demonstrations. Ask your hotel or local contacts for advice on areas and times of day.",
+      "Health matters at least as much as security. Speak to a doctor or travel clinic well before you travel about vaccinations and malaria prevention, drink bottled or treated water, and use insect repellent. A yellow fever certificate is commonly required. Travel insurance that covers medical care and evacuation is strongly worth having.",
+      "On the road and on the water, choose reputable operators, and keep a margin for delays. Transport conditions can vary, especially in the rainy season, and boat crossings depend on the weather.",
+      "Travelling with a local agency means someone who knows the current situation is looking after your transport, accommodation and plans, and is reachable if something changes. Tell us where you are going and we will explain what to expect.",
+    ],
+  },
+  {
+    slug: "flying-home-to-sierra-leone-for-christmas-diaspora-tips",
+    metaTitle: "Flying Home to Sierra Leone: Diaspora Tips",
+    hub: "visit-sierra-leone",
+    title: "Flying Home to Sierra Leone for the Holidays: Tips for the Diaspora",
+    excerpt:
+      "Going home for Christmas or a family event? How to book early, avoid delays and make the journey smoother.",
+    category: "Visit Sierra Leone",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1527605158555-853f200063e9.jpg",
+    content: [
+      "Every year, many Sierra Leoneans living abroad travel home around Christmas, the end of the year and for family events. Flights fill up and prices rise during these periods, so booking early is the single most useful thing you can do.",
+      "Check your documents first. Make sure your passport is valid for long enough, that you know what you need to enter Sierra Leone on the passport you hold, and that your vaccination certificates, including yellow fever, are in order. If you travel on a foreign passport, confirm the visa rules for it.",
+      "Think about baggage. Many families carry gifts and heavy luggage, so compare baggage allowances and the cost of extra bags between airlines, not just the fare. Pack essential items and medication in your hand luggage in case checked bags are delayed.",
+      "Plan the last leg. Freetown's airport is at Lungi, across the estuary, so arrange your pickup and the crossing in advance, especially if you land at night or are travelling with children and elderly relatives.",
+      "Our team in Freetown can help your family with tickets, visas, airport pickups and the Lungi crossing, so the journey home starts and ends smoothly. Contact us with your dates.",
+    ],
+  },
+  {
+    slug: "seven-days-in-sierra-leone-sample-itinerary",
+    metaTitle: "7 Days in Sierra Leone: Sample Itinerary",
+    hub: "visit-sierra-leone",
+    title: "Seven Days in Sierra Leone: A Sample Itinerary",
+    excerpt:
+      "An easy first-week plan covering Freetown, the peninsula beaches, the Banana Islands and Bunce Island.",
+    category: "Visit Sierra Leone",
+    readTime: "6 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+    content: [
+      "This is a sample plan, not a fixed route. Timings depend on your flights, the season, the boat crossings and what you enjoy, and it is easy to adjust. It stays close to Freetown, which keeps transfers manageable.",
+      "Day 1: arrive at Lungi, cross the estuary and settle in at your hotel. Keep the first evening easy. Day 2: explore Freetown, with its markets, museum and viewpoints, and a local meal.",
+      "Day 3: head down the peninsula to the beaches, with time at places such as River No. 2 or Tokeh. Day 4: more beach time, or a surf lesson at Bureh if conditions suit.",
+      "Day 5: a day trip to the Banana Islands by road to Kent and a short boat crossing, for snorkeling and quiet beaches. Day 6: visit Bunce Island by boat with a guide for a meaningful look at Sierra Leone's history.",
+      "Day 7: a relaxed morning, last-minute shopping, then the crossing back to Lungi for your flight, with plenty of time in hand. If you have more time, Tiwai Island and the national parks make a rewarding extension, although they take longer to reach.",
+      "We can build this itinerary around your dates, arrange the flights, hotels, transfers, boats and guides, and adjust it for families, couples or groups. Contact us with your dates and interests.",
+    ],
+  },
 ];
 
 export function getJournalEntry(slug: string) {
   return journalEntries.find((e) => e.slug === slug);
+}
+
+export function getHubEntries(hub: string) {
+  return journalEntries.filter((e) => e.hub === hub);
 }

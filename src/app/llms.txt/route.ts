@@ -36,6 +36,7 @@ Pricing is quoted directly by a real person once trip details are known; this si
 - [Homepage](${siteUrl})
 - [All destinations](${siteUrl}/destinations)
 - [All tours](${siteUrl}/tours)
+- [Visit Sierra Leone: guides and trip planning](${siteUrl}/visit-sierra-leone)
 - [Services](${siteUrl}/services)
 - [About](${siteUrl}/about)
 - [Contact](${siteUrl}/contact)
