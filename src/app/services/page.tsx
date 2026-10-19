@@ -5,10 +5,10 @@ import Reveal from "@/components/Reveal";
 import Magnetic from "@/components/Magnetic";
 
 const description =
-  "Flights, boat tickets, hotels, car hire, transfers, and insurance — arranged as part of your trip by our team, not booked blind through a search engine.";
+  "Travel agency services in Freetown, Sierra Leone: air tickets, Lungi ferry and boat tickets, hotels, car hire, airport transfers, visa assistance and insurance, arranged by our team.";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Travel Agency Services in Freetown",
   description,
   alternates: { canonical: "/services" },
   openGraph: { title: "Services — Green Vital", description, url: "/services", type: "website" },
@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     title: "Services — Green Vital",
     description: description,
   },
+};
+
+const landingHref: Record<string, string> = {
+  "Flights": "/services/air-tickets-freetown",
+  "Boat Ticketing": "/services/lungi-ferry-and-boat-tickets",
+  "Hotels & Villas": "/services/hotel-booking-sierra-leone",
+  "Car Hire & Private Drivers": "/services/car-rental-freetown",
+  "Airport & Private Transfers": "/services/airport-transfers-freetown",
+  "Travel Insurance": "/insurance",
+  "Visa & Travel Documentation": "/services/visa-assistance-sierra-leone",
 };
 
 const services = [
@@ -136,6 +146,14 @@ export default function ServicesPage() {
                 <div className="p-7">
                   <h2 className="font-serif text-xl text-ink">{s.title}</h2>
                   <p className="mt-2 text-sm leading-relaxed text-ink/70">{s.body}</p>
+                  {landingHref[s.title] && (
+                    <Link
+                      href={landingHref[s.title]}
+                      className="mt-4 inline-block text-xs eyebrow uppercase text-accent-deep underline-offset-4 hover:underline"
+                    >
+                      Learn more
+                    </Link>
+                  )}
                 </div>
               </div>
             </Reveal>

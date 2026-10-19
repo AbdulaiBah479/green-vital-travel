@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import type { TravelAgency, WithContext } from "schema-dts";
+import type { TravelAgency, WebSite, WithContext } from "schema-dts";
 import { Fraunces, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -25,6 +25,7 @@ import {
   siteDescription,
   siteKeywords,
   contact,
+  social,
 } from "@/lib/site";
 import "./globals.css";
 
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
     siteName,
     url: siteUrl,
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
@@ -76,6 +77,14 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "eF1Hbp2pcrmSeQZ9lD2zhvmoffbGplkiZMOWX6wbyMI",
+  },
+  // Regional hints (Bing and some directories read these; Google mostly
+  // relies on structured data and Search Console targeting).
+  other: {
+    "geo.region": "SL-W",
+    "geo.placename": "Freetown",
+    "geo.position": "8.483077;-13.258893",
+    ICBM: "8.483077, -13.258893",
   },
 };
 
@@ -98,15 +107,35 @@ const organizationJsonLd: WithContext<TravelAgency> = {
     "@type": "PostalAddress",
     streetAddress: contact.address.street,
     addressLocality: contact.address.city,
-    addressCountry: contact.address.country,
+    addressRegion: "Western Area",
+    addressCountry: "SL",
   },
   geo: {
     "@type": "GeoCoordinates",
     latitude: 8.483077,
     longitude: -13.258893,
   },
-  areaServed: "Worldwide",
+  // Primary market first: local relevance is what ranks a Freetown agency
+  // for "travel agency Sierra Leone"; international trips are sold to
+  // customers based here, so "Worldwide" undersold the local signal.
+  areaServed: [
+    { "@type": "Country", name: "Sierra Leone" },
+    { "@type": "City", name: "Freetown" },
+    { "@type": "Place", name: "West Africa" },
+  ],
+  knowsLanguage: "en",
+  sameAs: Object.values(social).filter(Boolean),
   priceRange: "$$",
+};
+
+const websiteJsonLd: WithContext<WebSite> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  alternateName: siteFullName,
+  url: siteUrl,
+  inLanguage: "en-GB",
+  publisher: { "@type": "TravelAgency", name: siteName, url: siteUrl },
 };
 
 export default function RootLayout({
@@ -120,6 +149,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(websiteJsonLd) }}
         />
         <CurrencyProvider>
           <WishlistProvider>

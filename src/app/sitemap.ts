@@ -3,6 +3,7 @@ import { siteUrl } from "@/lib/site";
 import { journalEntries } from "@/lib/journal";
 import { destinations } from "@/lib/destinations";
 import { tours } from "@/lib/tours";
+import { servicePages } from "@/lib/servicePages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -161,5 +162,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...destinationRoutes, ...tourRoutes, ...journalRoutes];
+  const serviceRoutes: MetadataRoute.Sitemap = servicePages.map((p) => ({
+    url: `${siteUrl}/services/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...destinationRoutes, ...tourRoutes, ...journalRoutes];
 }

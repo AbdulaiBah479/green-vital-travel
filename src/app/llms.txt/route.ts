@@ -7,6 +7,7 @@
 // hardcoded count on a page already did once this session.
 import { destinations } from "@/lib/destinations";
 import { tours } from "@/lib/tours";
+import { servicePages } from "@/lib/servicePages";
 import { siteFullName, siteDescription, siteUrl, contact, companyRegistration } from "@/lib/site";
 
 export function GET() {
@@ -16,6 +17,10 @@ export function GET() {
 
   const tourLines = tours
     .map((t) => `- [${t.title}](${siteUrl}/tours/${t.slug}): ${t.category}, ${t.nights} nights, ${t.difficulty} pace`)
+    .join("\n");
+
+  const serviceLines = servicePages
+    .map((p) => `- [${p.metaTitle}](${siteUrl}/services/${p.slug})`)
     .join("\n");
 
   const body = `# ${siteFullName}
@@ -35,6 +40,10 @@ Pricing is quoted directly by a real person once trip details are known; this si
 - [About](${siteUrl}/about)
 - [Contact](${siteUrl}/contact)
 - [Trip Planner](${siteUrl}/planner)
+
+## Services (Freetown, Sierra Leone)
+
+${serviceLines}
 
 ## Destinations with an existing tour package (${destinations.length} total)
 

@@ -9,7 +9,7 @@ const description =
   "Green Vital is a full-service travel agency in Freetown, Sierra Leone — flights, hotels, visas, and tours, handled by a real person, not a database.";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Us — Freetown Travel Agency",
   description,
   alternates: { canonical: "/about" },
   openGraph: { title: "About — Green Vital", description, url: "/about", type: "website" },

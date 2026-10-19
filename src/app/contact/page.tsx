@@ -8,7 +8,7 @@ const description =
   "One office in Freetown, one team — reach us directly, or start with the form and we'll route it to the right person.";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Our Freetown Travel Agency",
   description,
   alternates: { canonical: "/contact" },
   openGraph: { title: "Contact — Green Vital", description, url: "/contact", type: "website" },

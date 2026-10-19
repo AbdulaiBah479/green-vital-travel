@@ -8,7 +8,7 @@ import { destinations } from "@/lib/destinations";
 const description = `${destinations.length} places we've already built trips around, across every inhabited continent — and a starting point, not the full list. If your destination isn't here, we can still book it.`;
 
 export const metadata: Metadata = {
-  title: "Destinations",
+  title: "Holiday Destinations from Sierra Leone",
   description,
   alternates: { canonical: "/destinations" },
   openGraph: {

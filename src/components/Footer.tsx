@@ -8,15 +8,21 @@ const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Services", href: "/services" },
+  { label: "Tour Packages", href: "/tours" },
+  { label: "Destinations", href: "/destinations" },
+  { label: "Travel Journal", href: "/journal" },
   { label: "Trip Planner", href: "/planner" },
   { label: "Contact Us", href: "/contact" },
 ];
 
-const companyLinks = [
+const serviceLinks = [
+  { label: "Air Tickets Freetown", href: "/services/air-tickets-freetown" },
+  { label: "Lungi Ferry & Boat Tickets", href: "/services/lungi-ferry-and-boat-tickets" },
+  { label: "Visa Assistance", href: "/services/visa-assistance-sierra-leone" },
+  { label: "Hotel Bookings", href: "/services/hotel-booking-sierra-leone" },
+  { label: "Car Rental Freetown", href: "/services/car-rental-freetown" },
+  { label: "Airport Transfers", href: "/services/airport-transfers-freetown" },
   { label: "Travel Insurance", href: "/insurance" },
-  { label: "Partners", href: "/partners" },
-  { label: "Press", href: "/press" },
-  { label: "Sustainability", href: "/sustainability" },
 ];
 
 const supportLinks = [
@@ -25,6 +31,9 @@ const supportLinks = [
   { label: "Travel Requirements", href: "/travel-requirements" },
   { label: "Gift Cards", href: "/gift-cards" },
   { label: "Rewards", href: "/rewards" },
+  { label: "Partners", href: "/partners" },
+  { label: "Press", href: "/press" },
+  { label: "Sustainability", href: "/sustainability" },
 ];
 
 const legalLinks = [
@@ -98,7 +107,7 @@ export default function Footer() {
           </div>
 
           <FooterColumn title="Explore" links={exploreLinks} />
-          <FooterColumn title="Company" links={companyLinks} />
+          <FooterColumn title="Services" links={serviceLinks} />
           <FooterColumn title="Support" links={supportLinks} />
 
           <div>

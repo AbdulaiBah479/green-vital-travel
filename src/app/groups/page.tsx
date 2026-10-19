@@ -8,7 +8,7 @@ const description =
   "Family reunions, corporate retreats, and destination weddings — group logistics designed around the group's actual mix of ages, budgets, and energy levels.";
 
 export const metadata: Metadata = {
-  title: "Group & Corporate Travel",
+  title: "Group & Corporate Travel from Freetown",
   description,
   alternates: { canonical: "/groups" },
   openGraph: { title: "Group & Corporate Travel — Green Vital", description, url: "/groups", type: "website" },

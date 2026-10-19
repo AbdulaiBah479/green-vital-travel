@@ -5,7 +5,7 @@ const description =
   "Entry requirements for Sierra Leone and outbound travel for Sierra Leonean passport holders — plus why the destination's embassy is the source that matters.";
 
 export const metadata: Metadata = {
-  title: "Travel Requirements",
+  title: "Visa & Entry Requirements for Sierra Leoneans",
   description,
   alternates: { canonical: "/travel-requirements" },
   openGraph: {

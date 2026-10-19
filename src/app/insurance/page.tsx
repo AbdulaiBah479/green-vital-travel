@@ -8,7 +8,7 @@ const description =
   "What travel insurance actually covers, what it doesn't, and why it's a default line item on every itinerary rather than an upsell.";
 
 export const metadata: Metadata = {
-  title: "Travel Insurance",
+  title: "Travel Insurance in Sierra Leone",
   description,
   alternates: { canonical: "/insurance" },
   openGraph: { title: "Travel Insurance — Green Vital", description, url: "/insurance", type: "website" },

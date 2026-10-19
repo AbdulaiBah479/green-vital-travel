@@ -199,6 +199,60 @@ export const journalEntries: JournalEntry[] = [
       "So the honest advice, even though it costs us the occasional booking: if your trip is simple, book it yourself and keep the difference. If it has more than one moving part — connections, visas, a group, a special occasion you don't want to gamble on — that's where we actually earn the fee. Ask us which one your trip is; it costs nothing to find out.",
     ],
   },
+  {
+    slug: "traveling-with-family-how-to-plan-for-everyone",
+    title: "Traveling With Family: How to Plan for Everyone, Not Just the Planner",
+    excerpt:
+      "A good family trip isn't the one with the most in it. It's the one where nobody, at any age, spends a day waiting for it to be over.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-05",
+    img: "/images/unsplash/1504609773096-104ff2c73ba4.jpg",
+    content: [
+      "Most family itineraries are written by one person, for an imagined version of the whole group. The result is usually a schedule that suits the planner and quietly wears everyone else down by the fourth day.",
+      "The fix is less glamorous than it sounds: ask each person, including the youngest who can answer, for one thing they want from the trip, and build those in first. Then fill the gaps. A grandparent's one slow morning at a market and a teenager's one active afternoon are both easier to protect when they're on the schedule from the start, not squeezed in afterwards.",
+      "Build in a day with nothing on it in the middle of the trip. Not as a luxury; as a buffer. Jet lag, a bad night's sleep or one under-the-weather child will take a day from you whether you plan for it or not, and it's far kinder to have chosen which day.",
+      "Where we steer families away from the default: long transfers on arrival day, and back-to-back changes of hotel. Fewer bases, longer stays and shorter drives beat a packed route almost every time.",
+      "If you tell us who's coming, their ages and what each of them dreads about travel, we'll build around that rather than around a template.",
+    ],
+  },
+  {
+    slug: "honeymoons-and-anniversaries-planning-it-without-the-pressure",
+    title: "Honeymoons & Anniversaries: Planning It Without the Pressure",
+    excerpt:
+      "A milestone trip carries expectations a normal holiday never has to meet. Here's how we plan so it can simply be good.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-12",
+    img: "/images/unsplash/1544644181-1484b3fdfc62.jpg",
+    content: [
+      "A honeymoon or an anniversary trip arrives with an unspoken brief: it has to be perfect. That pressure is the thing most likely to spoil it, and it usually shows up as an itinerary with too much in it.",
+      "Our advice is to choose one or two moments worth protecting, such as a dinner, a sunrise or a quiet afternoon, and let everything else be easy. Moments are easier to deliver when the days around them aren't racing to fit in a second and third attraction.",
+      "Tell us what you'd like to mark, not just where you'd like to go. If it's a long-awaited first trip together, that's a different plan from a tenth anniversary where you'd like some time away from the everyday.",
+      "Practical things that make the difference: travel on dates that suit you both and not just the cheapest fare, keep a night or two at the end for the return rather than flying straight home, and let us know in advance about any occasion so the hotel can be told. We pass on the detail; we don't promise upgrades or surprises we can't control.",
+      "The best compliment we hear isn't that the trip was flawless. It's that nobody felt rushed.",
+    ],
+  },
+  {
+    slug: "your-first-trip-abroad-a-calm-checklist",
+    title: "Your First Trip Abroad: A Calm Checklist",
+    excerpt:
+      "Nobody tells you which parts of a first international trip are actually hard. Here's the short, honest list.",
+    category: "Travel Guides",
+    readTime: "4 min read",
+    date: "October 2026",
+    isoDate: "2026-10-18",
+    img: "/images/unsplash/1436491865332-7a61a109cc05.jpg",
+    content: [
+      "If you've never traveled internationally, the logistics can feel bigger than the trip itself. In practice, a handful of things matter most, and most of them can be done weeks ahead.",
+      "Start with your passport: check that it's valid and that its expiry date meets the destination's rules. Then confirm entry requirements for your nationality directly with the destination's official government source. Requirements differ by passport and change from time to time, so please don't rely on a friend's experience from a different passport.",
+      "Next, think about money and phones before you leave. Tell your bank you're traveling if they ask for it, carry more than one way to pay, and check what your phone plan charges abroad. Offline maps downloaded in advance are a small step that removes a lot of stress.",
+      "On the day, arrive at the airport earlier than you think you need to. Keep passports, tickets and key documents in one place you can reach, and photograph them as a backup.",
+      "Finally, consider travel insurance before you pay non-refundable deposits, not after. And ask questions. Every consultant here has answered the \"silly\" question before, and we would much rather you ask it than worry about it.",
+    ],
+  },
 ];
 
 export function getJournalEntry(slug: string) {

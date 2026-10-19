@@ -8,7 +8,7 @@ import { tours } from "@/lib/tours";
 const description = `${tours.length} small-group and private tours across our destinations — filter by style or region, or start from a specific place you already have in mind. Not seeing it? We book any destination, globally.`;
 
 export const metadata: Metadata = {
-  title: "Tours & Packages",
+  title: "Tour Packages from Sierra Leone",
   description,
   alternates: { canonical: "/tours" },
   openGraph: {
