@@ -98,6 +98,19 @@ const nextConfig: NextConfig = {
     // silently downgraded back to 75.
     qualities: [75, 85],
   },
+  // The site moved from gtravelsandtours.com to greenvitaltravelandtour.com.
+  // A permanent (308) redirect on the old host passes visitors, links and
+  // search rankings to the same page on the new domain.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: "(www\\.)?gtravelsandtours\\.com" }],
+        destination: "https://greenvitaltravelandtour.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

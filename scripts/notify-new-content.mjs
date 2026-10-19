@@ -16,9 +16,9 @@ import fs from "node:fs";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL;
-const EMAIL_FROM = process.env.EMAIL_FROM || "noreply@gtravelsandtours.com";
+const EMAIL_FROM = process.env.EMAIL_FROM || "noreply@greenvitaltravelandtour.com";
 const BEFORE_SHA = process.env.GIT_BEFORE_SHA;
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://gtravelsandtours.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://greenvitaltravelandtour.com";
 
 // Optional: a Make.com webhook that fans a caption + photo out to Facebook,
 // Instagram, and LinkedIn at once. Without it, the email still drafts a
@@ -152,7 +152,7 @@ async function main() {
 
   const names = [...newDestinations.map((d) => d.name), ...newTours.map((t) => t.title)];
   const body = [
-    `${names.length} new listing(s) just went live on gtravelsandtours.com.`,
+    `${names.length} new listing(s) just went live on greenvitaltravelandtour.com.`,
     "",
     "Review each draft before posting — same rule as everything else: nothing here states a price.",
     "",

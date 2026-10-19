@@ -25,5 +25,5 @@ jobs:
             --accept 200,206,999
             --retry-wait-time 5
             --max-retries 2
-            https://gtravelsandtours.com
+            https://greenvitaltravelandtour.com
           fail: true

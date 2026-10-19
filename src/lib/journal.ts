@@ -262,6 +262,63 @@ export const journalEntries: JournalEntry[] = [
       "Finally, consider travel insurance before you pay non-refundable deposits, not after. And ask questions. Every consultant here has answered the \"silly\" question before, and we would much rather you ask it than worry about it.",
     ],
   },
+  {
+    slug: "getting-from-freetown-to-lungi-airport",
+    metaTitle: "Freetown to Lungi Airport: How to Get There",
+    title: "Getting From Freetown to Lungi Airport: Ferry, Water Taxi and Road",
+    excerpt:
+      "Freetown's airport is across the estuary from the city. Here is how the crossing works, what to allow for, and how to avoid a missed flight.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-19",
+    img: "/images/services/boat-ticketing.jpg",
+    content: [
+      "Freetown International Airport is at Lungi, on the north side of the Sierra Leone River estuary, while the city of Freetown sits on the south side, on the peninsula. Unlike most capital cities, you cannot simply drive to the airport in a straight line. A water crossing, or a much longer drive around the estuary, is part of almost every arrival and departure.",
+      "In broad terms there are three ways to make the journey: a ferry, a water taxi or speedboat, or the long road route around the estuary. Each has a different mix of cost, speed and comfort, and the options available on any given day can change, so confirm the current choices when you book rather than relying on an old schedule.",
+      "The rule that matters most is to plan the crossing backwards from your flight. Allow time for the road to the departure point, the crossing itself, the transfer on the Lungi side, and airport check-in. Then add a buffer for weather, tides, queues and delays. Rushing a departure is the most common way travelers miss flights here.",
+      "Arrivals are easier if someone has arranged the whole chain in advance: a pickup at Lungi, the crossing, and the ride to your hotel or home. After a long flight, you do not want to be negotiating at the jetty with your luggage.",
+      "If you tell us your flight number and where you are staying, we will plan the crossing and the transfers on either side as one connected booking, and confirm the current options and cost with you before you commit.",
+    ],
+  },
+  {
+    slug: "best-time-to-visit-sierra-leone",
+    metaTitle: "Best Time to Visit Sierra Leone",
+    title: "The Best Time to Visit Sierra Leone: Dry Season vs. Rainy Season",
+    excerpt:
+      "The dry season is the easy answer, but the full picture depends on what you want to do. A practical guide to when to go.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-20",
+    img: "/images/unsplash/1602298674761-700e96568f5f.jpg",
+    content: [
+      "Sierra Leone has two main seasons: a dry season and a rainy season. The dry season runs roughly from November to April and is the most popular time to visit, with more sunshine, easier travel and calmer conditions for beaches and boat trips. The rainy season, roughly May to October, brings heavy downpours, especially in the middle months.",
+      "For a beach holiday on the Freetown Peninsula, the dry season is the clear choice. Roads and boat crossings are more dependable, and the days are more reliably bright. If you are planning island visits or a trip to the rainforest, the same applies, since access is generally easier when it is not raining heavily.",
+      "The early part of the dry season, from about November to January, is often the most comfortable. Later in the dry season it becomes hotter, and the harmattan, a dry wind from the Sahara, can bring hazy skies and dust for some weeks around the turn of the year. If photography matters to you, ask us what to expect in your travel month.",
+      "That does not mean the rainy season is a write-off. The landscape is greener, there are fewer visitors, and prices for some stays can be lower. It does mean you should build in flexibility, because heavy rain can disrupt road and water transport, and pack accordingly.",
+      "Weather varies from year to year, so treat any guide, including this one, as a starting point. Tell us your dates and what you want to do, and we will give you a straight answer on whether the timing works and how to plan around it.",
+    ],
+  },
+  {
+    slug: "beaches-near-freetown-peninsula-guide",
+    metaTitle: "Beaches Near Freetown: A Short Guide",
+    title: "Beaches Near Freetown: A Short Guide to the Peninsula Coast",
+    excerpt:
+      "From Lumley to River No. 2, Tokeh and Bureh, the coast south of Freetown is the easiest place to start a beach trip in Sierra Leone.",
+    category: "Travel Guides",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-21",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+    content: [
+      "The Freetown Peninsula has some of the best-known beaches in Sierra Leone, and most are within reach of the city. Lumley is the closest and most convenient. Further out, River No. 2, Tokeh and Bureh are popular for longer stays, with palm-backed sand and a more relaxed pace.",
+      "River No. 2 is often described as one of the most beautiful beaches in the country, where a river meets the sea. Tokeh is known for its long stretch of sand and its range of places to stay. Bureh is the one surfers talk about, thanks to reliable waves for people who want to try the sport.",
+      "Conditions change with the seasons. The dry season, roughly November to April, is the easiest time for beach days and for getting around. In the rainy season the sea can be rougher and roads can be harder going, so check conditions before you set out, and take local advice on swimming.",
+      "Plan your logistics before you go. Allow generous time for the road from the city, agree transport and a return time in advance, and carry cash for small purchases, since card payments cannot be assumed away from larger hotels. If you want to stay overnight, book ahead in the busier months.",
+      "We arrange beach stays, transfers and private drivers for the peninsula, and can combine them with the Banana Islands or a wider Sierra Leone itinerary. Tell us how many days you have and what kind of trip you want, whether relaxed, active or family-friendly, and we will suggest a plan.",
+    ],
+  },
 ];
 
 export function getJournalEntry(slug: string) {

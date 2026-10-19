@@ -54,7 +54,7 @@ export function getConfiguredProviders(): AiProvider[] {
           // OpenRouter asks free-tier callers to identify the calling site —
           // it's optional, but omitting it makes usage harder for them to
           // attribute and can affect free-tier rate limits.
-          extraHeaders: { "HTTP-Referer": "https://gtravelsandtours.com", "X-Title": "Green Vital" },
+          extraHeaders: { "HTTP-Referer": "https://greenvitaltravelandtour.com", "X-Title": "Green Vital" },
         }
       : null,
   ];
