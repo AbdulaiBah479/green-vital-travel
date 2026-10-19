@@ -53,3 +53,18 @@ describe("chatbot fallback answers real, common questions", () => {
     expect(reply.text).not.toContain("I don't have a confident answer");
   });
 });
+
+describe("chatbot identity phrasing", () => {
+  it.each(["are you a real person", "Are you real?", "are you a real human", "r u a bot", "are you actually a person"])(
+    "admits it is an AI for %j",
+    (question) => {
+      const reply = getBotReply(question).text.toLowerCase();
+      // Must be the disclosure itself, not an incidental word like "email" containing "ai".
+      expect(reply).toContain("i'm an ai assistant");
+    }
+  );
+
+  it("still routes 'I want to talk to a real person' to the contact answer", () => {
+    expect(getBotReply("I want to talk to a real person").text).toContain("reaches a real person");
+  });
+});

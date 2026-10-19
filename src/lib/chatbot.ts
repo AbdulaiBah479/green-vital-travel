@@ -79,6 +79,12 @@ const rules: Rule[] = [
         "you human",
         "you a human",
         "you a person",
+        "you a real",
+        "are you real",
+        "you actually a",
+        "u a bot",
+        "u a human",
+        "u real",
       ]),
     respond: () => ({
       text: "I'm an AI assistant built into this site, not a person. I work from Green Vital's actual destinations, tours, and policies, so I'm reliable on those — pricing is quoted directly by the team, not by me. For anything that needs judgment, I'll hand you to a real person.",
