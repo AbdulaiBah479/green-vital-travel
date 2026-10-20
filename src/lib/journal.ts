@@ -545,6 +545,27 @@ export const journalEntries: JournalEntry[] = [
       "We can build this itinerary around your dates, arrange the flights, hotels, transfers, boats and guides, and adjust it for families, couples or groups. Contact us with your dates and interests.",
     ],
   },
+  {
+    slug: "things-to-do-in-freetown-sierra-leone",
+    metaTitle: "Things to Do in Freetown, Sierra Leone",
+    hub: "visit-sierra-leone",
+    title: "Things to Do in Freetown: A Practical Guide for Visitors",
+    excerpt:
+      "Beaches, a chimpanzee sanctuary, a national museum, busy markets and day trips. Here is how to spend your time in Sierra Leone's capital.",
+    category: "Visit Sierra Leone",
+    readTime: "5 min read",
+    date: "October 2026",
+    isoDate: "2026-10-20",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+    content: [
+      "Freetown is a lively, hilly city on the Atlantic coast, and it makes an easy base for a first visit to Sierra Leone. Most things worth doing are within a short drive, which means you can mix city sights, beach time and nature without a long journey.",
+      "For the beach, Lumley Beach is the closest and most convenient, with a long stretch of sand, simple restaurants and a relaxed weekend atmosphere. For quieter sand and clearer water, many visitors head down the peninsula to places such as River No. 2, Tokeh and Bureh.",
+      "For wildlife, the Tacugama Chimpanzee Sanctuary, in the hills above the city, cares for rescued chimpanzees and is a popular half-day visit. Because access and visiting arrangements can change, it is sensible to arrange your visit in advance rather than turning up.",
+      "For history and culture, the National Museum in the city centre gives a useful introduction to the country's peoples and past, and a day trip to Bunce Island, a former slave-trading fort on the Sierra Leone River, is one of the most meaningful excursions you can make from Freetown.",
+      "For everyday life, spend time in the markets and try local food, such as jollof rice and dishes made with cassava leaves. Go with a local contact or guide if it is your first visit, keep valuables out of sight, and carry cash for small purchases.",
+      "Plan on getting around with a trusted driver, especially in the evening, and allow extra time for traffic. We can arrange airport pickups, drivers, hotels and day trips from Freetown. Tell us how many days you have and what you enjoy, and we will suggest a plan.",
+    ],
+  },
 ];
 
 export function getJournalEntry(slug: string) {
