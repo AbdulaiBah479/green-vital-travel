@@ -1,5 +1,5 @@
-// Emails a ready-to-post social caption the moment a new destination or
-// tour is added via the admin panel — a push to master is what a Tina edit
+// Emails a ready-to-post social caption the moment a new destination,
+// tour or Journal guide is added (destinations and tours via the admin panel) — a push to master is what a Tina edit
 // actually produces, and each destination/tour lives in its own committed
 // file (content/destinations/<slug>.json, content/tours/<slug>.json), so a
 // newly ADDED file in this push is exactly "something new just went live,"
@@ -56,11 +56,48 @@ function readJson(path) {
   return JSON.parse(fs.readFileSync(path, "utf-8"));
 }
 
+// Journal guides live in src/lib/journal.ts rather than one file each, so a
+// "new" guide is a slug added to that file in this push. This reads just the
+// fields the caption needs; it is a plain-Node scan, not a TypeScript parse.
+function addedJournalEntries() {
+  let diff = "";
+  try {
+    diff = execSync(`git diff ${BEFORE_SHA}..HEAD -- src/lib/journal.ts`, { encoding: "utf-8" });
+  } catch (err) {
+    console.error("Failed to diff journal.ts:", err.message);
+    return [];
+  }
+  const slugs = [...diff.matchAll(/^\+\s{4}slug: "([^"]+)"/gm)].map((m) => m[1]);
+  if (slugs.length === 0) return [];
+
+  const source = fs.readFileSync("src/lib/journal.ts", "utf-8");
+  const field = (block, name) => {
+    const m = block.match(new RegExp(`${name}:\\s*"((?:[^"\\\\]|\\\\.)*)"`));
+    if (!m) return "";
+    try {
+      return JSON.parse(`"${m[1]}"`);
+    } catch {
+      return m[1];
+    }
+  };
+
+  return slugs
+    .map((slug) => {
+      const start = source.indexOf(`slug: "${slug}"`);
+      if (start < 0) return null;
+      const end = source.indexOf("\n  },", start);
+      const block = source.slice(start, end < 0 ? undefined : end);
+      return { slug, title: field(block, "title"), excerpt: field(block, "excerpt"), img: field(block, "img") };
+    })
+    .filter((e) => e && e.title);
+}
+
 const newDestinations = addedFiles("content/destinations/").map(readJson);
 const newTours = addedFiles("content/tours/").map(readJson);
+const newGuides = addedJournalEntries();
 
-if (newDestinations.length === 0 && newTours.length === 0) {
-  console.log("No new destinations or tours in this push — nothing to notify.");
+if (newDestinations.length === 0 && newTours.length === 0 && newGuides.length === 0) {
+  console.log("No new destinations, tours or guides in this push — nothing to notify.");
   process.exit(0);
 }
 
@@ -112,19 +149,20 @@ async function draftCaption(prompt) {
   return null;
 }
 
-function publishLink(caption, heroImg) {
+function publishLink(caption, heroImg, pageUrl) {
   if (!MAKE_PUBLISH_WEBHOOK) return "";
   const imageUrl = `${SITE_URL}${heroImg}`;
-  const params = new URLSearchParams({ caption, imageUrl });
+  const params = new URLSearchParams({ caption: pageUrl ? `${caption}\n\n${pageUrl}` : caption, imageUrl });
   return `\nPublish to Facebook, Instagram & LinkedIn now:\n${MAKE_PUBLISH_WEBHOOK}?${params}\n`;
 }
 
-async function buildSection(label, promptText, heroImg) {
+async function buildSection(label, promptText, heroImg, pageUrl) {
   const caption = PROVIDERS.length > 0 ? await draftCaption(promptText) : null;
   if (!caption) {
-    return `${label}\n\n(No AI provider configured — add one to get a draft caption here automatically.)\n`;
+    return `${label}\n\n(No AI provider configured — add one to get a draft caption here automatically.)\n${pageUrl ? `Link: ${pageUrl}\n` : ""}`;
   }
-  return `${label}\n\nDraft caption:\n${caption}\n${publishLink(caption, heroImg)}`;
+  const linkLine = pageUrl ? `Link to include: ${pageUrl}\n` : "";
+  return `${label}\n\nDraft caption:\n${caption}\n${linkLine}${publishLink(caption, heroImg, pageUrl)}`;
 }
 
 async function main() {
@@ -150,7 +188,22 @@ async function main() {
     );
   }
 
-  const names = [...newDestinations.map((d) => d.name), ...newTours.map((t) => t.title)];
+  for (const g of newGuides) {
+    sections.push(
+      await buildSection(
+        `New travel guide: ${g.title}`,
+        `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) sharing Green Vital Travel's new travel guide "${g.title}" for travelers in and to Sierra Leone. Summary: "${g.excerpt}". Say the full guide is on our website. No markdown, no prices, plain text only.`,
+        g.img,
+        `${SITE_URL}/journal/${g.slug}`
+      )
+    );
+  }
+
+  const names = [
+    ...newDestinations.map((d) => d.name),
+    ...newTours.map((t) => t.title),
+    ...newGuides.map((g) => g.title),
+  ];
   const body = [
     `${names.length} new listing(s) just went live on gtravelsandtours.com.`,
     "",
@@ -175,7 +228,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`Sent new-content notification for ${newDestinations.length} destination(s), ${newTours.length} tour(s).`);
+  console.log(`Sent new-content notification for ${newDestinations.length} destination(s), ${newTours.length} tour(s), ${newGuides.length} guide(s).`);
 }
 
 main().catch((err) => {
