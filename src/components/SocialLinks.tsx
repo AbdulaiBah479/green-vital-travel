@@ -35,7 +35,9 @@ const links = [
 export default function SocialLinks({ className = "" }: { className?: string }) {
   return (
     <ul className={`flex flex-wrap items-center gap-3 ${className}`}>
-      {links.map((l) => (
+      {links
+        .filter((l) => l.href)
+        .map((l) => (
         <li key={l.label}>
           <a
             href={l.href}
