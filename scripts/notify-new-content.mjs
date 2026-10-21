@@ -149,10 +149,50 @@ async function draftCaption(prompt) {
   return null;
 }
 
+// Each platform rewards something different, so one drafted caption becomes
+// three posts: Facebook gets a clickable link and a few tags, Instagram (where
+// links in captions aren't clickable) points to the bio and carries a wider
+// hashtag set, and LinkedIn keeps a professional tone with few tags. The
+// Make scenario reads captionFacebook / captionInstagram / captionLinkedin and
+// falls back to `caption` when a platform-specific one is missing.
+const FB_TAGS = "#SierraLeone #VisitSierraLeone #Freetown #TravelAfrica #WestAfrica";
+const IG_TAGS =
+  "#SierraLeone #VisitSierraLeone #Freetown #Salone #WestAfrica #TravelAfrica #DiscoverAfrica #ExploreAfrica #SierraLeoneTourism #HiddenGems #TravelInspiration #Wanderlust #TravelAgency #FreetownSierraLeone";
+const LI_TAGS = "#SierraLeone #Travel #Tourism #WestAfrica #Freetown";
+
+function whatsappNumber() {
+  try {
+    return readJson("content/settings/index.json").whatsapp || "";
+  } catch {
+    return "";
+  }
+}
+
+// The AI is asked for a few hashtags of its own; drop any trailing hashtag-only
+// tail so the standard sets below aren't duplicated.
+function stripTrailingHashtags(caption) {
+  return caption.replace(/(?:\s+#\w+)+\s*$/u, "").trim();
+}
+
+function platformCaptions(caption, pageUrl) {
+  const base = stripTrailingHashtags(caption);
+  const phone = whatsappNumber();
+  const contactLine = phone ? `Message us on WhatsApp ${phone} or visit ${SITE_URL.replace(/^https?:\/\//, "")}.` : `Visit ${SITE_URL.replace(/^https?:\/\//, "")}.`;
+  return {
+    captionFacebook: `${base}${pageUrl ? `\n\n👉 ${pageUrl}` : ""}\n\n${contactLine}\n\n${FB_TAGS}`,
+    captionInstagram: `${base}\n\n👉 Link in our bio${pageUrl ? `: ${pageUrl.replace(/^https?:\/\//, "")}` : ""}\n📍 Freetown, Sierra Leone\n💬 ${phone ? `WhatsApp ${phone}` : "DM us"}\n\n${IG_TAGS}`,
+    captionLinkedin: `${base}${pageUrl ? `\n\nRead more: ${pageUrl}` : ""}\n\nGreen Vital Travel and Tour Agency, Freetown.\n\n${LI_TAGS}`,
+  };
+}
+
 function publishLink(caption, heroImg, pageUrl) {
   if (!MAKE_PUBLISH_WEBHOOK) return "";
   const imageUrl = `${SITE_URL}${heroImg}`;
-  const params = new URLSearchParams({ caption: pageUrl ? `${caption}\n\n${pageUrl}` : caption, imageUrl });
+  const params = new URLSearchParams({
+    caption: pageUrl ? `${caption}\n\n${pageUrl}` : caption,
+    ...platformCaptions(caption, pageUrl),
+    imageUrl,
+  });
   return `\nPublish to Facebook, Instagram & LinkedIn now:\n${MAKE_PUBLISH_WEBHOOK}?${params}\n`;
 }
 
@@ -161,8 +201,20 @@ async function buildSection(label, promptText, heroImg, pageUrl) {
   if (!caption) {
     return `${label}\n\n(No AI provider configured — add one to get a draft caption here automatically.)\n${pageUrl ? `Link: ${pageUrl}\n` : ""}`;
   }
-  const linkLine = pageUrl ? `Link to include: ${pageUrl}\n` : "";
-  return `${label}\n\nDraft caption:\n${caption}\n${linkLine}${publishLink(caption, heroImg, pageUrl)}`;
+  const variants = platformCaptions(caption, pageUrl);
+  return [
+    `${label}`,
+    "",
+    "Facebook version:",
+    variants.captionFacebook,
+    "",
+    "Instagram version:",
+    variants.captionInstagram,
+    "",
+    "LinkedIn version:",
+    variants.captionLinkedin,
+    publishLink(caption, heroImg, pageUrl),
+  ].join("\n");
 }
 
 async function main() {
