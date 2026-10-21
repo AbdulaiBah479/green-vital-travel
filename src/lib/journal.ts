@@ -438,6 +438,7 @@ export const journalEntries: JournalEntry[] = [
     img: "/images/unsplash/1602298674761-700e96568f5f.jpg",
     content: [
       "Tiwai Island is a wildlife sanctuary on a river in southern Sierra Leone, covered in rainforest and known for its primates and birdlife. It is managed with the involvement of local communities, so a visit supports the people who live around it.",
+      "Tiwai now has international recognition too. Together with Gola Rainforest National Park, it forms the Gola-Tiwai Complex, which UNESCO inscribed on the World Heritage List in July 2025, making it Sierra Leone's first World Heritage Site. The listing highlights the area as a stronghold for the western chimpanzee, the pygmy hippopotamus and the white-necked rockfowl.",
       "Visitors usually come for guided walks and canoe trips. Early morning and evening are the best times to look for wildlife, and a local guide will help you spot and identify what you see. Expect simple facilities, so it suits travelers who enjoy a rustic, nature-focused stay.",
       "Getting there takes time, because the island is a long way from Freetown. Plan the journey carefully, allow a full day of travel each way, and check road and river conditions. The dry season is generally the easiest time to reach it.",
       "Bring insect repellent, lightweight long sleeves, sturdy shoes, a torch and any medication you need, and speak to a doctor about malaria precautions before you travel. Facilities and access arrangements can change, so confirm them before you go.",

@@ -44,6 +44,7 @@ export const quizOutcomes: QuizOutcome[] = [
     imgAlt: "Rainforest on a river island in Sierra Leone",
     knowing: [
       "Tiwai Island is a river-island sanctuary in southern Sierra Leone, run with local communities.",
+      "With Gola Rainforest National Park, Tiwai is part of Sierra Leone's first UNESCO World Heritage Site (inscribed in July 2025).",
       "It is a long way from Freetown, so plan a full day of travel each way.",
       "Early mornings and evenings are the best times to look for wildlife.",
     ],
