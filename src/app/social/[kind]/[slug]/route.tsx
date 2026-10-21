@@ -8,7 +8,7 @@ import { siteName } from "@/lib/site";
 
 // Branded 4:5 cards for social posts (Facebook, Instagram, LinkedIn), made on
 // demand from the site's own content: /social/guide/<slug>, /social/tour/<slug>
-// or /social/destination/<slug>. Only known slugs resolve, so this can't be
+// /social/destination/<slug> or /social/page/<quiz|visit-sierra-leone>. Only known slugs resolve, so this can't be
 // used to render arbitrary text. Instagram only accepts JPEG, so the PNG that
 // next/og produces is converted with sharp when it is available.
 
@@ -19,7 +19,22 @@ const HEIGHT = 1350;
 
 type CardData = { title: string; eyebrow: string; img: string };
 
+// Cards for fixed site pages (the quiz and the Visit Sierra Leone hub).
+const pageCards: Record<string, CardData> = {
+  quiz: {
+    title: "Which Sierra Leone trip suits you?",
+    eyebrow: "Free 1-minute quiz",
+    img: "/images/unsplash/1611395813517-41f9be5e292d.jpg",
+  },
+  "visit-sierra-leone": {
+    title: "Plan your trip to Sierra Leone",
+    eyebrow: "Guides, tours and tips",
+    img: "/images/unsplash/1625001071825-0a85373c8972.jpg",
+  },
+};
+
 function cardData(kind: string, slug: string): CardData | null {
+  if (kind === "page") return pageCards[slug] ?? null;
   if (kind === "guide") {
     const g = getJournalEntry(slug);
     return g ? { title: g.title, eyebrow: `${g.category} · ${g.readTime}`, img: g.img } : null;
