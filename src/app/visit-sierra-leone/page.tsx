@@ -136,6 +136,23 @@ export default function VisitSierraLeonePage() {
         </Reveal>
       </div>
 
+      <div className="mx-auto mt-14 max-w-2xl px-6 sm:px-10">
+        <Reveal>
+          <Link
+            href="/visit-sierra-leone/quiz"
+            className="group flex flex-col gap-2 rounded-3xl border border-accent/40 bg-accent/10 p-7 transition-colors hover:border-accent sm:flex-row sm:items-center sm:justify-between"
+          >
+            <span>
+              <span className="eyebrow block text-[10px] uppercase text-accent-deep">One-minute quiz</span>
+              <span className="mt-1 block font-serif text-xl leading-snug text-ink">
+                Which Sierra Leone trip suits you?
+              </span>
+            </span>
+            <span className="text-xs eyebrow uppercase text-accent-deep group-hover:underline">Take the quiz</span>
+          </Link>
+        </Reveal>
+      </div>
+
       <div className="mx-auto mt-16 max-w-5xl px-6 sm:px-10">
         <h2 className="eyebrow mb-6 text-xs uppercase text-accent-deep">Sierra Leone travel guides</h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
