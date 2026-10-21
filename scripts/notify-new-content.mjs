@@ -185,6 +185,8 @@ function platformCaptions(caption, pageUrl) {
   };
 }
 
+// `heroImg` is a site path to the image to post: a branded card such as
+// /social/guide/<slug> (see src/app/social), not a raw photo.
 function publishLink(caption, heroImg, pageUrl) {
   if (!MAKE_PUBLISH_WEBHOOK) return "";
   const imageUrl = `${SITE_URL}${heroImg}`;
@@ -225,7 +227,7 @@ async function main() {
       await buildSection(
         `New destination: ${d.name}, ${d.country}`,
         `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) announcing that Green Vital Travel now offers trips to ${d.name}, ${d.country}. Hook: "${d.hook}". No markdown, plain text only.`,
-        d.heroImg
+        `/social/destination/${d.slug}`
       )
     );
   }
@@ -235,7 +237,7 @@ async function main() {
       await buildSection(
         `New tour package: ${t.title}`,
         `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) announcing Green Vital Travel's new tour package "${t.title}" — ${t.nights} nights, ${t.category} style, ${t.difficulty} pace. Summary: "${t.summary}". No markdown, plain text only.`,
-        t.heroImg
+        `/social/tour/${t.slug}`
       )
     );
   }
@@ -245,7 +247,7 @@ async function main() {
       await buildSection(
         `New travel guide: ${g.title}`,
         `Write a short, upbeat Instagram/Facebook caption (2-3 sentences, end with 3-5 relevant hashtags) sharing Green Vital Travel's new travel guide "${g.title}" for travelers in and to Sierra Leone. Summary: "${g.excerpt}". Say the full guide is on our website. No markdown, no prices, plain text only.`,
-        g.img,
+        `/social/guide/${g.slug}`,
         `${SITE_URL}/journal/${g.slug}`
       )
     );
