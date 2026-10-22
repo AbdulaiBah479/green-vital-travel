@@ -45,7 +45,7 @@ export default function AirlinePartners() {
               >
                 <div className="flex h-28 w-full items-center justify-center rounded-xl bg-paper-dim/40 p-2">
                   <div className={`relative h-full w-full ${wide ? "scale-x-125" : ""}`}>
-                    <Image src={logo} alt={name} fill className="object-contain" />
+                    <Image src={logo} alt={name} fill sizes="140px" className="object-contain" />
                   </div>
                 </div>
                 <span className="text-xs leading-snug text-ink/70">{name}</span>

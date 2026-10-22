@@ -94,8 +94,8 @@ export default function Footer() {
                 alt="Green Vital"
                 width={963}
                 height={982}
+                sizes="(min-width: 640px) 160px, 128px"
                 className="h-32 w-auto sm:h-40"
-                loading="eager"
               />
             </div>
             <p className="mt-5 max-w-60 text-sm leading-relaxed text-paper/55">

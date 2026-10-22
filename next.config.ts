@@ -115,7 +115,7 @@ const nextConfig: NextConfig = {
     // allowed value. The services-section imagery deliberately requests 85
     // for extra sharpness — without listing it here that request would be
     // silently downgraded back to 75.
-    qualities: [75, 85],
+    qualities: [65, 75, 85],
   },
   // Domain consolidation. Only active once NEXT_PUBLIC_SITE_URL is set to the
   // site's canonical address (e.g. https://www.example.com): every other host
@@ -150,7 +150,7 @@ const nextConfig: NextConfig = {
         // visits load instantly, but a future replace of the same filename
         // still reaches visitors within a day rather than staying stuck.
         source: "/:path*.(mp4|jpg|jpeg|png|webp|avif|svg|ico)",
-        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=2592000" }],
       },
     ];
   },

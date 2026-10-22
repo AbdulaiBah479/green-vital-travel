@@ -128,6 +128,9 @@ export default function Nav() {
               alt="Green Vital"
               width={963}
               height={982}
+              // Displayed at roughly 95px (mobile) to 140px (desktop) wide; without
+              // this hint the browser fetched the ~1,000px version (about 98 KB).
+              sizes="(min-width: 1024px) 140px, 96px"
               className="h-24 w-auto lg:h-36"
               priority
             />
