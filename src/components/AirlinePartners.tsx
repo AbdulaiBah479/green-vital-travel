@@ -28,7 +28,7 @@ export default function AirlinePartners() {
             Airline Ticketing
           </p>
           <h2 className="text-balance text-center font-serif text-3xl leading-tight text-ink sm:text-4xl">
-            Partner Airlines
+            Airlines We Ticket
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             We&rsquo;re not limited to these carriers — as a full-service agency, we can ticket

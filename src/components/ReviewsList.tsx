@@ -18,6 +18,10 @@ export default function ReviewsList() {
     [tourSlug, minRating]
   );
 
+  // With no on-site reviews, the page points visitors to the public Google
+  // reviews instead of showing empty filters and a "no reviews" message.
+  if (reviews.length === 0) return null;
+
   return (
     <div>
       <div className="mb-10 flex flex-wrap items-center justify-center gap-3">

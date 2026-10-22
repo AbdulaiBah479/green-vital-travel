@@ -8,6 +8,7 @@ const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Services", href: "/services" },
+  { label: "Travel Agency in Freetown", href: "/travel-agency-freetown" },
   { label: "Visit Sierra Leone", href: "/visit-sierra-leone" },
   { label: "Tour Packages", href: "/tours" },
   { label: "Destinations", href: "/destinations" },

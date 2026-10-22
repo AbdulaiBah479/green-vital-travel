@@ -2,6 +2,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import { Stars } from "./TourCard";
 import { reviews, averageRating } from "@/lib/reviews";
+import { googleBusinessUrl } from "@/lib/site";
 
 export default function ReviewsSummary() {
   const avg = averageRating();
@@ -21,20 +22,32 @@ export default function ReviewsSummary() {
             </>
           ) : (
             <div>
-              <p className="font-serif text-2xl text-ink">A newly registered agency.</p>
+              <p className="font-serif text-2xl text-ink">Real reviews, on Google.</p>
               <p className="mt-1 text-xs text-ink/70">
-                No reviews yet — you&rsquo;d be one of our first travelers.
+                See what travelers say about Green Vital, in their own words.
               </p>
             </div>
           )}
         </div>
-        <Link
-          href={hasReviews ? "/reviews" : "/planner"}
-          data-cursor-hover
-          className="rounded-full border border-ink/15 px-6 py-3 text-xs eyebrow uppercase text-ink/70 transition-colors hover:border-accent hover:text-accent-deep"
-        >
-          {hasReviews ? "Read All Reviews →" : "Start Planning →"}
-        </Link>
+        {hasReviews ? (
+          <Link
+            href="/reviews"
+            data-cursor-hover
+            className="rounded-full border border-ink/15 px-6 py-3 text-xs eyebrow uppercase text-ink/70 transition-colors hover:border-accent hover:text-accent-deep"
+          >
+            Read All Reviews →
+          </Link>
+        ) : (
+          <a
+            href={googleBusinessUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            className="rounded-full border border-ink/15 px-6 py-3 text-xs eyebrow uppercase text-ink/70 transition-colors hover:border-accent hover:text-accent-deep"
+          >
+            Read Our Google Reviews →
+          </a>
+        )}
       </Reveal>
     </section>
   );

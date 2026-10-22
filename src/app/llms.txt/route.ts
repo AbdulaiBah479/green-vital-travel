@@ -36,6 +36,7 @@ Pricing is quoted directly by a real person once trip details are known; this si
 - [Homepage](${siteUrl})
 - [All destinations](${siteUrl}/destinations)
 - [All tours](${siteUrl}/tours)
+- [Travel agency in Freetown, Sierra Leone](${siteUrl}/travel-agency-freetown)
 - [Visit Sierra Leone: guides and trip planning](${siteUrl}/visit-sierra-leone)
 - [Quiz: which Sierra Leone trip suits you?](${siteUrl}/visit-sierra-leone/quiz)
 - [Services](${siteUrl}/services)

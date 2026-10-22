@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import ReviewsList from "@/components/ReviewsList";
 import WriteReviewForm from "@/components/WriteReviewForm";
 import { reviews, averageRating, ratingBreakdown } from "@/lib/reviews";
-import { googleReviewUrl } from "@/lib/site";
+import { googleReviewUrl, googleBusinessUrl } from "@/lib/site";
 
 const description =
   "What travelers actually say after the trip is over — every review tied to a real tour, filterable by destination or rating.";
@@ -41,13 +41,33 @@ export default function ReviewsPage() {
             Traveler Reviews
           </p>
           <h1 className="text-balance text-center font-serif text-4xl leading-tight text-ink sm:text-5xl">
-            {hasReviews ? `${avg.toFixed(1)} out of 5, across ${total} reviews.` : "No reviews yet — you could be first."}
+            {hasReviews ? `${avg.toFixed(1)} out of 5, across ${total} reviews.` : "Real reviews, written on Google."}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-balance text-center text-sm leading-relaxed text-ink/70">
             {hasReviews
               ? description
-              : "We're a newly registered agency in Freetown — every review here will be from a real traveler, tied to a real tour. Traveled with us already? Leave the first one below."}
+              : "Every review of Green Vital is written by a real traveler on Google, where anyone can read it. Read what they say, and add yours if we have helped you."}
           </p>
+          {!hasReviews && (
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={googleBusinessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full bg-accent px-8 py-4 text-xs eyebrow uppercase text-ink transition-colors hover:bg-accent-soft"
+              >
+                Read our Google reviews
+              </a>
+              <a
+                href={googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full border border-ink/20 px-8 py-4 text-xs eyebrow uppercase text-ink transition-colors hover:border-ink/50"
+              >
+                Leave a review
+              </a>
+            </div>
+          )}
         </Reveal>
 
         {hasReviews && (
