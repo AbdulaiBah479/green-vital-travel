@@ -2,6 +2,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import { Stars } from "./TourCard";
 import { reviews, averageRating } from "@/lib/reviews";
+import { featuredGoogleReview } from "@/lib/googleReviews";
 import { googleBusinessUrl } from "@/lib/site";
 
 export default function ReviewsSummary() {
@@ -20,6 +21,16 @@ export default function ReviewsSummary() {
                 <p className="mt-1 text-xs text-ink/70">Based on {reviews.length} traveler reviews</p>
               </div>
             </>
+          ) : featuredGoogleReview ? (
+            <figure className="max-w-2xl">
+              <Stars rating={featuredGoogleReview.rating} />
+              <blockquote className="mt-2 font-serif text-xl leading-snug text-ink sm:text-2xl">
+                &ldquo;{featuredGoogleReview.text}&rdquo;
+              </blockquote>
+              <figcaption className="mt-2 text-xs text-ink/70">
+                {featuredGoogleReview.name}, Google review
+              </figcaption>
+            </figure>
           ) : (
             <div>
               <p className="font-serif text-2xl text-ink">Real reviews, on Google.</p>

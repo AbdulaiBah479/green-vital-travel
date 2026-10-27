@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ReviewsList from "@/components/ReviewsList";
+import GoogleReviews from "@/components/GoogleReviews";
 import WriteReviewForm from "@/components/WriteReviewForm";
 import { reviews, averageRating, ratingBreakdown } from "@/lib/reviews";
 import { googleReviewUrl, googleBusinessUrl } from "@/lib/site";
@@ -90,6 +91,10 @@ export default function ReviewsPage() {
             })}
           </Reveal>
         )}
+
+        <Reveal className="mt-16">
+          <GoogleReviews />
+        </Reveal>
 
         <Reveal className="mt-16">
           <ReviewsList />
