@@ -43,10 +43,15 @@ export const newsletterSchema = z.object({
 });
 
 export const reviewSchema = z.object({
-  tourSlug: z.string().trim().min(1),
+  tourSlug: z.string().trim().optional(),
+  service: z.string().trim().max(60).optional(),
   rating: z.coerce.number().int().min(1).max(5),
-  name: z.string().trim().min(1, "Please enter your name."),
-  body: z.string().trim().min(1, "Please share a few words about the trip."),
+  name: z.string().trim().min(1, "Please enter your name.").max(80, "Please use a shorter name."),
+  body: z
+    .string()
+    .trim()
+    .min(1, "Please share a few words about your experience.")
+    .max(1200, "Please keep your review under 1,200 characters."),
 });
 
 export function firstIssueMessage(error: z.ZodError, fallback: string): string {

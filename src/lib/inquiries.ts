@@ -1,4 +1,5 @@
 import { siteUrl, contact } from "./site";
+import { createReviewToken, reviewId } from "./siteReviews";
 
 // Best-effort CRM logging to Airtable. Never blocks or fails the caller —
 // the email notification below is the channel that must work; this is a
@@ -290,25 +291,25 @@ export async function subscribeNewsletter(email: string) {
 }
 
 export type ReviewSubmission = {
-  tourSlug: string;
-  tourTitle: string;
-  rating: number;
   name: string;
+  rating: number;
   body: string;
+  service?: string;
 };
 
-// Reviews are hand-curated (checked against a real booking before
-// publishing, per the copy on the review form) rather than auto-published,
-// so a submission notifies the business instead of writing straight to
-// the reviews data — same fallback pattern as the other inquiry types.
+// Website reviews are never shown automatically. A submission is emailed to
+// the business with a signed link; opening it and confirming publishes the
+// review (see /api/review/approve). Without REVIEW_SECRET the email still
+// arrives, just without the publish link.
 export async function submitReview(review: ReviewSubmission) {
   const businessEmail = process.env.BUSINESS_EMAIL || process.env.CONTACT_EMAIL || contact.email;
   const fromEmail = process.env.EMAIL_FROM || `noreply@${new URL(siteUrl).hostname}`;
+  const serviceLabel = review.service || "Not given";
 
   await logToAirtable({
     Name: review.name,
     Type: "Review Submission",
-    "Subject / Tour": review.tourTitle,
+    "Subject / Tour": serviceLabel,
     Message: `Rating: ${review.rating}/5\n\n${review.body}`,
     Source: "website-review-form",
     Status: "New",
@@ -316,15 +317,34 @@ export async function submitReview(review: ReviewSubmission) {
     "Date Received": new Date().toISOString(),
   });
 
+  const secret = process.env.REVIEW_SECRET;
+  let publishLine = "To publish it, add it to content/site-reviews.json (set REVIEW_SECRET to get a one-tap link here).";
+  if (secret) {
+    const isoDate = new Date().toISOString();
+    const token = createReviewToken(
+      {
+        id: reviewId(review.name, review.body, isoDate),
+        name: review.name,
+        rating: review.rating as 1 | 2 | 3 | 4 | 5,
+        body: review.body,
+        service: review.service,
+        isoDate,
+      },
+      secret
+    );
+    publishLine = `Publish it (link works for 30 days):\n${siteUrl}/api/review/approve?t=${token}`;
+  }
+
   const text = [
-    "New traveler review submitted",
-    `Tour: ${review.tourTitle}`,
+    "New review submitted on the website",
+    `Used us for: ${serviceLabel}`,
     `Rating: ${review.rating}/5`,
     `Name: ${review.name}`,
     "",
     `Review:\n${review.body}`,
     "",
-    "Verify against a real booking before adding it to src/lib/reviews.ts.",
+    "Check it is from a real customer, then publish it or ignore this email.",
+    publishLine,
   ].join("\n");
 
   if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
@@ -353,7 +373,7 @@ export async function submitReview(review: ReviewSubmission) {
       body: JSON.stringify({
         from: `Green Vital <${fromEmail}>`,
         to: [businessEmail],
-        subject: `New review: ${review.tourTitle} (${review.rating}/5)`,
+        subject: `New website review (${review.rating}/5) from ${review.name}`,
         text,
       }),
     });

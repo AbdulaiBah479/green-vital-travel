@@ -4,7 +4,7 @@ import { tours } from "@/lib/tours";
 import { firstIssueMessage, isSpam, reviewSchema } from "@/lib/validation";
 import { clientKey, rateLimit } from "@/lib/rateLimit";
 
-const SUCCESS_MESSAGE = "Thanks — we'll verify it against your booking before it goes live.";
+const SUCCESS_MESSAGE = "Thanks. We read every review, and yours will appear on this page once we have approved it.";
 
 export async function POST(request: Request) {
   if (!rateLimit(`review:${clientKey(request)}`, 5, 10 * 60 * 1000)) {
@@ -22,20 +22,18 @@ export async function POST(request: Request) {
     }
 
     const parsed = reviewSchema.safeParse(body);
-    const tour = parsed.success ? tours.find((t) => t.slug === parsed.data.tourSlug) : undefined;
 
-    if (!parsed.success || !tour) {
+    if (!parsed.success) {
       return NextResponse.json(
-        {
-          error: parsed.success
-            ? "Please choose a valid tour."
-            : firstIssueMessage(parsed.error, "Please complete all fields before submitting your review."),
-        },
+        { error: firstIssueMessage(parsed.error, "Please complete all fields before submitting your review.") },
         { status: 400 }
       );
     }
 
-    await submitReview({ ...parsed.data, tourTitle: tour.title });
+    const tourTitle = tours.find((t) => t.slug === parsed.data.tourSlug)?.title;
+    const service = parsed.data.service || tourTitle || undefined;
+
+    await submitReview({ name: parsed.data.name, rating: parsed.data.rating, body: parsed.data.body, service });
 
     return NextResponse.json({ ok: true, message: SUCCESS_MESSAGE });
   } catch (error) {

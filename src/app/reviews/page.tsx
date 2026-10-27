@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ReviewsList from "@/components/ReviewsList";
 import GoogleReviews from "@/components/GoogleReviews";
+import SiteReviews from "@/components/SiteReviews";
 import WriteReviewForm from "@/components/WriteReviewForm";
 import { reviews, averageRating, ratingBreakdown } from "@/lib/reviews";
 import { googleReviewUrl, googleBusinessUrl } from "@/lib/site";
@@ -97,13 +98,17 @@ export default function ReviewsPage() {
         </Reveal>
 
         <Reveal className="mt-16">
+          <SiteReviews />
+        </Reveal>
+
+        <Reveal className="mt-16">
           <ReviewsList />
         </Reveal>
 
         <Reveal className="mt-20 border-t border-ink/10 pt-16">
           <p className="eyebrow mb-4 text-xs uppercase text-accent-deep">Write a Review</p>
           <h2 className="mb-6 max-w-md font-serif text-2xl leading-tight text-ink">
-            Traveled with us? We&rsquo;d like to hear how it went.
+            Used our services? We&rsquo;d like to hear how it went.
           </h2>
           <WriteReviewForm />
         </Reveal>

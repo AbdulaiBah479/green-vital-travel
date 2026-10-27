@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import Magnetic from "./Magnetic";
-import { tours } from "@/lib/tours";
+import { REVIEW_SERVICES } from "@/lib/siteReviews-services";
 
 type Status = "idle" | "submitting" | "success";
 
 export default function WriteReviewForm() {
-  const [tourSlug, setTourSlug] = useState(tours[0]?.slug ?? "");
+  const [service, setService] = useState<string>(REVIEW_SERVICES[0]);
   const [rating, setRating] = useState(5);
   const [name, setName] = useState("");
   const [body, setBody] = useState("");
@@ -29,7 +29,7 @@ export default function WriteReviewForm() {
       const response = await fetch("/api/review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tourSlug, rating, name, body, companyWebsite }),
+        body: JSON.stringify({ service, rating, name, body, companyWebsite }),
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "We couldn't submit your review right now.");
@@ -49,8 +49,7 @@ export default function WriteReviewForm() {
       <div className="rounded-2xl border border-ink/10 bg-paper-dim px-6 py-6 text-sm text-ink">
         <p className="font-serif text-lg italic text-ink">Thank you, {name || "traveler"}.</p>
         <p className="mt-1 text-ink/70">
-          Reviews are checked against real bookings before they&rsquo;re published — yours will appear once
-          that&rsquo;s confirmed.
+          We read every review. Yours will appear on this page once we have approved it, usually within a day.
         </p>
       </div>
     );
@@ -75,14 +74,14 @@ export default function WriteReviewForm() {
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <select
-          value={tourSlug}
-          onChange={(e) => setTourSlug(e.target.value)}
-          aria-label="Which tour was this?"
+          value={service}
+          onChange={(e) => setService(e.target.value)}
+          aria-label="What did you use Green Vital for?"
           className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none focus:border-accent"
         >
-          {tours.map((t) => (
-            <option key={t.slug} value={t.slug}>
-              {t.title}
+          {REVIEW_SERVICES.map((s) => (
+            <option key={s} value={s}>
+              {s}
             </option>
           ))}
         </select>
@@ -113,9 +112,11 @@ export default function WriteReviewForm() {
         rows={4}
         value={body}
         onChange={(e) => setBody(e.target.value)}
-        placeholder="How was the trip?"
+        placeholder="How was your experience with us?"
+        maxLength={1200}
         className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-ink/70 focus:border-accent"
       />
+      <p className="text-xs text-ink/60">By submitting, you agree that we may show your name and review on this website.</p>
       <Magnetic strength={0.2}>
         <button
           type="submit"
