@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NewsletterForm from "./NewsletterForm";
 import SocialLinks from "./SocialLinks";
-import { contact, companyRegistration, siteFullName, businessHours, googleReviewUrl } from "@/lib/site";
+import { contact, companyRegistration, legalName, businessHours, googleReviewUrl } from "@/lib/site";
 
 const exploreLinks = [
   { label: "Home", href: "/" },
@@ -164,7 +164,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-6 pt-8 text-xs text-paper/50 sm:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} {siteFullName}. Reg. No.{" "}
+            &copy; {new Date().getFullYear()} {legalName}. Reg. No.{" "}
             {companyRegistration.registrationNumber}, {companyRegistration.jurisdiction}.
           </p>
           <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">

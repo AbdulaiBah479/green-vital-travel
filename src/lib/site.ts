@@ -11,6 +11,9 @@ export const siteName = "Green Vital";
 
 export const siteFullName = "Green Vital Travel and Tour Agency Limited";
 
+// The name exactly as it appears on the certificate of incorporation (one word, "Greenvital").
+export const legalName = "Greenvital Travel and Tour Agency Limited";
+
 export const siteTitle = "Green Vital | Travel Agency in Freetown, Sierra Leone";
 
 export const siteDescription =
@@ -38,9 +41,9 @@ export const companyRegistration = {
   // and NRA taxpayer certificate.
   registrationNumber: "SL200726GREEN31171",
   tin: "1001814533",
-  incorporatedDate: "Founded 2026",
+  incorporatedDate: "20 July 2026",
   jurisdiction: "Sierra Leone",
-  entityType: "Private Company Limited by Shares",
+  entityType: "Private Company Limited by Liability",
 };
 
 // Public opening hours. Kept in one place so the visible text and the
@@ -91,3 +94,43 @@ export const social = {
   tiktok: settings.tiktok,
   linkedin: settings.linkedin,
 };
+
+// Licences and registrations, as shown on the original certificates. Shown on the About page so visitors and partners can check them.
+export const licences = [
+  {
+    authority: "National Investment Board",
+    document: "Certificate of Incorporation and Registration",
+    reference: "SL200726GREEN31171",
+    validity: "Incorporated 20 July 2026",
+  },
+  {
+    authority: "Sierra Leone Civil Aviation Authority",
+    document: "Air Ticketing Certificate (Air Ticketing Agent)",
+    reference: "ECR/26/SLCAA/093",
+    validity: "18 September 2026 to 17 September 2027",
+  },
+  {
+    authority: "National Tourist Board of Sierra Leone",
+    document: "Class 2 Travel Agency licences (manager and proprietor)",
+    reference: "NTB-TA-200",
+    validity: "Until 31 July 2027",
+  },
+  {
+    authority: "National Tourist Board of Sierra Leone",
+    document: "Class 2 Handling Agency licences (manager and proprietor)",
+    reference: "NTB-TH-199 and NTB-TH-099",
+    validity: "Until 31 July 2027",
+  },
+  {
+    authority: "Freetown City Council",
+    document: "Business licence",
+    reference: "FCC/S25/008753",
+    validity: "January to December 2026",
+  },
+  {
+    authority: "NASSIT",
+    document: "Registration of establishment",
+    reference: "W01J2026393",
+    validity: "Registered 20 July 2026",
+  },
+] as const;

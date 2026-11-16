@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Magnetic from "@/components/Magnetic";
-import { founder, companyRegistration } from "@/lib/site";
+import { founder, companyRegistration, legalName, licences } from "@/lib/site";
 
 const description =
   "Green Vital is a full-service travel agency in Freetown, Sierra Leone — flights, hotels, visas, and tours, handled by a real person, not a database.";
@@ -47,7 +47,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="space-y-6 text-lg leading-relaxed text-ink/80">
             <p className="font-serif text-2xl italic leading-snug text-ink">
-              Green Vital Travel and Tour Agency Limited was incorporated in{" "}
+              {legalName}, trading as Green Vital, was incorporated in{" "}
               {companyRegistration.jurisdiction} in {companyRegistration.incorporatedDate.split(" ").slice(1).join(" ")}, on a simple idea: one traveler
               should be able to reach one real person for everything a trip
               needs — the flight, the hotel, the visa, and the plan for the
@@ -90,6 +90,28 @@ export default function AboutPage() {
               Every guide, driver, and partner is someone we&rsquo;ve worked with
               directly.
             </li>
+          </ul>
+        </Reveal>
+
+        <Reveal className="mt-16 border-t border-ink/10 pt-10">
+          <p className="eyebrow mb-4 text-xs uppercase text-accent-deep">Licensed and registered</p>
+          <p className="mb-6 text-sm leading-relaxed text-ink/70">
+            {legalName} is a {companyRegistration.entityType.toLowerCase()} incorporated in {companyRegistration.jurisdiction}.
+            These are the registrations and licences behind the business. Originals can be shown on request.
+          </p>
+          <ul className="divide-y divide-ink/10 rounded-2xl border border-ink/10">
+            {licences.map((l) => (
+              <li key={l.reference} className="grid gap-1 px-5 py-4 text-sm sm:grid-cols-[1fr_auto] sm:gap-6">
+                <span>
+                  <strong className="block text-ink">{l.authority}</strong>
+                  <span className="text-ink/70">{l.document}</span>
+                </span>
+                <span className="text-ink/70 sm:text-right">
+                  <span className="block text-ink">{l.reference}</span>
+                  {l.validity}
+                </span>
+              </li>
+            ))}
           </ul>
         </Reveal>
 
