@@ -21,6 +21,9 @@ const moreLinks = [
   { label: "Partners", href: "/partners" },
 ];
 
+// Where staff read their @gtravelsandtours.com mailboxes (Namecheap Private Email webmail).
+const mailLoginUrl = "https://privateemail.com";
+
 export default function Nav() {
   const pathname = usePathname();
   const hasDarkHero = pathname === "/";
@@ -183,6 +186,15 @@ export default function Nav() {
                   {l.label}
                 </Link>
               ))}
+              <a
+                href={mailLoginUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMoreOpen(false)}
+                className="block border-t border-ink/10 px-4 py-3 text-sm text-ink/70 transition-colors hover:bg-paper-dim hover:text-accent-deep"
+              >
+                Staff Mail Login
+              </a>
             </div>
           </div>
         </nav>
@@ -271,6 +283,15 @@ export default function Nav() {
             <CurrencySwitcher dark={false} />
           </div>
         </div>
+        <a
+          href={mailLoginUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
+          className="mt-6 w-fit text-xs eyebrow uppercase text-paper/70 hover:text-paper"
+        >
+          Staff Mail Login
+        </a>
         <Link
           href="/planner"
           onClick={() => setOpen(false)}
